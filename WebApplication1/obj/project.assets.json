@@ -8517,11 +8517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ISPSMS_SD\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\ISPSMS_FINAL\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\ISPSMS_SD\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "D:\\ISPSMS_FINAL\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\Zeb Perez\\.nuget\\packages\\",
-      "outputPath": "D:\\ISPSMS_SD\\WebApplication1\\obj\\",
+      "outputPath": "D:\\ISPSMS_FINAL\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

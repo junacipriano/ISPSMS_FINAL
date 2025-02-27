@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ISPSMS_SD\\ServiceLayer\\ServiceLayer.csproj": {}
+    "D:\\ISPSMS_FINAL\\ServiceLayer\\ServiceLayer.csproj": {}
   },
   "projects": {
-    "D:\\ISPSMS_SD\\ServiceLayer\\ServiceLayer.csproj": {
+    "D:\\ISPSMS_FINAL\\ServiceLayer\\ServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ISPSMS_SD\\ServiceLayer\\ServiceLayer.csproj",
+        "projectUniqueName": "D:\\ISPSMS_FINAL\\ServiceLayer\\ServiceLayer.csproj",
         "projectName": "ServiceLayer",
-        "projectPath": "D:\\ISPSMS_SD\\ServiceLayer\\ServiceLayer.csproj",
+        "projectPath": "D:\\ISPSMS_FINAL\\ServiceLayer\\ServiceLayer.csproj",
         "packagesPath": "C:\\Users\\Zeb Perez\\.nuget\\packages\\",
-        "outputPath": "D:\\ISPSMS_SD\\ServiceLayer\\obj\\",
+        "outputPath": "D:\\ISPSMS_FINAL\\ServiceLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
