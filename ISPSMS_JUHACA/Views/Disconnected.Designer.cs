@@ -32,28 +32,25 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             dataGridView1 = new DataGridView();
-            disconnectedSubscribersBindingSource = new BindingSource(components);
+            disconnectedSubscriberViewBindingSource = new BindingSource(components);
             subsidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            disconnNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            contactNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            planDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            duedateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            currentDuedateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            installationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             monthlyChargeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            balanceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            totalChargeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)disconnectedSubscribersBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).BeginInit();
             SuspendLayout();
             // 
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Helvetica Rounded", 23.9999981F, FontStyle.Bold, GraphicsUnit.Pixel, 0);
+            materialLabel1.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
             materialLabel1.ForeColor = Color.Coral;
             materialLabel1.Location = new Point(26, 93);
@@ -85,90 +82,83 @@
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { subsidDataGridViewTextBoxColumn, disconnNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, currentDuedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn, balanceDataGridViewTextBoxColumn, totalChargeDataGridViewTextBoxColumn });
-            dataGridView1.DataSource = disconnectedSubscribersBindingSource;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { subsidDataGridViewTextBoxColumn, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, monthlyChargeDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = disconnectedSubscriberViewBindingSource;
             dataGridView1.Location = new Point(26, 150);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1158, 474);
+            dataGridView1.Size = new Size(1221, 515);
             dataGridView1.TabIndex = 2;
             // 
-            // disconnectedSubscribersBindingSource
+            // disconnectedSubscriberViewBindingSource
             // 
-            disconnectedSubscribersBindingSource.DataSource = typeof(Domain.Models.DisconnectedSubscribers);
+            disconnectedSubscriberViewBindingSource.DataSource = typeof(Domain.ViewModels.DisconnectedSubscriberView);
             // 
             // subsidDataGridViewTextBoxColumn
             // 
             subsidDataGridViewTextBoxColumn.DataPropertyName = "subs_id";
-            subsidDataGridViewTextBoxColumn.HeaderText = "ID NO.";
+            subsidDataGridViewTextBoxColumn.HeaderText = "subs_id";
             subsidDataGridViewTextBoxColumn.MinimumWidth = 6;
             subsidDataGridViewTextBoxColumn.Name = "subsidDataGridViewTextBoxColumn";
             subsidDataGridViewTextBoxColumn.Width = 125;
             // 
-            // disconnNameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            disconnNameDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            disconnNameDataGridViewTextBoxColumn.HeaderText = "Disconn_Name";
-            disconnNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            disconnNameDataGridViewTextBoxColumn.Name = "disconnNameDataGridViewTextBoxColumn";
-            disconnNameDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn1.DataPropertyName = "Disconn_Name";
+            dataGridViewTextBoxColumn1.HeaderText = "Disconn_Name";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // contactNumberDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            contactNumberDataGridViewTextBoxColumn.DataPropertyName = "CONTACT NO.";
-            contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
-            contactNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            contactNumberDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn2.DataPropertyName = "ContactNumber";
+            dataGridViewTextBoxColumn2.HeaderText = "ContactNumber";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // addressDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            addressDataGridViewTextBoxColumn.DataPropertyName = "ADDRESS";
-            addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            addressDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn3.DataPropertyName = "Address";
+            dataGridViewTextBoxColumn3.HeaderText = "Address";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Width = 125;
             // 
-            // planDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            planDataGridViewTextBoxColumn.DataPropertyName = "PLAN";
-            planDataGridViewTextBoxColumn.HeaderText = "Plan";
-            planDataGridViewTextBoxColumn.MinimumWidth = 6;
-            planDataGridViewTextBoxColumn.Name = "planDataGridViewTextBoxColumn";
-            planDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn4.DataPropertyName = "Plan";
+            dataGridViewTextBoxColumn4.HeaderText = "Plan";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Width = 125;
             // 
-            // statusDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            statusDataGridViewTextBoxColumn.DataPropertyName = "STATUS";
-            statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            statusDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn5.DataPropertyName = "Status";
+            dataGridViewTextBoxColumn5.HeaderText = "Status";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.Width = 125;
             // 
-            // duedateDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            duedateDataGridViewTextBoxColumn.DataPropertyName = "DUEDATE";
-            duedateDataGridViewTextBoxColumn.HeaderText = "Duedate";
-            duedateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            duedateDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn6.DataPropertyName = "Duedate";
+            dataGridViewTextBoxColumn6.HeaderText = "Duedate";
+            dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.Width = 125;
             // 
-            // currentDuedateDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            currentDuedateDataGridViewTextBoxColumn.DataPropertyName = "DD";
-            currentDuedateDataGridViewTextBoxColumn.HeaderText = "CurrentDuedate";
-            currentDuedateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            currentDuedateDataGridViewTextBoxColumn.Name = "currentDuedateDataGridViewTextBoxColumn";
-            currentDuedateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // installationDateDataGridViewTextBoxColumn
-            // 
-            installationDateDataGridViewTextBoxColumn.DataPropertyName = "INSTALLATION DATE";
-            installationDateDataGridViewTextBoxColumn.HeaderText = "InstallationDate";
-            installationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            installationDateDataGridViewTextBoxColumn.Name = "installationDateDataGridViewTextBoxColumn";
-            installationDateDataGridViewTextBoxColumn.Width = 125;
+            dataGridViewTextBoxColumn7.DataPropertyName = "InstallationDate";
+            dataGridViewTextBoxColumn7.HeaderText = "InstallationDate";
+            dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.Width = 125;
             // 
             // monthlyChargeDataGridViewTextBoxColumn
             // 
@@ -178,33 +168,17 @@
             monthlyChargeDataGridViewTextBoxColumn.Name = "monthlyChargeDataGridViewTextBoxColumn";
             monthlyChargeDataGridViewTextBoxColumn.Width = 125;
             // 
-            // balanceDataGridViewTextBoxColumn
-            // 
-            balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
-            balanceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
-            balanceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // totalChargeDataGridViewTextBoxColumn
-            // 
-            totalChargeDataGridViewTextBoxColumn.DataPropertyName = "MONTHLY CHARGE";
-            totalChargeDataGridViewTextBoxColumn.HeaderText = "TotalCharge";
-            totalChargeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            totalChargeDataGridViewTextBoxColumn.Name = "totalChargeDataGridViewTextBoxColumn";
-            totalChargeDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Disconnected
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1209, 652);
+            ClientSize = new Size(1269, 694);
             Controls.Add(dataGridView1);
             Controls.Add(materialTextBox1);
             Controls.Add(materialLabel1);
             Name = "Disconnected";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)disconnectedSubscribersBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,7 +188,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn subsidDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn disconnNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
@@ -223,9 +196,16 @@
         private DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn currentDuedateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn installationDateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn monthlyChargeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn totalChargeDataGridViewTextBoxColumn;
-        private BindingSource disconnectedSubscribersBindingSource;
+        private DataGridViewTextBoxColumn subsidDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn monthlyChargeDataGridViewTextBoxColumn;
+        private BindingSource disconnectedSubscriberViewBindingSource;
     }
 }

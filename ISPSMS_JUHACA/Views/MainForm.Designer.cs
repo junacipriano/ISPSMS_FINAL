@@ -180,7 +180,7 @@
             connectedsubscribersGridView.ColumnHeadersHeight = 29;
             connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { subsidDataGridViewTextBoxColumn, Conn_Name, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn, editButton, disconnectButton });
-            connectedsubscribersGridView.DataSource = connectedSubscribersBindingSource;
+            connectedsubscribersGridView.DataSource = connectedSubscriberViewBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Ivory;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -355,10 +355,6 @@
             // connectedSubscriberViewBindingSource
             // 
             connectedSubscriberViewBindingSource.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
-            // 
-            // connectedSubscriberViewBindingSource1
-            // 
-            connectedSubscriberViewBindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
             // 
             // MainForm
             // 

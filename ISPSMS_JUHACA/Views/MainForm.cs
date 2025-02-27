@@ -43,6 +43,8 @@ namespace ISPSMS_JUHACA
 
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            ConSubsEntity = (Domain.Models.ConnectedSubscribers)bindingSource.Current;
+
             if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "disconnectButton")
             {
                 if (e.RowIndex < 0)
@@ -50,23 +52,35 @@ namespace ISPSMS_JUHACA
                     MessageBox.Show("No valid subscriber selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 var selectedSubscriber = connectedsubscribersGridView.Rows[e.RowIndex].DataBoundItem as Domain.Models.ConnectedSubscribers;
                 if (selectedSubscriber == null)
                 {
                     MessageBox.Show("Subscriber not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 DialogResult result = MessageBox.Show("Are you sure you want to disconnect this subscriber?",
                                                       "Confirm Disconnection",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-
                     try
                     {
-                        dbContext.connectedSubscriberRepository.Remove(selectedSubscriber);
+                        // Ensure we are working with a tracked entity
+                        var subscriberToDelete = dbContext.connectedSubscriberRepository
+                                                          .Get(s => s.subs_id == selectedSubscriber.subs_id, tracked: true);
+
+                        if (subscriberToDelete == null)
+                        {
+                            MessageBox.Show("Subscriber not found in database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
                         dbContext.Save();
+
                         bindingSource.Remove(selectedSubscriber);
                         getSubscribers();
 
