@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ISPSMS_JUHACA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a87d2c523fd73785fcccc2abf1929ad8288acd39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+067cd6ee413555535a03eec7db41ea0a2e8564a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISPSMS_JUHACA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISPSMS_JUHACA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

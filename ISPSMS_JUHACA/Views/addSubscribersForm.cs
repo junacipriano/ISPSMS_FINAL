@@ -26,7 +26,8 @@ namespace ISPSMS_JUHACA
         private readonly AddSubscriberPresenter _presenter;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         private readonly MainForm mainForm;
-
+        internal SubscriberPage s;
+        internal string message;
 
         public event EventHandler SaveSubscriber;
         public event EventHandler FormLoaded;
@@ -88,6 +89,7 @@ namespace ISPSMS_JUHACA
 
 
 
+
         public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage SubscribersForm)
         {
             InitializeComponent();
@@ -95,7 +97,9 @@ namespace ISPSMS_JUHACA
             this.SubscribersForm = SubscribersForm;
             _presenter = new AddSubscriberPresenter(this, dbContext, SubscribersForm);
 
-              }
+      
+
+        }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
@@ -116,6 +120,8 @@ namespace ISPSMS_JUHACA
         private void addSubscribersForm_Load(object sender, EventArgs e)
         {
             FormLoaded?.Invoke(this, EventArgs.Empty);
+            _presenter.EditLoad();
+
         }
     }
 }

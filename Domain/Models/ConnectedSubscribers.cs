@@ -10,6 +10,7 @@ namespace Domain.Models
         public string Conn_Name { get; set; }
 
         [Phone]
+        [RegularExpression(@"^09\d{9}$", ErrorMessage = "Contact number must be 11 digits and start with 09.")]
         public string ContactNumber { get; set; }
         public string Address { get; set; }
         public string Plan { get; set; }

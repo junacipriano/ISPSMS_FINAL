@@ -18,6 +18,7 @@ namespace ISPSMS_JUHACA.Views.USERCONTROL
         public readonly IUnitOfWork dbContext;
         private BindingSource bindingSource;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
+        public bool isEdit = false;
 
         public BindingSource BindingSource => bindingSource;
 
@@ -28,13 +29,14 @@ namespace ISPSMS_JUHACA.Views.USERCONTROL
             this.dbContext = dbContext;
             bindingSource = new BindingSource();
             connectedsubscribersGridView.DataSource = bindingSource;
-            connectedsubscribersGridView.VirtualMode = true;
+    
             this.TopLevel = false;
         }
         public void getSubscribers()
         {
             var subscribers = dbContext.connectedSubscriberRepository.GetAll();
-            connectedsubscribersGridView.DataSource = subscribers;
+            bindingSource.DataSource = subscribers;  // Set data to the binding source
+            connectedsubscribersGridView.DataSource = bindingSource;  // Keep the grid bound to the binding source
 
         }
         private void disconnectedbtn_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace ISPSMS_JUHACA.Views.USERCONTROL
             var Disconnected = new Disconnected(dbContext, this);
             Disconnected.ShowDialog();
         }
+      
 
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,6 +85,17 @@ namespace ISPSMS_JUHACA.Views.USERCONTROL
                     }
                 }
             }
+
+            if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
+            {
+                ConSubsEntity = (Domain.Models.ConnectedSubscribers)bindingSource.Current;
+            isEdit = true;  
+            var addsubs = new addSubscribersForm(dbContext,this);
+            addsubs.s = this;
+            addsubs.Text = "Edit Program Information";
+            addsubs.message = "Program updated successfully.";
+            addsubs.ShowDialog();
+            }
         }
 
         private void SubscriberPage_Load(object sender, EventArgs e)
@@ -92,7 +106,7 @@ namespace ISPSMS_JUHACA.Views.USERCONTROL
         private void addBtn_Click(object sender, EventArgs e)
         {
             ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
-
+            isEdit = false;
             var AddForm = new addSubscribersForm(dbContext, this);
             AddForm.ShowDialog();
         }
