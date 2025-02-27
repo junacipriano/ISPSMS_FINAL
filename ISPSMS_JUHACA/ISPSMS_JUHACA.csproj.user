@@ -13,5 +13,20 @@
     <Compile Update="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\USERCONTROL\AccountsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\USERCONTROL\BillingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\USERCONTROL\DashboardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\USERCONTROL\SubscriberPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\USERCONTROL\TransactionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

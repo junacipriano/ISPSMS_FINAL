@@ -22,3 +22,15 @@ D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ServiceLayer.dll
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.deps.json
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.dll
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.pdb
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.AssemblyInfo.cs
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.sourcelink.json
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.dll
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
+C:\Users\user\Source\Repos\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll

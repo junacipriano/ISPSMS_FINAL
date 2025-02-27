@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
+using ISPSMS_JUHACA.Views.USERCONTROL;
 using Microsoft.EntityFrameworkCore;
 
 namespace ISPSMS_JUHACA.Presenter
@@ -14,9 +15,10 @@ namespace ISPSMS_JUHACA.Presenter
     {
             private readonly IMainSubscriberPage _view;
             private readonly IUnitOfWork _dbContext;
-            private readonly MainForm _subscribersForm;
+            private readonly SubscriberPage _subscribersForm;
 
-            public AddSubscriberPresenter(IMainSubscriberPage view, IUnitOfWork dbContext, MainForm subscribersForm)
+
+        public AddSubscriberPresenter(IMainSubscriberPage view, IUnitOfWork dbContext, SubscriberPage subscribersForm)
             {
                 _view = view;
                 _dbContext = dbContext;
@@ -27,7 +29,7 @@ namespace ISPSMS_JUHACA.Presenter
 
         private void OnSaveSubscriber(object? sender, EventArgs e)
         {
-            var entity = _subscribersForm.ConSubsEntity;
+            var entity = _subscribersForm.BindingSource.Current as ConnectedSubscribers;
 
             entity = new ConnectedSubscribers
             {

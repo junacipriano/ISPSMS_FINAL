@@ -387,6 +387,7 @@
             Controls.Add(lastNameTextBox);
             Controls.Add(label1);
             Name = "addSubscribersForm";
+            Text = "z";
             Load += addSubscribersForm_Load;
             ResumeLayout(false);
             PerformLayout();

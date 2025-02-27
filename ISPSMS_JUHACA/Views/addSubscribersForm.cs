@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
 using ISPSMS_JUHACA.Presenter;
+using ISPSMS_JUHACA.Views.USERCONTROL;
 
 
 namespace ISPSMS_JUHACA
@@ -21,9 +22,11 @@ namespace ISPSMS_JUHACA
     public partial class addSubscribersForm : MaterialForm, IMainSubscriberPage
     {
         public readonly IUnitOfWork dbContext;
-        internal MainForm SubscribersForm;
+        internal SubscriberPage SubscribersForm;
         private readonly AddSubscriberPresenter _presenter;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
+        private readonly MainForm mainForm;
+
 
         public event EventHandler SaveSubscriber;
         public event EventHandler FormLoaded;
@@ -85,12 +88,14 @@ namespace ISPSMS_JUHACA
 
 
 
-        public addSubscribersForm(IUnitOfWork dbContext, MainForm subscribersForm)
+        public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage SubscribersForm)
         {
             InitializeComponent();
-      
-            _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm);
-        }
+            this.dbContext = dbContext;
+            this.SubscribersForm = SubscribersForm;
+            _presenter = new AddSubscriberPresenter(this, dbContext, SubscribersForm);
+
+              }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
