@@ -1,0 +1,530 @@
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+D:\ISPSMS_JUHACA\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.SubscribersForm.resources
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.SubscribersForm.resources
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.SubscribersForm.resources
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.SubscribersForm.resources
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+C:\Users\kenneth\Documents\ISPSMS - Back Up\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainForm.resources
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+C:\Users\user\Desktop\SD_FINAL\Final na jud\ISPSMS\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Identity.UI.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Core.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Identity.Stores.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.OpenApi.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Abstractions.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Unity.Container.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
+D:\ISPSMS_SD\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainForm.resources
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Properties.Resources.resources
+D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.Disconnected.resources
