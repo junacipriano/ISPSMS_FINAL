@@ -21,4 +21,8 @@ public class AppDbContext : IdentityDbContext<AppUser>
     }
     public DbSet<AppUser> AppUsers { get; set; }
     public DbSet<Models.ConnectedSubscribers> connectedSubscribers { get; set; }
+    public DbSet<Models.DisconnectedSubscribers> disconnectedSubscribers { get; set; }
+    public DbSet<Models.Transactions> transactions { get; set; }
+    public DbSet<Models.Accounts> accounts { get; set; }
+    public DbSet<Models.Activities> activities { get; set; }
 }

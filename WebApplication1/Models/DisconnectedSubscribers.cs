@@ -9,7 +9,7 @@ using WebApplication1.Areas.Identity.Data;
 
 namespace WebApplication1.Models
 {
-    internal class DisconnectedSubscribers
+    public class DisconnectedSubscribers
     {
         [Key]
         public int subs_id { get; set; }

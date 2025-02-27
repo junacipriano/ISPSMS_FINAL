@@ -9,7 +9,7 @@ using WebApplication1.Areas.Identity.Data;
 
 namespace WebApplication1.Models
 {
-    internal class Transactions
+    public class Transactions
     {
         [Key]
         public int trans_id { get; set; }
