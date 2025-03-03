@@ -101,5 +101,25 @@ namespace ISPSMS_JUHACA
             var Disconnected = new Disconnected(dbContext, this);
             Disconnected.ShowDialog();
         }
+
+        private void customMaterialButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customMaterialButton11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customMaterialButton10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
