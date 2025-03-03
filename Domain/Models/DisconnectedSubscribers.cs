@@ -11,7 +11,7 @@ namespace Domain.Models
     public class DisconnectedSubscribers
     {
         [Key]
-        public int subs_id { get; set; }
+        public int subs_id { get; set; }  
         public string Disconn_Name { get; set; }
 
         [Phone]
