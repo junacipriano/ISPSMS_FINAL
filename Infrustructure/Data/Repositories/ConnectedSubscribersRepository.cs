@@ -2,6 +2,7 @@
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Data;
 using ISPSMS_JUHACA.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infastructure.Repositories
 {
@@ -15,7 +16,14 @@ namespace Infastructure.Repositories
 
         public void Update(ConnectedSubscribers obj)
         {
-            _db.ConnectedSubscribers.Update(obj);
+            var trackedEntity = _db.ConnectedSubscribers.Local.FirstOrDefault(s => s.subs_id == obj.subs_id);
+
+            if (trackedEntity != null)
+            {
+                _db.Entry(trackedEntity).State = EntityState.Detached; // Detach old tracked entity
+            }
+
+            _db.Entry(obj).State = EntityState.Modified; // Track the updated entity
         }
 
         public void Save()

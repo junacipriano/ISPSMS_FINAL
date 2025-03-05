@@ -618,3 +618,4 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubscriberPage.resources
