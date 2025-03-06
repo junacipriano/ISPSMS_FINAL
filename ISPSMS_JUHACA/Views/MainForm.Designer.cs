@@ -33,29 +33,28 @@
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             dashboardPage = new TabPage();
             subscribersPage = new TabPage();
-            connectedSubscribersBindingSource1 = new BindingSource(components);
             billingPage = new TabPage();
             transactionsPage = new TabPage();
             accountsPage = new TabPage();
             activitiesPage = new TabPage();
             imageList1 = new ImageList(components);
+            connectedSubscribersBindingSource1 = new BindingSource(components);
             connectedSubscriberViewBindingSource = new BindingSource(components);
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             connectedSubscribersBindingSource = new BindingSource(components);
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
             pictureBox1 = new PictureBox();
             label6 = new Label();
             label7 = new Label();
             button1 = new Button();
-            panel1 = new Panel();
             disconnectedSubscriberViewBindingSource = new BindingSource(components);
+            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            panel1 = new Panel();
             materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -102,10 +101,6 @@
             subscribersPage.Size = new Size(1666, 703);
             subscribersPage.TabIndex = 1;
             subscribersPage.Text = "Subscribers";
-            // 
-            // connectedSubscribersBindingSource1
-            // 
-            connectedSubscribersBindingSource1.DataSource = typeof(Domain.Models.ConnectedSubscribers);
             // 
             // billingPage
             // 
@@ -163,30 +158,13 @@
             imageList1.Images.SetKeyName(4, "accounts.png");
             imageList1.Images.SetKeyName(5, "activities.png");
             // 
+            // connectedSubscribersBindingSource1
+            // 
+            connectedSubscribersBindingSource1.DataSource = typeof(Domain.Models.ConnectedSubscribers);
+            // 
             // connectedSubscriberViewBindingSource
             // 
             connectedSubscriberViewBindingSource.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
-            // 
-            // materialTextBox1
-            // 
-            materialTextBox1.AnimateReadOnly = true;
-            materialTextBox1.BackColor = Color.White;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.ForeColor = Color.FromArgb(166, 166, 166);
-            materialTextBox1.Hint = "Search...";
-            materialTextBox1.LeadingIcon = Properties.Resources.search;
-            materialTextBox1.Location = new Point(103, 16);
-            materialTextBox1.Margin = new Padding(6, 3, 3, 3);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(308, 50);
-            materialTextBox1.TabIndex = 22;
-            materialTextBox1.Text = "";
-            materialTextBox1.TrailingIcon = null;
             // 
             // connectedSubscribersBindingSource
             // 
@@ -241,28 +219,46 @@
             button1.TabIndex = 4;
             button1.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(241, 240, 233);
-            panel1.Controls.Add(materialTextBox1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.ForeColor = SystemColors.ControlDark;
-            panel1.Location = new Point(3, 24);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1674, 784);
-            panel1.TabIndex = 27;
-            panel1.TabStop = true;
-            // 
             // disconnectedSubscriberViewBindingSource
             // 
             disconnectedSubscriberViewBindingSource.DataSource = typeof(Domain.ViewModels.DisconnectedSubscriberView);
             // 
+            // materialTextBox1
+            // 
+            materialTextBox1.AnimateReadOnly = true;
+            materialTextBox1.BackColor = Color.White;
+            materialTextBox1.BorderStyle = BorderStyle.None;
+            materialTextBox1.Depth = 0;
+            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialTextBox1.ForeColor = Color.FromArgb(166, 166, 166);
+            materialTextBox1.Hint = "Search...";
+            materialTextBox1.LeadingIcon = Properties.Resources.search;
+            materialTextBox1.Location = new Point(101, 40);
+            materialTextBox1.Margin = new Padding(6, 3, 3, 3);
+            materialTextBox1.MaxLength = 50;
+            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            materialTextBox1.Multiline = false;
+            materialTextBox1.Name = "materialTextBox1";
+            materialTextBox1.Size = new Size(308, 50);
+            materialTextBox1.TabIndex = 22;
+            materialTextBox1.Text = "";
+            materialTextBox1.TrailingIcon = null;
+            materialTextBox1.TextChanged += materialTextBox1_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 24);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1674, 784);
+            panel1.TabIndex = 23;
+            // 
             // MainForm
             // 
             AutoScaleMode = AutoScaleMode.None;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.FromArgb(241, 240, 233);
             ClientSize = new Size(1680, 810);
+            Controls.Add(materialTextBox1);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -288,7 +284,6 @@
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -307,14 +302,14 @@
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private BindingSource connectedSubscribersBindingSource;
         private TabPage subscribersPage;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private ImageList imageList1;
         private PictureBox pictureBox1;
         private Label label6;
         private Label label7;
         private Button button1;
-        private Panel panel1;
         private BindingSource connectedSubscribersBindingSource1;
         private BindingSource disconnectedSubscriberViewBindingSource;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private Panel panel1;
     }
 }

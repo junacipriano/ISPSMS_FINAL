@@ -26,7 +26,7 @@ namespace ISPSMS_JUHACA.MainPages
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             bindingSource = new BindingSource();
-
+            connectedsubscribersGridView.AutoGenerateColumns = true;
         }
         public void getSubscribers()
         {
@@ -143,6 +143,80 @@ namespace ISPSMS_JUHACA.MainPages
         {
             getSubscribers();
         }
+
+        private void allBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anahawonBtn_Click(object sender, EventArgs e)
+        {
+            FilterSubscribersByAddress("Anahawon");
+        }
+
+        private void baseCampBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void camp1Btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void colambugonBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void danggawanBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dologonBtn_Click(object sender, EventArgs e)
+        {
+            FilterSubscribersByAddress("Dologon");
+        }
+
+        private void northPobBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panadtalanBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sanMiguelBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void southPobBtn_Click(object sender, EventArgs e)
+        {
+            FilterSubscribersByAddress("South Poblacion");
+        }
         
-    }
+
+        private void FilterSubscribersByAddress(string address)
+        {
+            var filteredSubscribers = dbContext.connectedSubscriberRepository
+       .GetAll(s => s.Address.Contains(address)) // Use Contains for partial matches
+       .ToList();
+
+            if (filteredSubscribers.Any()) // Check if any data is found
+            {
+                bindingSource.DataSource = filteredSubscribers;
+                connectedsubscribersGridView.DataSource = bindingSource;
+            }
+            else
+            {
+                MessageBox.Show("No subscribers found for this address.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                getSubscribers(); // Reload all subscribers if no match is found
+
+            }
+        }
+    } 
 }

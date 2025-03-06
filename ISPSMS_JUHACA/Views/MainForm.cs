@@ -19,7 +19,7 @@ namespace ISPSMS_JUHACA
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-       
+
             this.BackColor = Color.FromArgb(30, 30, 30);
             this.dbContext = dbContext;
             bindingSource = new BindingSource();
@@ -154,6 +154,11 @@ namespace ISPSMS_JUHACA
         private void materialExpansionPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        {
+              
         }
     }
 }
