@@ -1,4 +1,4 @@
-﻿    using Domain.Models;
+﻿using Domain.Models;
 
 using MaterialSkin.Controls;
 using System;
@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
 using ISPSMS_JUHACA.Presenter;
+using ISPSMS_JUHACA.MainPages;
 
 
 namespace ISPSMS_JUHACA
@@ -21,13 +22,14 @@ namespace ISPSMS_JUHACA
     public partial class addSubscribersForm : MaterialForm, IMainSubscriberPage
     {
         public readonly IUnitOfWork dbContext;
-        internal MainForm SubscribersForm;
+        internal SubscriberPage SubscribersForm;
         private readonly AddSubscriberPresenter _presenter;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
+        internal string message;
 
         public event EventHandler SaveSubscriber;
         public event EventHandler FormLoaded;
-
+        public ConnectedSubscribers EditedSubscriber { get; set; }
         public string LastName
         {
             get => lastNameTextBox.Text.Trim().ToUpper();
@@ -85,11 +87,15 @@ namespace ISPSMS_JUHACA
 
 
 
-        public addSubscribersForm(IUnitOfWork dbContext, MainForm subscribersForm)
+        public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage subscribersForm)
         {
             InitializeComponent();
-      
+
             _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm);
+            if (EditedSubscriber != null)
+            {
+                _presenter.EditLoad();
+            }
         }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)

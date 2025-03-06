@@ -1,8 +1,9 @@
 ﻿using Infastructure.Data.Repositories.IRepositories;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using ISPSMS_JUHACA.Views.IVews;
+
+using ISPSMS_JUHACA.MainPages;
+
 
 
 namespace ISPSMS_JUHACA.Views
@@ -11,8 +12,9 @@ namespace ISPSMS_JUHACA.Views
     {
         public readonly IUnitOfWork dbContext;
         private System.Windows.Forms.BindingSource bindingSource;
+
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
-        public Disconnected(IUnitOfWork dbContext, MainForm subscribersForm)
+        public Disconnected(IUnitOfWork dbContext, SubscriberPage subscribersForm)
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
