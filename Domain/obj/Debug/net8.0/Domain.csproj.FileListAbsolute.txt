@@ -61,3 +61,16 @@ D:\ISPSMS_SD\Domain\obj\Debug\net8.0\Domain.dll
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\Domain.pdb
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\ISPSMS_FINAL\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\ISPSMS_FINAL\Domain\bin\Debug\net8.0\Domain.dll
+D:\ISPSMS_FINAL\Domain\bin\Debug\net8.0\Domain.pdb
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.dll
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\Domain.pdb
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0\ref\Domain.dll

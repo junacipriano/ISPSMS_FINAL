@@ -3214,11 +3214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ISPSMS_SD\\Infrustructure\\Infastructure.csproj",
+      "projectUniqueName": "D:\\ISPSMS_FINAL\\Infrustructure\\Infastructure.csproj",
       "projectName": "Infastructure",
-      "projectPath": "D:\\ISPSMS_SD\\Infrustructure\\Infastructure.csproj",
+      "projectPath": "D:\\ISPSMS_FINAL\\Infrustructure\\Infastructure.csproj",
       "packagesPath": "C:\\Users\\Zeb Perez\\.nuget\\packages\\",
-      "outputPath": "D:\\ISPSMS_SD\\Infrustructure\\obj\\",
+      "outputPath": "D:\\ISPSMS_FINAL\\Infrustructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3240,8 +3240,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ISPSMS_SD\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\ISPSMS_SD\\Domain\\Domain.csproj"
+            "D:\\ISPSMS_FINAL\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\ISPSMS_FINAL\\Domain\\Domain.csproj"
             }
           }
         }
