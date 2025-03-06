@@ -17,6 +17,10 @@ namespace Infastructure.Data.Repositories
         {
             _db.Accounts.Update(obj);
         }
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
 
     }
 }

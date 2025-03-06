@@ -6,5 +6,6 @@ namespace Infastructure.Data.Repositories.IRepositories
     {
        
         void Update(Accounts obj);
+        void Save();
     }
 }
