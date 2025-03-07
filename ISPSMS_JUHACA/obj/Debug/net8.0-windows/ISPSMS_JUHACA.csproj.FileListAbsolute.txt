@@ -528,19 +528,14 @@ D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconf
 D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
 D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Properties.Resources.resources
 D:\ISPSMS_SD\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.Disconnected.resources
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.exe
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.deps.json
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconfig.json
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\AutoMapper.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Core.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Azure.Identity.dll
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Docking.dll
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Navigator.dll
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Ribbon.dll
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Toolkit.dll
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Workspace.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\MaterialSkin.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNet.Identity.Core.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -607,9 +602,6 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Domain.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Infastructure.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.BillingPage.resources
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.BillingItems.resources
-D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubscriberPage.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Properties.Resources.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.Disconnected.resources
@@ -626,21 +618,6 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.AssemblyReference.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Properties.Resources.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.addSubscribersForm.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.BillingCheckout.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.Disconnected.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.EditAccount.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.LoginForm.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainForm.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.SignUpForm.resources
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfo.cs
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.CoreCompileInputs.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.sourcelink.json
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubscriberPage.resources
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.BillingPage.resources
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.BillingItems.resources
