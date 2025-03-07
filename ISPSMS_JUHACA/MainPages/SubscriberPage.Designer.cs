@@ -75,7 +75,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(52, 72, 100);
-            label5.Location = new Point(1585, 112);
+            label5.Location = new Point(1807, 109);
             label5.Name = "label5";
             label5.Size = new Size(26, 18);
             label5.TabIndex = 46;
@@ -86,7 +86,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(52, 72, 100);
-            label4.Location = new Point(1582, 92);
+            label4.Location = new Point(1804, 89);
             label4.Name = "label4";
             label4.Size = new Size(41, 18);
             label4.TabIndex = 45;
@@ -97,7 +97,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(111, 130, 157);
-            label3.Location = new Point(1536, 112);
+            label3.Location = new Point(1758, 109);
             label3.Name = "label3";
             label3.Size = new Size(47, 18);
             label3.TabIndex = 44;
@@ -108,7 +108,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(111, 130, 157);
-            label2.Location = new Point(1437, 92);
+            label2.Location = new Point(1659, 89);
             label2.Name = "label2";
             label2.Size = new Size(147, 18);
             label2.TabIndex = 43;
@@ -130,7 +130,7 @@
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 29;
             materialComboBox1.Items.AddRange(new object[] { "All", "Active", "Past due", "Overdue" });
-            materialComboBox1.Location = new Point(345, 92);
+            materialComboBox1.Location = new Point(417, 86);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MaximumSize = new Size(200, 0);
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
@@ -161,13 +161,13 @@
             allBtn.HighEmphasis = true;
             allBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             allBtn.Icon = null;
-            allBtn.Location = new Point(91, 24);
+            allBtn.Location = new Point(174, 22);
             allBtn.Margin = new Padding(4);
             allBtn.MouseState = MaterialSkin.MouseState.HOVER;
             allBtn.Name = "allBtn";
             allBtn.NoAccentTextColor = Color.Empty;
             allBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            allBtn.Size = new Size(148, 59);
+            allBtn.Size = new Size(162, 59);
             allBtn.TabIndex = 41;
             allBtn.Text = "All";
             allBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -175,6 +175,7 @@
             allBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             allBtn.UseAccentColor = false;
             allBtn.UseVisualStyleBackColor = true;
+            allBtn.Click += allBtn_Click;
             // 
             // anahawonBtn
             // 
@@ -197,13 +198,13 @@
             anahawonBtn.HighEmphasis = true;
             anahawonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             anahawonBtn.Icon = null;
-            anahawonBtn.Location = new Point(228, 24);
+            anahawonBtn.Location = new Point(320, 22);
             anahawonBtn.Margin = new Padding(4);
             anahawonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             anahawonBtn.Name = "anahawonBtn";
             anahawonBtn.NoAccentTextColor = Color.Empty;
             anahawonBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            anahawonBtn.Size = new Size(148, 59);
+            anahawonBtn.Size = new Size(162, 59);
             anahawonBtn.TabIndex = 40;
             anahawonBtn.Text = "Anahawon";
             anahawonBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -234,13 +235,13 @@
             baseCampBtn.HighEmphasis = true;
             baseCampBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             baseCampBtn.Icon = null;
-            baseCampBtn.Location = new Point(369, 24);
+            baseCampBtn.Location = new Point(473, 22);
             baseCampBtn.Margin = new Padding(4);
             baseCampBtn.MouseState = MaterialSkin.MouseState.HOVER;
             baseCampBtn.Name = "baseCampBtn";
             baseCampBtn.NoAccentTextColor = Color.Empty;
             baseCampBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            baseCampBtn.Size = new Size(148, 59);
+            baseCampBtn.Size = new Size(162, 59);
             baseCampBtn.TabIndex = 39;
             baseCampBtn.Text = "Base Camp";
             baseCampBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -271,13 +272,13 @@
             camp1Btn.HighEmphasis = true;
             camp1Btn.HoverBackColor = Color.FromArgb(237, 237, 237);
             camp1Btn.Icon = null;
-            camp1Btn.Location = new Point(509, 24);
+            camp1Btn.Location = new Point(620, 22);
             camp1Btn.Margin = new Padding(4);
             camp1Btn.MouseState = MaterialSkin.MouseState.HOVER;
             camp1Btn.Name = "camp1Btn";
             camp1Btn.NoAccentTextColor = Color.Empty;
             camp1Btn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            camp1Btn.Size = new Size(148, 59);
+            camp1Btn.Size = new Size(162, 59);
             camp1Btn.TabIndex = 38;
             camp1Btn.Text = "Camp 1";
             camp1Btn.TextColor = Color.FromArgb(166, 166, 166);
@@ -308,13 +309,13 @@
             colambugonBtn.HighEmphasis = true;
             colambugonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             colambugonBtn.Icon = null;
-            colambugonBtn.Location = new Point(649, 24);
+            colambugonBtn.Location = new Point(772, 22);
             colambugonBtn.Margin = new Padding(4);
             colambugonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             colambugonBtn.Name = "colambugonBtn";
             colambugonBtn.NoAccentTextColor = Color.Empty;
             colambugonBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            colambugonBtn.Size = new Size(148, 59);
+            colambugonBtn.Size = new Size(162, 59);
             colambugonBtn.TabIndex = 37;
             colambugonBtn.Text = "Colambugon";
             colambugonBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -345,13 +346,13 @@
             danggawanBtn.HighEmphasis = true;
             danggawanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             danggawanBtn.Icon = null;
-            danggawanBtn.Location = new Point(789, 24);
+            danggawanBtn.Location = new Point(921, 22);
             danggawanBtn.Margin = new Padding(4);
             danggawanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             danggawanBtn.Name = "danggawanBtn";
             danggawanBtn.NoAccentTextColor = Color.Empty;
             danggawanBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            danggawanBtn.Size = new Size(148, 59);
+            danggawanBtn.Size = new Size(162, 59);
             danggawanBtn.TabIndex = 36;
             danggawanBtn.Text = "Danggawan";
             danggawanBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -382,13 +383,13 @@
             dologonBtn.HighEmphasis = true;
             dologonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             dologonBtn.Icon = null;
-            dologonBtn.Location = new Point(929, 24);
+            dologonBtn.Location = new Point(1074, 22);
             dologonBtn.Margin = new Padding(4);
             dologonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             dologonBtn.Name = "dologonBtn";
             dologonBtn.NoAccentTextColor = Color.Empty;
             dologonBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            dologonBtn.Size = new Size(148, 59);
+            dologonBtn.Size = new Size(162, 59);
             dologonBtn.TabIndex = 35;
             dologonBtn.Text = "Dologon";
             dologonBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -419,13 +420,13 @@
             northPobBtn.HighEmphasis = true;
             northPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             northPobBtn.Icon = null;
-            northPobBtn.Location = new Point(1069, 24);
+            northPobBtn.Location = new Point(1226, 22);
             northPobBtn.Margin = new Padding(4);
             northPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             northPobBtn.Name = "northPobBtn";
             northPobBtn.NoAccentTextColor = Color.Empty;
             northPobBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            northPobBtn.Size = new Size(148, 59);
+            northPobBtn.Size = new Size(162, 59);
             northPobBtn.TabIndex = 34;
             northPobBtn.Text = "North Pob.";
             northPobBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -456,13 +457,13 @@
             panadtalanBtn.HighEmphasis = true;
             panadtalanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             panadtalanBtn.Icon = null;
-            panadtalanBtn.Location = new Point(1209, 24);
+            panadtalanBtn.Location = new Point(1380, 22);
             panadtalanBtn.Margin = new Padding(4);
             panadtalanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             panadtalanBtn.Name = "panadtalanBtn";
             panadtalanBtn.NoAccentTextColor = Color.Empty;
             panadtalanBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            panadtalanBtn.Size = new Size(148, 59);
+            panadtalanBtn.Size = new Size(162, 59);
             panadtalanBtn.TabIndex = 33;
             panadtalanBtn.Text = "Panadtalan";
             panadtalanBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -493,13 +494,13 @@
             sanMiguelBtn.HighEmphasis = true;
             sanMiguelBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             sanMiguelBtn.Icon = null;
-            sanMiguelBtn.Location = new Point(1349, 24);
+            sanMiguelBtn.Location = new Point(1532, 22);
             sanMiguelBtn.Margin = new Padding(4);
             sanMiguelBtn.MouseState = MaterialSkin.MouseState.HOVER;
             sanMiguelBtn.Name = "sanMiguelBtn";
             sanMiguelBtn.NoAccentTextColor = Color.Empty;
             sanMiguelBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            sanMiguelBtn.Size = new Size(148, 59);
+            sanMiguelBtn.Size = new Size(162, 59);
             sanMiguelBtn.TabIndex = 32;
             sanMiguelBtn.Text = "San Miguel";
             sanMiguelBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -530,13 +531,13 @@
             southPobBtn.HighEmphasis = true;
             southPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             southPobBtn.Icon = null;
-            southPobBtn.Location = new Point(1485, 24);
+            southPobBtn.Location = new Point(1686, 22);
             southPobBtn.Margin = new Padding(4);
             southPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             southPobBtn.Name = "southPobBtn";
             southPobBtn.NoAccentTextColor = Color.Empty;
             southPobBtn.RightBorderColor = Color.FromArgb(212, 208, 208);
-            southPobBtn.Size = new Size(148, 59);
+            southPobBtn.Size = new Size(162, 59);
             southPobBtn.TabIndex = 31;
             southPobBtn.Text = "South Pob.";
             southPobBtn.TextColor = Color.FromArgb(166, 166, 166);
@@ -558,7 +559,7 @@
             disconnectedbtn.ForeColor = Color.FromArgb(255, 255, 252);
             disconnectedbtn.HighEmphasis = true;
             disconnectedbtn.Icon = null;
-            disconnectedbtn.Location = new Point(571, 91);
+            disconnectedbtn.Location = new Point(643, 85);
             disconnectedbtn.Margin = new Padding(4);
             disconnectedbtn.MouseState = MaterialSkin.MouseState.HOVER;
             disconnectedbtn.Name = "disconnectedbtn";
@@ -576,7 +577,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Helvetica", 18F, FontStyle.Bold, GraphicsUnit.Point, 0, true);
             label1.ForeColor = Color.FromArgb(52, 72, 100);
-            label1.Location = new Point(97, 95);
+            label1.Location = new Point(169, 89);
             label1.Name = "label1";
             label1.Size = new Size(243, 35);
             label1.TabIndex = 29;
@@ -620,7 +621,7 @@
             connectedsubscribersGridView.EnableHeadersVisualStyles = false;
             connectedsubscribersGridView.GridColor = Color.FromArgb(255, 255, 252);
             connectedsubscribersGridView.ImeMode = ImeMode.NoControl;
-            connectedsubscribersGridView.Location = new Point(97, 134);
+            connectedsubscribersGridView.Location = new Point(174, 132);
             connectedsubscribersGridView.Margin = new Padding(3, 2, 3, 2);
             connectedsubscribersGridView.Name = "connectedsubscribersGridView";
             connectedsubscribersGridView.RightToLeft = RightToLeft.No;
@@ -644,7 +645,7 @@
             connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             connectedsubscribersGridView.ScrollBars = ScrollBars.Vertical;
             connectedsubscribersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            connectedsubscribersGridView.Size = new Size(1542, 545);
+            connectedsubscribersGridView.Size = new Size(1674, 803);
             connectedsubscribersGridView.TabIndex = 28;
             connectedsubscribersGridView.CellContentClick += connectedsubscribersGridView_CellContentClick;
             // 
@@ -745,7 +746,7 @@
             addBtn.ForeColor = Color.FromArgb(255, 255, 252);
             addBtn.HighEmphasis = true;
             addBtn.Icon = null;
-            addBtn.Location = new Point(477, 92);
+            addBtn.Location = new Point(549, 86);
             addBtn.Margin = new Padding(4);
             addBtn.MouseState = MaterialSkin.MouseState.HOVER;
             addBtn.Name = "addBtn";
@@ -762,7 +763,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1666, 703);
+            ClientSize = new Size(1906, 973);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);

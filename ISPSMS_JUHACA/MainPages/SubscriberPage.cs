@@ -14,6 +14,7 @@ namespace ISPSMS_JUHACA.MainPages
         public readonly IUnitOfWork dbContext;
         private BindingSource bindingSource;
         internal bool isEdit;
+        private MaterialButton activeButton;
 
         public BindingSource BindingSource => bindingSource;
         public SubscriberPage(IUnitOfWork dbContext, MainForm mainform)
@@ -28,6 +29,18 @@ namespace ISPSMS_JUHACA.MainPages
             bindingSource = new BindingSource();
             connectedsubscribersGridView.AutoGenerateColumns = true;
         }
+
+        private void SetActiveButton(MaterialButton clickedButton)
+        {
+            if (activeButton != null)
+            {
+                activeButton.UseAccentColor = false; // Reset previous button
+            }
+
+            activeButton = clickedButton;
+            activeButton.UseAccentColor = true; // Highlight active button
+        }
+
         public void getSubscribers()
         {
             var subscribers = dbContext.connectedSubscriberRepository.GetAll();
@@ -37,6 +50,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            isEdit = false;
             ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
 
             var AddForm = new addSubscribersForm(dbContext, this);
@@ -103,102 +117,28 @@ namespace ISPSMS_JUHACA.MainPages
                 }
             }
 
-            // ✅ Handling the Edit Button
             if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
             {
-                // Open the AddSubscriberForm in Edit Mode
+
+                isEdit = true;
+
                 var addsubs = new addSubscribersForm(dbContext, this)
                 {
-                    EditedSubscriber = selectedSubscriber,
-                    Text = "Edit Subscriber Information",
-                    message = "Subscriber updated successfully."
+                    EditedSubscriber = selectedSubscriber, // ✅ Load the subscriber data
+                    Text = "Edit Subscriber Information"
                 };
 
-                // ✅ Initialize the Presenter and Load Data
                 var presenter = new AddSubscriberPresenter(addsubs, dbContext, this);
-                presenter.EditLoad(); // Load data into the form
+                presenter.EditLoad(); // Load the subscriber's existing data
 
-                if (addsubs.ShowDialog() == DialogResult.OK) // ✅ Handle save logic
-                {
-                    try
-                    {
-                        // ✅ Update the subscriber in the database
-                        dbContext.connectedSubscriberRepository.Update(selectedSubscriber);
-                        dbContext.Save();
-
-                        // ✅ Refresh the UI
-                        getSubscribers();
-                        MessageBox.Show("Subscriber successfully updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error while updating: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                addsubs.ShowDialog();// ✅ Handle save logic
             }
-
         }
 
         private void SubscriberPage_Load(object sender, EventArgs e)
         {
             getSubscribers();
         }
-
-        private void allBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void anahawonBtn_Click(object sender, EventArgs e)
-        {
-            FilterSubscribersByAddress("Anahawon");
-        }
-
-        private void baseCampBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void camp1Btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void colambugonBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void danggawanBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dologonBtn_Click(object sender, EventArgs e)
-        {
-            FilterSubscribersByAddress("Dologon");
-        }
-
-        private void northPobBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panadtalanBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sanMiguelBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void southPobBtn_Click(object sender, EventArgs e)
-        {
-            FilterSubscribersByAddress("South Poblacion");
-        }
-        
 
         private void FilterSubscribersByAddress(string address)
         {
@@ -218,5 +158,65 @@ namespace ISPSMS_JUHACA.MainPages
 
             }
         }
-    } 
+
+        private void allBtn_Click(object sender, EventArgs e)
+        {
+            getSubscribers();
+        }
+
+
+        private void anahawonBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Anahawon");
+        }
+
+        private void baseCampBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void camp1Btn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void colambugonBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void danggawanBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void dologonBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Dologon");
+        }
+
+        private void northPobBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("North Poblacion");
+        }
+
+        private void panadtalanBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void sanMiguelBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+        }
+
+        private void southPobBtn_Click(object sender, EventArgs e)
+        {
+            SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("South Poblacion");
+        }
+    }
 }

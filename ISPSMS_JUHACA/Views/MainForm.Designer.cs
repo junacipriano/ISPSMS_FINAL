@@ -56,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -75,7 +76,7 @@
             materialTabControl1.Multiline = true;
             materialTabControl1.Name = "materialTabControl1";
             materialTabControl1.SelectedIndex = 0;
-            materialTabControl1.Size = new Size(1674, 731);
+            materialTabControl1.Size = new Size(1914, 1001);
             materialTabControl1.TabIndex = 0;
             // 
             // dashboardPage
@@ -86,7 +87,7 @@
             dashboardPage.Margin = new Padding(3, 2, 3, 2);
             dashboardPage.Name = "dashboardPage";
             dashboardPage.Padding = new Padding(3, 2, 3, 2);
-            dashboardPage.Size = new Size(1666, 703);
+            dashboardPage.Size = new Size(1906, 973);
             dashboardPage.TabIndex = 0;
             dashboardPage.Text = "Dashboard";
             // 
@@ -98,7 +99,7 @@
             subscribersPage.Margin = new Padding(3, 2, 3, 2);
             subscribersPage.Name = "subscribersPage";
             subscribersPage.Padding = new Padding(3, 2, 3, 2);
-            subscribersPage.Size = new Size(1666, 703);
+            subscribersPage.Size = new Size(1906, 973);
             subscribersPage.TabIndex = 1;
             subscribersPage.Text = "Subscribers";
             // 
@@ -109,7 +110,7 @@
             billingPage.Location = new Point(4, 24);
             billingPage.Margin = new Padding(3, 2, 3, 2);
             billingPage.Name = "billingPage";
-            billingPage.Size = new Size(1666, 703);
+            billingPage.Size = new Size(1906, 973);
             billingPage.TabIndex = 2;
             billingPage.Text = "Billing";
             // 
@@ -120,7 +121,7 @@
             transactionsPage.Location = new Point(4, 24);
             transactionsPage.Margin = new Padding(3, 2, 3, 2);
             transactionsPage.Name = "transactionsPage";
-            transactionsPage.Size = new Size(1666, 703);
+            transactionsPage.Size = new Size(1906, 973);
             transactionsPage.TabIndex = 3;
             transactionsPage.Text = "Transactions";
             // 
@@ -131,7 +132,7 @@
             accountsPage.Location = new Point(4, 24);
             accountsPage.Margin = new Padding(3, 2, 3, 2);
             accountsPage.Name = "accountsPage";
-            accountsPage.Size = new Size(1666, 703);
+            accountsPage.Size = new Size(1906, 973);
             accountsPage.TabIndex = 4;
             accountsPage.Text = "Accounts";
             // 
@@ -142,7 +143,7 @@
             activitiesPage.Location = new Point(4, 24);
             activitiesPage.Margin = new Padding(3, 2, 3, 2);
             activitiesPage.Name = "activitiesPage";
-            activitiesPage.Size = new Size(1666, 703);
+            activitiesPage.Size = new Size(1906, 973);
             activitiesPage.TabIndex = 5;
             activitiesPage.Text = "Activities";
             // 
@@ -233,7 +234,7 @@
             materialTextBox1.ForeColor = Color.FromArgb(166, 166, 166);
             materialTextBox1.Hint = "Search...";
             materialTextBox1.LeadingIcon = Properties.Resources.search;
-            materialTextBox1.Location = new Point(101, 40);
+            materialTextBox1.Location = new Point(57, 3);
             materialTextBox1.Margin = new Padding(6, 3, 3, 3);
             materialTextBox1.MaxLength = 50;
             materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
@@ -247,18 +248,18 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(materialTextBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 24);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1674, 784);
+            panel1.Size = new Size(1914, 1054);
             panel1.TabIndex = 23;
             // 
             // MainForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1680, 810);
-            Controls.Add(materialTextBox1);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(button1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -285,6 +286,7 @@
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

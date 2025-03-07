@@ -45,6 +45,21 @@ namespace ISPSMS_JUHACA
                 subsPage.Show();
 
             }
+            else if (materialTabControl1.SelectedTab == billingPage)
+            {
+
+                billingPage.Controls.Clear();
+
+                var billPage = new BillingPage(dbContext, this);
+
+                billPage.TopLevel = false;
+                billPage.FormBorderStyle = FormBorderStyle.None;
+                billPage.Dock = DockStyle.Fill;
+
+                billingPage.Controls.Add(billPage);
+                billPage.Show();
+
+            }
 
         }
 
