@@ -45,9 +45,9 @@
             button1 = new Button();
             disconnectedSubscriberViewBindingSource = new BindingSource(components);
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).BeginInit();
@@ -83,11 +83,11 @@
             // 
             subscribersPage.BackColor = Color.FromArgb(241, 240, 233);
             subscribersPage.ImageKey = "database.png";
-            subscribersPage.Location = new Point(4, 24);
+            subscribersPage.Location = new Point(4, 29);
             subscribersPage.Margin = new Padding(3, 2, 3, 2);
             subscribersPage.Name = "subscribersPage";
             subscribersPage.Padding = new Padding(3, 2, 3, 2);
-            subscribersPage.Size = new Size(1906, 973);
+            subscribersPage.Size = new Size(1906, 968);
             subscribersPage.TabIndex = 1;
             subscribersPage.Text = "Subscribers";
             // 
@@ -95,10 +95,10 @@
             // 
             billingPage.BackColor = Color.FromArgb(241, 240, 233);
             billingPage.ImageKey = "billing.png";
-            billingPage.Location = new Point(4, 24);
+            billingPage.Location = new Point(4, 29);
             billingPage.Margin = new Padding(3, 2, 3, 2);
             billingPage.Name = "billingPage";
-            billingPage.Size = new Size(1906, 973);
+            billingPage.Size = new Size(1906, 968);
             billingPage.TabIndex = 2;
             billingPage.Text = "Billing";
             // 
@@ -106,10 +106,10 @@
             // 
             transactionsPage.BackColor = Color.FromArgb(241, 240, 233);
             transactionsPage.ImageKey = "transactions.png";
-            transactionsPage.Location = new Point(4, 24);
+            transactionsPage.Location = new Point(4, 29);
             transactionsPage.Margin = new Padding(3, 2, 3, 2);
             transactionsPage.Name = "transactionsPage";
-            transactionsPage.Size = new Size(1906, 973);
+            transactionsPage.Size = new Size(1906, 968);
             transactionsPage.TabIndex = 3;
             transactionsPage.Text = "Transactions";
             // 
@@ -117,10 +117,10 @@
             // 
             accountsPage.BackColor = Color.FromArgb(241, 240, 233);
             accountsPage.ImageKey = "accounts.png";
-            accountsPage.Location = new Point(4, 24);
+            accountsPage.Location = new Point(4, 29);
             accountsPage.Margin = new Padding(3, 2, 3, 2);
             accountsPage.Name = "accountsPage";
-            accountsPage.Size = new Size(1906, 973);
+            accountsPage.Size = new Size(1906, 968);
             accountsPage.TabIndex = 4;
             accountsPage.Text = "Accounts";
             // 
@@ -128,10 +128,10 @@
             // 
             activitiesPage.BackColor = Color.FromArgb(241, 240, 233);
             activitiesPage.ImageKey = "activities.png";
-            activitiesPage.Location = new Point(4, 24);
+            activitiesPage.Location = new Point(4, 29);
             activitiesPage.Margin = new Padding(3, 2, 3, 2);
             activitiesPage.Name = "activitiesPage";
-            activitiesPage.Size = new Size(1906, 973);
+            activitiesPage.Size = new Size(1906, 968);
             activitiesPage.TabIndex = 5;
             activitiesPage.Text = "Activities";
             // 
@@ -139,11 +139,11 @@
             // 
             dashboardPage.BackColor = Color.FromArgb(241, 240, 233);
             dashboardPage.ImageKey = "dashboard.png";
-            dashboardPage.Location = new Point(4, 24);
+            dashboardPage.Location = new Point(4, 29);
             dashboardPage.Margin = new Padding(3, 2, 3, 2);
             dashboardPage.Name = "dashboardPage";
             dashboardPage.Padding = new Padding(3, 2, 3, 2);
-            dashboardPage.Size = new Size(1906, 973);
+            dashboardPage.Size = new Size(1906, 968);
             dashboardPage.TabIndex = 0;
             dashboardPage.Text = "Dashboard";
             // 
@@ -174,7 +174,6 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.ProfileMenu;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -204,31 +203,8 @@
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.TabIndex = 5;
             // 
-            // kryptonLabel2
-            // 
-            kryptonLabel2.Location = new Point(1712, 51);
-            kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(131, 18);
-            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(111, 130, 157);
-            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(111, 130, 157);
-            kryptonLabel2.StateCommon.ShortText.Font = new Font("Helvetica", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            kryptonLabel2.TabIndex = 6;
-            kryptonLabel2.Values.Text = " System Administrator";
-            // 
-            // kryptonLabel1
-            // 
-            kryptonLabel1.Location = new Point(1715, 32);
-            kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(141, 22);
-            kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel1.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
-            kryptonLabel1.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonLabel1.TabIndex = 5;
-            kryptonLabel1.Values.Text = "Luisa P. Cipriano";
-            // 
             // kryptonPictureBox1
             // 
-            kryptonPictureBox1.BackgroundImage = Properties.Resources.ProfilePic;
             kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             kryptonPictureBox1.Location = new Point(1658, 20);
             kryptonPictureBox1.Name = "kryptonPictureBox1";
@@ -236,13 +212,35 @@
             kryptonPictureBox1.TabIndex = 7;
             kryptonPictureBox1.TabStop = false;
             // 
+            // kryptonLabel2
+            // 
+            kryptonLabel2.Location = new Point(1712, 51);
+            kryptonLabel2.Name = "kryptonLabel2";
+            kryptonLabel2.Size = new Size(163, 21);
+            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(111, 130, 157);
+            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(111, 130, 157);
+            kryptonLabel2.StateCommon.ShortText.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            kryptonLabel2.TabIndex = 6;
+            kryptonLabel2.Values.Text = " System Administrator";
+            // 
+            // kryptonLabel1
+            // 
+            kryptonLabel1.Location = new Point(1715, 32);
+            kryptonLabel1.Name = "kryptonLabel1";
+            kryptonLabel1.Size = new Size(165, 26);
+            kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonLabel1.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel1.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel1.TabIndex = 5;
+            kryptonLabel1.Values.Text = "Luisa P. Cipriano";
+            // 
             // MainForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 240, 233);
             ClientSize = new Size(1920, 1080);
-            Controls.Add(kryptonPanel1);
             Controls.Add(materialTabControl1);
+            Controls.Add(kryptonPanel1);
             DrawerAutoShow = true;
             DrawerBackgroundWithAccent = true;
             DrawerIsOpen = true;
