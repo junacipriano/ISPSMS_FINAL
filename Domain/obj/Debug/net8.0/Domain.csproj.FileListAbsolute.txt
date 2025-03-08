@@ -61,16 +61,3 @@ D:\ISPSMS_SD\Domain\obj\Debug\net8.0\Domain.dll
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\Domain.pdb
 D:\ISPSMS_SD\Domain\obj\Debug\net8.0\ref\Domain.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\bin\Debug\net8.0\Domain.deps.json
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\bin\Debug\net8.0\Domain.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\bin\Debug\net8.0\Domain.pdb
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.sourcelink.json
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\refint\Domain.dll
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\Domain.pdb
-C:\Users\kenneth\Documents\ISPSMS FINAL\Domain\obj\Debug\net8.0\ref\Domain.dll
