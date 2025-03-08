@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="Krypton.Docking" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Navigator" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Ribbon" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Workspace" Version="90.25.2.55" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />

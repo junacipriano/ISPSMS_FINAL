@@ -34,8 +34,5 @@ namespace WebApplication1.Models
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]
         public decimal MonthlyCharge { get; set; }
-        [ForeignKey(nameof(AppUser))]
-        public string UserId { get; set; }
-        public virtual AppUser AppUser { get; set; }
     }
 }

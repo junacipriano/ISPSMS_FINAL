@@ -9,6 +9,7 @@ using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.MainPages;
 using ISPSMS_JUHACA.Views.IVews;
 using Microsoft.EntityFrameworkCore;
+using static Unity.Storage.RegistrationSet;
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -109,7 +110,6 @@ namespace ISPSMS_JUHACA.Presenter
 
                 _dbContext.connectedSubscriberRepository.Add(newSubscriber);
                 _dbContext.Save();
-
                 _view.ShowMessage("Subscriber ADDED successfully!"); // ✅ Check if this appears twice
             }
 
