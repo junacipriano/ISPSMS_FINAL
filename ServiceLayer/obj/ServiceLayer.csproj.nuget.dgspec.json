@@ -51,6 +51,7 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+<<<<<<< HEAD
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -70,6 +71,11 @@
             "Krypton.Workspace": {
               "target": "Package",
               "version": "[90.25.2.55, )"
+=======
+            "Krypton.Toolkit": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+>>>>>>> ce253b2 (ACCOUNTS)
             }
           },
           "imports": [

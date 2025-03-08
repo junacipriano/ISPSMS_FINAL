@@ -10,11 +10,15 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Domain": "1.0.0",
+<<<<<<< HEAD
           "Krypton.Docking": "90.25.2.55",
           "Krypton.Navigator": "90.25.2.55",
           "Krypton.Ribbon": "90.25.2.55",
           "Krypton.Toolkit": "90.25.2.55",
           "Krypton.Workspace": "90.25.2.55",
+=======
+          "Krypton.Toolkit": "90.25.2.55",
+>>>>>>> ce253b2 (ACCOUNTS)
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -70,6 +74,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Krypton.Docking/90.25.2.55": {
         "dependencies": {
           "Krypton.Navigator": "90.25.2.55",
@@ -105,6 +110,8 @@
           }
         }
       },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "Krypton.Toolkit/90.25.2.55": {
         "runtime": {
           "lib/net462/Krypton.Toolkit.dll": {
@@ -113,6 +120,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Krypton.Workspace/90.25.2.55": {
         "dependencies": {
           "Krypton.Navigator": "90.25.2.55",
@@ -125,6 +133,8 @@
           }
         }
       },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "MaterialSkin.2/2.3.1": {
         "runtime": {
           "lib/net461/MaterialSkin.dll": {
@@ -720,11 +730,15 @@
       "Domain/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+<<<<<<< HEAD
           "Krypton.Docking": "90.25.2.55",
           "Krypton.Navigator": "90.25.2.55",
           "Krypton.Ribbon": "90.25.2.55",
           "Krypton.Toolkit": "90.25.2.55",
           "Krypton.Workspace": "90.25.2.55",
+=======
+          "Krypton.Toolkit": "90.25.2.55",
+>>>>>>> ce253b2 (ACCOUNTS)
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -766,6 +780,7 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+<<<<<<< HEAD
     "Krypton.Docking/90.25.2.55": {
       "type": "package",
       "serviceable": true,
@@ -787,6 +802,8 @@
       "path": "krypton.ribbon/90.25.2.55",
       "hashPath": "krypton.ribbon.90.25.2.55.nupkg.sha512"
     },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     "Krypton.Toolkit/90.25.2.55": {
       "type": "package",
       "serviceable": true,
@@ -794,6 +811,7 @@
       "path": "krypton.toolkit/90.25.2.55",
       "hashPath": "krypton.toolkit.90.25.2.55.nupkg.sha512"
     },
+<<<<<<< HEAD
     "Krypton.Workspace/90.25.2.55": {
       "type": "package",
       "serviceable": true,
@@ -801,6 +819,8 @@
       "path": "krypton.workspace/90.25.2.55",
       "hashPath": "krypton.workspace.90.25.2.55.nupkg.sha512"
     },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     "MaterialSkin.2/2.3.1": {
       "type": "package",
       "serviceable": true,

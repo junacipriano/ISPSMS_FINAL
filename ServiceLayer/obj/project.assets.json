@@ -2,6 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
+<<<<<<< HEAD
       "Krypton.Docking/90.25.2.55": {
         "type": "package",
         "dependencies": {
@@ -52,6 +53,8 @@
           }
         }
       },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "Krypton.Toolkit/90.25.2.55": {
         "type": "package",
         "compile": {
@@ -64,6 +67,7 @@
             "related": ".xml"
           }
         }
+<<<<<<< HEAD
       },
       "Krypton.Workspace/90.25.2.55": {
         "type": "package",
@@ -81,10 +85,13 @@
             "related": ".xml"
           }
         }
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       }
     }
   },
   "libraries": {
+<<<<<<< HEAD
     "Krypton.Docking/90.25.2.55": {
       "sha512": "2uSvZUDgRtEh8RJMdA5iMDGqFPH42m3lI8yT1LgheJ+2RQOvnm0A4+I07AZ/5YB7VegZlqO0G9soP9XrpS4uJg==",
       "type": "package",
@@ -175,6 +182,8 @@
         "lib/net9.0-windows7.0/Krypton.Ribbon.xml"
       ]
     },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     "Krypton.Toolkit/90.25.2.55": {
       "sha512": "FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
       "type": "package",
@@ -204,6 +213,7 @@
         "lib/net9.0-windows7.0/Krypton.Toolkit.dll",
         "lib/net9.0-windows7.0/Krypton.Toolkit.xml"
       ]
+<<<<<<< HEAD
     },
     "Krypton.Workspace/90.25.2.55": {
       "sha512": "y/kMeHOfPvB50YEmZhc3vdpCuY+MJTU5n4YJpAsV/0J8wXwL6VOp1+UF940dIa4ybxIkN+BjVhWd8baFkg2+sg==",
@@ -234,15 +244,21 @@
         "lib/net9.0-windows7.0/Krypton.Workspace.dll",
         "lib/net9.0-windows7.0/Krypton.Workspace.xml"
       ]
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+<<<<<<< HEAD
       "Krypton.Docking >= 90.25.2.55",
       "Krypton.Navigator >= 90.25.2.55",
       "Krypton.Ribbon >= 90.25.2.55",
       "Krypton.Toolkit >= 90.25.2.55",
       "Krypton.Workspace >= 90.25.2.55"
+=======
+      "Krypton.Toolkit >= 90.25.2.55"
+>>>>>>> ce253b2 (ACCOUNTS)
     ]
   },
   "packageFolders": {
@@ -296,6 +312,7 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+<<<<<<< HEAD
           "Krypton.Docking": {
             "target": "Package",
             "version": "[90.25.2.55, )"
@@ -315,6 +332,11 @@
           "Krypton.Workspace": {
             "target": "Package",
             "version": "[90.25.2.55, )"
+=======
+          "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
+>>>>>>> ce253b2 (ACCOUNTS)
           }
         },
         "imports": [
@@ -342,6 +364,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Docking",
       "targetGraphs": [
@@ -372,11 +395,14 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Toolkit",
       "targetGraphs": [
         "net8.0"
       ]
+<<<<<<< HEAD
     },
     {
       "code": "NU1701",
@@ -387,6 +413,8 @@
       "targetGraphs": [
         "net8.0"
       ]
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     }
   ]
 }

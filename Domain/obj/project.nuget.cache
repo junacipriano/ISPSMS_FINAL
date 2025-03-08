@@ -1,17 +1,25 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "oeXNWq6OnII=",
+=======
+  "dgSpecHash": "9DAzVFL9Smg=",
+>>>>>>> ce253b2 (ACCOUNTS)
   "success": true,
   "projectFilePath": "C:\\Users\\kenneth\\Documents\\ISPSMS FINAL\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenneth\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+<<<<<<< HEAD
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.docking\\90.25.2.55\\krypton.docking.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.navigator\\90.25.2.55\\krypton.navigator.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.ribbon\\90.25.2.55\\krypton.ribbon.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.workspace\\90.25.2.55\\krypton.workspace.90.25.2.55.nupkg.sha512",
+=======
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512",
+>>>>>>> ce253b2 (ACCOUNTS)
     "C:\\Users\\kenneth\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.11\\microsoft.aspnetcore.cryptography.internal.8.0.11.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.11\\microsoft.aspnetcore.cryptography.keyderivation.8.0.11.nupkg.sha512",
@@ -80,6 +88,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Docking",
       "targetGraphs": [
@@ -110,6 +119,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Toolkit",
       "targetGraphs": [
@@ -120,6 +131,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Workspace 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Workspace",
       "targetGraphs": [
@@ -130,6 +142,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'MaterialSkin.2 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "MaterialSkin.2",
       "targetGraphs": [

@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Krypton.Docking" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Navigator" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Ribbon" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Workspace" Version="90.25.2.55" />
+=======
+    <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
+>>>>>>> ce253b2 (ACCOUNTS)
   </ItemGroup>
 
 </Project>

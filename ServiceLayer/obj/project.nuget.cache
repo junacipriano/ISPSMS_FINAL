@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "vtCtGaGa8Cg=",
   "success": true,
   "projectFilePath": "C:\\Users\\kenneth\\Documents\\ISPSMS FINAL\\ServiceLayer\\ServiceLayer.csproj",
@@ -9,12 +10,20 @@
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.ribbon\\90.25.2.55\\krypton.ribbon.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.workspace\\90.25.2.55\\krypton.workspace.90.25.2.55.nupkg.sha512"
+=======
+  "dgSpecHash": "xz6jqS4D2VY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kenneth\\Documents\\ISPSMS FINAL\\ServiceLayer\\ServiceLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512"
+>>>>>>> ce253b2 (ACCOUNTS)
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Docking",
       "targetGraphs": [
@@ -45,11 +54,14 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Toolkit",
       "targetGraphs": [
         "net8.0"
       ]
+<<<<<<< HEAD
     },
     {
       "code": "NU1701",
@@ -60,6 +72,8 @@
       "targetGraphs": [
         "net8.0"
       ]
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     }
   ]
 }

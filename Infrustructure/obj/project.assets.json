@@ -63,6 +63,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Krypton.Docking/90.25.2.55": {
         "type": "package",
         "dependencies": {
@@ -113,6 +114,8 @@
           }
         }
       },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "Krypton.Toolkit/90.25.2.55": {
         "type": "package",
         "compile": {
@@ -126,6 +129,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Krypton.Workspace/90.25.2.55": {
         "type": "package",
         "dependencies": {
@@ -143,6 +147,8 @@
           }
         }
       },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "MaterialSkin.2/2.3.1": {
         "type": "package",
         "compile": {
@@ -1246,11 +1252,15 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "14.0.0",
+<<<<<<< HEAD
           "Krypton.Docking": "90.25.2.55",
           "Krypton.Navigator": "90.25.2.55",
           "Krypton.Ribbon": "90.25.2.55",
           "Krypton.Toolkit": "90.25.2.55",
           "Krypton.Workspace": "90.25.2.55",
+=======
+          "Krypton.Toolkit": "90.25.2.55",
+>>>>>>> ce253b2 (ACCOUNTS)
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -1319,6 +1329,7 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+<<<<<<< HEAD
     "Krypton.Docking/90.25.2.55": {
       "sha512": "2uSvZUDgRtEh8RJMdA5iMDGqFPH42m3lI8yT1LgheJ+2RQOvnm0A4+I07AZ/5YB7VegZlqO0G9soP9XrpS4uJg==",
       "type": "package",
@@ -1409,6 +1420,8 @@
         "lib/net9.0-windows7.0/Krypton.Ribbon.xml"
       ]
     },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     "Krypton.Toolkit/90.25.2.55": {
       "sha512": "FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
       "type": "package",
@@ -1439,6 +1452,7 @@
         "lib/net9.0-windows7.0/Krypton.Toolkit.xml"
       ]
     },
+<<<<<<< HEAD
     "Krypton.Workspace/90.25.2.55": {
       "sha512": "y/kMeHOfPvB50YEmZhc3vdpCuY+MJTU5n4YJpAsV/0J8wXwL6VOp1+UF940dIa4ybxIkN+BjVhWd8baFkg2+sg==",
       "type": "package",
@@ -1469,6 +1483,8 @@
         "lib/net9.0-windows7.0/Krypton.Workspace.xml"
       ]
     },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
     "MaterialSkin.2/2.3.1": {
       "sha512": "w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
       "type": "package",
@@ -3436,11 +3452,15 @@
     "net8.0": [
       "AutoMapper >= 14.0.0",
       "Domain >= 1.0.0",
+<<<<<<< HEAD
       "Krypton.Docking >= 90.25.2.55",
       "Krypton.Navigator >= 90.25.2.55",
       "Krypton.Ribbon >= 90.25.2.55",
       "Krypton.Toolkit >= 90.25.2.55",
       "Krypton.Workspace >= 90.25.2.55",
+=======
+      "Krypton.Toolkit >= 90.25.2.55",
+>>>>>>> ce253b2 (ACCOUNTS)
       "MaterialSkin.2 >= 2.3.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.11",
@@ -3506,6 +3526,7 @@
             "target": "Package",
             "version": "[14.0.0, )"
           },
+<<<<<<< HEAD
           "Krypton.Docking": {
             "target": "Package",
             "version": "[90.25.2.55, )"
@@ -3518,14 +3539,19 @@
             "target": "Package",
             "version": "[90.25.2.55, )"
           },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
           "Krypton.Toolkit": {
             "target": "Package",
             "version": "[90.25.2.55, )"
           },
+<<<<<<< HEAD
           "Krypton.Workspace": {
             "target": "Package",
             "version": "[90.25.2.55, )"
           },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
           "MaterialSkin.2": {
             "target": "Package",
             "version": "[2.3.1, )"
@@ -3568,6 +3594,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Docking",
       "targetGraphs": [
@@ -3598,6 +3625,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Toolkit",
       "targetGraphs": [
@@ -3608,6 +3637,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Package 'Krypton.Workspace 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Workspace",
       "targetGraphs": [
@@ -3618,6 +3648,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
       "message": "Package 'MaterialSkin.2 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "MaterialSkin.2",
       "targetGraphs": [

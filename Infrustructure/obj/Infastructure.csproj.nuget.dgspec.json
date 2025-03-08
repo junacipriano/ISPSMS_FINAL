@@ -55,6 +55,7 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+<<<<<<< HEAD
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -67,14 +68,19 @@
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
             "Krypton.Toolkit": {
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+<<<<<<< HEAD
             "Krypton.Workspace": {
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
@@ -167,6 +173,7 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+<<<<<<< HEAD
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -179,14 +186,19 @@
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
             "Krypton.Toolkit": {
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+<<<<<<< HEAD
             "Krypton.Workspace": {
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+=======
+>>>>>>> ce253b2 (ACCOUNTS)
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
