@@ -23,6 +23,13 @@ namespace ISPSMS_JUHACA.Views.IVews
         DateTime DueDate { get; set; }
 
         void ShowMessage(string message);
+
         void CloseForm();
+
+
+        List<string> DistrictOptions { set; }
+
+        event EventHandler BarangayChanged;
+        event EventHandler DistrictChanged;
     }
 }

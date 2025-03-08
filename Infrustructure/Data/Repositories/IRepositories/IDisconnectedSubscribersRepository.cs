@@ -2,9 +2,9 @@
 
 namespace Infastructure.Data.Repositories.IRepositories
 {
-    public interface IDisconnectedSubscribersRepository
+    public interface IDisconnectedSubscribersRepository : IRepository<DisconnectedSubscribers>
     {
-     
+
         void Update(DisconnectedSubscribers obj);
     }
-}
+} 

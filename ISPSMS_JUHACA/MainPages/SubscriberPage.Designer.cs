@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label5 = new Label();
-            label4 = new Label();
+            TotalSubscriberLabel = new Label();
             label3 = new Label();
             label2 = new Label();
             materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
@@ -81,16 +81,16 @@
             label5.TabIndex = 46;
             label5.Text = "50\r\n";
             // 
-            // label4
+            // TotalSubscriberLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(52, 72, 100);
-            label4.Location = new Point(1804, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(41, 18);
-            label4.TabIndex = 45;
-            label4.Text = "1000";
+            TotalSubscriberLabel.AutoSize = true;
+            TotalSubscriberLabel.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalSubscriberLabel.ForeColor = Color.FromArgb(52, 72, 100);
+            TotalSubscriberLabel.Location = new Point(1804, 89);
+            TotalSubscriberLabel.Name = "TotalSubscriberLabel";
+            TotalSubscriberLabel.Size = new Size(41, 18);
+            TotalSubscriberLabel.TabIndex = 45;
+            TotalSubscriberLabel.Text = "1000";
             // 
             // label3
             // 
@@ -597,27 +597,27 @@
             connectedsubscribersGridView.BorderStyle = BorderStyle.None;
             connectedsubscribersGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             connectedsubscribersGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle1.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle1.Padding = new Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(212, 208, 208);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            connectedsubscribersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 255, 252);
+            dataGridViewCellStyle5.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(166, 166, 166);
+            dataGridViewCellStyle5.Padding = new Padding(3);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(212, 208, 208);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            connectedsubscribersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             connectedsubscribersGridView.ColumnHeadersHeight = 50;
             connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { Conn_Name, editButton, disconnectButton, subsidDataGridViewTextBoxColumn, connNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn });
             connectedsubscribersGridView.DataSource = connectedSubscriberViewBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle2.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(52, 72, 100);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(242, 242, 242);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            connectedsubscribersGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 255, 252);
+            dataGridViewCellStyle6.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(52, 72, 100);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(242, 242, 242);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(166, 166, 166);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            connectedsubscribersGridView.DefaultCellStyle = dataGridViewCellStyle6;
             connectedsubscribersGridView.EnableHeadersVisualStyles = false;
             connectedsubscribersGridView.GridColor = Color.FromArgb(255, 255, 252);
             connectedsubscribersGridView.ImeMode = ImeMode.NoControl;
@@ -626,23 +626,23 @@
             connectedsubscribersGridView.Name = "connectedsubscribersGridView";
             connectedsubscribersGridView.RightToLeft = RightToLeft.No;
             connectedsubscribersGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle3.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle3.Padding = new Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 219, 199);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            connectedsubscribersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 255, 252);
+            dataGridViewCellStyle7.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(166, 166, 166);
+            dataGridViewCellStyle7.Padding = new Padding(3);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(219, 219, 199);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            connectedsubscribersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             connectedsubscribersGridView.RowHeadersWidth = 51;
             connectedsubscribersGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle4.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(52, 72, 100);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(242, 242, 242);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(225, 111, 74);
-            connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 255, 252);
+            dataGridViewCellStyle8.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(52, 72, 100);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(242, 242, 242);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(225, 111, 74);
+            connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             connectedsubscribersGridView.ScrollBars = ScrollBars.Vertical;
             connectedsubscribersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             connectedsubscribersGridView.Size = new Size(1674, 803);
@@ -765,7 +765,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1906, 973);
             Controls.Add(label5);
-            Controls.Add(label4);
+            Controls.Add(TotalSubscriberLabel);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(materialComboBox1);
@@ -798,7 +798,7 @@
         #endregion
 
         private Label label5;
-        private Label label4;
+        private Label TotalSubscriberLabel;
         private Label label3;
         private Label label2;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;

@@ -22,16 +22,3 @@ D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ServiceLayer.dll
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
 D:\ISPSMS_SD\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll
-D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.deps.json
-D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.dll
-D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\ServiceLayer.pdb
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.csproj.AssemblyReference.cache
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.AssemblyInfoInputs.cache
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.AssemblyInfo.cs
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.csproj.CoreCompileInputs.cache
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.sourcelink.json
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.dll
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
-D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll

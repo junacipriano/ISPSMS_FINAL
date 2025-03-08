@@ -5,6 +5,7 @@ using Domain.Models;
 using ISPSMS_JUHACA.Views;
 using System.Collections.Generic;
 using ISPSMS_JUHACA.Presenter;
+using ISPSMS_JUHACA.Views.IVews;
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -17,6 +18,9 @@ namespace ISPSMS_JUHACA.MainPages
         private MaterialButton activeButton;
 
         public BindingSource BindingSource => bindingSource;
+
+
+
         public SubscriberPage(IUnitOfWork dbContext, MainForm mainform)
         {
             InitializeComponent();
@@ -43,9 +47,10 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void getSubscribers()
         {
-            var subscribers = dbContext.connectedSubscriberRepository.GetAll();
+            var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
             bindingSource.DataSource = subscribers;
             connectedsubscribersGridView.DataSource = bindingSource;
+            TotalSubscriberLabel.Text = subscribers.Count.ToString();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -59,7 +64,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void disconnectedbtn_Click(object sender, EventArgs e)
         {
-            ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
+
 
             var disconnectedForm = new Disconnected(dbContext, this);
             disconnectedForm.ShowDialog();
@@ -67,6 +72,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex < 0)
             {
                 MessageBox.Show("No valid subscriber selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,7 +86,6 @@ namespace ISPSMS_JUHACA.MainPages
                 return;
             }
 
-            // ✅ Handling the Disconnect Button
             if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "disconnectButton")
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to disconnect this subscriber?",
@@ -100,11 +105,28 @@ namespace ISPSMS_JUHACA.MainPages
                             return;
                         }
 
-                        // ✅ Remove the subscriber from the database
-                        dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
-                        dbContext.Save();
 
-                        // ✅ Refresh the UI
+                        var disconnectedSubscriber = new DisconnectedSubscribers
+                        {
+                            Disconn_Name = subscriberToDelete.Conn_Name,
+                            ContactNumber = subscriberToDelete.ContactNumber,
+                            Address = subscriberToDelete.Address,
+                            Plan = subscriberToDelete.Plan,
+                            Status = "Disconnected",
+                            Duedate = subscriberToDelete.Duedate,
+                            CurrentDuedate = DateTime.Now,
+                            InstallationDate = subscriberToDelete.InstallationDate,
+                            MonthlyCharge = subscriberToDelete.MonthlyCharge,
+                            Balance = subscriberToDelete.Balance,
+                            Charge = subscriberToDelete.Charge,
+
+                        };
+
+                        dbContext.disconnectedSubscriberRepository.Add(disconnectedSubscriber);
+                        dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
+                        dbContext.Save(); // ✅ Make sure changes are saved before updating UI
+
+                        // ✅ Refresh UI
                         bindingSource.Remove(selectedSubscriber);
                         getSubscribers();
 
@@ -112,7 +134,8 @@ namespace ISPSMS_JUHACA.MainPages
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error while deleting: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Error while disconnecting: {ex.InnerException?.Message ?? ex.Message}",
+                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -125,19 +148,35 @@ namespace ISPSMS_JUHACA.MainPages
                 var addsubs = new addSubscribersForm(dbContext, this)
                 {
                     EditedSubscriber = selectedSubscriber, // ✅ Load the subscriber data
-                    Text = "Edit Subscriber Information"
+                    Text = "Edit Subscriber Information",
+
                 };
 
                 var presenter = new AddSubscriberPresenter(addsubs, dbContext, this);
-                presenter.EditLoad(); // Load the subscriber's existing data
+                presenter.EditLoad();
 
                 addsubs.ShowDialog();// ✅ Handle save logic
             }
+
+            /*   if (e.RowIndex < 0) return;
+               var selectedSubscriber = connectedsubscribersGridView.Rows[e.RowIndex].DataBoundItem as ConnectedSubscribers;
+               if (selectedSubscriber == null) return;
+
+               if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "disconnectButton")
+               {
+                   _presenter.DisconnectSubscriber(selectedSubscriber);
+               }
+               else if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
+               {
+
+                   _presenter.EditSubscriber(selectedSubscriber);
+               }*/
         }
 
         private void SubscriberPage_Load(object sender, EventArgs e)
         {
             getSubscribers();
+
         }
 
         private void FilterSubscribersByAddress(string address)
@@ -159,6 +198,14 @@ namespace ISPSMS_JUHACA.MainPages
             }
         }
 
+
+
+        /* public void LoadSubscribers(IEnumerable<ConnectedSubscribers> subscribers)
+           {
+               BindingSource.DataSource = subscribers.ToList();
+               connectedsubscribersGridView.DataSource = BindingSource;
+           }*/
+
         private void allBtn_Click(object sender, EventArgs e)
         {
             getSubscribers();
@@ -174,21 +221,27 @@ namespace ISPSMS_JUHACA.MainPages
         private void baseCampBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Base Camp");
         }
 
         private void camp1Btn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Camp 1");
         }
 
         private void colambugonBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Colambugon");
+
+
         }
 
         private void danggawanBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Danggawan");
         }
 
         private void dologonBtn_Click(object sender, EventArgs e)
@@ -206,11 +259,14 @@ namespace ISPSMS_JUHACA.MainPages
         private void panadtalanBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("Panadtalan");
         }
 
         private void sanMiguelBtn_Click(object sender, EventArgs e)
         {
+
             SetActiveButton((MaterialButton)sender);
+            FilterSubscribersByAddress("San Miguel");
         }
 
         private void southPobBtn_Click(object sender, EventArgs e)
@@ -218,5 +274,6 @@ namespace ISPSMS_JUHACA.MainPages
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("South Poblacion");
         }
+
     }
 }

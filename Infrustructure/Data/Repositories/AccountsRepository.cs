@@ -18,5 +18,10 @@ namespace Infastructure.Data.Repositories
             _db.Accounts.Update(obj);
         }
 
+        public Accounts GetAccountByEmailAndPassword(string email, string password)
+        {
+            return _db.Accounts.FirstOrDefault(a => a.Username == email && a.AccountPassword == password);
+        }
+
     }
 }

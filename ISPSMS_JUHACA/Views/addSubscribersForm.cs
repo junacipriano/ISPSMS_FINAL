@@ -26,9 +26,15 @@ namespace ISPSMS_JUHACA
         private readonly AddSubscriberPresenter _presenter;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         internal string message;
+        private readonly IMainSubscriberPage _view;
+
 
         public event EventHandler SaveSubscriber;
         public event EventHandler FormLoaded;
+        public event EventHandler DistrictChanged;
+
+        public event EventHandler BarangayChanged;
+
         public ConnectedSubscribers EditedSubscriber { get; set; }
         public string LastName
         {
@@ -50,14 +56,14 @@ namespace ISPSMS_JUHACA
 
         public string District
         {
-            get => districtComboBox.Text;
-            set => districtComboBox.Text = value;
+            get => districtComboBox.SelectedItem?.ToString() ?? "";
+            set => districtComboBox.SelectedItem = value;
         }
 
         public string Barangay
         {
-            get => barangayComboBox.Text;
-            set => barangayComboBox.Text = value;
+            get => barangayComboBox.SelectedItem?.ToString() ?? "";
+            set => barangayComboBox.SelectedItem = value;
         }
 
         public string Plan
@@ -85,23 +91,38 @@ namespace ISPSMS_JUHACA
         }
 
 
+        public List<string> DistrictOptions
+        {
+            set
+            {
+                districtComboBox.Items.Clear();
+                districtComboBox.Items.AddRange(value.ToArray());
 
+                if (districtComboBox.Items.Count > 0)
+                {
+                    districtComboBox.SelectedIndex = 0; // Auto-select first option
+                }
+
+                districtComboBox.Refresh(); // Force refresh UI
+            }
+        }
 
         public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage subscribersForm)
         {
             InitializeComponent();
-
-            _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm);
-            if (EditedSubscriber != null)
+            if (_presenter == null)
             {
-                _presenter.EditLoad();
+                _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm);
             }
+
+
         }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
 
-            SaveSubscriber?.Invoke(this, EventArgs.Empty);
+            //SaveSubscriber?.Invoke(this, EventArgs.Empty);
+            _presenter.OnSaveSubscriber();
         }
 
         public void ShowMessage(string message)
@@ -117,6 +138,18 @@ namespace ISPSMS_JUHACA
         private void addSubscribersForm_Load(object sender, EventArgs e)
         {
             FormLoaded?.Invoke(this, EventArgs.Empty);
+
+            districtComboBox.SelectedIndexChanged += (s, e) => DistrictChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void barangayComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BarangayChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

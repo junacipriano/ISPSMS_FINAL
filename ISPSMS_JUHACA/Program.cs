@@ -4,6 +4,9 @@ using Infastructure.Repositories;
 using Unity;
 using Unity.Lifetime;
 using Infastructure.Data.Repositories;
+using ISPSMS_JUHACA.Presenter;
+using ISPSMS_JUHACA.Views;
+using Microsoft.EntityFrameworkCore;
 
 namespace ISPSMS_JUHACA
 {
@@ -29,12 +32,25 @@ namespace ISPSMS_JUHACA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var unitOfWork = UnityC.Resolve<IUnitOfWork>();
-            var Subs = new MainForm(unitOfWork);
-            // new AppUserFormPresenter(unitOfWork, appUserForm);
-            Application.Run(Subs);
+            //var unitOfWork = UnityC.Resolve<IUnitOfWork>();
+            //var Subs = new MainForm(unitOfWork);
+            //// new AppUserFormPresenter(unitOfWork, appUserForm);
+            //Application.Run(Subs);
 
-           // Application.Run(new SubscribersForm(ConnectedSubscribersRepository));
+            var dbContext = new AppDbContext(new DbContextOptions<AppDbContext>());
+            var accountsRepository = new AccountsRepository(dbContext);
+            var unitOfWork = new UnitOfWork(dbContext);
+
+            var loginForm = new LoginForm();
+            new LoginPresenter(loginForm, unitOfWork, accountsRepository);
+
+            Application.Run(loginForm);
+
+
+
+
+
+            // Application.Run(new SubscribersForm(ConnectedSubscribersRepository));
         }
     }
 }

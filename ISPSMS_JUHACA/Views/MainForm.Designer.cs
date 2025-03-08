@@ -45,9 +45,9 @@
             button1 = new Button();
             disconnectedSubscriberViewBindingSource = new BindingSource(components);
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).BeginInit();
@@ -204,6 +204,16 @@
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.TabIndex = 5;
             // 
+            // kryptonPictureBox1
+            // 
+            kryptonPictureBox1.BackgroundImage = Properties.Resources.ProfilePic;
+            kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            kryptonPictureBox1.Location = new Point(1658, 20);
+            kryptonPictureBox1.Name = "kryptonPictureBox1";
+            kryptonPictureBox1.Size = new Size(50, 51);
+            kryptonPictureBox1.TabIndex = 7;
+            kryptonPictureBox1.TabStop = false;
+            // 
             // kryptonLabel2
             // 
             kryptonLabel2.Location = new Point(1712, 51);
@@ -226,23 +236,13 @@
             kryptonLabel1.TabIndex = 5;
             kryptonLabel1.Values.Text = "Luisa P. Cipriano";
             // 
-            // kryptonPictureBox1
-            // 
-            kryptonPictureBox1.BackgroundImage = Properties.Resources.ProfilePic;
-            kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            kryptonPictureBox1.Location = new Point(1658, 20);
-            kryptonPictureBox1.Name = "kryptonPictureBox1";
-            kryptonPictureBox1.Size = new Size(50, 51);
-            kryptonPictureBox1.TabIndex = 7;
-            kryptonPictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 240, 233);
             ClientSize = new Size(1920, 1080);
-            Controls.Add(kryptonPanel1);
             Controls.Add(materialTabControl1);
+            Controls.Add(kryptonPanel1);
             DrawerAutoShow = true;
             DrawerBackgroundWithAccent = true;
             DrawerIsOpen = true;
