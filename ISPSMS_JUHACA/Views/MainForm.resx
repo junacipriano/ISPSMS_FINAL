@@ -117,34 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Conn_Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>924, 17</value>
   </metadata>
-  <metadata name="editButton.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="disconnectButton.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="connectedSubscribersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>677, 17</value>
-  </metadata>
-  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="accountsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>977, 17</value>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
+        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA+AUAAAJNU0Z0AUkBTAIBAQYB
+        AAHgAQAB4AEAARABAAEQAQAE/wEFAQAI/wFCAU0BdgcAAXYDAAEoAwABQAMAASADAAEBAQABBAYAAQQY
+        AAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8B
+        AAL/AgAD/wkAAQ8BfwH4AYcB+AGPAfcB8BEAAQ8E/wHwAQABDwZmAXARAAH4BGYBjwEAAQcGZgFwEAAB
+        /wH2BGYBjwH/AQcGZgFwEAABhgF3BGYBdwFoAQcBZgF3AYcBdwF4AWYBcBAAAXYBjwGGAmYBaAH4AWcB
+        BwFmA3cBeAFmAXAQAAH3AYcB+AJmAX8BeAF/AQcGZgFwEAABDwF/AQAC/wEAAfcB8AEHBmYBcBAAAfgB
+        ZgH/AXgBhwH/AYYBjwEHAWYCfwH/AfcBZgFwEAABdgFmAXcCZgF3AWYBbwEHAWYEiAFmAXAQAAH2AWYB
+        eAJmAYcBZgGPAQcGZgFwEAABDwF3AfYCZgGPAXcB8AEHAWYEiAFmAXASAAEIAmYBgAIAAQcBZgJ/Af8B
+        9wFmAXASAAEPAYYBaAHwAgABBwFmAYgEZgFwEwAC/wMAAQcGZgFwGAABDwF4BIgBhwHwEAAB9wJ3AX8B
+        9wJ3AX8BAAEPAfcCdwF/AfADAAH3AXgBhwF/AwABDwH/BQABdgJmAW8B9gJmAWcBAAF4BGYBhwIAAQ8B
+        hgJmAWgB8AIAAXYBZwUAAXYCZgFvAfYCZgFnAQ8FZgF4AfABAAF2BGYBZwEAAQ8BhgFmAfAEAAF2AmYB
+        bwH2AmYBZwEHAWgBfwL/AfcBhgFwAQ8BZgFoAYYDZgHwAfgCZgSIAX8BdgJmAW8B9gJmAWcBBwF/AXcC
+        iAF3AfcBcAH4AWYBbwH2A2YBjwF2BmYBZwF2AmYBbwH2AmYBZwEHAXgEZgGHAXABdgFmAW8B+ANmAWcB
+        dgZmAWcB9wJ3AX8B9gJmAWcBBwFmAWgCiAGGAXgBcAF2AWYBbwEAAf8BhgFmAWcB+AZmAY8BDwL/AQAB
+        +AJmAWcBBwFnBP8BdgFwAYYBZgGPAfcBfwH4AWYBaAEPBv8B8AF4AogBjwEPAv8B8AEHAXcBhgJmAWgB
+        dwFwAYYBZgF/AfcBfwEHAWYBaAEPBv8B8AF2AmYBbwH3AncBfwEHAYYEZgF4AXABdgFmAX8B9wF/AQcB
+        ZgFnAfgGZgGPAXYCZgFvAfYCZgFnAQcBZgGHAncBeAGIAXABdgFmAY8B9wF/AfgBZgFnAXYGZgFnAXYC
+        ZgFvAfYCZgFnAQcBjwQAAfgBcAH4AWYBZwEAAQ8BhgFmAY8BdgZmAWcBdgJmAW8B9gJmAWcBBwHwBAAB
+        DwFwAQ8CZgGIAYYCZgHwAfcEiAJmAY8BdgJmAW8B9gJmAWcBBwFwBAABBwHwAQABdgRmAWcFAAEPAWYB
+        aAHwAXYCZgFvAfYCZgFnAQABdwH/AgAB/wF3AgABDwGGAmYBaAHwBgABdgFnAQAB9wJ3AX8B9wJ3AX8B
+        AAEPAfcCdwF/AfADAAH3AXgBhwF/BwAB/wHwAQABQgFNAT4HAAE+AwABKAMAAUADAAEgAwABAQEAAQEG
+        AAEBFgAD/wEAAv8BgAEBBAAB4AEHAYABAQQAAcABAwGAAQEGAAGAAQEGAAGAAQEGAAGAAQEGAAGAAQEE
+        AAGMATEBgAEBBgABgAEBBgABgAEBBgABgAEBBAABgAEBAYABAQQAAfgBHwGAAQEEAAH4AR8BgAEBBAAB
+        /AE/AYABAQQAAv8BgAEBBgAB4AEHAfABDwHjAf8CAAHAAQMB4AEHAcMB/wIAAYABAQHAAQMBgQH/AgAB
+        gAEBAYABAQQAAYABAQYAAYABAQYAAYABAQEDAwABgwEAAYABAQIAAYABAQEAAYEBgAEBAQABIAGAAQEC
+        AAGAAQEBAAEgBAABgAEBBgABjwHxAQMBgAQAAZ8B+QGAAQEEAAGfAfkBwAEDAf8BgQIAAsMB4AEHAf8B
+        wwIAAeABBwHwAQ8B/wHHCw==
+</value>
+  </data>
+  <metadata name="connectedSubscribersBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
   </metadata>
   <metadata name="connectedSubscriberViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="connectedSubscribersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>677, 17</value>
+  </metadata>
   <metadata name="connectedSubscriberViewBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>343, 17</value>
   </metadata>
+  <metadata name="disconnectedSubscriberViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1035, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>96</value>
+    <value>25</value>
   </metadata>
 </root>

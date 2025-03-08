@@ -1,0 +1,120 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ServiceLayer/1.0.0": {
+        "dependencies": {
+          "Krypton.Docking": "90.25.2.55",
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Ribbon": "90.25.2.55",
+          "Krypton.Toolkit": "90.25.2.55",
+          "Krypton.Workspace": "90.25.2.55"
+        },
+        "runtime": {
+          "ServiceLayer.dll": {}
+        }
+      },
+      "Krypton.Docking/90.25.2.55": {
+        "dependencies": {
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Toolkit": "90.25.2.55",
+          "Krypton.Workspace": "90.25.2.55"
+        },
+        "runtime": {
+          "lib/net462/Krypton.Docking.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      },
+      "Krypton.Navigator/90.25.2.55": {
+        "dependencies": {
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "runtime": {
+          "lib/net462/Krypton.Navigator.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      },
+      "Krypton.Ribbon/90.25.2.55": {
+        "dependencies": {
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "runtime": {
+          "lib/net462/Krypton.Ribbon.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      },
+      "Krypton.Toolkit/90.25.2.55": {
+        "runtime": {
+          "lib/net462/Krypton.Toolkit.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      },
+      "Krypton.Workspace/90.25.2.55": {
+        "dependencies": {
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "runtime": {
+          "lib/net462/Krypton.Workspace.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ServiceLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Krypton.Docking/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2uSvZUDgRtEh8RJMdA5iMDGqFPH42m3lI8yT1LgheJ+2RQOvnm0A4+I07AZ/5YB7VegZlqO0G9soP9XrpS4uJg==",
+      "path": "krypton.docking/90.25.2.55",
+      "hashPath": "krypton.docking.90.25.2.55.nupkg.sha512"
+    },
+    "Krypton.Navigator/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GzwEUtdON1D6i8Gg4wxTJgRyaXXwFVFZ3nXAjybn7YEyMDEVo+0ra/HhqzcadqGeSvaWnjU64YW8x83NMhIeQw==",
+      "path": "krypton.navigator/90.25.2.55",
+      "hashPath": "krypton.navigator.90.25.2.55.nupkg.sha512"
+    },
+    "Krypton.Ribbon/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D76NO4GiL+rF4Tek5/VzDA0d3lT6vOjeCO0cBEPMtQt6JQv4fKxDDpDA/zsFZUlZi4BdkaZ0pXRfHBQXMMNvEw==",
+      "path": "krypton.ribbon/90.25.2.55",
+      "hashPath": "krypton.ribbon.90.25.2.55.nupkg.sha512"
+    },
+    "Krypton.Toolkit/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
+      "path": "krypton.toolkit/90.25.2.55",
+      "hashPath": "krypton.toolkit.90.25.2.55.nupkg.sha512"
+    },
+    "Krypton.Workspace/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y/kMeHOfPvB50YEmZhc3vdpCuY+MJTU5n4YJpAsV/0J8wXwL6VOp1+UF940dIa4ybxIkN+BjVhWd8baFkg2+sg==",
+      "path": "krypton.workspace/90.25.2.55",
+      "hashPath": "krypton.workspace.90.25.2.55.nupkg.sha512"
+    }
+  }
+}

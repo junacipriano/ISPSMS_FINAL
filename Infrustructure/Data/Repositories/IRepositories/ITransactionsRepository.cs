@@ -2,7 +2,7 @@
 
 namespace Infastructure.Data.Repositories.IRepositories
 {
-    public interface ITransactionsRepository
+    public interface ITransactionsRepository : IRepository<Transactions>
     {
         
         void Update(Transactions obj);

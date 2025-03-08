@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "+t4UbShEzsQ=",
+  "dgSpecHash": "TngdyzkKMKU=",
   "success": true,
   "projectFilePath": "C:\\Users\\kenneth\\Documents\\ISPSMS FINAL\\ISPSMS_JUHACA\\ISPSMS_JUHACA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenneth\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.docking\\90.25.2.55\\krypton.docking.90.25.2.55.nupkg.sha512",
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.navigator\\90.25.2.55\\krypton.navigator.90.25.2.55.nupkg.sha512",
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.ribbon\\90.25.2.55\\krypton.ribbon.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512",
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.workspace\\90.25.2.55\\krypton.workspace.90.25.2.55.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\kenneth\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.11\\microsoft.aspnetcore.cryptography.internal.8.0.11.nupkg.sha512",

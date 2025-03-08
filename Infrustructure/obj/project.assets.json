@@ -63,6 +63,56 @@
           }
         }
       },
+      "Krypton.Docking/90.25.2.55": {
+        "type": "package",
+        "dependencies": {
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Toolkit": "90.25.2.55",
+          "Krypton.Workspace": "90.25.2.55"
+        },
+        "compile": {
+          "lib/net462/Krypton.Docking.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Krypton.Docking.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Krypton.Navigator/90.25.2.55": {
+        "type": "package",
+        "dependencies": {
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "compile": {
+          "lib/net462/Krypton.Navigator.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Krypton.Navigator.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Krypton.Ribbon/90.25.2.55": {
+        "type": "package",
+        "dependencies": {
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "compile": {
+          "lib/net462/Krypton.Ribbon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Krypton.Ribbon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Krypton.Toolkit/90.25.2.55": {
         "type": "package",
         "compile": {
@@ -72,6 +122,23 @@
         },
         "runtime": {
           "lib/net462/Krypton.Toolkit.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Krypton.Workspace/90.25.2.55": {
+        "type": "package",
+        "dependencies": {
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Toolkit": "90.25.2.55"
+        },
+        "compile": {
+          "lib/net462/Krypton.Workspace.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Krypton.Workspace.dll": {
             "related": ".xml"
           }
         }
@@ -1179,7 +1246,11 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Krypton.Docking": "90.25.2.55",
+          "Krypton.Navigator": "90.25.2.55",
+          "Krypton.Ribbon": "90.25.2.55",
           "Krypton.Toolkit": "90.25.2.55",
+          "Krypton.Workspace": "90.25.2.55",
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -1248,6 +1319,96 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "Krypton.Docking/90.25.2.55": {
+      "sha512": "2uSvZUDgRtEh8RJMdA5iMDGqFPH42m3lI8yT1LgheJ+2RQOvnm0A4+I07AZ/5YB7VegZlqO0G9soP9XrpS4uJg==",
+      "type": "package",
+      "path": "krypton.docking/90.25.2.55",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.docking.90.25.2.55.nupkg.sha512",
+        "krypton.docking.nuspec",
+        "lib/net462/Krypton.Docking.dll",
+        "lib/net462/Krypton.Docking.xml",
+        "lib/net47/Krypton.Docking.dll",
+        "lib/net47/Krypton.Docking.xml",
+        "lib/net471/Krypton.Docking.dll",
+        "lib/net471/Krypton.Docking.xml",
+        "lib/net472/Krypton.Docking.dll",
+        "lib/net472/Krypton.Docking.xml",
+        "lib/net48/Krypton.Docking.dll",
+        "lib/net48/Krypton.Docking.xml",
+        "lib/net481/Krypton.Docking.dll",
+        "lib/net481/Krypton.Docking.xml",
+        "lib/net8.0-windows7.0/Krypton.Docking.dll",
+        "lib/net8.0-windows7.0/Krypton.Docking.xml",
+        "lib/net9.0-windows7.0/Krypton.Docking.dll",
+        "lib/net9.0-windows7.0/Krypton.Docking.xml"
+      ]
+    },
+    "Krypton.Navigator/90.25.2.55": {
+      "sha512": "GzwEUtdON1D6i8Gg4wxTJgRyaXXwFVFZ3nXAjybn7YEyMDEVo+0ra/HhqzcadqGeSvaWnjU64YW8x83NMhIeQw==",
+      "type": "package",
+      "path": "krypton.navigator/90.25.2.55",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.navigator.90.25.2.55.nupkg.sha512",
+        "krypton.navigator.nuspec",
+        "lib/net462/Krypton.Navigator.dll",
+        "lib/net462/Krypton.Navigator.xml",
+        "lib/net47/Krypton.Navigator.dll",
+        "lib/net47/Krypton.Navigator.xml",
+        "lib/net471/Krypton.Navigator.dll",
+        "lib/net471/Krypton.Navigator.xml",
+        "lib/net472/Krypton.Navigator.dll",
+        "lib/net472/Krypton.Navigator.xml",
+        "lib/net48/Krypton.Navigator.dll",
+        "lib/net48/Krypton.Navigator.xml",
+        "lib/net481/Krypton.Navigator.dll",
+        "lib/net481/Krypton.Navigator.xml",
+        "lib/net8.0-windows7.0/Krypton.Navigator.dll",
+        "lib/net8.0-windows7.0/Krypton.Navigator.xml",
+        "lib/net9.0-windows7.0/Krypton.Navigator.dll",
+        "lib/net9.0-windows7.0/Krypton.Navigator.xml"
+      ]
+    },
+    "Krypton.Ribbon/90.25.2.55": {
+      "sha512": "D76NO4GiL+rF4Tek5/VzDA0d3lT6vOjeCO0cBEPMtQt6JQv4fKxDDpDA/zsFZUlZi4BdkaZ0pXRfHBQXMMNvEw==",
+      "type": "package",
+      "path": "krypton.ribbon/90.25.2.55",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.ribbon.90.25.2.55.nupkg.sha512",
+        "krypton.ribbon.nuspec",
+        "lib/net462/Krypton.Ribbon.dll",
+        "lib/net462/Krypton.Ribbon.xml",
+        "lib/net47/Krypton.Ribbon.dll",
+        "lib/net47/Krypton.Ribbon.xml",
+        "lib/net471/Krypton.Ribbon.dll",
+        "lib/net471/Krypton.Ribbon.xml",
+        "lib/net472/Krypton.Ribbon.dll",
+        "lib/net472/Krypton.Ribbon.xml",
+        "lib/net48/Krypton.Ribbon.dll",
+        "lib/net48/Krypton.Ribbon.xml",
+        "lib/net481/Krypton.Ribbon.dll",
+        "lib/net481/Krypton.Ribbon.xml",
+        "lib/net8.0-windows7.0/Krypton.Ribbon.dll",
+        "lib/net8.0-windows7.0/Krypton.Ribbon.xml",
+        "lib/net9.0-windows7.0/Krypton.Ribbon.dll",
+        "lib/net9.0-windows7.0/Krypton.Ribbon.xml"
+      ]
+    },
     "Krypton.Toolkit/90.25.2.55": {
       "sha512": "FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
       "type": "package",
@@ -1276,6 +1437,36 @@
         "lib/net8.0-windows7.0/Krypton.Toolkit.xml",
         "lib/net9.0-windows7.0/Krypton.Toolkit.dll",
         "lib/net9.0-windows7.0/Krypton.Toolkit.xml"
+      ]
+    },
+    "Krypton.Workspace/90.25.2.55": {
+      "sha512": "y/kMeHOfPvB50YEmZhc3vdpCuY+MJTU5n4YJpAsV/0J8wXwL6VOp1+UF940dIa4ybxIkN+BjVhWd8baFkg2+sg==",
+      "type": "package",
+      "path": "krypton.workspace/90.25.2.55",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.workspace.90.25.2.55.nupkg.sha512",
+        "krypton.workspace.nuspec",
+        "lib/net462/Krypton.Workspace.dll",
+        "lib/net462/Krypton.Workspace.xml",
+        "lib/net47/Krypton.Workspace.dll",
+        "lib/net47/Krypton.Workspace.xml",
+        "lib/net471/Krypton.Workspace.dll",
+        "lib/net471/Krypton.Workspace.xml",
+        "lib/net472/Krypton.Workspace.dll",
+        "lib/net472/Krypton.Workspace.xml",
+        "lib/net48/Krypton.Workspace.dll",
+        "lib/net48/Krypton.Workspace.xml",
+        "lib/net481/Krypton.Workspace.dll",
+        "lib/net481/Krypton.Workspace.xml",
+        "lib/net8.0-windows7.0/Krypton.Workspace.dll",
+        "lib/net8.0-windows7.0/Krypton.Workspace.xml",
+        "lib/net9.0-windows7.0/Krypton.Workspace.dll",
+        "lib/net9.0-windows7.0/Krypton.Workspace.xml"
       ]
     },
     "MaterialSkin.2/2.3.1": {
@@ -3245,7 +3436,11 @@
     "net8.0": [
       "AutoMapper >= 14.0.0",
       "Domain >= 1.0.0",
+      "Krypton.Docking >= 90.25.2.55",
+      "Krypton.Navigator >= 90.25.2.55",
+      "Krypton.Ribbon >= 90.25.2.55",
       "Krypton.Toolkit >= 90.25.2.55",
+      "Krypton.Workspace >= 90.25.2.55",
       "MaterialSkin.2 >= 2.3.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.11",
@@ -3311,7 +3506,23 @@
             "target": "Package",
             "version": "[14.0.0, )"
           },
+          "Krypton.Docking": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
+          },
+          "Krypton.Navigator": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
+          },
+          "Krypton.Ribbon": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
+          },
           "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[90.25.2.55, )"
+          },
+          "Krypton.Workspace": {
             "target": "Package",
             "version": "[90.25.2.55, )"
           },
@@ -3357,8 +3568,48 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Krypton.Docking",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Krypton.Navigator 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Krypton.Navigator",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Krypton.Ribbon 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Krypton.Ribbon",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "Krypton.Toolkit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Krypton.Workspace 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Krypton.Workspace",
       "targetGraphs": [
         "net8.0"
       ]

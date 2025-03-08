@@ -55,7 +55,23 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "Krypton.Docking": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            },
+            "Krypton.Navigator": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            },
+            "Krypton.Ribbon": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            },
             "Krypton.Toolkit": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            },
+            "Krypton.Workspace": {
               "target": "Package",
               "version": "[90.25.2.55, )"
             },

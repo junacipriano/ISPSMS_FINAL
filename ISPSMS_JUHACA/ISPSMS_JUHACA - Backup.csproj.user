@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Update="MainPages\BillingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainPages\SubPages\BillingCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainPages\SubPages\BillingItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainPages\SubscriberPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> 242f82f (current UI)
+    <Compile Update="Modified Tools\BUTTON.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Modified Tools\FORM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Views\addSubscribersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Disconnected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\EditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

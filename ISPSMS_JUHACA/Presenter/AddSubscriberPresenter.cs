@@ -7,6 +7,7 @@ using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
 using Microsoft.EntityFrameworkCore;
+using static Unity.Storage.RegistrationSet;
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -44,12 +45,18 @@ namespace ISPSMS_JUHACA.Presenter
                 MonthlyCharge = _view.MonthlyCharge
             };
 
-            _dbContext.connectedSubscriberRepository.Add(entity);
-            _dbContext.Save();
+                _dbContext.connectedSubscriberRepository.Add(newSubscriber);
+                _dbContext.Save();
+                _view.ShowMessage("Subscriber ADDED successfully!"); // ✅ Check if this appears twice
+            }
 
-            _view.ShowMessage("Subscriber successfully added!");
-            _subscribersForm.getSubscribers();
-            _view.CloseForm();
+            _subscribersForm.getSubscribers(); // ✅ Refresh UI once
+
+            if (_view is Form addForm)
+            {
+                addForm.Close(); // ✅ Close form after saving
+            }
+
         }
 
         private string GetOrdinal(int day)
