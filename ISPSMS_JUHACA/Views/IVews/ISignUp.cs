@@ -12,12 +12,9 @@ namespace ISPSMS_JUHACA.Views.IVews
         string Username { get; set; }
         string AccountName { get; set; }
         string AccountPassword { get; set; }
-        string AccountRole { get; set; }
-        string AccountEmail { get; set; }
-        string AccountPhone { get; set; }
-        string AccountAddress { get; set; }
-       
+        string AccountRole { get; set; }       
         void ShowMessage(string message);
-        event EventHandler Save; // Add this line to define the Save event
+        void ShowError(string message);
+        event EventHandler Save; 
     }
 }

@@ -1,16 +1,21 @@
-    using MaterialSkin;
-    using MaterialSkin.Controls;
-    using Infastructure.Data.Repositories.IRepositories;
-    using Domain.Models;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using Infastructure.Data.Repositories.IRepositories;
+using Domain.Models;
 using ISPSMS_JUHACA.Views;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace ISPSMS_JUHACA
-    {
+{
     public partial class MainForm : MaterialForm
     {
         public readonly IUnitOfWork dbContext;
         private BindingSource bindingSource;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
+        private string currentUserRole;
+
         public MainForm(IUnitOfWork dbContext)
         {
             InitializeComponent();
@@ -20,16 +25,26 @@ namespace ISPSMS_JUHACA
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             this.dbContext = dbContext;
             bindingSource = new BindingSource();
+            currentUserRole = GetCurrentUserRole();
         }
+
         private void SubscribersForm_Load(object sender, EventArgs e)
         {
             getSubscribers();
+            getAccounts();
         }
 
         public void getSubscribers()
         {
-            var subscribers = dbContext.connectedSubscriberRepository.GetAll();
-            connectedsubscribersGridView.DataSource = subscribers;
+            try
+            {
+                var subscribers = dbContext.connectedSubscriberRepository.GetAll();
+                connectedsubscribersGridView.DataSource = subscribers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading subscribers: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -38,7 +53,6 @@ namespace ISPSMS_JUHACA
 
             var AddForm = new addSubscribersForm(dbContext, this);
             AddForm.ShowDialog();
-
         }
 
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,7 +76,6 @@ namespace ISPSMS_JUHACA
                                                       MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-
                     try
                     {
                         dbContext.connectedSubscriberRepository.Remove(selectedSubscriber);
@@ -86,6 +99,79 @@ namespace ISPSMS_JUHACA
 
             var Disconnected = new Disconnected(dbContext, this);
             Disconnected.ShowDialog();
+        }
+
+        public void getAccounts()
+        {
+            try
+            {
+                var accounts = dbContext.accountsRepository.GetAll();
+                accountsGridView.DataSource = accounts; // Assuming you have a DataGridView named accountsGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading accounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void accountsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (accountsGridView.Columns[e.ColumnIndex].Name == "Edit" && e.RowIndex >= 0)
+            {
+                var selectedAccount = accountsGridView.Rows[e.RowIndex].DataBoundItem as Accounts;
+                if (selectedAccount != null)
+                {
+                    if (currentUserRole == "DEFAULT")
+                    {
+                        MessageBox.Show("You do not have permission to edit this account.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    var editForm = new EditAccount(selectedAccount, dbContext as DbContext, currentUserRole); // Pass currentUserRole
+                    editForm.ShowDialog();
+                    getAccounts(); // Refresh the accounts grid view after editing
+                }
+            }
+            else if (accountsGridView.Columns[e.ColumnIndex].Name == "Delete" && e.RowIndex >= 0)
+            {
+                if (currentUserRole != "CEO")
+                {
+                    MessageBox.Show("You do not have permission to delete this account.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var selectedAccount = accountsGridView.Rows[e.RowIndex].DataBoundItem as Accounts;
+                if (selectedAccount != null)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this account?",
+                                                          "Confirm Deletion",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            dbContext.accountsRepository.Remove(selectedAccount);
+                            dbContext.Save();
+                            getAccounts(); // Refresh the accounts grid view after deletion
+                            MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error while deleting: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private string GetCurrentUserRole()
+        {
+            var identity = System.Threading.Thread.CurrentPrincipal?.Identity;
+            if (identity is ClaimsIdentity claimsIdentity)
+            {
+                var roleClaim = claimsIdentity.FindFirst(ClaimTypes.Role);
+                return roleClaim?.Value ?? "DEFAULT";
+            }
+            return "DEFAULT";
         }
     }
 }

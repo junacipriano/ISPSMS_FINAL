@@ -15,8 +15,8 @@ namespace Domain.Models
         public string AccountName { get; set; }
         public string AccountPassword { get; set; }
         public string AccountRole { get; set; }
-        public string AccountEmail { get; set; }
-        public string AccountPhone { get; set; } = string.Empty;
-        public string AccountAddress { get; set; } = string.Empty;
+      
+ 
+     
     }
 }

@@ -619,3 +619,6 @@ C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\I
 C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
 C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
 C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.SignUpForm.resources
+C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.LoginForm.resources
+C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.EditAccount.resources
+C:\Users\kenneth\Documents\ISPSMS FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Krypton.Toolkit.dll

@@ -25,20 +25,49 @@ namespace ISPSMS_JUHACA.Views
         public string Username { get => tbUserName.Text.Trim().ToUpper(); set => tbUserName.Text = value; }
         public string AccountName { get => tbAccountName.Text.Trim().ToUpper(); set => tbAccountName.Text = value; }
         public string AccountPassword { get => tbPassword.Text; set => tbPassword.Text = value; }
-        public string AccountRole { get => tbRole.Text.Trim().ToUpper(); set => tbRole.Text = value; }
-        public string AccountEmail { get => tbEmail.Text.Trim().ToUpper(); set => tbEmail.Text = value; }
-        public string AccountPhone { get => tbPhone.Text.Trim().ToUpper(); set => tbPhone.Text = value; }
-        public string AccountAddress { get => tbAddress.Text.Trim().ToUpper(); set => tbAddress.Text = value; }
+        public string AccountRole { get => "DEFAULT"; set { } }
+
 
         public void ShowMessage(string message)
         {
             MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-        private void btnSave_Click(object sender, EventArgs e)
+        public void ShowError(string message)
         {
-            Save?.Invoke(this, EventArgs.Empty);
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private bool ValidateInputs()
+        {
+            if (string.IsNullOrWhiteSpace(Username))
+            {
+                ShowError("Username is required.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(AccountName))
+            {
+                ShowError("Account Name is required.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(AccountPassword))
+            {
+                ShowError("Password is required.");
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if (ValidateInputs())
+            {
+                Save?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }

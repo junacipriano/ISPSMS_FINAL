@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Domain": "1.0.0",
+          "Krypton.Toolkit": "90.25.2.55",
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -62,6 +63,14 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.11.4.0",
             "fileVersion": "1.1100.424.31005"
+          }
+        }
+      },
+      "Krypton.Toolkit/90.25.2.55": {
+        "runtime": {
+          "lib/net462/Krypton.Toolkit.dll": {
+            "assemblyVersion": "90.25.2.55",
+            "fileVersion": "90.25.2.55"
           }
         }
       },
@@ -660,6 +669,7 @@
       "Domain/1.0.0": {
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "Krypton.Toolkit": "90.25.2.55",
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -700,6 +710,13 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "Krypton.Toolkit/90.25.2.55": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FaAMlKtIoCwZqQHjsyd6PzF/KdSYdLrv8IwvepyHenES59MVUGcwBJDWRM949KWhq8mky3icT5Xkq7qwnyQFCA==",
+      "path": "krypton.toolkit/90.25.2.55",
+      "hashPath": "krypton.toolkit.90.25.2.55.nupkg.sha512"
     },
     "MaterialSkin.2/2.3.1": {
       "type": "package",

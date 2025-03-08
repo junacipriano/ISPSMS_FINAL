@@ -50,6 +50,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Krypton.Toolkit": {
+              "target": "Package",
+              "version": "[90.25.2.55, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

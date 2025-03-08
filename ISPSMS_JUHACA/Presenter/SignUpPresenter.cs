@@ -28,21 +28,24 @@ namespace ISPSMS_JUHACA.Presenter
 
         private void OnSaveUser(object? sender, EventArgs e)
         {
-            var newAccount = new Accounts
+            try
             {
-                Username = _view.Username,
-                AccountName = _view.AccountName,
-                AccountPassword = _view.AccountPassword,
-                AccountRole = _view.AccountRole,
-                AccountEmail = _view.AccountEmail,
-                AccountPhone = _view.AccountPhone,
-                AccountAddress = _view.AccountAddress,
-            };
+                var account = new Accounts
+                {
+                    Username = _view.Username,
+                    AccountName = _view.AccountName,
+                    AccountPassword = _view.AccountPassword,
+                    AccountRole = _view.AccountRole
+                };
 
-            _dbContext.accountsRepository.Update(newAccount);
-            _dbContext.Save();
-
-            _view.ShowMessage("User successfully added!");
+                _repository.Update(account);
+                _dbContext.Save();
+                _view.ShowMessage("Account created successfully.");
+            }
+            catch (Exception ex)
+            {
+                _view.ShowError($"An error occurred: {ex.Message}");
+            }
         }
     }
 }

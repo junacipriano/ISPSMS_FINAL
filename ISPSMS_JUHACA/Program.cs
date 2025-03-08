@@ -1,38 +1,42 @@
+
+using System;
+using System.Windows.Forms;
+using ISPSMS_JUHACA.Views;
+using ISPSMS_JUHACA.Presenter;
+using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Data;
-using Infastructure.Repositories;
-using Unity;
+using Microsoft.EntityFrameworkCore;
 using Unity.Lifetime;
-using Infastructure.Data.Repositories;
-using ISPSMS_JUHACA.Views;
+using Unity;
 
 namespace ISPSMS_JUHACA
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            IUnityContainer UnityC = new UnityContainer();
-            UnityC.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
-            UnityC.RegisterType<IAccountsRepository, AccountsRepository>(new HierarchicalLifetimeManager());
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            
 
             Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var unitOfWork = UnityC.Resolve<IUnitOfWork>();
-            var accountsRepository = UnityC.Resolve<IAccountsRepository>();
-            var signupForm = new SignUpForm(unitOfWork, accountsRepository);
-            Application.Run(signupForm);
+            var dbContext = new AppDbContext(new DbContextOptions<AppDbContext>());
+            var accountsRepository = new AccountsRepository(dbContext);
+            var unitOfWork = new UnitOfWork(dbContext);
 
-            // Application.Run(new SubscribersForm(ConnectedSubscribersRepository));
+            var loginForm = new LoginForm();
+            new LoginPresenter(loginForm, unitOfWork, accountsRepository);
+
+            Application.Run(loginForm);
         }
     }
 }
+
+

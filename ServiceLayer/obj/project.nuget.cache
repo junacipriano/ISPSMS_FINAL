@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "XtyPsKXi7eQ=",
+  "dgSpecHash": "xz6jqS4D2VY=",
   "success": true,
   "projectFilePath": "C:\\Users\\kenneth\\Documents\\ISPSMS FINAL\\ServiceLayer\\ServiceLayer.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\kenneth\\.nuget\\packages\\krypton.toolkit\\90.25.2.55\\krypton.toolkit.90.25.2.55.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Krypton.Toolkit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

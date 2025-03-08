@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             dashboardPage = new TabPage();
             subscribersPage = new TabPage();
@@ -55,6 +57,19 @@
             billingPage = new TabPage();
             transactionsPage = new TabPage();
             accountsPage = new TabPage();
+            accountsGridView = new DataGridView();
+            accountidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            usernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            accountPasswordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            accountRoleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
+            accountsBindingSource = new BindingSource(components);
+            panel1 = new Panel();
+            label2 = new Label();
+            panel2 = new Panel();
+            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
+            tbSearch = new Krypton.Toolkit.KryptonTextBox();
             activitiesPage = new TabPage();
             connectedSubscriberViewBindingSource = new BindingSource(components);
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
@@ -62,6 +77,12 @@
             subscribersPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
+            accountsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)accountsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accountsBindingSource).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
             SuspendLayout();
@@ -75,7 +96,6 @@
             materialTabControl1.Controls.Add(accountsPage);
             materialTabControl1.Controls.Add(activitiesPage);
             materialTabControl1.Depth = 0;
-            materialTabControl1.Dock = DockStyle.Fill;
             materialTabControl1.Location = new Point(3, 64);
             materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             materialTabControl1.Multiline = true;
@@ -104,7 +124,7 @@
             subscribersPage.Location = new Point(4, 29);
             subscribersPage.Name = "subscribersPage";
             subscribersPage.Padding = new Padding(3);
-            subscribersPage.Size = new Size(1906, 980);
+            subscribersPage.Size = new Size(1906, 977);
             subscribersPage.TabIndex = 1;
             subscribersPage.Text = "Subscribers";
             subscribersPage.UseVisualStyleBackColor = true;
@@ -320,7 +340,7 @@
             // 
             billingPage.Location = new Point(4, 29);
             billingPage.Name = "billingPage";
-            billingPage.Size = new Size(1906, 980);
+            billingPage.Size = new Size(1906, 977);
             billingPage.TabIndex = 2;
             billingPage.Text = "Billing";
             billingPage.UseVisualStyleBackColor = true;
@@ -329,25 +349,166 @@
             // 
             transactionsPage.Location = new Point(4, 29);
             transactionsPage.Name = "transactionsPage";
-            transactionsPage.Size = new Size(1906, 980);
+            transactionsPage.Size = new Size(1906, 977);
             transactionsPage.TabIndex = 3;
             transactionsPage.Text = "Transactions";
             transactionsPage.UseVisualStyleBackColor = true;
             // 
             // accountsPage
             // 
+            accountsPage.Controls.Add(accountsGridView);
+            accountsPage.Controls.Add(panel1);
+            accountsPage.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             accountsPage.Location = new Point(4, 29);
             accountsPage.Name = "accountsPage";
-            accountsPage.Size = new Size(1906, 980);
+            accountsPage.Size = new Size(1906, 977);
             accountsPage.TabIndex = 4;
             accountsPage.Text = "Accounts";
             accountsPage.UseVisualStyleBackColor = true;
+            // 
+            // accountsGridView
+            // 
+            accountsGridView.AllowUserToOrderColumns = true;
+            accountsGridView.AutoGenerateColumns = false;
+            accountsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            accountsGridView.Columns.AddRange(new DataGridViewColumn[] { accountidDataGridViewTextBoxColumn, usernameDataGridViewTextBoxColumn, accountPasswordDataGridViewTextBoxColumn, accountRoleDataGridViewTextBoxColumn, Edit, Delete });
+            accountsGridView.DataSource = accountsBindingSource;
+            accountsGridView.Dock = DockStyle.Fill;
+            accountsGridView.Location = new Point(0, 112);
+            accountsGridView.Name = "accountsGridView";
+            accountsGridView.RowHeadersWidth = 51;
+            accountsGridView.Size = new Size(1906, 865);
+            accountsGridView.TabIndex = 1;
+            accountsGridView.CellContentClick += accountsGridView_CellContentClick;
+            // 
+            // accountidDataGridViewTextBoxColumn
+            // 
+            accountidDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            accountidDataGridViewTextBoxColumn.DataPropertyName = "account_id";
+            accountidDataGridViewTextBoxColumn.Frozen = true;
+            accountidDataGridViewTextBoxColumn.HeaderText = "account_id";
+            accountidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            accountidDataGridViewTextBoxColumn.Name = "accountidDataGridViewTextBoxColumn";
+            accountidDataGridViewTextBoxColumn.Width = 242;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            usernameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // accountPasswordDataGridViewTextBoxColumn
+            // 
+            accountPasswordDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            accountPasswordDataGridViewTextBoxColumn.DataPropertyName = "AccountPassword";
+            accountPasswordDataGridViewTextBoxColumn.HeaderText = "Account Password";
+            accountPasswordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            accountPasswordDataGridViewTextBoxColumn.Name = "accountPasswordDataGridViewTextBoxColumn";
+            accountPasswordDataGridViewTextBoxColumn.Width = 338;
+            // 
+            // accountRoleDataGridViewTextBoxColumn
+            // 
+            accountRoleDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            accountRoleDataGridViewTextBoxColumn.DataPropertyName = "AccountRole";
+            accountRoleDataGridViewTextBoxColumn.HeaderText = "Account Role";
+            accountRoleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            accountRoleDataGridViewTextBoxColumn.Name = "accountRoleDataGridViewTextBoxColumn";
+            accountRoleDataGridViewTextBoxColumn.Width = 259;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.DataPropertyName = "AccountRole";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.Blue;
+            dataGridViewCellStyle4.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(128, 255, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.Blue;
+            Edit.DefaultCellStyle = dataGridViewCellStyle4;
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
+            Edit.Width = 120;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.DataPropertyName = "AccountRole";
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.Red;
+            dataGridViewCellStyle5.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 128, 128);
+            Delete.DefaultCellStyle = dataGridViewCellStyle5;
+            Delete.HeaderText = "Delete";
+            Delete.MinimumWidth = 6;
+            Delete.Name = "Delete";
+            Delete.Width = 144;
+            // 
+            // accountsBindingSource
+            // 
+            accountsBindingSource.DataSource = typeof(Domain.Models.Accounts);
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Azure;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1906, 112);
+            panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(-4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(195, 54);
+            label2.TabIndex = 0;
+            label2.Text = "Accounts";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Gray;
+            panel2.Controls.Add(kryptonComboBox1);
+            panel2.Controls.Add(tbSearch);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 57);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1906, 55);
+            panel2.TabIndex = 1;
+            // 
+            // kryptonComboBox1
+            // 
+            kryptonComboBox1.DropDownWidth = 211;
+            kryptonComboBox1.Items.AddRange(new object[] { "ALL", "CEO", "ADMIN", "DEFAULT" });
+            kryptonComboBox1.Location = new Point(542, 18);
+            kryptonComboBox1.Name = "kryptonComboBox1";
+            kryptonComboBox1.Size = new Size(211, 26);
+            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            kryptonComboBox1.TabIndex = 1;
+            kryptonComboBox1.Text = "ALL";
+            // 
+            // tbSearch
+            // 
+            tbSearch.CueHint.CueHintText = "Search";
+            tbSearch.Location = new Point(263, 18);
+            tbSearch.Name = "tbSearch";
+            tbSearch.Size = new Size(226, 27);
+            tbSearch.TabIndex = 0;
             // 
             // activitiesPage
             // 
             activitiesPage.Location = new Point(4, 29);
             activitiesPage.Name = "activitiesPage";
-            activitiesPage.Size = new Size(1906, 980);
+            activitiesPage.Size = new Size(1906, 977);
             activitiesPage.TabIndex = 5;
             activitiesPage.Text = "Activities";
             activitiesPage.UseVisualStyleBackColor = true;
@@ -376,6 +537,14 @@
             subscribersPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).EndInit();
+            accountsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)accountsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accountsBindingSource).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
             ResumeLayout(false);
@@ -410,5 +579,19 @@
         private DataGridViewTextBoxColumn monthlyChargeDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn editButton;
         private DataGridViewButtonColumn disconnectButton;
+        private Panel panel1;
+        private DataGridView accountsGridView;
+        private BindingSource accountsBindingSource;
+        private DataGridViewTextBoxColumn accountNameDataGridViewTextBoxColumn;
+        private Panel panel2;
+        private Label label2;
+        private DataGridViewTextBoxColumn accountidDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn accountPasswordDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn accountRoleDataGridViewTextBoxColumn;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Delete;
+        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private Krypton.Toolkit.KryptonTextBox tbSearch;
     }
 }
