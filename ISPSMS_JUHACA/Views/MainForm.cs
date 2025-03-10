@@ -76,6 +76,21 @@
                     accPage.Show();
 
                 }
+                    else if (materialTabControl1.SelectedTab == transactionsPage)
+                {
+
+                transactionsPage.Controls.Clear();
+
+                var traPage = new Transaction(dbContext, this);
+
+                traPage.TopLevel = false;
+                traPage.FormBorderStyle = FormBorderStyle.None;
+                traPage.Dock = DockStyle.Fill;
+
+                transactionsPage.Controls.Add(traPage);
+                traPage.Show();
+
+                }
 
             }
 

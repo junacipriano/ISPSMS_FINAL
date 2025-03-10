@@ -139,6 +139,7 @@ namespace ISPSMS_JUHACA
         {
             FormLoaded?.Invoke(this, EventArgs.Empty);
 
+
             districtComboBox.SelectedIndexChanged += (s, e) => DistrictChanged?.Invoke(this, EventArgs.Empty);
         }
 

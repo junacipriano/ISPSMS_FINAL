@@ -16,6 +16,9 @@
     <Compile Update="MainPages\SubscriberPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainPages\Transaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Modified Tools\BUTTON.cs">
       <SubType>Component</SubType>
     </Compile>

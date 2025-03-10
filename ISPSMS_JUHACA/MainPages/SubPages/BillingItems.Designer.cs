@@ -126,9 +126,9 @@
             // 
             // dueDateTextBox
             // 
-            dueDateTextBox.Location = new Point(270, 125);
+            dueDateTextBox.Location = new Point(192, 125);
             dueDateTextBox.Name = "dueDateTextBox";
-            dueDateTextBox.Size = new Size(91, 24);
+            dueDateTextBox.Size = new Size(169, 24);
             dueDateTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -203,9 +203,9 @@
             // 
             // addressTextBox
             // 
-            addressTextBox.Location = new Point(230, 212);
+            addressTextBox.Location = new Point(164, 212);
             addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(133, 24);
+            addressTextBox.Size = new Size(199, 24);
             addressTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -230,6 +230,7 @@
             // 
             // payBtn
             // 
+            payBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             payBtn.Location = new Point(270, 307);
             payBtn.Name = "payBtn";
             payBtn.Size = new Size(91, 37);
@@ -251,6 +252,7 @@
             payBtn.TabIndex = 17;
             payBtn.Values.DropDownArrowColor = Color.Empty;
             payBtn.Values.Text = "Pay";
+            payBtn.Click += payBtn_Click;
             // 
             // planTextBox
             // 

@@ -6,6 +6,7 @@ using ISPSMS_JUHACA.Views;
 using System.Collections.Generic;
 using ISPSMS_JUHACA.Presenter;
 using ISPSMS_JUHACA.Views.IVews;
+using Domain.ViewModels;
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -38,19 +39,21 @@ namespace ISPSMS_JUHACA.MainPages
         {
             if (activeButton != null)
             {
-                activeButton.UseAccentColor = false; // Reset previous button
+                activeButton.UseAccentColor = false;
             }
 
             activeButton = clickedButton;
-            activeButton.UseAccentColor = true; // Highlight active button
+            activeButton.UseAccentColor = true;
         }
 
         public void getSubscribers()
         {
             var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
+
             bindingSource.DataSource = subscribers;
             connectedsubscribersGridView.DataSource = bindingSource;
             TotalSubscriberLabel.Text = subscribers.Count.ToString();
+
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -69,6 +72,24 @@ namespace ISPSMS_JUHACA.MainPages
             var disconnectedForm = new Disconnected(dbContext, this);
             disconnectedForm.ShowDialog();
         }
+
+        private void connectedsubscribersGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (connectedsubscribersGridView.Columns[e.ColumnIndex].DataPropertyName == "Status" && e.Value != null)
+            {
+                string status = e.Value.ToString().Trim();
+
+                Console.WriteLine($"Row {e.RowIndex}, Column {e.ColumnIndex}, Status Value: {status}"); // Debugging
+
+                if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
+                {
+                    e.CellStyle.ForeColor = Color.Green; // Set text color to green
+                    e.CellStyle.Font = new Font(connectedsubscribersGridView.Font, FontStyle.Bold);
+                }
+            }
+        }
+
+
 
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -142,7 +163,6 @@ namespace ISPSMS_JUHACA.MainPages
 
             if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
             {
-
                 isEdit = true;
 
                 var addsubs = new addSubscribersForm(dbContext, this)
@@ -157,54 +177,40 @@ namespace ISPSMS_JUHACA.MainPages
 
                 addsubs.ShowDialog();// ✅ Handle save logic
             }
-
-            /*   if (e.RowIndex < 0) return;
-               var selectedSubscriber = connectedsubscribersGridView.Rows[e.RowIndex].DataBoundItem as ConnectedSubscribers;
-               if (selectedSubscriber == null) return;
-
-               if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "disconnectButton")
-               {
-                   _presenter.DisconnectSubscriber(selectedSubscriber);
-               }
-               else if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
-               {
-
-                   _presenter.EditSubscriber(selectedSubscriber);
-               }*/
         }
-
         private void SubscriberPage_Load(object sender, EventArgs e)
         {
             getSubscribers();
+            connectedsubscribersGridView.CellFormatting += connectedsubscribersGridView_CellFormatting;
 
         }
 
         private void FilterSubscribersByAddress(string address)
         {
             var filteredSubscribers = dbContext.connectedSubscriberRepository
-       .GetAll(s => s.Address.Contains(address)) // Use Contains for partial matches
+       .GetAll(s => s.Address.Contains(address))
        .ToList();
 
-            if (filteredSubscribers.Any()) // Check if any data is found
+            if (filteredSubscribers.Any())
             {
                 bindingSource.DataSource = filteredSubscribers;
-                connectedsubscribersGridView.DataSource = bindingSource;
             }
             else
             {
-                MessageBox.Show("No subscribers found for this address.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                getSubscribers(); // Reload all subscribers if no match is found
-
+                bindingSource.DataSource = new List<ConnectedSubscribers>(); // Show empty table
             }
+
+            connectedsubscribersGridView.DataSource = bindingSource;
+            TotalSubscriberLabel.Text = filteredSubscribers.Count.ToString();
         }
 
 
 
-        /* public void LoadSubscribers(IEnumerable<ConnectedSubscribers> subscribers)
-           {
-               BindingSource.DataSource = subscribers.ToList();
-               connectedsubscribersGridView.DataSource = BindingSource;
-           }*/
+
+
+
+
+
 
         private void allBtn_Click(object sender, EventArgs e)
         {
@@ -275,5 +281,9 @@ namespace ISPSMS_JUHACA.MainPages
             FilterSubscribersByAddress("South Poblacion");
         }
 
+        private void connectedSubscriberViewBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

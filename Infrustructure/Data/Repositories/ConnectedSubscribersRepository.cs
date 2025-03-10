@@ -34,7 +34,5 @@ namespace Infastructure.Repositories
         }
 
 
-
-
     }
 }

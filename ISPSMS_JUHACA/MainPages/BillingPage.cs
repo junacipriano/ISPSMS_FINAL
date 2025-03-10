@@ -23,11 +23,9 @@ namespace ISPSMS_JUHACA.MainPages
     {
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         public readonly IUnitOfWork dbContext;
-        private BindingSource bindingSource;
         internal bool isEdit;
         private MainForm mainForm;
         private readonly SubscriberPage _subscribersForm;
-        public BindingSource BindingSource => bindingSource;
 
         public BillingPage(IUnitOfWork dbContext, MainForm mainForm)
         {
@@ -41,22 +39,35 @@ namespace ISPSMS_JUHACA.MainPages
 
         }
 
+        public void getSubscribers()
+        {
+            var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
+        }
 
         private void BillingPage_Load(object sender, EventArgs e)
         {
             LoadBillingItems();
         }
 
-        private void LoadBillingItems()
+        public void LoadBillingItems()
         {
             billingFlowPanel.Controls.Clear(); // Ensure it's empty before adding new items
 
-            var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
-        
+            var subscribers = dbContext.connectedSubscriberRepository
+                .GetAll()
+                .OrderBy(sub => sub.CurrentDuedate)
+                .ToList();
+            if (!subscribers.Any())
+            {
+                MessageBox.Show("No subscribers found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             foreach (var subscriber in subscribers)
             {
 
-                BillingItems billingItem = new BillingItems(dbContext)
+                BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this)
+
                 {
                     TopLevel = false, // Prevents form from opening in a new window
                     FormBorderStyle = FormBorderStyle.None, // No borders
