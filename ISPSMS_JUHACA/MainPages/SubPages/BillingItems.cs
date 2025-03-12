@@ -18,7 +18,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private MainForm mainForm;
         private int currentBillingIndex = 0;
 
-        public BillingItems(IUnitOfWork dbContext, SubscriberPage subscribersForm, BillingPage billingPage  )
+        public BillingItems(IUnitOfWork dbContext, SubscriberPage subscribersForm, BillingPage billingPage)
         {
             InitializeComponent();
             this.dbContext = dbContext;
@@ -47,7 +47,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             payBtn.Click += payBtn_Click;
         }
 
-      
+
         private void kryptonTextBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -72,6 +72,11 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             dbContext.connectedSubscriberRepository.Save();
             BillingCheckout paymentForm = new BillingCheckout(dbContext, ConSubsEntity, _billingPage);
             paymentForm.ShowDialog();
+        }
+
+        private void kryptonBorderEdge1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

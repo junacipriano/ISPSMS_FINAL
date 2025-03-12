@@ -103,13 +103,14 @@
             // 
             // kryptonBorderEdge1
             // 
-            kryptonBorderEdge1.Location = new Point(46, 157);
+            kryptonBorderEdge1.Location = new Point(43, 155);
             kryptonBorderEdge1.MinimumSize = new Size(318, 2);
             kryptonBorderEdge1.Name = "kryptonBorderEdge1";
             kryptonBorderEdge1.Size = new Size(318, 2);
             kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(166, 166, 166);
             kryptonBorderEdge1.StateCommon.Color2 = Color.FromArgb(166, 166, 166);
             kryptonBorderEdge1.Text = "kryptonBorderEdge1";
+            kryptonBorderEdge1.Paint += kryptonBorderEdge1_Paint;
             // 
             // kryptonTextBox4
             // 
@@ -179,7 +180,7 @@
             // 
             // kryptonBorderEdge2
             // 
-            kryptonBorderEdge2.Location = new Point(46, 290);
+            kryptonBorderEdge2.Location = new Point(45, 294);
             kryptonBorderEdge2.MinimumSize = new Size(318, 2);
             kryptonBorderEdge2.Name = "kryptonBorderEdge2";
             kryptonBorderEdge2.Size = new Size(318, 2);
@@ -232,6 +233,7 @@
             // 
             payBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             payBtn.Location = new Point(270, 307);
+            payBtn.Margin = new Padding(0);
             payBtn.Name = "payBtn";
             payBtn.Size = new Size(91, 37);
             payBtn.StateCommon.Back.Color1 = Color.FromArgb(94, 167, 178);
@@ -244,11 +246,19 @@
             payBtn.StateCommon.Content.ShortText.Font = new Font("Franklin Gothic Book", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             payBtn.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             payBtn.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            payBtn.StateNormal.Back.Color1 = Color.FromArgb(94, 167, 178);
+            payBtn.StateNormal.Back.Color2 = Color.FromArgb(94, 167, 178);
+            payBtn.StateNormal.Border.Color1 = Color.FromArgb(255, 255, 252);
+            payBtn.StateNormal.Border.Color2 = Color.FromArgb(255, 255, 252);
             payBtn.StatePressed.Back.Color1 = Color.FromArgb(82, 147, 157);
             payBtn.StatePressed.Back.Color2 = Color.FromArgb(82, 147, 157);
             payBtn.StatePressed.Border.Color1 = Color.FromArgb(82, 147, 157);
             payBtn.StatePressed.Border.Color2 = Color.FromArgb(82, 147, 157);
             payBtn.StatePressed.Border.Rounding = 10F;
+            payBtn.StateTracking.Back.Color1 = Color.FromArgb(82, 147, 157);
+            payBtn.StateTracking.Back.Color2 = Color.FromArgb(82, 147, 157);
+            payBtn.StateTracking.Border.Color1 = Color.FromArgb(82, 147, 157);
+            payBtn.StateTracking.Border.Color2 = Color.FromArgb(82, 147, 157);
             payBtn.TabIndex = 17;
             payBtn.Values.DropDownArrowColor = Color.Empty;
             payBtn.Values.Text = "Pay";
@@ -326,7 +336,6 @@
             MaximumSize = new Size(427, 423);
             MinimumSize = new Size(427, 423);
             Name = "BillingItems";
-            Padding = new Padding(10);
             StartPosition = FormStartPosition.Manual;
             StateActive.Border.Rounding = 20F;
             StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);

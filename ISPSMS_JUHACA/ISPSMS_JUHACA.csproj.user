@@ -13,6 +13,9 @@
     <Compile Update="MainPages\SubPages\BillingItems.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainPages\SubPages\TransactionTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainPages\SubscriberPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,7 +43,13 @@
     <Compile Update="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\UserProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

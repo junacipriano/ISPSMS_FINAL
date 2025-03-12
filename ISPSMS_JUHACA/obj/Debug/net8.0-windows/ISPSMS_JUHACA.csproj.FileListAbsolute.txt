@@ -611,6 +611,7 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.A
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.BillingPage.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.BillingCheckout.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.BillingItems.resources
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubPages.TransactionTemplate.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.SubscriberPage.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainPages.Transaction.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Properties.Resources.resources
@@ -619,7 +620,9 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.Disco
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.EditAccount.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.LoginForm.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.MainForm.resources
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.ReceiptForm.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.SignUpForm.resources
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.UserProfileForm.resources
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.csproj.GenerateResource.cache
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.GeneratedMSBuildEditorConfig.editorconfig
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.AssemblyInfoInputs.cache

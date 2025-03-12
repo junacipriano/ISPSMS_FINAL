@@ -42,12 +42,13 @@
             connectedSubscriberViewBindingSource = new BindingSource(components);
             connectedSubscribersBindingSource = new BindingSource(components);
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
-            button1 = new Button();
+            btnProfile = new Button();
             disconnectedSubscriberViewBindingSource = new BindingSource(components);
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            searchBar = new Krypton.Toolkit.KryptonTextBox();
             kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
-            kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
-            kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            lblRole = new Krypton.Toolkit.KryptonLabel();
+            lblUsername = new Krypton.Toolkit.KryptonLabel();
             materialTabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource).BeginInit();
@@ -171,19 +172,20 @@
             // 
             connectedSubscribersBindingSource.DataSource = typeof(Domain.Models.ConnectedSubscribers);
             // 
-            // button1
+            // btnProfile
             // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.ProfileMenu;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(1850, 32);
-            button1.Name = "button1";
-            button1.Size = new Size(29, 31);
-            button1.TabIndex = 4;
-            button1.UseVisualStyleBackColor = false;
+            btnProfile.BackColor = Color.Transparent;
+            btnProfile.BackgroundImage = Properties.Resources.ProfileMenu;
+            btnProfile.BackgroundImageLayout = ImageLayout.Stretch;
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatStyle = FlatStyle.Flat;
+            btnProfile.ForeColor = Color.Transparent;
+            btnProfile.Location = new Point(1850, 15);
+            btnProfile.Name = "btnProfile";
+            btnProfile.Size = new Size(29, 31);
+            btnProfile.TabIndex = 4;
+            btnProfile.UseVisualStyleBackColor = false;
+            btnProfile.Click += btnProfile_Click_1;
             // 
             // disconnectedSubscriberViewBindingSource
             // 
@@ -191,10 +193,11 @@
             // 
             // kryptonPanel1
             // 
+            kryptonPanel1.Controls.Add(searchBar);
             kryptonPanel1.Controls.Add(kryptonPictureBox1);
-            kryptonPanel1.Controls.Add(button1);
-            kryptonPanel1.Controls.Add(kryptonLabel2);
-            kryptonPanel1.Controls.Add(kryptonLabel1);
+            kryptonPanel1.Controls.Add(btnProfile);
+            kryptonPanel1.Controls.Add(lblRole);
+            kryptonPanel1.Controls.Add(lblUsername);
             kryptonPanel1.Dock = DockStyle.Fill;
             kryptonPanel1.Location = new Point(3, 24);
             kryptonPanel1.Margin = new Padding(0);
@@ -202,39 +205,62 @@
             kryptonPanel1.Size = new Size(1914, 1054);
             kryptonPanel1.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
+            kryptonPanel1.StateNormal.Color1 = Color.FromArgb(241, 240, 233);
+            kryptonPanel1.StateNormal.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.TabIndex = 5;
+            // 
+            // searchBar
+            // 
+            searchBar.CueHint.Color1 = Color.FromArgb(115, 115, 115);
+            searchBar.CueHint.CueHintText = "Search";
+            searchBar.CueHint.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchBar.CueHint.Padding = new Padding(8, 4, -1, -1);
+            searchBar.Location = new Point(16, 8);
+            searchBar.MinimumSize = new Size(252, 40);
+            searchBar.Name = "searchBar";
+            searchBar.Size = new Size(277, 40);
+            searchBar.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            searchBar.StateCommon.Border.Color1 = Color.FromArgb(115, 115, 115);
+            searchBar.StateCommon.Border.Color2 = Color.FromArgb(115, 115, 115);
+            searchBar.StateCommon.Border.Image = Properties.Resources.search;
+            searchBar.StateCommon.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            searchBar.StateCommon.Border.Rounding = 20F;
+            searchBar.StateCommon.Border.Width = 1;
+            searchBar.StateCommon.Content.Color1 = Color.FromArgb(115, 115, 115);
+            searchBar.TabIndex = 8;
+            searchBar.TextChanged += searchBar_TextChanged;
             // 
             // kryptonPictureBox1
             // 
             kryptonPictureBox1.BackgroundImage = Properties.Resources.ProfilePic;
             kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            kryptonPictureBox1.Location = new Point(1658, 20);
+            kryptonPictureBox1.Location = new Point(1658, 3);
             kryptonPictureBox1.Name = "kryptonPictureBox1";
             kryptonPictureBox1.Size = new Size(50, 51);
             kryptonPictureBox1.TabIndex = 7;
             kryptonPictureBox1.TabStop = false;
             // 
-            // kryptonLabel2
+            // lblRole
             // 
-            kryptonLabel2.Location = new Point(1712, 51);
-            kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(131, 18);
-            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(111, 130, 157);
-            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(111, 130, 157);
-            kryptonLabel2.StateCommon.ShortText.Font = new Font("Helvetica", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            kryptonLabel2.TabIndex = 6;
-            kryptonLabel2.Values.Text = " System Administrator";
+            lblRole.Location = new Point(1712, 34);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(131, 18);
+            lblRole.StateCommon.ShortText.Color1 = Color.FromArgb(111, 130, 157);
+            lblRole.StateCommon.ShortText.Color2 = Color.FromArgb(111, 130, 157);
+            lblRole.StateCommon.ShortText.Font = new Font("Helvetica", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRole.TabIndex = 6;
+            lblRole.Values.Text = " System Administrator";
             // 
-            // kryptonLabel1
+            // lblUsername
             // 
-            kryptonLabel1.Location = new Point(1715, 32);
-            kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(141, 22);
-            kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel1.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
-            kryptonLabel1.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonLabel1.TabIndex = 5;
-            kryptonLabel1.Values.Text = "Luisa P. Cipriano";
+            lblUsername.Location = new Point(1715, 15);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(141, 22);
+            lblUsername.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            lblUsername.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            lblUsername.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsername.TabIndex = 5;
+            lblUsername.Values.Text = "Luisa P. Cipriano";
             // 
             // MainForm
             // 
@@ -283,12 +309,13 @@
         private BindingSource connectedSubscribersBindingSource;
         private TabPage subscribersPage;
         private ImageList imageList1;
-        private Button button1;
+        private Button btnProfile;
         private BindingSource connectedSubscribersBindingSource1;
         private BindingSource disconnectedSubscriberViewBindingSource;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonLabel lblRole;
+        private Krypton.Toolkit.KryptonLabel lblUsername;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;
+        private Krypton.Toolkit.KryptonTextBox searchBar;
     }
 }

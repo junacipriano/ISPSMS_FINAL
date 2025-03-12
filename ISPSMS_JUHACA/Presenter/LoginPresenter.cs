@@ -26,16 +26,23 @@ namespace ISPSMS_JUHACA.Presenter
             var account = await Task.Run(() => _repository.GetAccountByEmailAndPassword(_view.Username, _view.AccountPassword));
             if (account != null)
             {
-                _view.ShowMessage("Login successful!");
-                _view.CloseForm(); // Close the login form first
+                if (account.AccountRole == "DEFAULT")
+                {
+                    _view.ShowMessage("Your account is not approved yet. Please contact the administrator.");
+                    return;
+                }
+                _view.CloseForm(); 
+
                 var mainForm = new MainForm(_dbContext);
-                mainForm.Show(); // Show the main form after closing the login form
+                mainForm.SetUserProfile(account.Username, account.AccountRole); 
+                mainForm.Show(); 
             }
             else
             {
                 _view.ShowMessage("Invalid email or password.");
             }
         }
+
 
         private void OnSignUp(object? sender, EventArgs e)
         {

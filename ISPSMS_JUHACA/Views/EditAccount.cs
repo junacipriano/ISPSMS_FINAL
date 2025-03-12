@@ -1,93 +1,91 @@
-﻿using Domain.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using ISPSMS_JUHACA.Views.IVews;
+using ISPSMS_JUHACA.Presenter;
+using Domain.Models;
+using Infastructure.Data.Repositories.IRepositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ISPSMS_JUHACA.Views.IVews.ISPSMS_JUHACA.Views.IVews;
 
 namespace ISPSMS_JUHACA.Views
 {
-    public partial class EditAccount : Form
+    public partial class EditAccount : Form, IEditAccountView
     {
-        private Accounts _account;
-        private readonly DbContext dbContext;
-        private readonly string _currentUserRole;
+        private readonly EditAccountPresenter _presenter;
+        private bool isLoading = false;
 
-        public EditAccount(Accounts account, DbContext context, string currentUserRole)
+        public EditAccount(Accounts selectedAccount, IUnitOfWork dbContext1, string currentUserRole)
         {
             InitializeComponent();
-            _account = account;
-            dbContext = context;
-            _currentUserRole = currentUserRole;
+            _presenter = new EditAccountPresenter(this, dbContext1, selectedAccount);
+            CurrentUserRole = currentUserRole;
             LoadAccountData();
         }
 
-        // ...existing code...
+        public string Username
+        {
+            get => tbUsername.Text;
+            set => tbUsername.Text = value;
+        }
+
+        public string AccountName
+        {
+            get => tbAccountName.Text;
+            set => tbAccountName.Text = value;
+        }
+
+        public string Password
+        {
+            get => tbPassword.Text;
+            set => tbPassword.Text = value;
+        }
+
+        public string ConfirmPassword
+        {
+            get => tbConfirmPass.Text;
+            set => tbConfirmPass.Text = value;
+        }
+
+        public string AccountRole
+        {
+            get => ComboRole.SelectedItem?.ToString();
+            set
+            {
+                if (CurrentUserRole == "ADMIN" && (value == "ADMIN" || value == "CEO"))
+                {
+                    MessageBox.Show("You do not have permission to change this role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                ComboRole.SelectedItem = value;
+            }
+        }
+
+        public string CurrentUserRole { get; }
+
+        public void ShowMessage(string message, string caption)
+        {
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void CloseForm()
+        {
+            this.Close();
+        }
+
         private void LoadAccountData()
         {
-            tbUsername.Text = _account.Username;
-            tbAccountName.Text = _account.AccountName;
-            tbPassword.Text = _account.AccountPassword;
-            ComboRole.SelectedText = _account.AccountRole;
-            // Set other fields as needed
-
-            if (_currentUserRole == "CEO")
-            {
-                ComboRole.Enabled = true;
-                ComboRole.SelectedItem = _account.AccountRole; // Assuming you have a role field
-            }
-            else if (_currentUserRole == "ADMIN")
-            {
-                ComboRole.Enabled = true;
-                ComboRole.SelectedItem = _account.AccountRole; // Assuming you have a role field
-            }
-            else
-            {
-                ComboRole.Enabled = false;
-            }
-
-            if (_currentUserRole == "DEFAULT")
-            {
-                MessageBox.Show("You do not have permission to edit this account.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-            }
+            isLoading = true;
+            _presenter.LoadAccountData();
+            isLoading = false;
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            _account.Username = tbUsername.Text;
-            _account.AccountName = tbAccountName.Text;
-            _account.AccountPassword = tbPassword.Text;
-            _account.AccountRole = ComboRole.SelectedItem.ToString();
-            // Update other fields as needed
-
-            if (_currentUserRole == "CEO")
-            {
-                _account.AccountRole = ComboRole.SelectedItem.ToString();
-            }
-            else if (_currentUserRole == "ADMIN")
-            {
-                if (_account.AccountRole == "CEO" || _account.AccountRole == "ADMIN")
-                {
-                    MessageBox.Show("You do not have permission to modify this account.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                _account.AccountRole = ComboRole.SelectedItem.ToString();
-            }
-
-            dbContext.SaveChanges();
-            MessageBox.Show("Account details saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            _presenter.SaveAccount();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            if (_currentUserRole == "CEO")
+            if (CurrentUserRole == "CEO")
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this account?",
                                                       "Confirm Deletion",
@@ -95,16 +93,43 @@ namespace ISPSMS_JUHACA.Views
                                                       MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    dbContext.Remove(_account);
-                    dbContext.SaveChanges();
-                    MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    _presenter.DeleteAccount();
                 }
             }
             else
             {
-                MessageBox.Show("You do not have permission to delete this account.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ShowMessage("You do not have permission to delete this account.", "Access Denied");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ComboRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

@@ -19,9 +19,7 @@ namespace ISPSMS_JUHACA.MainPages
         private MaterialButton activeButton;
 
         public BindingSource BindingSource => bindingSource;
-
-
-
+        private List<ConnectedSubscribers> originalSubscribers = new List<ConnectedSubscribers>();
         public SubscriberPage(IUnitOfWork dbContext, MainForm mainform)
         {
             InitializeComponent();
@@ -48,12 +46,10 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void getSubscribers()
         {
-            var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
-
-            bindingSource.DataSource = subscribers;
+            originalSubscribers = dbContext.connectedSubscriberRepository.GetAll().ToList(); // Store full list
+            bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers);  // Set initial data
             connectedsubscribersGridView.DataSource = bindingSource;
-            TotalSubscriberLabel.Text = subscribers.Count.ToString();
-
+            TotalSubscriberLabel.Text = originalSubscribers.Count.ToString();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -204,13 +200,26 @@ namespace ISPSMS_JUHACA.MainPages
             TotalSubscriberLabel.Text = filteredSubscribers.Count.ToString();
         }
 
+        public void FilterData(string searchText)
+        {
+            if (string.IsNullOrEmpty(searchText))
+            {
+                bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers); // Restore original data
+            }
+            else
+            {
+                var filteredList = originalSubscribers
+                    .Where(sub => sub.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                  sub.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                  sub.ContactNumber.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
 
+                bindingSource.DataSource = filteredList;
+            }
 
-
-
-
-
-
+            connectedsubscribersGridView.DataSource = bindingSource;
+            TotalSubscriberLabel.Text = ((List<ConnectedSubscribers>)bindingSource.DataSource).Count.ToString();
+        }
 
         private void allBtn_Click(object sender, EventArgs e)
         {

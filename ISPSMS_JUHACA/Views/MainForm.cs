@@ -7,77 +7,86 @@
 
     namespace ISPSMS_JUHACA
         {
-        public partial class MainForm : MaterialForm
+    public partial class MainForm : MaterialForm
+    {
+        public readonly IUnitOfWork dbContext;
+        private BindingSource bindingSource;
+        private UserProfileForm _userProfileForm;
+        public Domain.Models.ConnectedSubscribers ConSubsEntity;
+
+        public MainForm(IUnitOfWork dbContext)
         {
-            public readonly IUnitOfWork dbContext;
-            private BindingSource bindingSource;
-            public Domain.Models.ConnectedSubscribers ConSubsEntity;
+            InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            public MainForm(IUnitOfWork dbContext)
+            this.BackColor = Color.FromArgb(241, 240, 233);
+            subscribersPage.BackColor = Color.FromArgb(241, 240, 233);
+            billingPage.BackColor = Color.FromArgb(241, 240, 233);
+            transactionsPage.BackColor = Color.FromArgb(241, 240, 233);
+            accountsPage.BackColor = Color.FromArgb(241, 240, 233);
+            activitiesPage.BackColor = Color.FromArgb(241, 240, 233);
+            dashboardPage.BackColor = Color.FromArgb(241, 240, 233);
+
+            this.dbContext = dbContext;
+            bindingSource = new BindingSource();
+            _userProfileForm = new UserProfileForm();
+
+            materialTabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
+        }
+
+        private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+
+            if (materialTabControl1.SelectedTab == subscribersPage)
             {
-                InitializeComponent();
-                var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.AddFormToManage(this);
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-                this.BackColor = Color.FromArgb(30, 30, 30);
-                this.dbContext = dbContext;
-                bindingSource = new BindingSource();
+                subscribersPage.Controls.Clear();
 
-                materialTabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
+                var subsPage = new SubscriberPage(dbContext, this);
+
+                subsPage.TopLevel = false;
+                subsPage.FormBorderStyle = FormBorderStyle.None;
+                subsPage.Dock = DockStyle.Fill;
+
+                subscribersPage.Controls.Add(subsPage);
+                subsPage.Show();
+
             }
-
-            private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
+            else if (materialTabControl1.SelectedTab == billingPage)
             {
 
-                if (materialTabControl1.SelectedTab == subscribersPage)
-                {
+                billingPage.Controls.Clear();
 
-                    subscribersPage.Controls.Clear();
+                var billPage = new BillingPage(dbContext, this);
 
-                    var subsPage = new SubscriberPage(dbContext, this);
+                billPage.TopLevel = false;
+                billPage.FormBorderStyle = FormBorderStyle.None;
+                billPage.Dock = DockStyle.Fill;
 
-                    subsPage.TopLevel = false;
-                    subsPage.FormBorderStyle = FormBorderStyle.None;
-                    subsPage.Dock = DockStyle.Fill;
+                billingPage.Controls.Add(billPage);
+                billPage.Show();
 
-                    subscribersPage.Controls.Add(subsPage);
-                    subsPage.Show();
+            }
+            else if (materialTabControl1.SelectedTab == accountsPage)
+            {
 
-                }
-                else if (materialTabControl1.SelectedTab == billingPage)
-                {
+                accountsPage.Controls.Clear();
 
-                    billingPage.Controls.Clear();
+                var accPage = new AccountsForm(dbContext, this);
 
-                    var billPage = new BillingPage(dbContext, this);
-
-                    billPage.TopLevel = false;
-                    billPage.FormBorderStyle = FormBorderStyle.None;
-                    billPage.Dock = DockStyle.Fill;
-
-                    billingPage.Controls.Add(billPage);
-                    billPage.Show();
-
-                }
-                else if (materialTabControl1.SelectedTab == accountsPage)
-                {
-
-                    accountsPage.Controls.Clear();
-
-                    var accPage = new AccountsForm(dbContext, this);
-
-                    accPage.TopLevel = false;
-                    accPage.FormBorderStyle = FormBorderStyle.None;
-                    accPage.Dock = DockStyle.Fill;
+                accPage.TopLevel = false;
+                accPage.FormBorderStyle = FormBorderStyle.None;
+                accPage.Dock = DockStyle.Fill;
 
                 accountsPage.Controls.Add(accPage);
-                    accPage.Show();
+                accPage.Show();
 
-                }
-                    else if (materialTabControl1.SelectedTab == transactionsPage)
-                {
+            }
+            else if (materialTabControl1.SelectedTab == transactionsPage)
+            {
 
                 transactionsPage.Controls.Clear();
 
@@ -90,10 +99,51 @@
                 transactionsPage.Controls.Add(traPage);
                 traPage.Show();
 
-                }
-
             }
 
+        }
+
+
+
+        private void searchBar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = searchBar.Text.Trim().ToLower();
+
+            if (materialTabControl1.SelectedTab == subscribersPage)
+            {
+                if (subscribersPage.Controls[0] is SubscriberPage subsPage)
+                {
+                    subsPage.FilterData(searchText);
+                }
+            }
+            else if (materialTabControl1.SelectedTab == billingPage)
+            {
+                if (billingPage.Controls[0] is BillingPage billPage)
+                {
+                    billPage.FilterData(searchText);
+                }
+            }
+        }
+
+   
+
+        private void btnProfile_Click_1(object sender, EventArgs e)
+        {
+            _userProfileForm.Show();
+        }
+        public void SetUserProfile(string username, string role)
+        {
+            lblUsername.Text = username;
+            lblRole.Text = role;
+            _userProfileForm.UpdateProfile(username, role); // Ensure UserProfileForm is updated
+        }
+
+        public string GetUserRole()
+        {
+            return lblRole.Text;
+        }
+
+  
 
         //private void SubscribersForm_Load(object sender, EventArgs e)
         //{
@@ -177,34 +227,8 @@
         //    Disconnected.ShowDialog();
         //}
 
-        private void customMaterialButton6_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void customMaterialButton11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customMaterialButton10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialExpansionPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialTextBox1_TextChanged(object sender, EventArgs e)
-        {
-              
-        }
     }
 }

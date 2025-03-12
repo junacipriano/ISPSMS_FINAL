@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            btnDelete = new Krypton.Toolkit.KryptonButton();
             btnSave = new Krypton.Toolkit.KryptonButton();
             btnCancel = new Krypton.Toolkit.KryptonButton();
             kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
@@ -57,6 +58,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(btnCancel);
             panel2.Controls.Add(kryptonLabel5);
@@ -74,9 +76,19 @@
             panel2.Size = new Size(658, 303);
             panel2.TabIndex = 1;
             // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(145, 231);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(112, 31);
+            btnDelete.TabIndex = 11;
+            btnDelete.Values.DropDownArrowColor = Color.Empty;
+            btnDelete.Values.Text = "Delete";
+            btnDelete.Click += btnDelete_Click_1;
+            // 
             // btnSave
             // 
-            btnSave.Location = new Point(450, 231);
+            btnSave.Location = new Point(285, 231);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(112, 31);
             btnSave.TabIndex = 10;
@@ -86,12 +98,13 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(286, 231);
+            btnCancel.Location = new Point(424, 231);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(112, 31);
             btnCancel.TabIndex = 9;
             btnCancel.Values.DropDownArrowColor = Color.Empty;
             btnCancel.Values.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // kryptonLabel5
             // 
@@ -142,6 +155,7 @@
             ComboRole.Size = new Size(209, 26);
             ComboRole.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             ComboRole.TabIndex = 4;
+            ComboRole.SelectedIndexChanged += ComboRole_SelectedIndexChanged;
             // 
             // tbConfirmPass
             // 
@@ -181,6 +195,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "EditAccount";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditAccount";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -204,5 +219,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonButton btnSave;
         private Krypton.Toolkit.KryptonButton btnCancel;
+        private Krypton.Toolkit.KryptonButton btnDelete;
     }
 }

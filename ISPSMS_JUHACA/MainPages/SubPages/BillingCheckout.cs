@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
+using ISPSMS_JUHACA.Views;
 using ISPSMS_JUHACA.Views.IVews;
 using Krypton.Toolkit;
 using MaterialSkin.Controls;
@@ -27,6 +28,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private readonly IUnitOfWork _dbContext;
         private readonly BillingItems _billingItems;
         private readonly BillingPage _billingPage;
+        private readonly Accounts _loggedInUser;
         public BillingCheckout(IUnitOfWork dbContext, ConnectedSubscribers selectedSubscribers, BillingPage billingPage)
         {
             InitializeComponent();
@@ -60,6 +62,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         {
             decimal amount = decimal.TryParse(amountTextBox.Text, out decimal value) ? value : 0;
             decimal balance = ConSubsEntity.MonthlyCharge - amount;
+            DateTime nextDueDate = ConSubsEntity.CurrentDuedate.AddMonths(1);
+            string formattedDueDate = FormatWithOrdinal(nextDueDate.Day);
             var newTransaction = new Domain.Models.Transactions
             {
                 trans_id = int.Parse(receiptNoTextBox.Text),
@@ -69,16 +73,33 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 PaidAmount = amount,
                 Balance = balance,
                 Note = noteComboBox.Text = "None",
-                Duedate = dueDateTextBox.Text,
+                Duedate = formattedDueDate,
                 TransactionDateTime = DateTime.Now
             };
             _dbContext.transactionsRepository.Add(newTransaction);
             _dbContext.Save();
 
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            _billingPage.LoadBillingItems();
 
+            DialogResult printReceipt = MessageBox.Show("Do you want to print the receipt?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (printReceipt == DialogResult.Yes)
+            {
+                PrintReceipt(newTransaction);
+            }
+
+            _billingPage.LoadBillingItems();
             this.Close();
+        }
+        private string FormatWithOrdinal(int day)
+        {
+            if (day >= 11 && day <= 13) return day + "th";
+            return day + (day % 10 == 1 ? "st" : day % 10 == 2 ? "nd" : day % 10 == 3 ? "rd" : "th");
+        }
+        private void PrintReceipt(Transactions transaction)
+        {
+            var receiptForm = new ReceiptForm(transaction, _loggedInUser);
+            receiptForm.ShowDialog();
         }
 
         private void editButton_Click(object sender, EventArgs e)

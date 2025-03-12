@@ -23,10 +23,12 @@ namespace ISPSMS_JUHACA.MainPages
     {
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         public readonly IUnitOfWork dbContext;
+        private BindingSource bindingSource;
         internal bool isEdit;
         private MainForm mainForm;
         private readonly SubscriberPage _subscribersForm;
 
+        public BindingSource BindingSource => bindingSource;
         public BillingPage(IUnitOfWork dbContext, MainForm mainForm)
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace ISPSMS_JUHACA.MainPages
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
+            billingFlowPanel.BackColor = Color.FromArgb(241, 240, 233);
         }
 
         public void getSubscribers()
@@ -69,9 +72,8 @@ namespace ISPSMS_JUHACA.MainPages
                 BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this)
 
                 {
-                    TopLevel = false, // Prevents form from opening in a new window
-                    FormBorderStyle = FormBorderStyle.None, // No borders
-                    Dock = DockStyle.Top // Stack items in FlowLayoutPanel
+                    TopLevel = false, 
+                    Dock = DockStyle.Top 
                 };
 
                 // Set data
@@ -81,6 +83,21 @@ namespace ISPSMS_JUHACA.MainPages
                 // Add to panel
                 billingFlowPanel.Controls.Add(billingItem);
                 billingItem.Show();
+            }
+        }
+
+        public void FilterData(string searchText)
+        {
+            foreach (Control control in billingFlowPanel.Controls)
+            {
+                if (control is BillingItems billingItem)
+                {
+                    var subscriber = billingItem.ConSubsEntity;
+                    bool isVisible = subscriber.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                     subscriber.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase);
+
+                    billingItem.Visible = isVisible;
+                }
             }
         }
 
