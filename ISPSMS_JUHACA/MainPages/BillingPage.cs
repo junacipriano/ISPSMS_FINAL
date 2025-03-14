@@ -54,7 +54,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void LoadBillingItems()
         {
-            billingFlowPanel.Controls.Clear(); // Ensure it's empty before adding new items
+            billingFlowPanel.Controls.Clear();
 
             var subscribers = dbContext.connectedSubscriberRepository
                 .GetAll()
@@ -78,7 +78,7 @@ namespace ISPSMS_JUHACA.MainPages
 
                 // Set data
                 billingItem.ConSubsEntity = subscriber;
-                billingItem.LoadBillingItemData(); // Ensure data is applied
+                billingItem.LoadBillingItemData();
 
                 // Add to panel
                 billingFlowPanel.Controls.Add(billingItem);

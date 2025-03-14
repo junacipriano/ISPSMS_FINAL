@@ -30,7 +30,7 @@ namespace ISPSMS_JUHACA.MainPages
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             this.mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
             bindingSource = new BindingSource();
-            currentUserRole = mainForm.GetUserRole(); // Get the role from MainForm
+            currentUserRole = mainForm.GetUserRole(); 
             getAccounts();
         }
 
@@ -39,7 +39,7 @@ namespace ISPSMS_JUHACA.MainPages
             try
             {
                 var accounts = dbContext.accountsRepository.GetAll();
-                accountsGridView.DataSource = accounts; // Assuming you have a DataGridView named accountsGridView
+                accountsGridView.DataSource = accounts; 
             }
             catch (Exception ex)
             {
@@ -65,9 +65,9 @@ namespace ISPSMS_JUHACA.MainPages
                     MessageBox.Show("You can only edit accounts with DEFAULT role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var editForm = new EditAccount(selectedAccount, dbContext, currentUserRole); // Pass currentUserRole
+                var editForm = new EditAccount(selectedAccount, dbContext, currentUserRole);
                 editForm.ShowDialog();
-                getAccounts(); // Refresh the accounts grid view after editing
+                getAccounts();
             }
             else if (accountsGridView.Columns[e.ColumnIndex].Name == "Delete" && e.RowIndex >= 0)
             {
@@ -88,7 +88,7 @@ namespace ISPSMS_JUHACA.MainPages
                         {
                             dbContext.accountsRepository.Remove(selectedAccount);
                             dbContext.Save();
-                            getAccounts(); // Refresh the accounts grid view after deletion
+                            getAccounts();
                             MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
@@ -114,7 +114,7 @@ namespace ISPSMS_JUHACA.MainPages
                         {
                             dbContext.accountsRepository.Remove(selectedAccount);
                             dbContext.Save();
-                            getAccounts(); // Refresh the accounts grid view after deletion
+                            getAccounts();
                             MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)

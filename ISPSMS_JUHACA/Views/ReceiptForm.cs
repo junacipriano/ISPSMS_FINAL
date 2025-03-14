@@ -28,7 +28,6 @@ namespace ISPSMS_JUHACA.Views
         {
             receiptNoTextBox.Text = _transaction.trans_id.ToString();
             transactionDateTextBox.Text = _transaction.TransactionDateTime.ToString();   
-            addressTextBox.Text = _transaction.Address.ToString();
             amountNumberTextBox.Text = _transaction.PaidAmount.ToString("C");
             amountWordTextBox.Text = ConvertAmountToWords(_transaction.PaidAmount);
             receivedByTextBox.Text = _loggedInUser.AccountName;

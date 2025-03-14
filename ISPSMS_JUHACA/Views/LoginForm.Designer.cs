@@ -31,8 +31,11 @@
         {
             tbUsername = new MaterialSkin.Controls.MaterialTextBox();
             tbPassword = new MaterialSkin.Controls.MaterialTextBox();
-            btnLogin = new MaterialSkin.Controls.MaterialButton();
-            btnSignUp = new MaterialSkin.Controls.MaterialButton();
+            btnLogin = new Krypton.Toolkit.KryptonButton();
+            kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            btnSignUp = new Krypton.Toolkit.KryptonButton();
+            kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             SuspendLayout();
             // 
             // tbUsername
@@ -43,12 +46,13 @@
             tbUsername.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             tbUsername.Hint = "Username";
             tbUsername.LeadingIcon = null;
-            tbUsername.Location = new Point(177, 56);
+            tbUsername.Location = new Point(51, 121);
+            tbUsername.Margin = new Padding(3, 2, 3, 2);
             tbUsername.MaxLength = 50;
             tbUsername.MouseState = MaterialSkin.MouseState.OUT;
             tbUsername.Multiline = false;
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(275, 50);
+            tbUsername.Size = new Size(258, 50);
             tbUsername.TabIndex = 0;
             tbUsername.Text = "";
             tbUsername.TrailingIcon = null;
@@ -61,80 +65,127 @@
             tbPassword.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             tbPassword.Hint = "Password";
             tbPassword.LeadingIcon = null;
-            tbPassword.Location = new Point(177, 135);
+            tbPassword.Location = new Point(51, 197);
+            tbPassword.Margin = new Padding(3, 2, 3, 2);
             tbPassword.MaxLength = 50;
             tbPassword.MouseState = MaterialSkin.MouseState.OUT;
             tbPassword.Multiline = false;
             tbPassword.Name = "tbPassword";
             tbPassword.Password = true;
-            tbPassword.Size = new Size(275, 50);
+            tbPassword.Size = new Size(258, 50);
             tbPassword.TabIndex = 1;
             tbPassword.Text = "";
             tbPassword.TrailingIcon = null;
             // 
             // btnLogin
             // 
-            btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnLogin.Depth = 0;
-            btnLogin.HighEmphasis = true;
-            btnLogin.Icon = null;
-            btnLogin.Location = new Point(208, 207);
-            btnLogin.Margin = new Padding(4, 6, 4, 6);
-            btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            btnLogin.Location = new Point(91, 271);
             btnLogin.Name = "btnLogin";
-            btnLogin.NoAccentTextColor = Color.Empty;
-            btnLogin.Size = new Size(64, 36);
-            btnLogin.TabIndex = 2;
-            btnLogin.Text = "Login";
-            btnLogin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnLogin.UseAccentColor = false;
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click_1;
+            btnLogin.Size = new Size(183, 57);
+            btnLogin.StateCommon.Back.Image = Properties.Resources._1;
+            btnLogin.StateCommon.Back.ImageAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            btnLogin.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            btnLogin.StateCommon.Border.Rounding = 30F;
+            btnLogin.StateCommon.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            btnLogin.StateCommon.Content.ShortText.Color2 = Color.FromArgb(255, 255, 252);
+            btnLogin.StateCommon.Content.ShortText.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.TabIndex = 4;
+            btnLogin.Values.DropDownArrowColor = Color.Empty;
+            btnLogin.Values.Text = "Sign in";
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // kryptonLabel1
+            // 
+            kryptonLabel1.Location = new Point(91, 51);
+            kryptonLabel1.Name = "kryptonLabel1";
+            kryptonLabel1.Size = new Size(172, 65);
+            kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(236, 73, 20);
+            kryptonLabel1.StateCommon.ShortText.Color2 = Color.FromArgb(236, 73, 20);
+            kryptonLabel1.StateCommon.ShortText.Font = new Font("Croogla 4F", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            kryptonLabel1.TabIndex = 5;
+            kryptonLabel1.Values.Text = "Sign in";
             // 
             // btnSignUp
             // 
-            btnSignUp.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnSignUp.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnSignUp.Depth = 0;
-            btnSignUp.HighEmphasis = true;
-            btnSignUp.Icon = null;
-            btnSignUp.Location = new Point(280, 207);
-            btnSignUp.Margin = new Padding(4, 6, 4, 6);
-            btnSignUp.MouseState = MaterialSkin.MouseState.HOVER;
+            btnSignUp.Location = new Point(459, 269);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.NoAccentTextColor = Color.Empty;
-            btnSignUp.Size = new Size(77, 36);
-            btnSignUp.TabIndex = 3;
-            btnSignUp.Text = "Sign Up";
-            btnSignUp.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnSignUp.UseAccentColor = false;
-            btnSignUp.UseVisualStyleBackColor = true;
-            btnSignUp.Click += btnSignUp_Click;
+            btnSignUp.Size = new Size(183, 59);
+            btnSignUp.StateCommon.Back.Color1 = Color.FromArgb(159, 144, 113);
+            btnSignUp.StateCommon.Back.Color2 = Color.FromArgb(159, 144, 113);
+            btnSignUp.StateCommon.Back.ImageAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            btnSignUp.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            btnSignUp.StateCommon.Border.Rounding = 30F;
+            btnSignUp.StateCommon.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            btnSignUp.StateCommon.Content.ShortText.Color2 = Color.FromArgb(255, 255, 252);
+            btnSignUp.StateCommon.Content.ShortText.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignUp.TabIndex = 6;
+            btnSignUp.Values.DropDownArrowColor = Color.Empty;
+            btnSignUp.Values.ImageTransparentColor = Color.FromArgb(239, 222, 178);
+            btnSignUp.Values.Text = "Sign in";
+            // 
+            // kryptonLabel2
+            // 
+            kryptonLabel2.Location = new Point(367, 51);
+            kryptonLabel2.Name = "kryptonLabel2";
+            kryptonLabel2.Size = new Size(361, 65);
+            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(114, 114, 88);
+            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(114, 114, 88);
+            kryptonLabel2.StateCommon.ShortText.Font = new Font("Croogla 4F", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            kryptonLabel2.TabIndex = 7;
+            kryptonLabel2.Values.Text = "Welcome Back!";
+            // 
+            // kryptonLabel3
+            // 
+            kryptonLabel3.Location = new Point(345, 149);
+            kryptonLabel3.Name = "kryptonLabel3";
+            kryptonLabel3.Size = new Size(6, 2);
+            kryptonLabel3.StateCommon.LongText.Color1 = Color.FromArgb(114, 114, 88);
+            kryptonLabel3.StateCommon.LongText.Color2 = Color.FromArgb(114, 114, 88);
+            kryptonLabel3.StateCommon.LongText.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel3.StateCommon.ShortText.Color1 = Color.FromArgb(114, 114, 88);
+            kryptonLabel3.StateCommon.ShortText.Color2 = Color.FromArgb(114, 114, 88);
+            kryptonLabel3.StateCommon.ShortText.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel3.TabIndex = 8;
+            kryptonLabel3.Values.Text = "";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(666, 450);
+            BackColor = Color.FromArgb(241, 240, 233);
+            ClientSize = new Size(758, 374);
+            Controls.Add(kryptonLabel3);
+            Controls.Add(kryptonLabel2);
             Controls.Add(btnSignUp);
+            Controls.Add(kryptonLabel1);
             Controls.Add(btnLogin);
             Controls.Add(tbPassword);
             Controls.Add(tbUsername);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
+            StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Back.Color2 = Color.FromArgb(241, 240, 233);
+            StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
+            StateCommon.Border.Rounding = 15F;
+            StateCommon.Header.Back.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Header.Back.Color2 = Color.FromArgb(241, 240, 233);
+            StateCommon.Header.Border.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Header.Border.Color2 = Color.FromArgb(241, 240, 233);
+            TransparencyKey = Color.Black;
             ResumeLayout(false);
             PerformLayout();
-
-
         }
 
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox tbUsername;
         private MaterialSkin.Controls.MaterialTextBox tbPassword;
-        private MaterialSkin.Controls.MaterialButton btnLogin;
-        private MaterialSkin.Controls.MaterialButton btnSignUp;
+        private Krypton.Toolkit.KryptonButton btnLogin;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonButton btnSignUp;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
     }
 }

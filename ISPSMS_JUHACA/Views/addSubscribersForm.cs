@@ -100,10 +100,10 @@ namespace ISPSMS_JUHACA
 
                 if (districtComboBox.Items.Count > 0)
                 {
-                    districtComboBox.SelectedIndex = 0; // Auto-select first option
+                    districtComboBox.SelectedIndex = 0; 
                 }
 
-                districtComboBox.Refresh(); // Force refresh UI
+                districtComboBox.Refresh();
             }
         }
 
@@ -121,7 +121,6 @@ namespace ISPSMS_JUHACA
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
 
-            //SaveSubscriber?.Invoke(this, EventArgs.Empty);
             _presenter.OnSaveSubscriber();
         }
 

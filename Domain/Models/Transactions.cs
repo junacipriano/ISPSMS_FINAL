@@ -14,7 +14,6 @@ namespace Domain.Models
         public int trans_id {  get; set; }
         public int subs_id { get; set; }
         public string Trans_Name { get; set; }
-        public string Address { get; set; }
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]

@@ -2,6 +2,7 @@
 using Krypton.Toolkit;
 using Microsoft.VisualBasic;
 using System;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace ISPSMS_JUHACA.MainPages.SubPages
@@ -9,7 +10,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
     public partial class TransactionTemplate : KryptonForm
     {
         private readonly Transactions _transaction;
-
+        private PrintDocument printDocument = new PrintDocument();
         public TransactionTemplate(Transactions transaction)
         {
             InitializeComponent();
@@ -22,9 +23,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             receiptNoTextBox.Text = _transaction.trans_id.ToString();
             subIDTextBox.Text = _transaction.subs_id.ToString();
             name.Text = _transaction.Trans_Name;
-            address.Text = _transaction.Address;
-            amount.Text = _transaction.PaidAmount.ToString("C");
-            balance.Text = _transaction.Balance.ToString("C");
+            balance.Text = _transaction.PaidAmount.ToString("C");
+            amount.Text = _transaction.Balance.ToString("C");
             note.Text = _transaction.Note;
             dueDate.Text = _transaction.Duedate;
             date.Text = _transaction.TransactionDateTime.ToString("MMMM d, yyyy HH:mm");
@@ -49,6 +49,33 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private void time_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string printText = "Hello test print";
+            Font printFont = new Font("Arial", 12);
+            e.Graphics.DrawString(printText, printFont, Brushes.Black, 50, 50);
+        }
+
+        private void prinyBtn_Click(object sender, EventArgs e)
+        {
+            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+
+            PrintDialog printDialog = new PrintDialog
+            {
+                Document = printDocument
+            };
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
         }
     }
 }

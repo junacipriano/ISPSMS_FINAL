@@ -17,7 +17,8 @@ namespace ISPSMS_JUHACA.MainPages
     {
         private readonly TransactionPresenter _presenter;
         private MainForm mainForm;
-
+        private BindingSource bindingSource;
+        public BindingSource BindingSource => bindingSource;
         public Transaction(IUnitOfWork dbContext, MainForm mainForm)
         {
             InitializeComponent();
@@ -57,6 +58,21 @@ namespace ISPSMS_JUHACA.MainPages
         private void Transaction_Load(object sender, EventArgs e)
         {
                LoadTransactions();
+        }
+
+        public void FilterData(string searchText)
+        {
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is BillingItems billingItem)
+                {
+                    var subscriber = billingItem.ConSubsEntity;
+                    bool isVisible = subscriber.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                     subscriber.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase);
+
+                    billingItem.Visible = isVisible;
+                }
+            }
         }
     }
 }

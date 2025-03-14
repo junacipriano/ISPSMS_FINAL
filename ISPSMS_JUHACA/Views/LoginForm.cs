@@ -1,4 +1,5 @@
 ﻿using ISPSMS_JUHACA.Views.IVews;
+using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +12,16 @@ using System.Windows.Forms;
 
 namespace ISPSMS_JUHACA.Views
 {
-    public partial class LoginForm : Form, ILogin
+    public partial class LoginForm : KryptonForm, ILogin
     {
         public event EventHandler Login;
         public event EventHandler SignUp;
 
-        public LoginForm()
+        public LoginForm(Infastructure.Data.Repositories.IRepositories.IUnitOfWork unitOfWork)
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(LoginForm_KeyDown);
         }
 
         public string Username
@@ -82,16 +85,6 @@ namespace ISPSMS_JUHACA.Views
         {
             this.Hide();
         }
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            if (ValidateInputs())
-            {
-                Login?.Invoke(this, EventArgs.Empty);
-                // Remove this.Close(); as it will be handled in the presenter
-            }
-        }
-
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             SignUp?.Invoke(this, EventArgs.Empty);
@@ -113,7 +106,23 @@ namespace ISPSMS_JUHACA.Views
 
             return true;
         }
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (ValidateInputs())
+                {
+                    Login?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
 
-
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (ValidateInputs())
+            {
+                Login?.Invoke(this, EventArgs.Empty);
+            }
+        }
     }
 }

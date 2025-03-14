@@ -234,7 +234,7 @@ namespace ISPSMS_JUHACA.Presenter
                 _dbContext.connectedSubscriberRepository.Add(newSubscriber);
                 _dbContext.Save();
 
-                _view.ShowMessage("Subscriber ADDED successfully!"); // ✅ Check if this appears twice
+                _view.ShowMessage("Subscriber ADDED successfully!");
             }
 
             _subscribersForm.getSubscribers();

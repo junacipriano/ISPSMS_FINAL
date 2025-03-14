@@ -180,7 +180,7 @@
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.ForeColor = Color.Transparent;
-            btnProfile.Location = new Point(1850, 15);
+            btnProfile.Location = new Point(1835, 15);
             btnProfile.Name = "btnProfile";
             btnProfile.Size = new Size(29, 31);
             btnProfile.TabIndex = 4;
@@ -234,7 +234,7 @@
             // 
             kryptonPictureBox1.BackgroundImage = Properties.Resources.ProfilePic;
             kryptonPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            kryptonPictureBox1.Location = new Point(1658, 3);
+            kryptonPictureBox1.Location = new Point(1643, 3);
             kryptonPictureBox1.Name = "kryptonPictureBox1";
             kryptonPictureBox1.Size = new Size(50, 51);
             kryptonPictureBox1.TabIndex = 7;
@@ -242,7 +242,7 @@
             // 
             // lblRole
             // 
-            lblRole.Location = new Point(1712, 34);
+            lblRole.Location = new Point(1697, 34);
             lblRole.Name = "lblRole";
             lblRole.Size = new Size(131, 18);
             lblRole.StateCommon.ShortText.Color1 = Color.FromArgb(111, 130, 157);
@@ -253,7 +253,7 @@
             // 
             // lblUsername
             // 
-            lblUsername.Location = new Point(1715, 15);
+            lblUsername.Location = new Point(1700, 15);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(141, 22);
             lblUsername.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);

@@ -123,19 +123,49 @@
                     billPage.FilterData(searchText);
                 }
             }
+            else if (materialTabControl1.SelectedTab == transactionsPage)
+            {
+                if (transactionsPage.Controls[0] is Transaction TransPage)
+                {
+                    TransPage.FilterData(searchText);
+                }
+            }
         }
 
-   
+
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
+            if (_userProfileForm == null || _userProfileForm.IsDisposed)
+            {
+                _userProfileForm = new UserProfileForm();
+            }
             _userProfileForm.Show();
         }
-        public void SetUserProfile(string username, string role)
+        public void SetUserProfile(string username, string role, string password, string profname, string id)
         {
             lblUsername.Text = username;
             lblRole.Text = role;
-            _userProfileForm.UpdateProfile(username, role); // Ensure UserProfileForm is updated
+            string pass = password;
+            string prof = profname;
+            string idd = id;
+            _userProfileForm.UpdateProfile(username, role, password, profname, id);
+        }
+
+        public void OpenSubscribersPage()
+        {
+            materialTabControl1.SelectedTab = subscribersPage;
+
+
+            subscribersPage.Controls.Clear();
+
+            var subsPage = new SubscriberPage(dbContext, this);
+            subsPage.TopLevel = false;
+            subsPage.FormBorderStyle = FormBorderStyle.None;
+            subsPage.Dock = DockStyle.Fill;
+
+            subscribersPage.Controls.Add(subsPage);
+            subsPage.Show();
         }
 
         public string GetUserRole()

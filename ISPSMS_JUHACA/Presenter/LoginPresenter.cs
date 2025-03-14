@@ -23,7 +23,7 @@ namespace ISPSMS_JUHACA.Presenter
 
         private async Task OnLoginAsync(object? sender, EventArgs e)
         {
-            var account = await Task.Run(() => _repository.GetAccountByEmailAndPassword(_view.Username, _view.AccountPassword));
+            var account = await _repository.GetAccountByEmailAndPasswordAsync(_view.Username, _view.AccountPassword);
             if (account != null)
             {
                 if (account.AccountRole == "DEFAULT")
@@ -31,11 +31,12 @@ namespace ISPSMS_JUHACA.Presenter
                     _view.ShowMessage("Your account is not approved yet. Please contact the administrator.");
                     return;
                 }
-                _view.CloseForm(); 
+                _view.CloseForm();
 
                 var mainForm = new MainForm(_dbContext);
-                mainForm.SetUserProfile(account.Username, account.AccountRole); 
-                mainForm.Show(); 
+                mainForm.SetUserProfile(account.AccountName, account.AccountRole, account.AccountPassword, account.Username, account.account_id.ToString());
+                mainForm.Show();
+                mainForm.OpenSubscribersPage();
             }
             else
             {
@@ -44,11 +45,15 @@ namespace ISPSMS_JUHACA.Presenter
         }
 
 
+
         private void OnSignUp(object? sender, EventArgs e)
         {
             var signUpForm = new SignUpForm(_dbContext, _repository);
             signUpForm.Show();
         }
+
+
+
     }
 
 }

@@ -46,8 +46,8 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void getSubscribers()
         {
-            originalSubscribers = dbContext.connectedSubscriberRepository.GetAll().ToList(); // Store full list
-            bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers);  // Set initial data
+            originalSubscribers = dbContext.connectedSubscriberRepository.GetAll().ToList(); 
+            bindingSource.DataSource = originalSubscribers;  
             connectedsubscribersGridView.DataSource = bindingSource;
             TotalSubscriberLabel.Text = originalSubscribers.Count.ToString();
         }
@@ -75,11 +75,11 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 string status = e.Value.ToString().Trim();
 
-                Console.WriteLine($"Row {e.RowIndex}, Column {e.ColumnIndex}, Status Value: {status}"); // Debugging
+                Console.WriteLine($"Row {e.RowIndex}, Column {e.ColumnIndex}, Status Value: {status}");
 
                 if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
                 {
-                    e.CellStyle.ForeColor = Color.Green; // Set text color to green
+                    e.CellStyle.ForeColor = Color.Green;
                     e.CellStyle.Font = new Font(connectedsubscribersGridView.Font, FontStyle.Bold);
                 }
             }
@@ -141,9 +141,9 @@ namespace ISPSMS_JUHACA.MainPages
 
                         dbContext.disconnectedSubscriberRepository.Add(disconnectedSubscriber);
                         dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
-                        dbContext.Save(); // ✅ Make sure changes are saved before updating UI
+                        dbContext.Save();
 
-                        // ✅ Refresh UI
+                       
                         bindingSource.Remove(selectedSubscriber);
                         getSubscribers();
 
@@ -163,7 +163,7 @@ namespace ISPSMS_JUHACA.MainPages
 
                 var addsubs = new addSubscribersForm(dbContext, this)
                 {
-                    EditedSubscriber = selectedSubscriber, // ✅ Load the subscriber data
+                    EditedSubscriber = selectedSubscriber, 
                     Text = "Edit Subscriber Information",
 
                 };
@@ -171,7 +171,7 @@ namespace ISPSMS_JUHACA.MainPages
                 var presenter = new AddSubscriberPresenter(addsubs, dbContext, this);
                 presenter.EditLoad();
 
-                addsubs.ShowDialog();// ✅ Handle save logic
+                addsubs.ShowDialog();
             }
         }
         private void SubscriberPage_Load(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace ISPSMS_JUHACA.MainPages
             }
             else
             {
-                bindingSource.DataSource = new List<ConnectedSubscribers>(); // Show empty table
+                bindingSource.DataSource = new List<ConnectedSubscribers>();
             }
 
             connectedsubscribersGridView.DataSource = bindingSource;
@@ -204,7 +204,7 @@ namespace ISPSMS_JUHACA.MainPages
         {
             if (string.IsNullOrEmpty(searchText))
             {
-                bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers); // Restore original data
+                bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers);
             }
             else
             {

@@ -8,26 +8,30 @@ namespace Infastructure.Data.Repositories
 {
     public class AccountsRepository : Repository<Accounts>, IAccountsRepository
     {
-        private AppDbContext _db;
+        private AppDbContext _context;
         public AccountsRepository(AppDbContext db) : base(db)
         {
-            _db = db;
+            _context = db;
         }
 
         public void Update(Accounts obj)
         {
-            var trackedEntity = _db.Accounts.Local.FirstOrDefault(e => e.account_id == obj.account_id);
+            var trackedEntity = _context.Accounts.Local.FirstOrDefault(e => e.account_id == obj.account_id);
             if (trackedEntity != null)
             {
-                _db.Entry(trackedEntity).State = EntityState.Detached;
+                _context.Entry(trackedEntity).State = EntityState.Detached;
             }
-            _db.Accounts.Update(obj);
+            _context.Accounts.Update(obj);
         }
 
         public Accounts GetAccountByEmailAndPassword(string email, string password)
         {
-            return _db.Accounts.FirstOrDefault(a => a.Username == email && a.AccountPassword == password);
+            return _context.Accounts.FirstOrDefault(a => a.Username == email && a.AccountPassword == password);
         }
 
+        public async Task<Accounts> GetAccountByEmailAndPasswordAsync(string email, string password)
+        {
+            return await _context.Accounts.FirstOrDefaultAsync(a => a.Username == email && a.AccountPassword == password);
+        }
     }
 }

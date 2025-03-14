@@ -67,7 +67,6 @@ namespace ISPSMS_JUHACA.Modified_Tools
                     pevent.Graphics.DrawPath(borderPen, path);
                 }
 
-                // Lower Border (Only orange when active)
                 using (Pen lowerBorderPen = new Pen(isActive ? ClickedBorderColor : BorderColor, BorderSize))
                 {
                     PointF startPoint = new PointF(rect.Left - BorderRadius, rect.Bottom - BorderSize / 2f);
@@ -75,7 +74,6 @@ namespace ISPSMS_JUHACA.Modified_Tools
                     pevent.Graphics.DrawLine(lowerBorderPen, startPoint, endPoint);
                 }
 
-                // Right Border (Always RightBorderColor)
                 using (Pen rightBorderPen = new Pen(RightBorderColor, BorderSize))
                 {
                     float rightX = rect.Right - BorderSize / 3;

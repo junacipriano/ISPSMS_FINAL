@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -60,7 +61,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         }
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            decimal amount = decimal.TryParse(amountTextBox.Text, out decimal value) ? value : 0;
+            decimal amount = decimal.TryParse(amountTextBox.Text.Trim(), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal value) ? value : 0;
             decimal balance = ConSubsEntity.MonthlyCharge - amount;
             DateTime nextDueDate = ConSubsEntity.CurrentDuedate.AddMonths(1);
             string formattedDueDate = FormatWithOrdinal(nextDueDate.Day);
@@ -69,7 +70,6 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 trans_id = int.Parse(receiptNoTextBox.Text),
                 subs_id = int.Parse(subIDTextBox.Text),
                 Trans_Name = mainNameTextBox.Text,
-                Address = addressTextBox.Text,
                 PaidAmount = amount,
                 Balance = balance,
                 Note = noteComboBox.Text = "None",

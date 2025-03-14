@@ -53,8 +53,6 @@
             label1 = new Label();
             connectedsubscribersGridView = new DataGridView();
             Conn_Name = new DataGridViewTextBoxColumn();
-            editButton = new DataGridViewButtonColumn();
-            disconnectButton = new DataGridViewButtonColumn();
             subsidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             connNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             contactNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -64,10 +62,14 @@
             duedateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             installationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             monthlyChargeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            addBtn = new MaterialSkin.Controls.MaterialButton();
+            editButton = new DataGridViewButtonColumn();
+            disconnectButton = new DataGridViewButtonColumn();
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
+            addBtn = new MaterialSkin.Controls.MaterialButton();
+            bindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -608,8 +610,8 @@
             connectedsubscribersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             connectedsubscribersGridView.ColumnHeadersHeight = 50;
             connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { Conn_Name, editButton, disconnectButton, subsidDataGridViewTextBoxColumn, connNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn });
-            connectedsubscribersGridView.DataSource = connectedSubscriberViewBindingSource1;
+            connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { Conn_Name, subsidDataGridViewTextBoxColumn, connNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn, editButton, disconnectButton });
+            connectedsubscribersGridView.DataSource = bindingSource1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 252);
             dataGridViewCellStyle2.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -655,26 +657,6 @@
             Conn_Name.HeaderText = "NAME";
             Conn_Name.MinimumWidth = 6;
             Conn_Name.Name = "Conn_Name";
-            // 
-            // editButton
-            // 
-            editButton.DataPropertyName = "subs_id";
-            editButton.FillWeight = 19.2589474F;
-            editButton.FlatStyle = FlatStyle.Popup;
-            editButton.HeaderText = "";
-            editButton.MinimumWidth = 3;
-            editButton.Name = "editButton";
-            editButton.UseColumnTextForButtonValue = true;
-            // 
-            // disconnectButton
-            // 
-            disconnectButton.DataPropertyName = "disconnectButton";
-            disconnectButton.FillWeight = 17.6470585F;
-            disconnectButton.FlatStyle = FlatStyle.Popup;
-            disconnectButton.HeaderText = "";
-            disconnectButton.MinimumWidth = 3;
-            disconnectButton.Name = "disconnectButton";
-            disconnectButton.UseColumnTextForButtonValue = true;
             // 
             // subsidDataGridViewTextBoxColumn
             // 
@@ -730,6 +712,30 @@
             monthlyChargeDataGridViewTextBoxColumn.HeaderText = "MonthlyCharge";
             monthlyChargeDataGridViewTextBoxColumn.Name = "monthlyChargeDataGridViewTextBoxColumn";
             // 
+            // editButton
+            // 
+            editButton.DataPropertyName = "subs_id";
+            editButton.FillWeight = 19.2589474F;
+            editButton.FlatStyle = FlatStyle.Popup;
+            editButton.HeaderText = "";
+            editButton.MinimumWidth = 3;
+            editButton.Name = "editButton";
+            editButton.UseColumnTextForButtonValue = true;
+            // 
+            // disconnectButton
+            // 
+            disconnectButton.DataPropertyName = "disconnectButton";
+            disconnectButton.FillWeight = 17.6470585F;
+            disconnectButton.FlatStyle = FlatStyle.Popup;
+            disconnectButton.HeaderText = "";
+            disconnectButton.MinimumWidth = 3;
+            disconnectButton.Name = "disconnectButton";
+            disconnectButton.UseColumnTextForButtonValue = true;
+            // 
+            // connectedSubscriberViewBindingSource1
+            // 
+            connectedSubscriberViewBindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
+            // 
             // addBtn
             // 
             addBtn.AutoSize = false;
@@ -755,9 +761,9 @@
             addBtn.UseVisualStyleBackColor = false;
             addBtn.Click += addBtn_Click;
             // 
-            // connectedSubscriberViewBindingSource1
+            // bindingSource1
             // 
-            connectedSubscriberViewBindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
+            bindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
             // 
             // SubscriberPage
             // 
@@ -791,6 +797,7 @@
             Load += SubscriberPage_Load;
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -816,10 +823,15 @@
         private MaterialSkin.Controls.MaterialButton disconnectedbtn;
         private Label label1;
         public DataGridView connectedsubscribersGridView;
-        private DataGridViewTextBoxColumn Conn_Name;
-        private DataGridViewButtonColumn editButton;
-        private DataGridViewButtonColumn disconnectButton;
         private MaterialSkin.Controls.MaterialButton addBtn;
+        private BindingSource connectedSubscriberViewBindingSource;
+        public Modified_Tools.CustomMaterialButton allBtn;
+        public Modified_Tools.CustomMaterialButton anahawonBtn;
+        public Modified_Tools.CustomMaterialButton baseCampBtn;
+        public Modified_Tools.CustomMaterialButton camp1;
+        public Modified_Tools.CustomMaterialButton camp1Btn;
+        private BindingSource connectedSubscriberViewBindingSource1;
+        private DataGridViewTextBoxColumn Conn_Name;
         private DataGridViewTextBoxColumn subsidDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn connNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
@@ -829,12 +841,8 @@
         private DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn installationDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn monthlyChargeDataGridViewTextBoxColumn;
-        private BindingSource connectedSubscriberViewBindingSource;
-        public Modified_Tools.CustomMaterialButton allBtn;
-        public Modified_Tools.CustomMaterialButton anahawonBtn;
-        public Modified_Tools.CustomMaterialButton baseCampBtn;
-        public Modified_Tools.CustomMaterialButton camp1;
-        public Modified_Tools.CustomMaterialButton camp1Btn;
-        private BindingSource connectedSubscriberViewBindingSource1;
+        private DataGridViewButtonColumn editButton;
+        private DataGridViewButtonColumn disconnectButton;
+        private BindingSource bindingSource1;
     }
 }

@@ -31,7 +31,7 @@ namespace ISPSMS_JUHACA
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+ 
             //var unitOfWork = UnityC.Resolve<IUnitOfWork>();
             //var Subs = new MainForm(unitOfWork);
             // new AppUserFormPresenter(unitOfWork, appUserForm);
@@ -41,7 +41,7 @@ namespace ISPSMS_JUHACA
             var accountsRepository = new AccountsRepository(dbContext);
             var unitOfWork = new UnitOfWork(dbContext);
 
-            var loginForm = new LoginForm();
+            var loginForm = new LoginForm(unitOfWork);
             new LoginPresenter(loginForm, unitOfWork, accountsRepository);
 
             Application.Run(loginForm);

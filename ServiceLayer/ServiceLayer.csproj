@@ -14,4 +14,8 @@
     <PackageReference Include="Krypton.Workspace" Version="90.25.2.55" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrustructure\Infastructure.csproj" />
+  </ItemGroup>
+
 </Project>
