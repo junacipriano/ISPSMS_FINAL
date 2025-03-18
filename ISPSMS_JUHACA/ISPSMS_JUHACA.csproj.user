@@ -7,6 +7,9 @@
     <Compile Update="MainPages\BillingPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainPages\DashboardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainPages\SubPages\BillingCheckout.cs">
       <SubType>Form</SubType>
     </Compile>

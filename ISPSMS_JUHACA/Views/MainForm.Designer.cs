@@ -62,12 +62,12 @@
             // 
             // materialTabControl1
             // 
+            materialTabControl1.Controls.Add(dashboardPage);
             materialTabControl1.Controls.Add(subscribersPage);
             materialTabControl1.Controls.Add(billingPage);
             materialTabControl1.Controls.Add(transactionsPage);
             materialTabControl1.Controls.Add(accountsPage);
             materialTabControl1.Controls.Add(activitiesPage);
-            materialTabControl1.Controls.Add(dashboardPage);
             materialTabControl1.Depth = 0;
             materialTabControl1.ImageList = imageList1;
             materialTabControl1.ImeMode = ImeMode.NoControl;

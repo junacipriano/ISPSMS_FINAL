@@ -99,6 +99,21 @@
                 transactionsPage.Controls.Add(traPage);
                 traPage.Show();
 
+            }  
+            else if (materialTabControl1.SelectedTab == dashboardPage)
+            {
+
+                dashboardPage.Controls.Clear();
+
+                var DBPage = new DashboardPage(dbContext, this);
+
+                DBPage.TopLevel = false;
+                DBPage.FormBorderStyle = FormBorderStyle.None;
+                DBPage.Dock = DockStyle.Fill;
+
+                dashboardPage.Controls.Add(DBPage);
+                DBPage.Show();
+
             }
 
         }
@@ -130,6 +145,7 @@
                     TransPage.FilterData(searchText);
                 }
             }
+            
         }
 
 

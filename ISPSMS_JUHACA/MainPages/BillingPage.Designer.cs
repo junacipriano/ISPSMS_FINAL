@@ -76,7 +76,7 @@
             // 
             // kryptonBorderEdge1
             // 
-            kryptonBorderEdge1.Location = new Point(137, 73);
+            kryptonBorderEdge1.Location = new Point(137, 87);
             kryptonBorderEdge1.Name = "kryptonBorderEdge1";
             kryptonBorderEdge1.Size = new Size(1743, 1);
             kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(142, 138, 138);
@@ -86,7 +86,7 @@
             // 
             // kryptonLabel2
             // 
-            kryptonLabel2.Location = new Point(129, 32);
+            kryptonLabel2.Location = new Point(129, 36);
             kryptonLabel2.Name = "kryptonLabel2";
             kryptonLabel2.Size = new Size(323, 34);
             kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
