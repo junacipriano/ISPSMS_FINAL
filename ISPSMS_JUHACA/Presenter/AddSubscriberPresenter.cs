@@ -19,26 +19,34 @@ namespace ISPSMS_JUHACA.Presenter
         private readonly IMainSubscriberPage _view;
         private readonly IUnitOfWork _dbContext;
         private readonly SubscriberPage _subscribersForm;
-        private readonly addSubscribersForm _subscriberForm;
-        private readonly string _currentUserName;
+        private readonly string _currentUsername;
         private readonly string _currentUserRole;
-
+        private MainForm _mainForm;
 
         private bool isSaving = false;
-        public AddSubscriberPresenter(IMainSubscriberPage view, IUnitOfWork dbContext, SubscriberPage subscribersForm)
+
+        public AddSubscriberPresenter(
+            IMainSubscriberPage view,
+            IUnitOfWork dbContext,
+            SubscriberPage subscribersForm,
+            string currentUsername,
+            MainForm mainForm) // Add MainForm as a parameter
         {
             _view = view;
             _dbContext = dbContext;
             _subscribersForm = subscribersForm;
+            _currentUsername = currentUsername;
+            _mainForm = mainForm; // Store the MainForm instance
+
+            _currentUsername = _mainForm.GetUsername(); // Get username from MainForm
+            _currentUserRole = _mainForm.GetUserRole(); // Get role from MainForm
 
             _view.BarangayChanged += OnBarangayChanged;
-
         }
+
 
         private void OnBarangayChanged(object? sender, EventArgs e)
         {
-
-
             if (_view.Barangay.Equals("Anahawon", StringComparison.OrdinalIgnoreCase))
             {
                 _view.DistrictOptions = new List<string> { "Purok2", "Purok 4", "Purok 6", "Purok 7" };
@@ -66,96 +74,91 @@ namespace ISPSMS_JUHACA.Presenter
             else if (_view.Barangay.Equals("South Poblacion", StringComparison.OrdinalIgnoreCase))
             {
                 _view.DistrictOptions = new List<string>
-            {
-            "Purok 1", "Purok 1A", "Purok 1B", "Purok 2", "Purok 2, Tamarin St.",
-            "Purok 2A, Tamarind St.", "Purok 3", "Purok 3A", "Purok 4", "Purok 4A",
-            "Purok 5", "Purok 5A", "Purok 6", "Purok 6A", "Purok 7", "Purok 7A",
-            "Purok 8", "Purok 9B", "Purok 9", "Wet Market", "Perimeter", "Purok 10"
-             };
+                {
+                    "Purok 1", "Purok 1A", "Purok 1B", "Purok 2", "Purok 2, Tamarin St.",
+                    "Purok 2A, Tamarind St.", "Purok 3", "Purok 3A", "Purok 4", "Purok 4A",
+                    "Purok 5", "Purok 5A", "Purok 6", "Purok 6A", "Purok 7", "Purok 7A",
+                    "Purok 8", "Purok 9B", "Purok 9", "Wet Market", "Perimeter", "Purok 10"
+                };
             }
             else if (_view.Barangay.Equals("San Miguel", StringComparison.OrdinalIgnoreCase))
             {
                 _view.DistrictOptions = new List<string>
-            {
-            "Purok 1A", "Purok 1B", "Purok 2B", "Purok 3", "Purok 10A",
-            "Green Hills", "Purok 10B", "Paglaum Village", "Kalinga Village",
-            "Dairy Farm Guard House"
-            };
+                {
+                    "Purok 1A", "Purok 1B", "Purok 2B", "Purok 3", "Purok 10A",
+                    "Green Hills", "Purok 10B", "Paglaum Village", "Kalinga Village",
+                    "Dairy Farm Guard House"
+                };
             }
             else if (_view.Barangay.Equals("North Poblacion", StringComparison.OrdinalIgnoreCase))
             {
                 _view.DistrictOptions = new List<string>
-        {
-            "Purok 1", "Purok 1A", "Purok 1, Tuban Village", "Purok 2", "Purok 2A",
-            "Purok 2A, Delcho Homes", "Purok 3", "Purok 4", "Purok 5", "Purok 5A",
-            "Purok 5A, Teacher's Village", "Purok 6", "Purok 6, Bulangan", "Purok 6A",
-            "Purok 7", "Purok 7A", "Purok 8", "Purok 8A", "Purok 9", "Purok 9B", "Southern"
-        };
+                {
+                    "Purok 1", "Purok 1A", "Purok 1, Tuban Village", "Purok 2", "Purok 2A",
+                    "Purok 2A, Delcho Homes", "Purok 3", "Purok 4", "Purok 5", "Purok 5A",
+                    "Purok 5A, Teacher's Village", "Purok 6", "Purok 6, Bulangan", "Purok 6A",
+                    "Purok 7", "Purok 7A", "Purok 8", "Purok 8A", "Purok 9", "Purok 9B", "Southern"
+                };
             }
-
             else
             {
                 _view.DistrictOptions = GetAllDistricts();
             }
         }
 
-
         private List<string> GetAllDistricts()
         {
             return new List<string>
-    {
-        "Purok 1",
-        "Purok 2",
-        "Purok 3",
-        "Purok 3, NoyNay Village",
-        "Purok 9",
-        "Purok 9, Urban Poor",
-        "Purok 7, Kalagutay",
-        "Purok 4",
-        "Purok 5",
-        "Purok 6",
-        "Purok 7",
-        "Purok 10",
-        "Purok 1A",
-        "Purok 2A",
-        "Purok 3A",
-        "Purok 4A",
-        "Purok 5A",
-        "Purok 5A, Paglaum Village",
-        "Purok 6A",
-        "Purok 6, Talipapa",
-        "Purok 9, Donhai",
-        "Purok 1, Tuban Village",
-        "Purok 2A, Delcho Homes",
-        "Purok 5A, Teacher's Village",
-        "Purok 6, Bulanagan",
-        "Purok 7A",
-        "Purok 8A",
-        "Purok 8",
-        "Purok 9B",
-        "Southern",
-        "Purok 2B",
-        "Purok 5A, JVO VILLAGE",
-        "Purok 2B",
-        "PUROK 10A, Green Hills",
-        "Purok 10B",
-        "Paglaum Village",
-        "Kalinga Village",
-        "Dairy Farm Guard House",
-        "Purok 2, Tamarin St.",
-        "Purok 2A, Tamarind St.",
-        "Wet Market",
-        "Perimeter",
-        "Kalinga",
-        "Purok 1B"
-    };
+            {
+                "Purok 1",
+                "Purok 2",
+                "Purok 3",
+                "Purok 3, NoyNay Village",
+                "Purok 9",
+                "Purok 9, Urban Poor",
+                "Purok 7, Kalagutay",
+                "Purok 4",
+                "Purok 5",
+                "Purok 6",
+                "Purok 7",
+                "Purok 10",
+                "Purok 1A",
+                "Purok 2A",
+                "Purok 3A",
+                "Purok 4A",
+                "Purok 5A",
+                "Purok 5A, Paglaum Village",
+                "Purok 6A",
+                "Purok 6, Talipapa",
+                "Purok 9, Donhai",
+                "Purok 1, Tuban Village",
+                "Purok 2A, Delcho Homes",
+                "Purok 5A, Teacher's Village",
+                "Purok 6, Bulanagan",
+                "Purok 7A",
+                "Purok 8A",
+                "Purok 8",
+                "Purok 9B",
+                "Southern",
+                "Purok 2B",
+                "Purok 5A, JVO VILLAGE",
+                "Purok 2B",
+                "PUROK 10A, Green Hills",
+                "Purok 10B",
+                "Paglaum Village",
+                "Kalinga Village",
+                "Dairy Farm Guard House",
+                "Purok 2, Tamarin St.",
+                "Purok 2A, Tamarind St.",
+                "Wet Market",
+                "Perimeter",
+                "Kalinga",
+                "Purok 1B"
+            };
         }
-
 
         public void EditLoad()
         {
-
-
             var selectedSubscriber = _subscribersForm.BindingSource.Current as ConnectedSubscribers;
 
             if (selectedSubscriber == null)
@@ -163,7 +166,6 @@ namespace ISPSMS_JUHACA.Presenter
                 _view.ShowMessage("No subscriber selected.");
                 return;
             }
-
 
             var nameParts = selectedSubscriber.Conn_Name.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -179,10 +181,8 @@ namespace ISPSMS_JUHACA.Presenter
             _view.DueDate = selectedSubscriber.CurrentDuedate;
 
             _subscribersForm.isEdit = true;
-
-
-
         }
+
         public void OnSaveSubscriber()
         {
             if (!ValidateFields())
@@ -199,6 +199,15 @@ namespace ISPSMS_JUHACA.Presenter
                     return;
                 }
 
+                // Store original values before updating
+                string oldName = entity.Conn_Name;
+                string oldAddress = entity.Address;
+                string oldPlan = entity.Plan;
+                string oldContact = entity.ContactNumber;
+                decimal oldCharge = entity.Charge;
+                DateTime oldDueDate = entity.CurrentDuedate;
+
+                // Update values
                 entity.Conn_Name = $"{_view.LastName}, {_view.FirstName} {_view.MiddleInitial}";
                 entity.Address = $"{_view.District}, {_view.Barangay}";
                 entity.Plan = _view.Plan;
@@ -209,6 +218,21 @@ namespace ISPSMS_JUHACA.Presenter
 
                 _dbContext.connectedSubscriberRepository.Update(entity);
                 _dbContext.Save();
+
+                // Build activity log
+                List<string> changes = new List<string>();
+                if (oldName != entity.Conn_Name) changes.Add($"Name: {oldName} → {entity.Conn_Name}");
+                if (oldAddress != entity.Address) changes.Add($"Address: {oldAddress} → {entity.Address}");
+                if (oldPlan != entity.Plan) changes.Add($"Plan: {oldPlan} → {entity.Plan}");
+                if (oldContact != entity.ContactNumber) changes.Add($"Contact: {oldContact} → {entity.ContactNumber}");
+                if (oldCharge != entity.Charge) changes.Add($"Charge: {oldCharge} → {entity.Charge}");
+                if (oldDueDate != entity.CurrentDuedate) changes.Add($"Due Date: {oldDueDate:MM/dd/yyyy} → {entity.CurrentDuedate:MM/dd/yyyy}");
+
+                if (changes.Count > 0)
+                {
+                    string activityDescription = $"Edited Subscriber: {entity.Conn_Name} ({string.Join(", ", changes)})";
+                    LogActivity(activityDescription);
+                }
 
                 _view.ShowMessage("Subscriber UPDATED successfully!");
             }
@@ -260,6 +284,7 @@ namespace ISPSMS_JUHACA.Presenter
                 _ => day + "th",
             };
         }
+
         private bool ValidateFields()
         {
             if (string.IsNullOrWhiteSpace(_view.LastName) ||
@@ -291,13 +316,12 @@ namespace ISPSMS_JUHACA.Presenter
         private string GetDistrict(string address) => address.Split(',')[0].Trim();
         private string GetBarangay(string address) => address.Split(',')[1].Trim();
 
-
         private void LogActivity(string activityDescription)
         {
             var activity = new Activity
             {
-                AccountName = _currentUserName,
-                AccountRole = _currentUserRole,
+                AccountName = _currentUsername, 
+                AccountRole = _currentUserRole, 
                 ActivitiesDone = activityDescription,
                 ActivitiesDateTime = DateTime.Now
             };

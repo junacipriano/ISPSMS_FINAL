@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "CuoreUI.Winforms": {
+              "target": "Package",
+              "version": "[2025.3.3, )"
+            },
             "Intersoft.Crosslight.UI.DataVisualization": {
               "target": "Package",
               "version": "[6.0.5000.975, )"
@@ -82,17 +86,21 @@
               "target": "Package",
               "version": "[0.9.7, )"
             },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.11, )"
+              "version": "[8.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -101,6 +109,22 @@
             "Microsoft.Graph": {
               "target": "Package",
               "version": "[5.74.0, )"
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.3124.44, )"
+            },
+            "ScottPlot.WinForms": {
+              "target": "Package",
+              "version": "[5.0.54, )"
+            },
+            "ThinkGeo.Core": {
+              "target": "Package",
+              "version": "[14.2.5, )"
+            },
+            "ThinkGeo.UI.WinForms": {
+              "target": "Package",
+              "version": "[14.2.5, )"
             }
           },
           "imports": [
@@ -177,6 +201,10 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "CuoreUI.Winforms": {
+              "target": "Package",
+              "version": "[2025.3.3, )"
+            },
             "Intersoft.Crosslight.UI.DataVisualization": {
               "target": "Package",
               "version": "[6.0.5000.975, )"
@@ -205,17 +233,21 @@
               "target": "Package",
               "version": "[0.9.7, )"
             },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.11, )"
+              "version": "[8.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -224,6 +256,22 @@
             "Microsoft.Graph": {
               "target": "Package",
               "version": "[5.74.0, )"
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.3124.44, )"
+            },
+            "ScottPlot.WinForms": {
+              "target": "Package",
+              "version": "[5.0.54, )"
+            },
+            "ThinkGeo.Core": {
+              "target": "Package",
+              "version": "[14.2.5, )"
+            },
+            "ThinkGeo.UI.WinForms": {
+              "target": "Package",
+              "version": "[14.2.5, )"
             }
           },
           "imports": [

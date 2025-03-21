@@ -1,15 +1,8 @@
 ﻿using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Data;
 using Krypton.Toolkit;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Microsoft.Web.WebView2.Core;
+
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -30,7 +23,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void dologonPanel_MouseEnter(object sender, EventArgs e)
         {
-            dologon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DOLOGON.png");
+            dologon.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DOLOGON.png");
             dologon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             dologon.BringToFront();
             infoBox.Visible = true;
@@ -59,7 +52,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void colambugonPanel_MouseEnter(object sender, EventArgs e)
         {
-            colambugon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\COLAMBUGON.png");
+            colambugon.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\COLAMBUGON.png");
             colambugon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             colambugon.BringToFront();
             infoBox.Visible = true;
@@ -88,7 +81,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void danggawanPanel_MouseEnter(object sender, EventArgs e)
         {
-            danggawan.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DANGGAWAN.png");
+            danggawan.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DANGGAWAN.png");
             danggawan.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             danggawan.BringToFront();
             infoBox.Visible = true;
@@ -117,7 +110,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void sanmiguelPanel_MouseEnter(object sender, EventArgs e)
         {
-            sanmiguel.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SANMIGUEL.png");
+            sanmiguel.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SANMIGUEL.png");
             sanmiguel.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             sanmiguel.BringToFront();
             infoBox.Visible = true;
@@ -146,7 +139,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void basecampPanel_MouseEnter(object sender, EventArgs e)
         {
-            basecamp.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\BASECAMP.png");
+            basecamp.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\BASECAMP.png");
             basecamp.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             basecamp.BringToFront();
             infoBox.Visible = true;
@@ -176,7 +169,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void panadtalanPanel_MouseEnter(object sender, EventArgs e)
         {
-            panadtalan.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\PANADTALAN.png");
+            panadtalan.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\PANADTALAN.png");
             panadtalan.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             panadtalan.BringToFront();
             infoBox.Visible = true;
@@ -205,7 +198,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void anahawonPanel_MouseEnter(object sender, EventArgs e)
         {
-            anahawon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\ANAHAWON.png");
+            anahawon.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\ANAHAWON.png");
             anahawon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             anahawon.BringToFront();
             infoBox.Visible = true;
@@ -234,7 +227,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void northPanel_MouseEnter(object sender, EventArgs e)
         {
-            north.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\NORTH.png");
+            north.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\NORTH.png");
             north.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             north.BringToFront();
             infoBox.Visible = true;
@@ -263,7 +256,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void camp1Panel_MouseEnter(object sender, EventArgs e)
         {
-            camp1.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\CAMP1.png");
+            camp1.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\CAMP1.png");
             camp1.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             camp1.BringToFront();
             infoBox.Visible = true;
@@ -292,7 +285,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void southPanel_MouseEnter(object sender, EventArgs e)
         {
-            south.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SOUTH.png");
+            south.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SOUTH.png");
             south.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             south.BringToFront();
             infoBox.Visible = true;
@@ -319,6 +312,15 @@ namespace ISPSMS_JUHACA.MainPages
             locLogo.Visible = false;
         }
 
+        private void InitializeMap()
+        {
+          
+        }
 
+        private void DashboardPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

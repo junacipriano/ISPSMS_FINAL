@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using ISPSMS_JUHACA.Presenter;
 using ISPSMS_JUHACA.Views.IVews;
 using Domain.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -16,18 +17,27 @@ namespace ISPSMS_JUHACA.MainPages
         public readonly IUnitOfWork dbContext;
         private BindingSource bindingSource;
         internal bool isEdit;
+        private MainForm mainForm;
         private MaterialButton activeButton;
+        private readonly string _currentUsername;
+        private readonly string _currentUserRole;
 
         public BindingSource BindingSource => bindingSource;
         private List<ConnectedSubscribers> originalSubscribers = new List<ConnectedSubscribers>();
-        public SubscriberPage(IUnitOfWork dbContext, MainForm mainform)
+        public SubscriberPage(IUnitOfWork dbContext, MainForm mainForm)  // Change parameter name to match usage
         {
             InitializeComponent();
             this.dbContext = dbContext;
+            this.mainForm = mainForm;  // Assign the passed instance to the class-level variable
+
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900,
+                                                               Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+            _currentUsername = mainForm.GetUsername();
+            _currentUserRole = mainForm.GetUserRole();
 
             bindingSource = new BindingSource();
             connectedsubscribersGridView.AutoGenerateColumns = true;
@@ -57,7 +67,7 @@ namespace ISPSMS_JUHACA.MainPages
             isEdit = false;
             ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
 
-            var AddForm = new addSubscribersForm(dbContext, this);
+            var AddForm = new addSubscribersForm(dbContext, this, _currentUsername, _currentUserRole, mainForm);
             AddForm.ShowDialog();
         }
 
@@ -142,8 +152,11 @@ namespace ISPSMS_JUHACA.MainPages
                         dbContext.disconnectedSubscriberRepository.Add(disconnectedSubscriber);
                         dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
                         dbContext.Save();
+                        // Log the activity after successfully disconnecting
+                        LogActivity($"Disconnected subscriber: {subscriberToDelete.Conn_Name}");
 
-                       
+
+
                         bindingSource.Remove(selectedSubscriber);
                         getSubscribers();
 
@@ -161,14 +174,16 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 isEdit = true;
 
-                var addsubs = new addSubscribersForm(dbContext, this)
+                var addsubs = new addSubscribersForm(dbContext, this, _currentUsername, _currentUserRole, mainForm)
                 {
                     EditedSubscriber = selectedSubscriber, 
                     Text = "Edit Subscriber Information",
 
                 };
 
-                var presenter = new AddSubscriberPresenter(addsubs, dbContext, this);
+                // Update the constructor call to include the required parameters 'currentUserName' and 'currentUserRole'
+                var presenter = new AddSubscriberPresenter(addsubs, dbContext, this, _currentUsername, mainForm);
+
                 presenter.EditLoad();
 
                 addsubs.ShowDialog();
@@ -290,9 +305,20 @@ namespace ISPSMS_JUHACA.MainPages
             FilterSubscribersByAddress("South Poblacion");
         }
 
-        private void connectedSubscriberViewBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
 
+        private void LogActivity(string activityDescription)
+        {
+            var activity = new Activity
+            {
+                AccountName = _currentUsername,
+                AccountRole = _currentUserRole,
+                ActivitiesDone = activityDescription,
+                ActivitiesDateTime = DateTime.Now
+            };
+
+            dbContext.activityRepository.Update(activity); // Use Add instead of Update for new records
+            dbContext.Save();
         }
+
     }
 }

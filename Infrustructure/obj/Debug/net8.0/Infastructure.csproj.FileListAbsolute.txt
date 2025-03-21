@@ -14,3 +14,12 @@ D:\ISPSMS_FINAL\Infrustructure\obj\Debug\net8.0\Infastructure.dll
 D:\ISPSMS_FINAL\Infrustructure\obj\Debug\net8.0\refint\Infastructure.dll
 D:\ISPSMS_FINAL\Infrustructure\obj\Debug\net8.0\Infastructure.pdb
 D:\ISPSMS_FINAL\Infrustructure\obj\Debug\net8.0\ref\Infastructure.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\runtimes\win-x86\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\runtimes\win-x64\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\runtimes\win-arm64\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.Core.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.WinForms.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.Wpf.dll
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.Core.xml
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.WinForms.xml
+D:\ISPSMS_FINAL\Infrustructure\bin\Debug\net8.0\Microsoft.Web.WebView2.Wpf.xml

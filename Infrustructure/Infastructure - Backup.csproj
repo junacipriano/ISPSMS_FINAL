@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="CuoreUI.Winforms" Version="2025.3.3" />
+    <PackageReference Include="Intersoft.Crosslight.UI.DataVisualization" Version="6.0.5000.975" />
+    <PackageReference Include="Krypton.Docking" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Navigator" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Ribbon" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
+    <PackageReference Include="Krypton.Workspace" Version="90.25.2.55" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
+    <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.Graph" Version="5.74.0" />
+    <PackageReference Include="ReaLTaiizor" Version="3.8.1.1" />
+    <PackageReference Include="ScottPlot.WinForms" Version="5.0.54" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>

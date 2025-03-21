@@ -69,8 +69,7 @@ namespace ISPSMS_JUHACA.MainPages
             foreach (var subscriber in subscribers)
             {
 
-                BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this)
-
+                BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this, mainForm)
                 {
                     TopLevel = false, 
                     Dock = DockStyle.Top 

@@ -27,6 +27,7 @@ namespace ISPSMS_JUHACA
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         internal string message;
         private readonly IMainSubscriberPage _view;
+       
 
 
         public event EventHandler SaveSubscriber;
@@ -107,15 +108,13 @@ namespace ISPSMS_JUHACA
             }
         }
 
-        public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage subscribersForm)
+        public addSubscribersForm(IUnitOfWork dbContext, SubscriberPage subscribersForm, string currentUsername, string currentUserRole, MainForm mainForm)
         {
             InitializeComponent();
             if (_presenter == null)
             {
-                _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm);
+                _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm, currentUsername, mainForm);
             }
-
-
         }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)
@@ -140,16 +139,6 @@ namespace ISPSMS_JUHACA
 
 
             districtComboBox.SelectedIndexChanged += (s, e) => DistrictChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void barangayComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BarangayChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void CancelBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -15,14 +15,15 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         public readonly IUnitOfWork dbContext;
         private SubscriberPage _subscribersForm;
         internal BillingPage _billingPage;
-        private MainForm mainForm;
+        private MainForm _mainForm; // Declare _mainForm
         private int currentBillingIndex = 0;
 
-        public BillingItems(IUnitOfWork dbContext, SubscriberPage subscribersForm, BillingPage billingPage)
+        public BillingItems(IUnitOfWork dbContext, SubscriberPage subscribersForm, BillingPage billingPage, MainForm mainForm)
         {
             InitializeComponent();
             this.dbContext = dbContext;
             _billingPage = billingPage;
+            _mainForm = mainForm; // Initialize _mainForm
         }
 
         private void BillingItems_Load(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
             dbContext.connectedSubscriberRepository.Update(ConSubsEntity);
             dbContext.connectedSubscriberRepository.Save();
-            BillingCheckout paymentForm = new BillingCheckout(dbContext, ConSubsEntity, _billingPage);
+            BillingCheckout paymentForm = new BillingCheckout(dbContext, ConSubsEntity, _billingPage, _mainForm);
             paymentForm.ShowDialog();
         }
 

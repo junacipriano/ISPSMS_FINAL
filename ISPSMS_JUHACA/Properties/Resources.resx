@@ -118,47 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CAMP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CAMP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="installation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\installation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PANADTALAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PANADTALAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ANAHAWON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ANAHAWON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DOLOGON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DOLOGON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BASECAMP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BASECAMP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DANGGAWAN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DANGGAWAN2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PANADTALAN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PANADTALAN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="P C (18)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\P C (18).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SANMIGUEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SANMIGUEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ProfileMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProfileMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DANGGAWAN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DANGGAWAN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NORTH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NORTH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cut-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cut-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProfilePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ProfilePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="location" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DOLOGON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DOLOGON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="COLAMBUGON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\COLAMBUGON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,37 +145,70 @@
   <data name="NORTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NORTH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PANADTALAN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PANADTALAN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="location" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="P C (18)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\P C (18)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BASE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BASE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DANGGAWAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DANGGAWAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rePrint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="COLAMBUGON1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\COLAMBUGON1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProfileMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ProfileMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CAMP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CAMP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="infoBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infoBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SOUTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SOUTH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rePrint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="infoBox1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infoBox1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BASECAMP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BASECAMP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SANMIGUEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SANMIGUEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NORTH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORTH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PANADTALAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PANADTALAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="COLAMBUGON1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\COLAMBUGON1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ANAHAWON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ANAHAWON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DANGGAWAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DANGGAWAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProfilePic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProfilePic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="P C (18)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\P C (18)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subscribers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subscribers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SOUTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SOUTH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BASE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BASE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DANGGAWAN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DANGGAWAN2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\passdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -30,14 +30,21 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private readonly BillingItems _billingItems;
         private readonly BillingPage _billingPage;
         private readonly Accounts _loggedInUser;
+        private readonly MainForm _mainForm;
         private readonly string _currentUserName;
         private readonly string _currentUserRole;
-        public BillingCheckout(IUnitOfWork dbContext, ConnectedSubscribers selectedSubscribers, BillingPage billingPage)
+
+        public BillingCheckout(IUnitOfWork dbContext, ConnectedSubscribers selectedSubscribers, BillingPage billingPage, MainForm mainForm)
         {
             InitializeComponent();
             ConSubsEntity = selectedSubscribers;
             _billingPage = billingPage;
             _dbContext = dbContext;
+            _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm)); // Ensure mainForm isn't null
+
+            _currentUserName = _mainForm.GetUsername();
+            _currentUserRole = _mainForm.GetUserRole();
+
             LoadBillingCheckoutData(ConSubsEntity);
         }
 
@@ -90,10 +97,10 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             }
 
             // Log the activity
-            string activityDescription = $"Processed payment of {mainNameTextBox.Text}";
+            string activityDescription = $"Processed payment: {mainNameTextBox.Text}";
             if (!string.IsNullOrEmpty(noteComboBox.Text) && noteComboBox.Text != "None")
             {
-                activityDescription += $" Note: {noteComboBox.Text}";
+                activityDescription += $" (Note: {noteComboBox.Text})";
             }
             LogActivity(activityDescription);
 
@@ -134,8 +141,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 ActivitiesDateTime = DateTime.Now
             };
 
-            dbContext.activityRepository.Update(activity);
-            dbContext.Save();
+            _dbContext.activityRepository.Update(activity); // Use Add instead of Update for new records
+            _dbContext.Save();
         }
     }
 }

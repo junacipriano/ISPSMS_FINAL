@@ -133,6 +133,16 @@ namespace ISPSMS_JUHACA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cut_off {
+            get {
+                object obj = ResourceManager.GetObject("cut-off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DANGGAWAN {
             get {
                 object obj = ResourceManager.GetObject("DANGGAWAN", resourceCulture);
@@ -196,6 +206,16 @@ namespace ISPSMS_JUHACA.Properties {
         internal static System.Drawing.Bitmap infoBox1 {
             get {
                 object obj = ResourceManager.GetObject("infoBox1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap installation {
+            get {
+                object obj = ResourceManager.GetObject("installation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +293,16 @@ namespace ISPSMS_JUHACA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap passdue {
+            get {
+                object obj = ResourceManager.GetObject("passdue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ProfileMenu {
             get {
                 object obj = ResourceManager.GetObject("ProfileMenu", resourceCulture);
@@ -326,6 +356,16 @@ namespace ISPSMS_JUHACA.Properties {
         internal static System.Drawing.Bitmap SOUTH {
             get {
                 object obj = ResourceManager.GetObject("SOUTH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap subscribers {
+            get {
+                object obj = ResourceManager.GetObject("subscribers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
