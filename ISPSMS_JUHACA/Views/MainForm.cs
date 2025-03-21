@@ -4,6 +4,7 @@
         using Domain.Models;
     using ISPSMS_JUHACA.Views;
     using ISPSMS_JUHACA.MainPages;
+using Infastructure.Data.Repositories;
 
     namespace ISPSMS_JUHACA
         {
@@ -13,10 +14,18 @@
         private BindingSource bindingSource;
         private UserProfileForm _userProfileForm;
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
+        public readonly IUnitOfWork unitOfWork;
+        private readonly IConnectedSubscribersRepository _connectedSubscribersRepository;
 
         public MainForm(IUnitOfWork dbContext)
         {
             InitializeComponent();
+
+            this.dbContext = dbContext;
+            this.unitOfWork = dbContext;
+
+            _connectedSubscribersRepository = unitOfWork.connectedSubscriberRepository;
+
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -104,8 +113,7 @@
             {
 
                 dashboardPage.Controls.Clear();
-
-                var DBPage = new DashboardPage(dbContext, this);
+                var DBPage = new DashboardPage(_connectedSubscribersRepository, dbContext, this);
 
                 DBPage.TopLevel = false;
                 DBPage.FormBorderStyle = FormBorderStyle.None;
@@ -189,91 +197,10 @@
             return lblRole.Text;
         }
 
-  
-
-        //private void SubscribersForm_Load(object sender, EventArgs e)
-        //{
-
-        //    getSubscribers();
-        //}
-
-        //public void getSubscribers()
-        //{
-        //    var subscribers = dbContext.connectedSubscriberRepository.GetAll();
-        //    connectedsubscribersGridView.DataSource = subscribers;
-        //}
-
-        //private void addBtn_Click(object sender, EventArgs e)
-        //{
-        //    ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
-
-        //    var AddForm = new addSubscribersForm(dbContext, this);
-        //    AddForm.ShowDialog();
-
-        //}
-
-        /*  private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-          {
-              ConSubsEntity = (Domain.Models.ConnectedSubscribers)bindingSource.Current;
-
-              if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "disconnectButton")
-              {
-                  if (e.RowIndex < 0)
-                  {
-                      MessageBox.Show("No valid subscriber selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      return;
-                  }
-
-                  var selectedSubscriber = connectedsubscribersGridView.Rows[e.RowIndex].DataBoundItem as Domain.Models.ConnectedSubscribers;
-                  if (selectedSubscriber == null)
-                  {
-                      MessageBox.Show("Subscriber not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      return;
-                  }
-
-                  DialogResult result = MessageBox.Show("Are you sure you want to disconnect this subscriber?",
-                                                        "Confirm Disconnection",
-                                                        MessageBoxButtons.YesNo,
-                                                        MessageBoxIcon.Warning);
-                  if (result == DialogResult.Yes)
-                  {
-                      try
-                      {
-                          // Ensure we are working with a tracked entity
-                          var subscriberToDelete = dbContext.connectedSubscriberRepository
-                                                            .Get(s => s.subs_id == selectedSubscriber.subs_id, tracked: true);
-
-                          if (subscriberToDelete == null)
-                          {
-                              MessageBox.Show("Subscriber not found in database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                              return;
-                          }
-
-                          dbContext.connectedSubscriberRepository.Remove(subscriberToDelete);
-                          dbContext.Save();
-
-                          bindingSource.Remove(selectedSubscriber);
-                          getSubscribers();
-
-                          MessageBox.Show("Subscriber successfully disconnected.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                      }
-                      catch (Exception ex)
-                      {
-                          MessageBox.Show("Error while deleting: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      }
-                  }
-              }
-          }*/
-
-        //private void disconnectedbtn_Click(object sender, EventArgs e)
-        //{
-        //    ConSubsEntity = (ConnectedSubscribers)bindingSource.Current;
-
-        //    var Disconnected = new Disconnected(dbContext, this);
-        //    Disconnected.ShowDialog();
-        //}
-
-
+        public string GetUsername()
+        {
+            return lblUsername.Text;
+        }
 
 
     }

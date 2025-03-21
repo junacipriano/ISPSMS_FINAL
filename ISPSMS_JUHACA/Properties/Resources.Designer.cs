@@ -183,6 +183,36 @@ namespace ISPSMS_JUHACA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infoBox {
+            get {
+                object obj = ResourceManager.GetObject("infoBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infoBox1 {
+            get {
+                object obj = ResourceManager.GetObject("infoBox1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap location {
+            get {
+                object obj = ResourceManager.GetObject("location", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NORTH {
             get {
                 object obj = ResourceManager.GetObject("NORTH", resourceCulture);
@@ -196,6 +226,26 @@ namespace ISPSMS_JUHACA.Properties {
         internal static System.Drawing.Bitmap NORTH1 {
             get {
                 object obj = ResourceManager.GetObject("NORTH1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap P_C__18_ {
+            get {
+                object obj = ResourceManager.GetObject("P C (18)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap P_C__18_1 {
+            get {
+                object obj = ResourceManager.GetObject("P C (18)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

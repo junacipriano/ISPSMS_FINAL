@@ -1,4 +1,5 @@
 ﻿using Infastructure.Data.Repositories.IRepositories;
+using ISPSMS_JUHACA.Data;
 using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
@@ -17,155 +18,307 @@ namespace ISPSMS_JUHACA.MainPages
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         public readonly IUnitOfWork dbContext;
         private MainForm mainForm;
-        public DashboardPage(IUnitOfWork dbContext, MainForm mainForm)
+        private readonly IConnectedSubscribersRepository _connectedSubscribersRepository;
+
+
+        public DashboardPage(IConnectedSubscribersRepository connectedSubscribersRepository, IUnitOfWork dbContext, MainForm mainForm)
+
         {
             InitializeComponent();
-            dologon.Visible = false;
-            colambugon.Visible = false;
-            danggawan.Visible = false;
-            sanmiguel.Visible = false;
-            basecamp.Visible = false;
-            panadtalan.Visible = false;
-            anahawon.Visible = false;
-            north.Visible = false;
-            southPanel.Visible = false;
-            camp1.Visible = false;
+            _connectedSubscribersRepository = connectedSubscribersRepository ?? throw new ArgumentNullException(nameof(connectedSubscribersRepository));
         }
 
         private void dologonPanel_MouseEnter(object sender, EventArgs e)
         {
-            dologon.Visible = true;
+            dologon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DOLOGON.png");
+            dologon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             dologon.BringToFront();
-            dologonPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Dologon";
+            int dologonCount = _connectedSubscribersRepository.CountDologonSubscribers();
+            subscribersTextbox.Text = dologonCount.ToString();
         }
 
         private void dologonPanel_MouseLeave(object sender, EventArgs e)
         {
-            dologon.Visible = false;
-            dologonPanel.Visible = true;
+            dologon.StateCommon.Image = null;
+            dologon.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
-
 
         private void colambugonPanel_MouseEnter(object sender, EventArgs e)
         {
-            colambugon.Visible = true;
+            colambugon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\COLAMBUGON.png");
+            colambugon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             colambugon.BringToFront();
-            colambugonPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Colambugon";
+            int ColambugonCount = _connectedSubscribersRepository.CountColambugonSubscribers();
+            subscribersTextbox.Text = ColambugonCount.ToString();
         }
 
         private void colambugonPanel_MouseLeave(object sender, EventArgs e)
         {
-            colambugon.Visible = false;
-            colambugonPanel.Visible = true;
+            colambugon.StateCommon.Image = null;
+            colambugon.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
         private void danggawanPanel_MouseEnter(object sender, EventArgs e)
         {
-            danggawan.Visible = true;
+            danggawan.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DANGGAWAN.png");
+            danggawan.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             danggawan.BringToFront();
-            danggawanPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Danggawan";
+            int DanggawanCount = _connectedSubscribersRepository.CountDanggawanSubscribers();
+            subscribersTextbox.Text = DanggawanCount.ToString();
         }
 
         private void danggawanPanel_MouseLeave(object sender, EventArgs e)
         {
-            danggawan.Visible = false;
-            danggawanPanel.Visible = true;
+            danggawan.StateCommon.Image = null;
+            danggawan.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
         private void sanmiguelPanel_MouseEnter(object sender, EventArgs e)
         {
-            sanmiguel.Visible = true;
+            sanmiguel.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SANMIGUEL.png");
+            sanmiguel.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             sanmiguel.BringToFront();
-            sanmiguelPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "San Miguel";
+            int SanMiguelCount = _connectedSubscribersRepository.CountSanmiguelSubscribers();
+            subscribersTextbox.Text = SanMiguelCount.ToString();
         }
 
         private void sanmiguelPanel_MouseLeave(object sender, EventArgs e)
         {
-            sanmiguel.Visible = false;
-            sanmiguelPanel.Visible = true;
+            sanmiguel.StateCommon.Image = null;
+            sanmiguel.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
-        private void basecamp_MouseEnter(object sender, EventArgs e)
+        private void basecampPanel_MouseEnter(object sender, EventArgs e)
         {
-            basecamp.Visible = true;
+            basecamp.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\BASECAMP.png");
+            basecamp.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             basecamp.BringToFront();
-            basecampPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Base Camp";
+            int BaseCampCount = _connectedSubscribersRepository.CountBasecampSubscribers();
+            subscribersTextbox.Text = BaseCampCount.ToString();
         }
 
-        private void basecamp_MouseLeave(object sender, EventArgs e)
+        private void basecampPanel_MouseLeave(object sender, EventArgs e)
         {
-            basecamp.Visible = false;
-            basecampPanel.Visible = true;
+            basecamp.StateCommon.Image = null;
+            basecamp.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
+
         }
 
         private void panadtalanPanel_MouseEnter(object sender, EventArgs e)
         {
-            panadtalan.Visible = true;
+            panadtalan.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\PANADTALAN.png");
+            panadtalan.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             panadtalan.BringToFront();
-            panadtalanPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Panadtalan";
+            int PanadtalanCount = _connectedSubscribersRepository.CountPanadtalanSubscribers();
+            subscribersTextbox.Text = PanadtalanCount.ToString();
         }
 
         private void panadtalanPanel_MouseLeave(object sender, EventArgs e)
         {
-            panadtalan.Visible = false;
-            panadtalanPanel.Visible = true;
+            panadtalan.StateCommon.Image = null;
+            panadtalan.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
         private void anahawonPanel_MouseEnter(object sender, EventArgs e)
         {
-            anahawon.Visible = true;
+            anahawon.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\ANAHAWON.png");
+            anahawon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             anahawon.BringToFront();
-            anahawonPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Anahawon";
+            int AnahawonCount = _connectedSubscribersRepository.CountAnahawonSubscribers();
+            subscribersTextbox.Text = AnahawonCount.ToString();
         }
 
         private void anahawonPanel_MouseLeave(object sender, EventArgs e)
         {
-            anahawon.Visible = false;
-            anahawonPanel.Visible = true;
+            anahawon.StateCommon.Image = null;
+            anahawon.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
         private void northPanel_MouseEnter(object sender, EventArgs e)
         {
-            north.Visible = true;
+            north.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\NORTH.png");
+            north.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             north.BringToFront();
-            northPanel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "North Poblacion";
+            int northCount = _connectedSubscribersRepository.CountNorthSubscribers();
+            subscribersTextbox.Text = northCount.ToString();
         }
 
         private void northPanel_MouseLeave(object sender, EventArgs e)
         {
-            north.Visible = false;
-            northPanel.Visible = true;
-        }
-
-        private void south_MouseEnter(object sender, EventArgs e)
-        {
-            south.Visible = true;
-            south.BringToFront();
-            southPanel.Visible = false;
-        }
-
-        private void south_MouseLeave(object sender, EventArgs e)
-        {
-            south.Visible = false;
-            southPanel.Visible = true;
+            north.StateCommon.Image = null;
+            north.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
         private void camp1Panel_MouseEnter(object sender, EventArgs e)
         {
-            camp1.Visible = true;
+            camp1.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\CAMP1.png");
+            camp1.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             camp1.BringToFront();
-            camp1Panel.Visible = false;
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
+
+            areaTextbox.Text = "Camp 1";
+            int Camp1Count = _connectedSubscribersRepository.CountCamp1Subscribers();
+            subscribersTextbox.Text = Camp1Count.ToString();
         }
 
         private void camp1Panel_MouseLeave(object sender, EventArgs e)
         {
-            camp1.Visible = false;
-            camp1Panel.Visible = true;
+            camp1.StateCommon.Image = null;
+            camp1.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
         }
 
-        private void kryptonPanel2_Paint(object sender, PaintEventArgs e)
+        private void southPanel_MouseEnter(object sender, EventArgs e)
         {
+            south.StateCommon.Image = Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SOUTH.png");
+            south.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
+            south.BringToFront();
+            infoBox.Visible = true;
+            areaLabel.Visible = true;
+            areaTextbox.Visible = true;
+            subscribersLabel.Visible = true;
+            subscribersTextbox.Visible = true;
+            locLogo.Visible = true;
 
+            areaTextbox.Text = "South Poblacion";
+            int southCount = _connectedSubscribersRepository.CountSouthSubscribers();
+            subscribersTextbox.Text = southCount.ToString();
         }
+
+        private void southPanel_MouseLeave(object sender, EventArgs e)
+        {
+            south.StateCommon.Image = null;
+            south.SendToBack();
+            infoBox.Visible = false;
+            areaLabel.Visible = false;
+            areaTextbox.Visible = false;
+            subscribersLabel.Visible = false;
+            subscribersTextbox.Visible = false;
+            locLogo.Visible = false;
+        }
+
+
     }
 }

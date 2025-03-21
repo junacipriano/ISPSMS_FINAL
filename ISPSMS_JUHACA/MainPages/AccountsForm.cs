@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views;
 
@@ -14,7 +15,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace ISPSMS_JUHACA.MainPages
 {
     public partial class AccountsForm : Form
@@ -23,14 +23,17 @@ namespace ISPSMS_JUHACA.MainPages
         private BindingSource bindingSource;
         private IUnitOfWork dbContext;
         private MainForm mainForm;
-
+        private readonly string _currentUserName;
+        private readonly string _currentUserRole;
         public AccountsForm(IUnitOfWork dbContext, MainForm mainForm)
         {
             InitializeComponent();
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             this.mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
             bindingSource = new BindingSource();
-            currentUserRole = mainForm.GetUserRole(); 
+            currentUserRole = mainForm.GetUserRole();
+            _currentUserName = mainForm.GetUsername();
+            _currentUserRole = mainForm.GetUserRole();
             getAccounts();
         }
 
@@ -39,14 +42,13 @@ namespace ISPSMS_JUHACA.MainPages
             try
             {
                 var accounts = dbContext.accountsRepository.GetAll();
-                accountsGridView.DataSource = accounts; 
+                accountsGridView.DataSource = accounts;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading accounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void accountsGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -65,7 +67,8 @@ namespace ISPSMS_JUHACA.MainPages
                     MessageBox.Show("You can only edit accounts with DEFAULT role.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var editForm = new EditAccount(selectedAccount, dbContext, currentUserRole);
+                // Update the constructor call to include the missing 'currentUserName' parameter
+                var editForm = new EditAccount(selectedAccount, dbContext, currentUserRole, mainForm.GetUsername());
                 editForm.ShowDialog();
                 getAccounts();
             }
@@ -88,6 +91,7 @@ namespace ISPSMS_JUHACA.MainPages
                         {
                             dbContext.accountsRepository.Remove(selectedAccount);
                             dbContext.Save();
+                            LogActivity("Deleted account: " + selectedAccount.Username);
                             getAccounts();
                             MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -114,6 +118,7 @@ namespace ISPSMS_JUHACA.MainPages
                         {
                             dbContext.accountsRepository.Remove(selectedAccount);
                             dbContext.Save();
+                            LogActivity("Deleted account: " + selectedAccount.Username);
                             getAccounts();
                             MessageBox.Show("Account successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -126,6 +131,18 @@ namespace ISPSMS_JUHACA.MainPages
             }
         }
 
+        private void LogActivity(string activityDescription)
+        {
+            var activity = new Activity
+            {
+                AccountName = _currentUserName,
+                AccountRole = _currentUserRole,
+                ActivitiesDone = activityDescription,
+                ActivitiesDateTime = DateTime.Now
+            };
 
+            dbContext.activityRepository.Update(activity);
+            dbContext.Save();
+        }
     }
 }

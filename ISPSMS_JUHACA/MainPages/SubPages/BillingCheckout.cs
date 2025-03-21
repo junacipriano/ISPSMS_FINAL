@@ -30,6 +30,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private readonly BillingItems _billingItems;
         private readonly BillingPage _billingPage;
         private readonly Accounts _loggedInUser;
+        private readonly string _currentUserName;
+        private readonly string _currentUserRole;
         public BillingCheckout(IUnitOfWork dbContext, ConnectedSubscribers selectedSubscribers, BillingPage billingPage)
         {
             InitializeComponent();
@@ -38,8 +40,6 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             _dbContext = dbContext;
             LoadBillingCheckoutData(ConSubsEntity);
         }
-
-    
 
         private void BillingCheckout_Load(object sender, EventArgs e)
         {
@@ -51,7 +51,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             {
                 subIDTextBox.Text = ConSubsEntity.subs_id.ToString();
                 mainNameTextBox.Text = ConSubsEntity.Conn_Name;
-                subNameTextBox.Text = ConSubsEntity.Conn_Name; 
+                subNameTextBox.Text = ConSubsEntity.Conn_Name;
                 statusTextBox.Text = ConSubsEntity.Status;
                 addressTextBox.Text = ConSubsEntity.Address;
                 dueDateTextBox.Text = ConSubsEntity.CurrentDuedate.ToString("MMMM d, yyyy");
@@ -59,6 +59,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 amountTextBox.Text = ConSubsEntity.MonthlyCharge.ToString("C");
             }
         }
+
         private void confirmButton_Click(object sender, EventArgs e)
         {
             decimal amount = decimal.TryParse(amountTextBox.Text.Trim(), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal value) ? value : 0;
@@ -72,7 +73,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 Trans_Name = mainNameTextBox.Text,
                 PaidAmount = amount,
                 Balance = balance,
-                Note = noteComboBox.Text = "None",
+                Note = noteComboBox.Text,
                 Duedate = formattedDueDate,
                 TransactionDateTime = DateTime.Now
             };
@@ -88,14 +89,24 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 PrintReceipt(newTransaction);
             }
 
+            // Log the activity
+            string activityDescription = $"Processed payment of {mainNameTextBox.Text}";
+            if (!string.IsNullOrEmpty(noteComboBox.Text) && noteComboBox.Text != "None")
+            {
+                activityDescription += $" Note: {noteComboBox.Text}";
+            }
+            LogActivity(activityDescription);
+
             _billingPage.LoadBillingItems();
             this.Close();
         }
+
         private string FormatWithOrdinal(int day)
         {
             if (day >= 11 && day <= 13) return day + "th";
             return day + (day % 10 == 1 ? "st" : day % 10 == 2 ? "nd" : day % 10 == 3 ? "rd" : "th");
         }
+
         private void PrintReceipt(Transactions transaction)
         {
             var receiptForm = new ReceiptForm(transaction, _loggedInUser);
@@ -111,6 +122,20 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LogActivity(string activityDescription)
+        {
+            var activity = new Activity
+            {
+                AccountName = _currentUserName,
+                AccountRole = _currentUserRole,
+                ActivitiesDone = activityDescription,
+                ActivitiesDateTime = DateTime.Now
+            };
+
+            dbContext.activityRepository.Update(activity);
+            dbContext.Save();
         }
     }
 }

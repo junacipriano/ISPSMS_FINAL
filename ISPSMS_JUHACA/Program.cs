@@ -7,6 +7,8 @@ using Infastructure.Data.Repositories;
 using ISPSMS_JUHACA.Presenter;
 using ISPSMS_JUHACA.Views;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Windows.Forms;
 
 namespace ISPSMS_JUHACA
 {
@@ -18,39 +20,27 @@ namespace ISPSMS_JUHACA
         [STAThread]
         static void Main()
         {
+            // Setup Dependency Injection with Unity
             IUnityContainer UnityC = new UnityContainer();
-            UnityC.RegisterType<IUnitOfWork,UnitOfWork>(new HierarchicalLifetimeManager());
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            UnityC.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
+            UnityC.RegisterType<IConnectedSubscribersRepository, ConnectedSubscribersRepository>(new HierarchicalLifetimeManager());
 
-
-
-         // var ConnectedSubscribersRepository = UnityC.Resolve<IConnectedSubscribersRepository>();
-
-            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2); 
-
+            // Enable high DPI settings for better UI scaling
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
- 
-            //var unitOfWork = UnityC.Resolve<IUnitOfWork>();
-            //var Subs = new MainForm(unitOfWork);
-            // new AppUserFormPresenter(unitOfWork, appUserForm);
-            //Application.Run(Subs);
 
+            // Create database context and repositories
             var dbContext = new AppDbContext(new DbContextOptions<AppDbContext>());
             var accountsRepository = new AccountsRepository(dbContext);
             var unitOfWork = new UnitOfWork(dbContext);
 
+            // Initialize Login Form with Presenter
             var loginForm = new LoginForm(unitOfWork);
             new LoginPresenter(loginForm, unitOfWork, accountsRepository);
 
+            // Run the application
             Application.Run(loginForm);
-
-
-
-
-
-            // Application.Run(new SubscribersForm(ConnectedSubscribersRepository));
         }
     }
 }

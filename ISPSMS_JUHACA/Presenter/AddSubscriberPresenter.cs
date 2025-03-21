@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Models;
+using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.MainPages;
 using ISPSMS_JUHACA.Views.IVews;
 using Microsoft.EntityFrameworkCore;
+using Activity = Domain.Models.Activity;
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -18,6 +20,8 @@ namespace ISPSMS_JUHACA.Presenter
         private readonly IUnitOfWork _dbContext;
         private readonly SubscriberPage _subscribersForm;
         private readonly addSubscribersForm _subscriberForm;
+        private readonly string _currentUserName;
+        private readonly string _currentUserRole;
 
 
         private bool isSaving = false;
@@ -181,14 +185,10 @@ namespace ISPSMS_JUHACA.Presenter
         }
         public void OnSaveSubscriber()
         {
-
-
             if (!ValidateFields())
             {
-
                 return;
             }
-
 
             if (_subscribersForm.isEdit)
             {
@@ -210,9 +210,7 @@ namespace ISPSMS_JUHACA.Presenter
                 _dbContext.connectedSubscriberRepository.Update(entity);
                 _dbContext.Save();
 
-
                 _view.ShowMessage("Subscriber UPDATED successfully!");
-
             }
             else
             {
@@ -234,6 +232,9 @@ namespace ISPSMS_JUHACA.Presenter
                 _dbContext.connectedSubscriberRepository.Add(newSubscriber);
                 _dbContext.Save();
 
+                // Log the activity
+                LogActivity($"Added Subscriber: {newSubscriber.Conn_Name}");
+
                 _view.ShowMessage("Subscriber ADDED successfully!");
             }
 
@@ -243,8 +244,8 @@ namespace ISPSMS_JUHACA.Presenter
             {
                 addForm.Close();
             }
-
         }
+
 
         private string GetOrdinal(int day)
         {
@@ -289,6 +290,21 @@ namespace ISPSMS_JUHACA.Presenter
 
         private string GetDistrict(string address) => address.Split(',')[0].Trim();
         private string GetBarangay(string address) => address.Split(',')[1].Trim();
+
+
+        private void LogActivity(string activityDescription)
+        {
+            var activity = new Activity
+            {
+                AccountName = _currentUserName,
+                AccountRole = _currentUserRole,
+                ActivitiesDone = activityDescription,
+                ActivitiesDateTime = DateTime.Now
+            };
+
+            _dbContext.activityRepository.Update(activity);
+            _dbContext.Save();
+        }
 
     }
 }

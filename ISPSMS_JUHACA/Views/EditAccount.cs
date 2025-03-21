@@ -13,10 +13,10 @@ namespace ISPSMS_JUHACA.Views
         private readonly EditAccountPresenter _presenter;
         private bool isLoading = false;
 
-        public EditAccount(Accounts selectedAccount, IUnitOfWork dbContext1, string currentUserRole)
+        public EditAccount(Accounts selectedAccount, IUnitOfWork dbContext1, string currentUserRole, string currentUserName)
         {
             InitializeComponent();
-            _presenter = new EditAccountPresenter(this, dbContext1, selectedAccount);
+            _presenter = new EditAccountPresenter(this, dbContext1, selectedAccount, currentUserName, currentUserRole);
             CurrentUserRole = currentUserRole;
             LoadAccountData();
         }
@@ -109,27 +109,6 @@ namespace ISPSMS_JUHACA.Views
 
         private void ComboRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
