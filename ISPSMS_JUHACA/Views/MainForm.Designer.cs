@@ -31,12 +31,12 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            dashboardPage = new TabPage();
             subscribersPage = new TabPage();
             billingPage = new TabPage();
             transactionsPage = new TabPage();
             accountsPage = new TabPage();
             activitiesPage = new TabPage();
-            dashboardPage = new TabPage();
             imageList1 = new ImageList(components);
             connectedSubscribersBindingSource1 = new BindingSource(components);
             connectedSubscriberViewBindingSource = new BindingSource(components);
@@ -79,6 +79,18 @@
             materialTabControl1.SelectedIndex = 0;
             materialTabControl1.Size = new Size(1914, 1001);
             materialTabControl1.TabIndex = 0;
+            // 
+            // dashboardPage
+            // 
+            dashboardPage.BackColor = Color.FromArgb(241, 240, 233);
+            dashboardPage.ImageKey = "dashboard.png";
+            dashboardPage.Location = new Point(4, 24);
+            dashboardPage.Margin = new Padding(3, 2, 3, 2);
+            dashboardPage.Name = "dashboardPage";
+            dashboardPage.Padding = new Padding(3, 2, 3, 2);
+            dashboardPage.Size = new Size(1906, 973);
+            dashboardPage.TabIndex = 0;
+            dashboardPage.Text = "Dashboard";
             // 
             // subscribersPage
             // 
@@ -135,18 +147,6 @@
             activitiesPage.Size = new Size(1906, 973);
             activitiesPage.TabIndex = 5;
             activitiesPage.Text = "Activities";
-            // 
-            // dashboardPage
-            // 
-            dashboardPage.BackColor = Color.FromArgb(241, 240, 233);
-            dashboardPage.ImageKey = "dashboard.png";
-            dashboardPage.Location = new Point(4, 24);
-            dashboardPage.Margin = new Padding(3, 2, 3, 2);
-            dashboardPage.Name = "dashboardPage";
-            dashboardPage.Padding = new Padding(3, 2, 3, 2);
-            dashboardPage.Size = new Size(1906, 973);
-            dashboardPage.TabIndex = 0;
-            dashboardPage.Text = "Dashboard";
             // 
             // imageList1
             // 

@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intersoft.Crosslight.UI.DataVisualization" Version="6.0.5000.975" />
     <PackageReference Include="Krypton.Docking" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Navigator" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Ribbon" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Toolkit" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Workspace" Version="90.25.2.55" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="Microsoft.Graph" Version="5.74.0" />
   </ItemGroup>
 
   <ItemGroup>

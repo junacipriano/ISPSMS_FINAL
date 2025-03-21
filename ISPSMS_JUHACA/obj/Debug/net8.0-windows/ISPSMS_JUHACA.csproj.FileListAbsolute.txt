@@ -106,3 +106,15 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\refint\ISPSMS_JUHACA.dll
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.pdb
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Graph.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Graph.Core.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Validators.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Abstractions.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Authentication.Azure.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Http.HttpClientLibrary.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Serialization.Form.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Serialization.Json.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Serialization.Multipart.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Kiota.Serialization.Text.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Std.UriTemplate.dll

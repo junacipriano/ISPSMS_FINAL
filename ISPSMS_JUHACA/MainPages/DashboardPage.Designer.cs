@@ -51,6 +51,9 @@
             areaTextbox = new Krypton.Toolkit.KryptonTextBox();
             subscribersLabel = new Krypton.Toolkit.KryptonLabel();
             areaLabel = new Krypton.Toolkit.KryptonLabel();
+            kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel2).BeginInit();
             kryptonPanel2.SuspendLayout();
@@ -159,8 +162,6 @@
             south.StateCommon.Color1 = Color.Transparent;
             south.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             south.TabIndex = 20;
-            //south.MouseEnter += southPanel_MouseEnter;
-            //south.MouseLeave += southPanel_MouseLeave;
             // 
             // colambugon
             // 
@@ -170,8 +171,6 @@
             colambugon.StateCommon.Color1 = Color.Transparent;
             colambugon.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             colambugon.TabIndex = 14;
-            //colambugon.MouseEnter += colambugonPanel_MouseEnter;
-            //colambugon.MouseLeave += colambugonPanel_MouseLeave;
             // 
             // danggawan
             // 
@@ -181,8 +180,6 @@
             danggawan.StateCommon.Color1 = Color.Transparent;
             danggawan.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             danggawan.TabIndex = 15;
-            //danggawan.MouseEnter += danggawanPanel_MouseEnter;
-            //danggawan.MouseLeave += danggawanPanel_MouseLeave;
             // 
             // panadtalan
             // 
@@ -193,8 +190,6 @@
             panadtalan.StateCommon.Color2 = Color.Transparent;
             panadtalan.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             panadtalan.TabIndex = 10;
-            //panadtalan.MouseEnter += panadtalanPanel_MouseEnter;
-            //panadtalan.MouseLeave += panadtalanPanel_MouseLeave;
             // 
             // dologon
             // 
@@ -205,9 +200,6 @@
             dologon.StateCommon.Color2 = Color.Transparent;
             dologon.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             dologon.TabIndex = 9;
-            //dologon.MouseEnter += dologonPanel_MouseEnter;
-            //dologon.MouseLeave += dologonPanel_MouseLeave;
-            //dologon.MouseHover += dologonPanel_MouseEnter;
             // 
             // anahawon
             // 
@@ -218,8 +210,6 @@
             anahawon.StateCommon.Color2 = Color.Transparent;
             anahawon.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             anahawon.TabIndex = 12;
-            //anahawon.MouseEnter += anahawonPanel_MouseEnter;
-            //anahawon.MouseLeave += anahawonPanel_MouseLeave;
             // 
             // camp1
             // 
@@ -229,8 +219,6 @@
             camp1.StateCommon.Color1 = Color.Transparent;
             camp1.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             camp1.TabIndex = 20;
-            //camp1.MouseEnter += camp1Panel_MouseEnter;
-            //camp1.MouseLeave += camp1Panel_MouseLeave;
             // 
             // basecamp
             // 
@@ -240,9 +228,7 @@
             basecamp.StateCommon.Color1 = Color.Transparent;
             basecamp.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             basecamp.TabIndex = 17;
-            //basecamp.MouseEnter += basecampPanel_MouseEnter;
-            //basecamp.MouseLeave += basecampPanel_MouseLeave;
-            //// 
+            // 
             // north
             // 
             north.Location = new Point(274, 231);
@@ -251,8 +237,6 @@
             north.StateCommon.Color1 = Color.Transparent;
             north.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             north.TabIndex = 18;
-            //north.MouseEnter += northPanel_MouseEnter;
-            //north.MouseLeave += northPanel_MouseLeave;
             // 
             // sanmiguel
             // 
@@ -262,8 +246,6 @@
             sanmiguel.StateCommon.Color1 = Color.Transparent;
             sanmiguel.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             sanmiguel.TabIndex = 16;
-            //sanmiguel.MouseEnter += sanmiguelPanel_MouseEnter;
-            //sanmiguel.MouseLeave += sanmiguelPanel_MouseLeave;
             // 
             // kryptonPanel5
             // 
@@ -354,6 +336,22 @@
             areaLabel.Values.Text = "Area";
             areaLabel.Visible = false;
             // 
+            // kryptonTextBox2
+            // 
+            kryptonTextBox2.Location = new Point(722, 195);
+            kryptonTextBox2.MinimumSize = new Size(564, 200);
+            kryptonTextBox2.Name = "kryptonTextBox2";
+            kryptonTextBox2.Size = new Size(564, 200);
+            kryptonTextBox2.TabIndex = 9;
+            // 
+            // kryptonTextBox3
+            // 
+            kryptonTextBox3.Location = new Point(1316, 195);
+            kryptonTextBox3.MinimumSize = new Size(564, 200);
+            kryptonTextBox3.Name = "kryptonTextBox3";
+            kryptonTextBox3.Size = new Size(564, 200);
+            kryptonTextBox3.TabIndex = 10;
+            // 
             // DashboardPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -361,6 +359,8 @@
             BackColor = Color.FromArgb(241, 240, 233);
             ClientSize = new Size(1892, 951);
             ControlBox = false;
+            Controls.Add(kryptonTextBox3);
+            Controls.Add(kryptonTextBox2);
             Controls.Add(infoBox);
             Controls.Add(kryptonPanel2);
             Controls.Add(kryptonLabel3);
@@ -424,5 +424,8 @@
         private Krypton.Toolkit.KryptonTextBox areaTextbox;
         private Krypton.Toolkit.KryptonLabel subscribersLabel;
         private Krypton.Toolkit.KryptonTextBox subscribersTextbox;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

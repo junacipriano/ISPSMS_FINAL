@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "Intersoft.Crosslight.UI.DataVisualization": {
+              "target": "Package",
+              "version": "[6.0.5000.975, )"
+            },
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -74,6 +78,10 @@
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
@@ -89,6 +97,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Microsoft.Graph": {
+              "target": "Package",
+              "version": "[5.74.0, )"
             }
           },
           "imports": [
@@ -165,6 +177,10 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "Intersoft.Crosslight.UI.DataVisualization": {
+              "target": "Package",
+              "version": "[6.0.5000.975, )"
+            },
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -185,6 +201,10 @@
               "target": "Package",
               "version": "[90.25.2.55, )"
             },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
             "MaterialSkin.2": {
               "target": "Package",
               "version": "[2.3.1, )"
@@ -200,6 +220,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Microsoft.Graph": {
+              "target": "Package",
+              "version": "[5.74.0, )"
             }
           },
           "imports": [
@@ -279,6 +303,14 @@
               "target": "Package",
               "version": "[14.0.0, )"
             },
+            "HIC.System.Windows.Forms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Intersoft.Crosslight.UI.DataVisualization": {
+              "target": "Package",
+              "version": "[6.0.5000.975, )"
+            },
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -298,6 +330,10 @@
             "Krypton.Workspace": {
               "target": "Package",
               "version": "[90.25.2.55, )"
+            },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
             },
             "MaterialSkin.2": {
               "target": "Package",
@@ -330,6 +366,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.11, )"
+            },
+            "Microsoft.Graph": {
+              "target": "Package",
+              "version": "[5.74.0, )"
             },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
