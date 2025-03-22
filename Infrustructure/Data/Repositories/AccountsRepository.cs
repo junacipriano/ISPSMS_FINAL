@@ -1,4 +1,8 @@
-﻿using Domain.Models;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using BCrypt.Net;
+using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Data;
 using ISPSMS_JUHACA.Data.Repositories;
@@ -8,7 +12,8 @@ namespace Infastructure.Data.Repositories
 {
     public class AccountsRepository : Repository<Accounts>, IAccountsRepository
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
+
         public AccountsRepository(AppDbContext db) : base(db)
         {
             _context = db;
@@ -24,14 +29,14 @@ namespace Infastructure.Data.Repositories
             _context.Accounts.Update(obj);
         }
 
-        public Accounts GetAccountByEmailAndPassword(string email, string password)
-        {
-            return _context.Accounts.FirstOrDefault(a => a.Username == email && a.AccountPassword == password);
-        }
-
         public async Task<Accounts> GetAccountByEmailAndPasswordAsync(string email, string password)
         {
-            return await _context.Accounts.FirstOrDefaultAsync(a => a.Username == email && a.AccountPassword == password);
+            var account = await _context.Accounts.FirstOrDefaultAsync(a => a.Username == email);
+            if (account != null && BCrypt.Net.BCrypt.Verify(password, account.AccountPassword))
+            {
+                return account; // Password matches
+            }
+            return null; // Invalid credentials
         }
     }
 }

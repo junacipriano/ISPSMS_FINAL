@@ -29,6 +29,5 @@
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Zeb Perez\.nuget\packages\microsoft.entityframeworkcore.tools\8.0.11</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\Zeb Perez\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
     <PkgLiveCharts_WinForms Condition=" '$(PkgLiveCharts_WinForms)' == '' ">C:\Users\Zeb Perez\.nuget\packages\livecharts.winforms\0.9.7.1</PkgLiveCharts_WinForms>
-    <PkgIntersoft_Crosslight Condition=" '$(PkgIntersoft_Crosslight)' == '' ">C:\Users\Zeb Perez\.nuget\packages\intersoft.crosslight\6.0.5000.975</PkgIntersoft_Crosslight>
   </PropertyGroup>
 </Project>

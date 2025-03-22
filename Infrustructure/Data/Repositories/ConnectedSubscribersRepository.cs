@@ -87,5 +87,27 @@ namespace Infastructure.Repositories
             return _db.ConnectedSubscribers.Count(s => s.Address.Contains("Camp 1"));
         }
 
+        public int CountAllSubscriber()
+        {
+            return _db.ConnectedSubscribers.Count();
+        }
+
+        public int CountPastDue()
+        {
+            return _db.ConnectedSubscribers.Count(s => s.Status.Contains("Past Due"));
+        }
+        public int CountOverDue()
+        {
+            return _db.ConnectedSubscribers.Count(s => s.Status.Contains("Overdue"));
+        }
+        public int CountActive()
+        {
+            return _db.ConnectedSubscribers.Count(s => s.Status.Contains("Active"));
+        }
+
+        public int CountDue()
+        {
+            return CountPastDue()+CountOverDue();
+        }
     }
 }

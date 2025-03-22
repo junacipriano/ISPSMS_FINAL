@@ -34,7 +34,10 @@
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             panel1 = new Panel();
-            materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
+            btnEdit = new Krypton.Toolkit.KryptonButton();
+            personID = new Krypton.Toolkit.KryptonLabel();
+            kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
+            Switch = new MaterialSkin.Controls.MaterialSwitch();
             personPassword = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel9 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
@@ -45,14 +48,12 @@
             kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             btnLogout = new Krypton.Toolkit.KryptonButton();
-            personID = new Krypton.Toolkit.KryptonLabel();
-            kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(99, 397);
+            btnClose.Location = new Point(15, 367);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(112, 31);
             btnClose.TabIndex = 2;
@@ -98,9 +99,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(btnEdit);
             panel1.Controls.Add(personID);
             panel1.Controls.Add(kryptonLabel10);
-            panel1.Controls.Add(materialSwitch1);
+            panel1.Controls.Add(Switch);
             panel1.Controls.Add(personPassword);
             panel1.Controls.Add(kryptonLabel9);
             panel1.Controls.Add(kryptonLabel6);
@@ -119,20 +121,49 @@
             panel1.Size = new Size(714, 306);
             panel1.TabIndex = 3;
             // 
-            // materialSwitch1
+            // btnEdit
             // 
-            materialSwitch1.AutoSize = true;
-            materialSwitch1.Depth = 0;
-            materialSwitch1.Location = new Point(55, 246);
-            materialSwitch1.Margin = new Padding(0);
-            materialSwitch1.MouseLocation = new Point(-1, -1);
-            materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialSwitch1.Name = "materialSwitch1";
-            materialSwitch1.Ripple = true;
-            materialSwitch1.Size = new Size(172, 37);
-            materialSwitch1.TabIndex = 14;
-            materialSwitch1.Text = "Show Password";
-            materialSwitch1.UseVisualStyleBackColor = true;
+            btnEdit.Location = new Point(527, 252);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(177, 31);
+            btnEdit.TabIndex = 5;
+            btnEdit.Values.DropDownArrowColor = Color.Empty;
+            btnEdit.Values.Text = "Edit Profile";
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // personID
+            // 
+            personID.Location = new Point(490, 138);
+            personID.Name = "personID";
+            personID.Size = new Size(52, 24);
+            personID.StateCommon.LongText.Font = new Font("Microsoft Sans Serif", 12F);
+            personID.TabIndex = 16;
+            personID.Values.Text = "Name";
+            // 
+            // kryptonLabel10
+            // 
+            kryptonLabel10.Location = new Point(340, 138);
+            kryptonLabel10.Name = "kryptonLabel10";
+            kryptonLabel10.Size = new Size(144, 31);
+            kryptonLabel10.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel10.TabIndex = 15;
+            kryptonLabel10.Values.Text = "Peroson ID:";
+            // 
+            // Switch
+            // 
+            Switch.AutoSize = true;
+            Switch.Depth = 0;
+            Switch.Location = new Point(55, 246);
+            Switch.Margin = new Padding(0);
+            Switch.MouseLocation = new Point(-1, -1);
+            Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            Switch.Name = "Switch";
+            Switch.Ripple = true;
+            Switch.Size = new Size(172, 37);
+            Switch.TabIndex = 14;
+            Switch.Text = "Show Password";
+            Switch.UseVisualStyleBackColor = true;
+            Switch.CheckedChanged += Switch_CheckedChanged;
             // 
             // personPassword
             // 
@@ -216,38 +247,20 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(614, 397);
+            btnLogout.Location = new Point(539, 367);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(112, 31);
+            btnLogout.Size = new Size(177, 31);
             btnLogout.StatePressed.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             btnLogout.TabIndex = 4;
             btnLogout.Values.DropDownArrowColor = Color.Empty;
             btnLogout.Values.Text = "Log Out";
             btnLogout.Click += btnLogout_Click;
             // 
-            // personID
-            // 
-            personID.Location = new Point(490, 138);
-            personID.Name = "personID";
-            personID.Size = new Size(52, 24);
-            personID.StateCommon.LongText.Font = new Font("Microsoft Sans Serif", 12F);
-            personID.TabIndex = 16;
-            personID.Values.Text = "Name";
-            // 
-            // kryptonLabel10
-            // 
-            kryptonLabel10.Location = new Point(340, 138);
-            kryptonLabel10.Name = "kryptonLabel10";
-            kryptonLabel10.Size = new Size(144, 31);
-            kryptonLabel10.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonLabel10.TabIndex = 15;
-            kryptonLabel10.Values.Text = "Peroson ID:";
-            // 
             // UserProfileForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(753, 450);
             Controls.Add(btnLogout);
             Controls.Add(panel1);
             Controls.Add(btnClose);
@@ -274,9 +287,10 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
         private Krypton.Toolkit.KryptonLabel personUsername;
         private Krypton.Toolkit.KryptonLabel personName;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
+        private MaterialSkin.Controls.MaterialSwitch Switch;
         private Krypton.Toolkit.KryptonLabel personPassword;
         private Krypton.Toolkit.KryptonLabel personID;
         private Krypton.Toolkit.KryptonLabel kryptonLabel10;
+        private Krypton.Toolkit.KryptonButton btnEdit;
     }
 }

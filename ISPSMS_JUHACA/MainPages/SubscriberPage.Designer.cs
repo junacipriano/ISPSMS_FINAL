@@ -64,12 +64,15 @@
             monthlyChargeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             editButton = new DataGridViewButtonColumn();
             disconnectButton = new DataGridViewButtonColumn();
+            connectedSubscribersBindingSource = new BindingSource(components);
+            bindingSource1 = new BindingSource(components);
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
             addBtn = new MaterialSkin.Controls.MaterialButton();
-            bindingSource1 = new BindingSource(components);
+            AddButton = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -132,7 +135,7 @@
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 29;
             materialComboBox1.Items.AddRange(new object[] { "All", "Active", "Past due", "Overdue" });
-            materialComboBox1.Location = new Point(417, 86);
+            materialComboBox1.Location = new Point(418, 94);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MaximumSize = new Size(200, 0);
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
@@ -141,6 +144,7 @@
             materialComboBox1.StartIndex = 0;
             materialComboBox1.TabIndex = 42;
             materialComboBox1.UseTallSize = false;
+            materialComboBox1.SelectedIndexChanged += materialComboBox1_SelectedIndexChanged;
             // 
             // allBtn
             // 
@@ -561,7 +565,7 @@
             disconnectedbtn.ForeColor = Color.FromArgb(255, 255, 252);
             disconnectedbtn.HighEmphasis = true;
             disconnectedbtn.Icon = null;
-            disconnectedbtn.Location = new Point(643, 85);
+            disconnectedbtn.Location = new Point(788, 89);
             disconnectedbtn.Margin = new Padding(4);
             disconnectedbtn.MouseState = MaterialSkin.MouseState.HOVER;
             disconnectedbtn.Name = "disconnectedbtn";
@@ -611,7 +615,7 @@
             connectedsubscribersGridView.ColumnHeadersHeight = 50;
             connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { Conn_Name, subsidDataGridViewTextBoxColumn, connNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn, editButton, disconnectButton });
-            connectedsubscribersGridView.DataSource = bindingSource1;
+            connectedsubscribersGridView.DataSource = connectedSubscribersBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 252);
             dataGridViewCellStyle2.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -732,44 +736,37 @@
             disconnectButton.Name = "disconnectButton";
             disconnectButton.UseColumnTextForButtonValue = true;
             // 
+            // connectedSubscribersBindingSource
+            // 
+            connectedSubscribersBindingSource.DataSource = typeof(Domain.Models.ConnectedSubscribers);
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
+            // 
             // connectedSubscriberViewBindingSource1
             // 
             connectedSubscriberViewBindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
             // 
             // addBtn
             // 
-            addBtn.AutoSize = false;
-            addBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addBtn.BackColor = Color.FromArgb(94, 167, 178);
-            addBtn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
-            addBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            addBtn.Depth = 0;
-            addBtn.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addBtn.ForeColor = Color.FromArgb(255, 255, 252);
-            addBtn.HighEmphasis = true;
-            addBtn.Icon = null;
-            addBtn.Location = new Point(549, 86);
-            addBtn.Margin = new Padding(4);
-            addBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            addBtn.Name = "addBtn";
-            addBtn.NoAccentTextColor = Color.Empty;
-            addBtn.Size = new Size(86, 36);
-            addBtn.TabIndex = 27;
-            addBtn.Text = "add new";
-            addBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            addBtn.UseAccentColor = false;
-            addBtn.UseVisualStyleBackColor = false;
-            addBtn.Click += addBtn_Click;
             // 
-            // bindingSource1
+            // AddButton
             // 
-            bindingSource1.DataSource = typeof(Domain.ViewModels.ConnectedSubscriberView);
+            AddButton.Location = new Point(591, 100);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(90, 25);
+            AddButton.TabIndex = 47;
+            AddButton.Values.DropDownArrowColor = Color.Empty;
+            AddButton.Values.Text = "kryptonButton1";
+            AddButton.Click += AddButton_Click;
             // 
             // SubscriberPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1906, 973);
+            ClientSize = new Size(1914, 949);
+            Controls.Add(AddButton);
             Controls.Add(label5);
             Controls.Add(TotalSubscriberLabel);
             Controls.Add(label3);
@@ -789,15 +786,14 @@
             Controls.Add(disconnectedbtn);
             Controls.Add(label1);
             Controls.Add(connectedsubscribersGridView);
-            Controls.Add(addBtn);
-            FormStyle = FormStyles.StatusAndActionBar_None;
             Name = "SubscriberPage";
             Padding = new Padding(3, 0, 3, 3);
             Text = "SubscriberPage";
             Load += SubscriberPage_Load;
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -844,5 +840,8 @@
         private DataGridViewButtonColumn editButton;
         private DataGridViewButtonColumn disconnectButton;
         private BindingSource bindingSource1;
+        private BindingSource connectedSubscribersBindingSource;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private Krypton.Toolkit.KryptonButton AddButton;
     }
 }

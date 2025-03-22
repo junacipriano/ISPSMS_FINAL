@@ -1,0 +1,1 @@
+D:\ISPSMS_FINAL\Domain\obj\Debug\net8.0-windows10.0.18362.0\Domain.csproj.AssemblyReference.cache

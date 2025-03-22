@@ -1,21 +1,13 @@
 ﻿using Domain.Models;
-
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
 using ISPSMS_JUHACA.Presenter;
 using ISPSMS_JUHACA.MainPages;
-
+using System.Diagnostics;
 
 namespace ISPSMS_JUHACA
 {
@@ -27,16 +19,16 @@ namespace ISPSMS_JUHACA
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         internal string message;
         private readonly IMainSubscriberPage _view;
-       
-
 
         public event EventHandler SaveSubscriber;
         public event EventHandler FormLoaded;
         public event EventHandler DistrictChanged;
-
         public event EventHandler BarangayChanged;
 
+
+
         public ConnectedSubscribers EditedSubscriber { get; set; }
+
         public string LastName
         {
             get => lastNameTextBox.Text.Trim().ToUpper();
@@ -58,13 +50,21 @@ namespace ISPSMS_JUHACA
         public string District
         {
             get => districtComboBox.SelectedItem?.ToString() ?? "";
-            set => districtComboBox.SelectedItem = value;
+            set
+            {
+                districtComboBox.SelectedItem = value;
+                DistrictChanged?.Invoke(this, EventArgs.Empty); // Ensure event is triggered
+            }
         }
 
         public string Barangay
         {
             get => barangayComboBox.SelectedItem?.ToString() ?? "";
-            set => barangayComboBox.SelectedItem = value;
+            set
+            {
+                barangayComboBox.SelectedItem = value;
+                BarangayChanged?.Invoke(this, EventArgs.Empty); // Ensure event is triggered
+            }
         }
 
         public string Plan
@@ -91,19 +91,20 @@ namespace ISPSMS_JUHACA
             set => dueDatePicker.Value = value;
         }
 
-
         public List<string> DistrictOptions
         {
             set
             {
+                districtComboBox.BeginUpdate();
                 districtComboBox.Items.Clear();
                 districtComboBox.Items.AddRange(value.ToArray());
 
                 if (districtComboBox.Items.Count > 0)
                 {
-                    districtComboBox.SelectedIndex = 0; 
+                    districtComboBox.SelectedIndex = 0;
                 }
 
+                districtComboBox.EndUpdate();
                 districtComboBox.Refresh();
             }
         }
@@ -115,6 +116,17 @@ namespace ISPSMS_JUHACA
             {
                 _presenter = new AddSubscriberPresenter(this, dbContext, subscribersForm, currentUsername, mainForm);
             }
+            districtComboBox.SelectedIndexChanged += (s, e) =>
+            {
+                Debug.WriteLine("District changed!");
+                DistrictChanged?.Invoke(this, EventArgs.Empty);
+            };
+
+            barangayComboBox.SelectedIndexChanged += (s, e) =>
+            {
+                Debug.WriteLine("Barangay changed!");
+                BarangayChanged?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         private void SaveBtn_Click_1(object sender, EventArgs e)
@@ -138,7 +150,7 @@ namespace ISPSMS_JUHACA
             FormLoaded?.Invoke(this, EventArgs.Empty);
 
 
-            districtComboBox.SelectedIndexChanged += (s, e) => DistrictChanged?.Invoke(this, EventArgs.Empty);
+           
         }
     }
 }

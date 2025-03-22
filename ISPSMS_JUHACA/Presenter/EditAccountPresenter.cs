@@ -4,6 +4,7 @@ using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews.ISPSMS_JUHACA.Views.IVews;
 using System;
 using ISPSMS_JUHACA.Views;
+using BCrypt.Net; // 🔹 Import BCrypt for password hashing
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -27,65 +28,105 @@ namespace ISPSMS_JUHACA.Presenter
 
         public void LoadAccountData()
         {
+            _view.ProfileName = _account.AccountName;
+            _view.ProfileRole = _account.AccountRole;
             _view.Username = _account.Username;
             _view.AccountName = _account.AccountName;
-            _view.Password = _account.AccountPassword;
-            _view.ConfirmPassword = _account.AccountPassword;
             _view.AccountRole = _account.AccountRole;
         }
 
         public void SaveAccount()
         {
-            if (_view.Password != _view.ConfirmPassword)
+            try
             {
-                _view.ShowMessage("Passwords do not match.", "Error");
-                return;
+                // 🔹 Validate required fields
+                if (string.IsNullOrWhiteSpace(_view.Username) || string.IsNullOrWhiteSpace(_view.AccountName))
+                {
+                    _view.ShowMessage("Username and Account Name cannot be empty.", "Error");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(_view.Password))
+                {
+                    _view.ShowMessage("Password cannot be empty.", "Error");
+                    return;
+                }
+
+                if (_view.Password != _view.ConfirmPassword)
+                {
+                    _view.ShowMessage("Passwords do not match.", "Error");
+                    return;
+                }
+
+                _account.Username = _view.Username;
+                _account.AccountName = _view.AccountName;
+
+                // 🔹 Hash the password only if it's changed
+                if (!string.IsNullOrWhiteSpace(_view.Password))
+                {
+                    _account.AccountPassword = BCrypt.Net.BCrypt.HashPassword(_view.Password);
+                }
+
+                _account.AccountRole = _view.AccountRole;
+
+                // 🔹 Prevent unauthorized role modification
+                if (_view.CurrentUserRole == "ADMIN" && (_account.AccountRole == "CEO" || _account.AccountRole == "ADMIN"))
+                {
+                    _view.ShowMessage("You do not have permission to modify this account.", "Access Denied");
+                    return;
+                }
+
+                _unitOfWork.accountsRepository.Update(_account);
+                _unitOfWork.Save();
+
+                LogActivity("Edit account: " + _account.Username);
+
+                _view.ShowMessage("Account details saved successfully.", "Success");
+                _view.CloseForm();
             }
-
-            _account.Username = _view.Username;
-            _account.AccountName = _view.AccountName;
-            _account.AccountPassword = _view.Password;
-            _view.ConfirmPassword = _account.AccountPassword;
-            _account.AccountRole = _view.AccountRole;
-
-            if (_view.CurrentUserRole == "ADMIN" && (_account.AccountRole == "CEO" || _account.AccountRole == "ADMIN"))
+            catch (Exception ex)
             {
-                _view.ShowMessage("You do not have permission to modify this account.", "Access Denied");
-                return;
+                _view.ShowMessage($"An error occurred: {ex.Message}", "Error");
             }
-
-            _unitOfWork.accountsRepository.Update(_account);
-            _unitOfWork.Save();
-
-            LogActivity("Edit account: " + _account.Username);
-
-            _view.ShowMessage("Account details saved successfully.", "Success");
-            _view.CloseForm();
         }
 
         public void DeleteAccount()
         {
-            _unitOfWork.accountsRepository.Remove(_account);
-            _unitOfWork.Save();
+            try
+            {
+                _unitOfWork.accountsRepository.Remove(_account);
+                _unitOfWork.Save();
 
-            LogActivity("Delete account: " + _account.AccountName);
+                LogActivity("Delete account: " + _account.AccountName);
 
-            _view.ShowMessage("Account successfully deleted.", "Success");
-            _view.CloseForm();
+                _view.ShowMessage("Account successfully deleted.", "Success");
+                _view.CloseForm();
+            }
+            catch (Exception ex)
+            {
+                _view.ShowMessage($"An error occurred while deleting the account: {ex.Message}", "Error");
+            }
         }
 
         private void LogActivity(string activityDescription)
         {
-            var activity = new Activity
+            try
             {
-                AccountName = _currentUserName,
-                AccountRole = _currentUserRole,
-                ActivitiesDone = activityDescription,
-                ActivitiesDateTime = DateTime.Now
-            };
+                var activity = new Activity
+                {
+                    AccountName = _currentUserName,
+                    AccountRole = _currentUserRole,
+                    ActivitiesDone = activityDescription,
+                    ActivitiesDateTime = DateTime.Now
+                };
 
-            _unitOfWork.activityRepository.Update(activity);
-            _unitOfWork.Save();
+                _unitOfWork.activityRepository.Update(activity);
+                _unitOfWork.Save();
+            }
+            catch (Exception ex)
+            {
+                _view.ShowMessage($"Failed to log activity: {ex.Message}", "Error");
+            }
         }
     }
 }

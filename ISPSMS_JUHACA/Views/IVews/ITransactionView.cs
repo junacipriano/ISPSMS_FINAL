@@ -10,5 +10,6 @@ namespace ISPSMS_JUHACA.Views.IVews
     public interface ITransactionView
     {
         void DisplayTransactions(List<Transactions> transactions);
+        void UpdatePaidAmountLabel(decimal totalPaidAmount);
     }
 }

@@ -16,3 +16,12 @@ D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.dll
 D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
 D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
 D:\ISPSMS_FINAL\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\runtimes\win-x86\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\runtimes\win-x64\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\runtimes\win-arm64\native\WebView2Loader.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.Core.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.WinForms.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.Wpf.dll
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.Core.xml
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.WinForms.xml
+D:\ISPSMS_FINAL\ServiceLayer\bin\Debug\net8.0\Microsoft.Web.WebView2.Wpf.xml

@@ -5,8 +5,9 @@
     using ISPSMS_JUHACA.Views;
     using ISPSMS_JUHACA.MainPages;
 using Infastructure.Data.Repositories;
+using ISPSMS_JUHACA.MainPages.SubPages;
 
-    namespace ISPSMS_JUHACA
+namespace ISPSMS_JUHACA
         {
     public partial class MainForm : MaterialForm
     {
@@ -47,7 +48,7 @@ using Infastructure.Data.Repositories;
         }
 
         private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
-        {
+        {   
 
             if (materialTabControl1.SelectedTab == subscribersPage)
             {
@@ -62,6 +63,8 @@ using Infastructure.Data.Repositories;
 
                 subscribersPage.Controls.Add(subsPage);
                 subsPage.Show();
+
+                subsPage.getSubscribers();
 
             }
             else if (materialTabControl1.SelectedTab == billingPage)
@@ -123,6 +126,22 @@ using Infastructure.Data.Repositories;
                 DBPage.Show();
 
             }
+            else if (materialTabControl1.SelectedTab == activitiesPage)
+            {
+
+                activitiesPage.Controls.Clear();
+                var ActPage = new ActivityForm(dbContext, this);
+
+                ActPage.TopLevel = false;
+                ActPage.FormBorderStyle = FormBorderStyle.None;
+                ActPage.Dock = DockStyle.Fill;
+
+                activitiesPage.Controls.Add(ActPage);
+                ActPage.Show();
+
+            }
+
+
 
         }
 
@@ -179,8 +198,6 @@ using Infastructure.Data.Repositories;
         public void OpenSubscribersPage()
         {
             materialTabControl1.SelectedTab = subscribersPage;
-
-
             subscribersPage.Controls.Clear();
 
             var subsPage = new SubscriberPage(dbContext, this);
@@ -189,8 +206,12 @@ using Infastructure.Data.Repositories;
             subsPage.Dock = DockStyle.Fill;
 
             subscribersPage.Controls.Add(subsPage);
-            subsPage.Show();
+
+            subsPage.getSubscribers(); // Ensure data loads with correct status
+            subsPage.Show(); // Ensure the form is displayed
+
         }
+
 
         public string GetUserRole()
         {

@@ -7,13 +7,16 @@ using System.Windows.Forms;
 
 namespace ISPSMS_JUHACA.MainPages.SubPages
 {
-    public partial class TransactionTemplate : KryptonForm
+    public partial class TransactionTemplate : UserControl
     {
         private readonly Transactions _transaction;
+
         private PrintDocument printDocument = new PrintDocument();
+        public Transactions Transaction { get; private set; }
         public TransactionTemplate(Transactions transaction)
         {
             InitializeComponent();
+            Transaction = transaction;
             _transaction = transaction;
             LoadTransactionData();
         }
@@ -23,8 +26,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             receiptNoTextBox.Text = _transaction.trans_id.ToString();
             subIDTextBox.Text = _transaction.subs_id.ToString();
             name.Text = _transaction.Trans_Name;
-            balance.Text = _transaction.PaidAmount.ToString("C");
-            amount.Text = _transaction.Balance.ToString("C");
+            amount.Text = _transaction.PaidAmount.ToString("C");
+            balance.Text = _transaction.Balance.ToString("C");
             note.Text = _transaction.Note;
             dueDate.Text = _transaction.Duedate;
             date.Text = _transaction.TransactionDateTime.ToString("MMMM d, yyyy HH:mm");
@@ -76,6 +79,11 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             {
                 printDocument.Print();
             }
+        }
+
+        private void amount_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

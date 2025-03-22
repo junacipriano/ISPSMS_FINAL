@@ -14,6 +14,11 @@ namespace Infastructure.Data.Repositories.IRepositories
         int CountPanadtalanSubscribers();
         int CountSanmiguelSubscribers();
         int CountSouthSubscribers();
+        int CountAllSubscriber();
+        int CountPastDue();
+        int CountOverDue();
+        int CountActive();
+        int CountDue();
         void Save();
         void Update(ConnectedSubscribers obj);
     }

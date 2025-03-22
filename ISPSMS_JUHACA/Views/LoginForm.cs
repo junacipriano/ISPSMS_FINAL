@@ -85,10 +85,7 @@ namespace ISPSMS_JUHACA.Views
         {
             this.Hide();
         }
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            SignUp?.Invoke(this, EventArgs.Empty);
-        }
+    
 
         private bool ValidateInputs()
         {
@@ -123,6 +120,11 @@ namespace ISPSMS_JUHACA.Views
             {
                 Login?.Invoke(this, EventArgs.Empty);
             }
+        }
+
+        private void btnSignUp_Click_1(object sender, EventArgs e)
+        {
+            SignUp?.Invoke(this, EventArgs.Empty);
         }
     }
 }

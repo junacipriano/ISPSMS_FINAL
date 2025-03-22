@@ -2,6 +2,7 @@
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Data;
 using ISPSMS_JUHACA.Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infastructure.Data.Repositories
 {
@@ -16,6 +17,10 @@ namespace Infastructure.Data.Repositories
         public void Update(Activity obj)
         {
             _db.Activity.Update(obj);
+        }
+        public IEnumerable<Activity> GetAll()
+        {
+            return _db.Set<Activity>().ToList();
         }
     }
 }

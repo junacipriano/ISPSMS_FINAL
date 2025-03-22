@@ -223,8 +223,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 252);
-            ClientSize = new Size(1751, 56);
-            ControlBox = false;
             Controls.Add(time);
             Controls.Add(date);
             Controls.Add(dueDate);
@@ -237,16 +235,7 @@
             Controls.Add(prinyBtn);
             ForeColor = Color.FromArgb(255, 255, 252);
             Name = "TransactionTemplate";
-            StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
-            StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
-            StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
-            StateCommon.Border.Rounding = 15F;
-            StateCommon.Header.Back.Color1 = Color.FromArgb(255, 255, 252);
-            StateCommon.Header.Back.Color2 = Color.FromArgb(255, 255, 252);
-            StateCommon.Header.ButtonPadding = new Padding(0);
-            StateCommon.Header.Content.Padding = new Padding(0);
-            TransparencyKey = Color.FromArgb(241, 240, 233);
+            Size = new Size(1751, 56);
             Load += TransactionTemplate_Load;
             ResumeLayout(false);
             PerformLayout();

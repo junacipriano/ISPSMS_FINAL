@@ -6,5 +6,7 @@ namespace Infastructure.Data.Repositories.IRepositories
     {
      
         void Update(Activity obj);
+
+        IEnumerable<Activity> GetAll();
     }
 }

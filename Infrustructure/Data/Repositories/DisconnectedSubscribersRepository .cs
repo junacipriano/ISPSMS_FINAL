@@ -18,6 +18,10 @@ namespace Infastructure.Data.Repositories
             _db.DisconnectedSubscribers.Update(obj);
         }
 
+        public int CountDisconnected()
+        {
+            return _db.DisconnectedSubscribers.Count();
+        }
 
     }
 }

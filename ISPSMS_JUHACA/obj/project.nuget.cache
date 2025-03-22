@@ -1,19 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "LeavqGg8ziU=",
+  "dgSpecHash": "n46Tc99yY9s=",
   "success": true,
   "projectFilePath": "D:\\ISPSMS_FINAL\\ISPSMS_JUHACA\\ISPSMS_JUHACA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\cuoreui.winforms\\2025.3.3\\cuoreui.winforms.2025.3.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\harfbuzzsharp\\7.3.0.3\\harfbuzzsharp.7.3.0.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0.3\\harfbuzzsharp.nativeassets.linux.7.3.0.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0.3\\harfbuzzsharp.nativeassets.macos.7.3.0.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0.3\\harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512",
-    "C:\\Users\\Zeb Perez\\.nuget\\packages\\intersoft.crosslight\\6.0.5000.975\\intersoft.crosslight.6.0.5000.975.nupkg.sha512",
-    "C:\\Users\\Zeb Perez\\.nuget\\packages\\intersoft.crosslight.ui.datavisualization\\6.0.5000.975\\intersoft.crosslight.ui.datavisualization.6.0.5000.975.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\krypton.docking\\90.25.2.55\\krypton.docking.90.25.2.55.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\krypton.navigator\\90.25.2.55\\krypton.navigator.90.25.2.55.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\krypton.ribbon\\90.25.2.55\\krypton.ribbon.90.25.2.55.nupkg.sha512",
@@ -21,6 +20,7 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\krypton.workspace\\90.25.2.55\\krypton.workspace.90.25.2.55.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\livecharts.winforms\\0.9.7.1\\livecharts.winforms.0.9.7.1.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\livecharts.winforms.netcore3\\0.9.8\\livecharts.winforms.netcore3.0.9.8.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
@@ -79,6 +79,7 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\nettopologysuite\\2.5.0\\nettopologysuite.2.5.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\opentk\\3.1.0\\opentk.3.1.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\opentk.glcontrol\\3.1.0\\opentk.glcontrol.3.1.0.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\presentationframework\\4.6.0\\presentationframework.4.6.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\scottplot\\5.0.54\\scottplot.5.0.54.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\scottplot.winforms\\5.0.54\\scottplot.winforms.5.0.54.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\skiasharp\\2.88.9\\skiasharp.2.88.9.nupkg.sha512",
@@ -97,6 +98,7 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.2.0\\swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.clientmodel\\1.1.0\\system.clientmodel.1.1.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.1\\system.configuration.configurationmanager.8.0.1.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.1\\system.diagnostics.eventlog.8.0.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.drawing.common\\4.7.3\\system.drawing.common.4.7.3.nupkg.sha512",
@@ -116,26 +118,6 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Intersoft.Crosslight 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Intersoft.Crosslight",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Intersoft.Crosslight.UI.DataVisualization 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Intersoft.Crosslight.UI.DataVisualization",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",
@@ -192,6 +174,16 @@
       "warningLevel": 1,
       "message": "Package 'OpenTK.GLControl 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenTK.GLControl",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PresentationFramework",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

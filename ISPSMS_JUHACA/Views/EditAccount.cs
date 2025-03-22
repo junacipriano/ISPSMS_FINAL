@@ -45,6 +45,20 @@ namespace ISPSMS_JUHACA.Views
             set => tbConfirmPass.Text = value;
         }
 
+        public string ProfileName
+        {
+            get => pName.Text;
+            set => pName.Text = value;
+        } 
+        
+        public string ProfileRole
+        {
+            get => pRole.Text;
+            set => pRole.Text = value;
+        }
+
+
+
         public string AccountRole
         {
             get => ComboRole.SelectedItem?.ToString();

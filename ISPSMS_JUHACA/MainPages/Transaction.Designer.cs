@@ -35,6 +35,11 @@
             transactionsRepositoryBindingSource2 = new BindingSource(components);
             flowLayoutPanel1 = new FlowLayoutPanel();
             kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            kryptonDateTimePicker1 = new Krypton.Toolkit.KryptonDateTimePicker();
+            lblTotalAmount = new Krypton.Toolkit.KryptonLabel();
+            btnPreviousPage = new Krypton.Toolkit.KryptonButton();
+            btnNextPage = new Krypton.Toolkit.KryptonButton();
+            kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel9 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
@@ -44,7 +49,6 @@
             kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactionsBindingSource).BeginInit();
@@ -64,6 +68,7 @@
             // transactionsBindingSource
             // 
             transactionsBindingSource.DataSource = typeof(Domain.Models.Transactions);
+            transactionsBindingSource.CurrentChanged += transactionsBindingSource_CurrentChanged;
             // 
             // transactionsRepositoryBindingSource2
             // 
@@ -80,6 +85,10 @@
             // 
             // kryptonPanel1
             // 
+            kryptonPanel1.Controls.Add(kryptonDateTimePicker1);
+            kryptonPanel1.Controls.Add(lblTotalAmount);
+            kryptonPanel1.Controls.Add(btnPreviousPage);
+            kryptonPanel1.Controls.Add(btnNextPage);
             kryptonPanel1.Controls.Add(kryptonLabel10);
             kryptonPanel1.Controls.Add(kryptonLabel9);
             kryptonPanel1.Controls.Add(kryptonLabel8);
@@ -99,6 +108,55 @@
             kryptonPanel1.StateNormal.Color1 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateNormal.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.TabIndex = 3;
+            // 
+            // kryptonDateTimePicker1
+            // 
+            kryptonDateTimePicker1.Location = new Point(1588, 58);
+            kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
+            kryptonDateTimePicker1.Size = new Size(136, 21);
+            kryptonDateTimePicker1.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonDateTimePicker1.TabIndex = 16;
+            kryptonDateTimePicker1.ValueChanged += kryptonDateTimePicker1_ValueChanged;
+            // 
+            // lblTotalAmount
+            // 
+            lblTotalAmount.Location = new Point(430, 942);
+            lblTotalAmount.Name = "lblTotalAmount";
+            lblTotalAmount.Size = new Size(95, 20);
+            lblTotalAmount.TabIndex = 14;
+            lblTotalAmount.Values.Text = "lblTotalAmount";
+        
+            // 
+            // btnPreviousPage
+            // 
+            btnPreviousPage.Location = new Point(271, 941);
+            btnPreviousPage.Name = "btnPreviousPage";
+            btnPreviousPage.Size = new Size(90, 25);
+            btnPreviousPage.TabIndex = 13;
+            btnPreviousPage.Values.DropDownArrowColor = Color.Empty;
+            btnPreviousPage.Values.Text = "kryptonButton1";
+            btnPreviousPage.Click += btnPreviousPage_Click;
+            // 
+            // btnNextPage
+            // 
+            btnNextPage.Location = new Point(144, 935);
+            btnNextPage.Name = "btnNextPage";
+            btnNextPage.Size = new Size(90, 25);
+            btnNextPage.TabIndex = 0;
+            btnNextPage.Values.DropDownArrowColor = Color.Empty;
+            btnNextPage.Values.Text = "NEXT";
+            btnNextPage.Click += btnNextPage_Click;
+            // 
+            // kryptonLabel10
+            // 
+            kryptonLabel10.Location = new Point(82, 36);
+            kryptonLabel10.Name = "kryptonLabel10";
+            kryptonLabel10.Size = new Size(211, 32);
+            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel10.TabIndex = 12;
+            kryptonLabel10.Values.Text = "TRANSACTIONS";
             // 
             // kryptonLabel9
             // 
@@ -199,17 +257,6 @@
             kryptonLabel1.TabIndex = 3;
             kryptonLabel1.Values.Text = "Receipt No.";
             // 
-            // kryptonLabel10
-            // 
-            kryptonLabel10.Location = new Point(82, 36);
-            kryptonLabel10.Name = "kryptonLabel10";
-            kryptonLabel10.Size = new Size(211, 34);
-            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
-            kryptonLabel10.StateCommon.ShortText.Font = new Font("Helvetica", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonLabel10.TabIndex = 12;
-            kryptonLabel10.Values.Text = "TRANSACTIONS";
-            // 
             // Transaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -252,5 +299,10 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel10;
+        private Krypton.Toolkit.KryptonButton btnPreviousPage;
+        private Krypton.Toolkit.KryptonButton btnNextPage;
+        private Krypton.Toolkit.KryptonButton btnLoadMore;
+        private Krypton.Toolkit.KryptonLabel lblTotalAmount;
+        private Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
     }
 }

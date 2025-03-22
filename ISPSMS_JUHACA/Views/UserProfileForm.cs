@@ -19,6 +19,7 @@ namespace ISPSMS_JUHACA.Views
     {
         private Label lblUsername;
         private Label lblRole;
+        private string actualPassword;
 
         public event EventHandler? Logout;
 
@@ -32,12 +33,13 @@ namespace ISPSMS_JUHACA.Views
 
         }
 
-        public void UpdateProfile(string username, string role,string password, string pname, string id)
+        public void UpdateProfile(string username, string role, string password, string pname, string id)
         {
+            actualPassword = password;
             Username.Text = username;
             UserRole.Text = role;
             personName.Text = pname;
-            personPassword.Text = password;
+            personPassword.Text = new string('*', password.Length);
             personUsername.Text = username;
             personID.Text = id;
         }
@@ -53,34 +55,33 @@ namespace ISPSMS_JUHACA.Views
 
             if (result == DialogResult.Yes)
             {
-                // Find and close all open forms except login
-                foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
-                {
-                    if (!(form is LoginForm))
-                    {
-                        form.Close();
-                    }
-                }
-
-                // Check if LoginForm is still open
-                LoginForm login = Application.OpenForms.OfType<LoginForm>().FirstOrDefault();
-                if (login == null)
-                {
-                    // Recreate the login form with necessary dependencies
-                    var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                    optionsBuilder.UseSqlServer("Data Source=LAPTOP-AEJ6B24K\\SQLEXPRESS;Initial Catalog=connected_subscribers_db;User ID=ISPSMS_JUHACA;Password=OPTICALITSOLUTIONS2025;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False\r\n");
-                    AppDbContext dbContext = new AppDbContext(optionsBuilder.Options);
-
-                    IAccountsRepository repository = new AccountsRepository(dbContext);
-                    IUnitOfWork unitOfWork = new UnitOfWork(dbContext);
-                    login = new LoginForm(unitOfWork);
-
-                    LoginPresenter loginPresenter = new LoginPresenter(login, unitOfWork, repository);
-                }
-
-                login.Show();
+                // Restart the application
+                Application.Restart();
+                Environment.Exit(0); // Ensures the current instance closes properly
             }
         }
 
+
+        private void Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Switch.Checked)
+            {
+                personPassword.Text = actualPassword; // Show actual password
+            }
+            else
+            {
+                personPassword.Text = new string('*', actualPassword.Length); // Mask password
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

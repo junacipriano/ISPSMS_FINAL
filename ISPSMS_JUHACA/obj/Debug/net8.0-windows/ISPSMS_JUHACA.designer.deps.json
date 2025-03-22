@@ -52,6 +52,14 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
+          }
+        }
+      },
       "CuoreUI.Winforms/2025.3.3": {
         "runtime": {
           "lib/net8.0/CuoreUI.dll": {
@@ -127,25 +135,6 @@
           }
         }
       },
-      "Intersoft.Crosslight/6.0.5000.975": {
-        "runtime": {
-          "lib/Intersoft.Crosslight.dll": {
-            "assemblyVersion": "6.0.5000.1",
-            "fileVersion": "6.0.5000.975"
-          }
-        }
-      },
-      "Intersoft.Crosslight.UI.DataVisualization/6.0.5000.975": {
-        "dependencies": {
-          "Intersoft.Crosslight": "6.0.5000.975"
-        },
-        "runtime": {
-          "lib/Intersoft.Crosslight.UI.DataVisualization.dll": {
-            "assemblyVersion": "6.0.5000.1",
-            "fileVersion": "6.0.5000.975"
-          }
-        }
-      },
       "Krypton.Docking/90.25.2.55": {
         "dependencies": {
           "Krypton.Navigator": "90.25.2.55",
@@ -218,6 +207,25 @@
           "lib/net45/LiveCharts.WinForms.dll": {
             "assemblyVersion": "0.9.7.1",
             "fileVersion": "0.9.7.1"
+          }
+        }
+      },
+      "LiveCharts.WinForms.NetCore3/0.9.8": {
+        "dependencies": {
+          "System.Data.DataSetExtensions": "4.5.0"
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/LiveCharts.WinForms.dll": {
+            "assemblyVersion": "0.9.8.0",
+            "fileVersion": "0.9.8.0"
+          },
+          "lib/net8.0-windows7.0/LiveCharts.Wpf.dll": {
+            "assemblyVersion": "0.9.8.0",
+            "fileVersion": "0.9.8.0"
+          },
+          "lib/net8.0-windows7.0/LiveCharts.dll": {
+            "assemblyVersion": "0.9.8.0",
+            "fileVersion": "0.9.8.0"
           }
         }
       },
@@ -918,6 +926,14 @@
           }
         }
       },
+      "PresentationFramework/4.6.0": {
+        "runtime": {
+          "lib/PresentationFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.81.0"
+          }
+        }
+      },
       "ScottPlot/5.0.54": {
         "dependencies": {
           "HarfBuzzSharp.NativeAssets.Linux": "7.3.0.3",
@@ -1257,6 +1273,14 @@
           }
         }
       },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
       "System.Diagnostics.DiagnosticSource/6.0.1": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -1474,6 +1498,13 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
     "CuoreUI.Winforms/2025.3.3": {
       "type": "package",
       "serviceable": true,
@@ -1508,20 +1539,6 @@
       "sha512": "sha512-RPxRXD16KtSs8Yxr2RK9Qs7AwyN9MlpqZIYs0AvfaJwl7RAtVhC0+u2f2SKwX0uMYYd3O98Z+OBA1sj6aWVKQA==",
       "path": "harfbuzzsharp.nativeassets.win32/7.3.0.3",
       "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512"
-    },
-    "Intersoft.Crosslight/6.0.5000.975": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-icRCEz9Fl9HI7LyiUniMnIN8TeI1vRI4QPZQyGDx3sTyX5YxDGNHE2uLXG3ShsI1EOSY4x/Vxycs/QTOL3uqnQ==",
-      "path": "intersoft.crosslight/6.0.5000.975",
-      "hashPath": "intersoft.crosslight.6.0.5000.975.nupkg.sha512"
-    },
-    "Intersoft.Crosslight.UI.DataVisualization/6.0.5000.975": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZGO8WeNI2VRFmMA3MFV4Bir5xwyOZo94LHBiz2EufjjW1vaHw8YU/ZmGpuDI6PpgWM4QdN6PvJg2mt6qULA1Qg==",
-      "path": "intersoft.crosslight.ui.datavisualization/6.0.5000.975",
-      "hashPath": "intersoft.crosslight.ui.datavisualization.6.0.5000.975.nupkg.sha512"
     },
     "Krypton.Docking/90.25.2.55": {
       "type": "package",
@@ -1571,6 +1588,13 @@
       "sha512": "sha512-eCBsVaxpUKHLpvlJEAhm+BQDWltnzc4VFhM4k4gJ+MsqyGQ/aq/AOWqTWx8OSJ0H52mDTJ1tQjErTYWeikLEOA==",
       "path": "livecharts.winforms/0.9.7.1",
       "hashPath": "livecharts.winforms.0.9.7.1.nupkg.sha512"
+    },
+    "LiveCharts.WinForms.NetCore3/0.9.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pIiJErHE6mxIktJiLBKAmEoas8dOmEtodJQZ0o0KUnelTYfQJJqgUB2kR5476x33TM19yvC9rUjnei3US61Jbg==",
+      "path": "livecharts.winforms.netcore3/0.9.8",
+      "hashPath": "livecharts.winforms.netcore3.0.9.8.nupkg.sha512"
     },
     "LiveCharts.Wpf/0.9.7": {
       "type": "package",
@@ -1978,6 +2002,13 @@
       "path": "opentk.glcontrol/3.1.0",
       "hashPath": "opentk.glcontrol.3.1.0.nupkg.sha512"
     },
+    "PresentationFramework/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-37FpU6XcB1Hgr5X03MgUOxvzWLJYKJP72J3g5hnZHi/DXsTxpJEu4brCGW+TmplVWfntuysO/uRcZcPS9YK0Bw==",
+      "path": "presentationframework/4.6.0",
+      "hashPath": "presentationframework.4.6.0.nupkg.sha512"
+    },
     "ScottPlot/5.0.54": {
       "type": "package",
       "serviceable": true,
@@ -2103,6 +2134,13 @@
       "sha512": "sha512-gPYFPDyohW2gXNhdQRSjtmeS6FymL2crg4Sral1wtvEJ7DUqFCDWDVbbLobASbzxfic8U1hQEdC7hmg9LHncMw==",
       "path": "system.configuration.configurationmanager/8.0.1",
       "hashPath": "system.configuration.configurationmanager.8.0.1.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/6.0.1": {
       "type": "package",

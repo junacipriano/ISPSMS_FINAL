@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Domain.Models;
+using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views.IVews;
 
@@ -19,13 +19,29 @@ namespace ISPSMS_JUHACA.Presenter
             _dbContext = dbContext;
         }
 
-        public void LoadTransactions()
+        public async Task LoadTransactionsAsync(int pageNumber, int pageSize)
         {
-            var transactions = _dbContext.transactionsRepository.GetAll()
-                .OrderByDescending(t => t.TransactionDateTime)
-                .ToList();
 
+            var transactions = await _dbContext.transactionsRepository.GetPaginatedAsync(pageNumber, pageSize, true); // Always descending
+            decimal totalPaidAmount = transactions.Sum(t => t.PaidAmount);
             _view.DisplayTransactions(transactions);
+            _view.UpdatePaidAmountLabel(totalPaidAmount);
+        }
+
+        public Task<decimal> GetTotalPaidAmountAsync()
+        {
+            return _dbContext.transactionsRepository.GetTotalPaidAmountAsync();
+        }
+
+
+        public async Task<int> GetTotalPagesAsync(int pageSize)
+        {
+            int totalCount = await _dbContext.transactionsRepository.GetTotalCountAsync();
+            return (int)Math.Ceiling((double)totalCount / pageSize);
+        }
+        public async Task<List<Transactions>> GetTransactionsByDateAsync(DateTime TransactionDateTime)
+        {
+            return await _dbContext.transactionsRepository.GetByDateAsync(TransactionDateTime);
         }
     }
 }

@@ -1,7 +1,8 @@
-﻿using Infastructure.Data.Repositories.IRepositories;
+﻿using System;
+using System.Threading.Tasks;
+using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views;
 using ISPSMS_JUHACA.Views.IVews;
-using System;
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -31,6 +32,7 @@ namespace ISPSMS_JUHACA.Presenter
                     _view.ShowMessage("Your account is not approved yet. Please contact the administrator.");
                     return;
                 }
+
                 _view.CloseForm();
 
                 var mainForm = new MainForm(_dbContext);
@@ -44,16 +46,10 @@ namespace ISPSMS_JUHACA.Presenter
             }
         }
 
-
-
         private void OnSignUp(object? sender, EventArgs e)
         {
             var signUpForm = new SignUpForm(_dbContext, _repository);
             signUpForm.Show();
         }
-
-
-
     }
-
 }

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net8.0-windows7.0": {
       "AutoMapper/14.0.0": {
         "type": "package",
         "dependencies": {
@@ -59,6 +59,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
             "related": ".xml"
           }
         }
@@ -157,27 +170,6 @@
           }
         }
       },
-      "Intersoft.Crosslight/6.0.5000.975": {
-        "type": "package",
-        "compile": {
-          "lib/Intersoft.Crosslight.dll": {}
-        },
-        "runtime": {
-          "lib/Intersoft.Crosslight.dll": {}
-        }
-      },
-      "Intersoft.Crosslight.UI.DataVisualization/6.0.5000.975": {
-        "type": "package",
-        "dependencies": {
-          "Intersoft.Crosslight": "6.0.5000.975"
-        },
-        "compile": {
-          "lib/Intersoft.Crosslight.UI.DataVisualization.dll": {}
-        },
-        "runtime": {
-          "lib/Intersoft.Crosslight.UI.DataVisualization.dll": {}
-        }
-      },
       "Krypton.Docking/90.25.2.55": {
         "type": "package",
         "dependencies": {
@@ -186,15 +178,18 @@
           "Krypton.Workspace": "90.25.2.55"
         },
         "compile": {
-          "lib/net462/Krypton.Docking.dll": {
+          "lib/net8.0-windows7.0/Krypton.Docking.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/Krypton.Docking.dll": {
+          "lib/net8.0-windows7.0/Krypton.Docking.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Krypton.Navigator/90.25.2.55": {
         "type": "package",
@@ -202,15 +197,18 @@
           "Krypton.Toolkit": "90.25.2.55"
         },
         "compile": {
-          "lib/net462/Krypton.Navigator.dll": {
+          "lib/net8.0-windows7.0/Krypton.Navigator.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/Krypton.Navigator.dll": {
+          "lib/net8.0-windows7.0/Krypton.Navigator.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Krypton.Ribbon/90.25.2.55": {
         "type": "package",
@@ -218,28 +216,34 @@
           "Krypton.Toolkit": "90.25.2.55"
         },
         "compile": {
-          "lib/net462/Krypton.Ribbon.dll": {
+          "lib/net8.0-windows7.0/Krypton.Ribbon.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/Krypton.Ribbon.dll": {
+          "lib/net8.0-windows7.0/Krypton.Ribbon.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Krypton.Toolkit/90.25.2.55": {
         "type": "package",
         "compile": {
-          "lib/net462/Krypton.Toolkit.dll": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/Krypton.Toolkit.dll": {
+          "lib/net8.0-windows7.0/Krypton.Toolkit.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Krypton.Workspace/90.25.2.55": {
         "type": "package",
@@ -248,15 +252,18 @@
           "Krypton.Toolkit": "90.25.2.55"
         },
         "compile": {
-          "lib/net462/Krypton.Workspace.dll": {
+          "lib/net8.0-windows7.0/Krypton.Workspace.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/Krypton.Workspace.dll": {
+          "lib/net8.0-windows7.0/Krypton.Workspace.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "LiveCharts/0.9.7": {
         "type": "package",
@@ -288,6 +295,33 @@
           }
         }
       },
+      "LiveCharts.WinForms.NetCore3/0.9.8": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.DataSetExtensions": "4.5.0"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/LiveCharts.WinForms.dll": {},
+          "lib/net8.0-windows7.0/LiveCharts.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net8.0-windows7.0/LiveCharts.dll": {
+            "related": ".Wpf.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/LiveCharts.WinForms.dll": {},
+          "lib/net8.0-windows7.0/LiveCharts.Wpf.dll": {
+            "related": ".xml"
+          },
+          "lib/net8.0-windows7.0/LiveCharts.dll": {
+            "related": ".Wpf.xml;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "LiveCharts.Wpf/0.9.7": {
         "type": "package",
         "dependencies": {
@@ -307,11 +341,14 @@
       "MaterialSkin.2/2.3.1": {
         "type": "package",
         "compile": {
-          "lib/net461/MaterialSkin.dll": {}
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
         },
         "runtime": {
-          "lib/net461/MaterialSkin.dll": {}
-        }
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.14": {
         "type": "package",
@@ -1258,15 +1295,18 @@
           "SkiaSharp.Views.WindowsForms": "2.88.9"
         },
         "compile": {
-          "lib/net462/ScottPlot.WinForms.dll": {
+          "lib/net6.0-windows7.0/ScottPlot.WinForms.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/ScottPlot.WinForms.dll": {
+          "lib/net6.0-windows7.0/ScottPlot.WinForms.dll": {
             "related": ".xml"
           }
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       },
       "SkiaSharp/2.88.9": {
         "type": "package",
@@ -1561,10 +1601,10 @@
           "SQLitePCLRaw.core": "2.1.6"
         },
         "compile": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+          "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+          "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "Std.UriTemplate/2.0.1": {
@@ -1611,6 +1651,15 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.1": {
@@ -2007,12 +2056,12 @@
           "ThinkGeo.Core": "14.2.5"
         },
         "compile": {
-          "lib/net462/ThinkGeo.UI.WinForms.dll": {
+          "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net462/ThinkGeo.UI.WinForms.dll": {
+          "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll": {
             "related": ".xml"
           }
         }
@@ -2023,7 +2072,6 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "CuoreUI.Winforms": "2025.3.3",
-          "Intersoft.Crosslight.UI.DataVisualization": "6.0.5000.975",
           "Krypton.Docking": "90.25.2.55",
           "Krypton.Navigator": "90.25.2.55",
           "Krypton.Ribbon": "90.25.2.55",
@@ -2031,6 +2079,7 @@
           "Krypton.Workspace": "90.25.2.55",
           "LiveCharts": "0.9.7",
           "LiveCharts.WinForms": "0.9.7.1",
+          "LiveCharts.WinForms.NetCore3": "0.9.8",
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.11",
           "Microsoft.AspNetCore.Identity.UI": "8.0.14",
@@ -2053,9 +2102,9 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "14.0.0",
+          "BCrypt.Net-Next": "4.0.3",
           "CuoreUI.Winforms": "2025.3.3",
           "Domain": "1.0.0",
-          "Intersoft.Crosslight.UI.DataVisualization": "6.0.5000.975",
           "Krypton.Docking": "90.25.2.55",
           "Krypton.Navigator": "90.25.2.55",
           "Krypton.Ribbon": "90.25.2.55",
@@ -2063,6 +2112,7 @@
           "Krypton.Workspace": "90.25.2.55",
           "LiveCharts": "0.9.7",
           "LiveCharts.WinForms": "0.9.7.1",
+          "LiveCharts.WinForms.NetCore3": "0.9.8",
           "MaterialSkin.2": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.11",
           "Microsoft.AspNetCore.Identity.UI": "8.0.14",
@@ -2134,6 +2184,37 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
       ]
     },
     "CuoreUI.Winforms/2025.3.3": {
@@ -2289,53 +2370,6 @@
         "runtimes/win-arm64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x64/native/libHarfBuzzSharp.dll",
         "runtimes/win-x86/native/libHarfBuzzSharp.dll"
-      ]
-    },
-    "Intersoft.Crosslight/6.0.5000.975": {
-      "sha512": "icRCEz9Fl9HI7LyiUniMnIN8TeI1vRI4QPZQyGDx3sTyX5YxDGNHE2uLXG3ShsI1EOSY4x/Vxycs/QTOL3uqnQ==",
-      "type": "package",
-      "path": "intersoft.crosslight/6.0.5000.975",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "intersoft.crosslight.6.0.5000.975.nupkg.sha512",
-        "intersoft.crosslight.nuspec",
-        "lib/Intersoft.Crosslight.dll",
-        "lib/MonoAndroid10/Intersoft.Crosslight.Android.dll",
-        "lib/MonoAndroid10/Intersoft.Crosslight.dll",
-        "lib/NetCore45/Intersoft.Crosslight.WinRT.dll",
-        "lib/NetCore45/Intersoft.Crosslight.WinRT/Controls/TabControl.xaml",
-        "lib/NetCore45/Intersoft.Crosslight.WinRT/Themes/DatePicker.xaml",
-        "lib/NetCore45/Intersoft.Crosslight.WinRT/Themes/Generic.xaml",
-        "lib/NetCore45/Intersoft.Crosslight.dll",
-        "lib/Xamarin.iOS10/Intersoft.Crosslight.dll",
-        "lib/Xamarin.iOS10/Intersoft.Crosslight.iOS.dll",
-        "lib/wp8/Intersoft.Crosslight.WinPhone.dll",
-        "lib/wp8/Intersoft.Crosslight.dll",
-        "tools/CocoaDialog.app.zip",
-        "tools/CocoaDialog.sh",
-        "tools/NugetUtil.dll",
-        "tools/dependencies.xml",
-        "tools/init.ps1",
-        "tools/install.log",
-        "tools/install.ps1"
-      ]
-    },
-    "Intersoft.Crosslight.UI.DataVisualization/6.0.5000.975": {
-      "sha512": "ZGO8WeNI2VRFmMA3MFV4Bir5xwyOZo94LHBiz2EufjjW1vaHw8YU/ZmGpuDI6PpgWM4QdN6PvJg2mt6qULA1Qg==",
-      "type": "package",
-      "path": "intersoft.crosslight.ui.datavisualization/6.0.5000.975",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "intersoft.crosslight.ui.datavisualization.6.0.5000.975.nupkg.sha512",
-        "intersoft.crosslight.ui.datavisualization.nuspec",
-        "lib/Intersoft.Crosslight.UI.DataVisualization.dll",
-        "lib/MonoAndroid10/Intersoft.Crosslight.UI.DataVisualization.Android.dll",
-        "lib/MonoAndroid10/Intersoft.Crosslight.UI.DataVisualization.dll",
-        "lib/Xamarin.iOS10/Intersoft.Crosslight.UI.DataVisualization.dll",
-        "lib/Xamarin.iOS10/Intersoft.Crosslight.UI.DataVisualization.iOS.dll"
       ]
     },
     "Krypton.Docking/90.25.2.55": {
@@ -2526,6 +2560,42 @@
         "livecharts.winforms.0.9.7.1.nupkg.sha512",
         "livecharts.winforms.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "LiveCharts.WinForms.NetCore3/0.9.8": {
+      "sha512": "pIiJErHE6mxIktJiLBKAmEoas8dOmEtodJQZ0o0KUnelTYfQJJqgUB2kR5476x33TM19yvC9rUjnei3US61Jbg==",
+      "type": "package",
+      "path": "livecharts.winforms.netcore3/0.9.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/LiveCharts.WinForms.dll",
+        "lib/net45/LiveCharts.Wpf.dll",
+        "lib/net45/LiveCharts.Wpf.xml",
+        "lib/net45/LiveCharts.dll",
+        "lib/net45/LiveCharts.xml",
+        "lib/net6.0-windows7.0/LiveCharts.WinForms.dll",
+        "lib/net6.0-windows7.0/LiveCharts.Wpf.dll",
+        "lib/net6.0-windows7.0/LiveCharts.Wpf.xml",
+        "lib/net6.0-windows7.0/LiveCharts.dll",
+        "lib/net6.0-windows7.0/LiveCharts.xml",
+        "lib/net7.0-windows7.0/LiveCharts.WinForms.dll",
+        "lib/net7.0-windows7.0/LiveCharts.Wpf.dll",
+        "lib/net7.0-windows7.0/LiveCharts.Wpf.xml",
+        "lib/net7.0-windows7.0/LiveCharts.dll",
+        "lib/net7.0-windows7.0/LiveCharts.xml",
+        "lib/net8.0-windows7.0/LiveCharts.WinForms.dll",
+        "lib/net8.0-windows7.0/LiveCharts.Wpf.dll",
+        "lib/net8.0-windows7.0/LiveCharts.Wpf.xml",
+        "lib/net8.0-windows7.0/LiveCharts.dll",
+        "lib/net8.0-windows7.0/LiveCharts.xml",
+        "lib/netcoreapp3.1/LiveCharts.WinForms.dll",
+        "lib/netcoreapp3.1/LiveCharts.Wpf.dll",
+        "lib/netcoreapp3.1/LiveCharts.Wpf.xml",
+        "lib/netcoreapp3.1/LiveCharts.dll",
+        "lib/netcoreapp3.1/LiveCharts.xml",
+        "livecharts.winforms.netcore3.0.9.8.nupkg.sha512",
+        "livecharts.winforms.netcore3.nuspec"
       ]
     },
     "LiveCharts.Wpf/0.9.7": {
@@ -4406,6 +4476,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "type": "package",
+      "path": "system.data.datasetextensions/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "system.data.datasetextensions.4.5.0.nupkg.sha512",
+        "system.data.datasetextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/6.0.1": {
       "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
       "type": "package",
@@ -5153,10 +5242,9 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net8.0-windows7.0": [
       "CuoreUI.Winforms >= 2025.3.3",
       "Infastructure >= 1.0.0",
-      "Intersoft.Crosslight.UI.DataVisualization >= 6.0.5000.975",
       "Krypton.Docking >= 90.25.2.55",
       "Krypton.Navigator >= 90.25.2.55",
       "Krypton.Ribbon >= 90.25.2.55",
@@ -5164,6 +5252,7 @@
       "Krypton.Workspace >= 90.25.2.55",
       "LiveCharts >= 0.9.7",
       "LiveCharts.WinForms >= 0.9.7.1",
+      "LiveCharts.WinForms.NetCore3 >= 0.9.8",
       "Microsoft.Graph >= 5.74.0",
       "Microsoft.Web.WebView2 >= 1.0.3124.44",
       "ScottPlot.WinForms >= 5.0.54",
@@ -5193,7 +5282,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net8.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -5201,8 +5290,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "projectReferences": {
             "D:\\ISPSMS_FINAL\\Infrustructure\\Infastructure.csproj": {
               "projectPath": "D:\\ISPSMS_FINAL\\Infrustructure\\Infastructure.csproj"
@@ -5222,16 +5311,12 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
         "dependencies": {
           "CuoreUI.Winforms": {
             "target": "Package",
             "version": "[2025.3.3, )"
-          },
-          "Intersoft.Crosslight.UI.DataVisualization": {
-            "target": "Package",
-            "version": "[6.0.5000.975, )"
           },
           "Krypton.Docking": {
             "target": "Package",
@@ -5260,6 +5345,10 @@
           "LiveCharts.WinForms": {
             "target": "Package",
             "version": "[0.9.7.1, )"
+          },
+          "LiveCharts.WinForms.NetCore3": {
+            "target": "Package",
+            "version": "[0.9.8, )"
           },
           "Microsoft.Graph": {
             "target": "Package",
@@ -5307,150 +5396,50 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Intersoft.Crosslight 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Intersoft.Crosslight",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Intersoft.Crosslight.UI.DataVisualization 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Intersoft.Crosslight.UI.DataVisualization",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Krypton.Docking 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Krypton.Docking",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Krypton.Navigator 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Krypton.Navigator",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Krypton.Ribbon 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Krypton.Ribbon",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Krypton.Toolkit 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Krypton.Toolkit",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Krypton.Workspace 90.25.2.55' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Krypton.Workspace",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts",
       "targetGraphs": [
-        "net8.0"
+        "net8.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts.WinForms 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts.WinForms 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts.WinForms",
       "targetGraphs": [
-        "net8.0"
+        "net8.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts.Wpf",
       "targetGraphs": [
-        "net8.0"
+        "net8.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'MaterialSkin.2 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "MaterialSkin.2",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'OpenTK 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'OpenTK 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenTK",
       "targetGraphs": [
-        "net8.0"
+        "net8.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'OpenTK.GLControl 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'OpenTK.GLControl 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenTK.GLControl",
       "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'ScottPlot.WinForms 5.0.54' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "ScottPlot.WinForms",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'ThinkGeo.UI.WinForms 14.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "ThinkGeo.UI.WinForms",
-      "targetGraphs": [
-        "net8.0"
+        "net8.0-windows7.0"
       ]
     }
   ]

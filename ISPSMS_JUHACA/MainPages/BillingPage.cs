@@ -34,10 +34,25 @@ namespace ISPSMS_JUHACA.MainPages
             InitializeComponent();
             this.dbContext = dbContext;
             this.mainForm = mainForm;
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            try
+            {
+                // Initialize MaterialSkinManager safely
+                var materialSkinManager = MaterialSkinManager.Instance;
+                if (materialSkinManager != null)
+                {
+                    materialSkinManager.AddFormToManage(this);
+                    materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                    materialSkinManager.ColorScheme = new ColorScheme(
+                        Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500,
+                        Accent.LightBlue200, TextShade.WHITE
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"MaterialSkin initialization failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
             billingFlowPanel.BackColor = Color.FromArgb(241, 240, 233);
         }

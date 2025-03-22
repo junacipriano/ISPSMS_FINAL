@@ -69,10 +69,26 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            decimal amount = decimal.TryParse(amountTextBox.Text.Trim(), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal value) ? value : 0;
-            decimal balance = ConSubsEntity.MonthlyCharge - amount;
+            decimal monthlyCharge = ConSubsEntity.MonthlyCharge;
+            decimal amount = 0;
+
+            try
+            {
+                amount = decimal.Parse(amountTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid amount format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Ensure the balance is calculated correctly
+            decimal balance = monthlyCharge - amount;
+            if (balance < 0) balance = 0; // Prevent negative balance
+
             DateTime nextDueDate = ConSubsEntity.CurrentDuedate.AddMonths(1);
             string formattedDueDate = FormatWithOrdinal(nextDueDate.Day);
+
             var newTransaction = new Domain.Models.Transactions
             {
                 trans_id = int.Parse(receiptNoTextBox.Text),
@@ -80,13 +96,13 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 Trans_Name = mainNameTextBox.Text,
                 PaidAmount = amount,
                 Balance = balance,
-                Note = noteComboBox.Text,
+                Note = string.IsNullOrWhiteSpace(noteComboBox.Text) ? "None" : noteComboBox.Text,
                 Duedate = formattedDueDate,
                 TransactionDateTime = DateTime.Now
             };
+
             _dbContext.transactionsRepository.Add(newTransaction);
             _dbContext.Save();
-
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             DialogResult printReceipt = MessageBox.Show("Do you want to print the receipt?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

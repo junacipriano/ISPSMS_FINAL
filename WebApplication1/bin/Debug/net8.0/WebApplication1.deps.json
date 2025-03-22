@@ -27,10 +27,14 @@
           "Microsoft.EntityFrameworkCore.Tools": "8.0.11",
           "Microsoft.Graph": "5.74.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
+          "Microsoft.Web.WebView2": "1.0.3124.44",
           "ScottPlot.WinForms": "5.0.54",
           "Swashbuckle.AspNetCore": "8.0.0",
           "ThinkGeo.Core": "14.2.5",
-          "ThinkGeo.UI.WinForms": "14.2.5"
+          "ThinkGeo.UI.WinForms": "14.2.5",
+          "Microsoft.Web.WebView2.Core": "1.0.3124.44",
+          "Microsoft.Web.WebView2.WinForms": "1.0.3124.44",
+          "Microsoft.Web.WebView2.Wpf": "1.0.3124.44"
         },
         "runtime": {
           "WebApplication1.dll": {}
@@ -1959,6 +1963,25 @@
           }
         }
       },
+      "Microsoft.Web.WebView2/1.0.3124.44": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.3124.44"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.3124.44"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.3124.44"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "runtime": {
           "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
@@ -2729,6 +2752,30 @@
           "lib/net462/ThinkGeo.UI.WinForms.dll": {
             "assemblyVersion": "14.0.0.0",
             "fileVersion": "14.2.5.0"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Core/1.0.3124.44": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.3124.44",
+            "fileVersion": "1.0.3124.44"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.WinForms/1.0.3124.44": {
+        "runtime": {
+          "Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.3124.44",
+            "fileVersion": "1.0.3124.44"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2.Wpf/1.0.3124.44": {
+        "runtime": {
+          "Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.3124.44",
+            "fileVersion": "1.0.3124.44"
           }
         }
       }
@@ -3762,6 +3809,13 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/8.0.7",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.8.0.7.nupkg.sha512"
     },
+    "Microsoft.Web.WebView2/1.0.3124.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sQb+ACD3ILvHxztxqCWLbhYmFNf5dH0HPhVKFYg020rpeQPkadH0nkVOSsgfSyBDMLypI9iMBeD6uVcVxsKLkg==",
+      "path": "microsoft.web.webview2/1.0.3124.44",
+      "hashPath": "microsoft.web.webview2.1.0.3124.44.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4265,6 +4319,21 @@
       "sha512": "sha512-XRIp8bagToU+KJZlq0Vjk8oP11q5cWn1uovUd6MgXAuKYbpJcFDvusK+l2AG33K+4GXwHxLgAYotbS73OP57Yg==",
       "path": "thinkgeo.ui.winforms/14.2.5",
       "hashPath": "thinkgeo.ui.winforms.14.2.5.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2.Core/1.0.3124.44": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.WinForms/1.0.3124.44": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2.Wpf/1.0.3124.44": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

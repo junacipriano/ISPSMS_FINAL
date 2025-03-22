@@ -14,6 +14,8 @@ namespace ISPSMS_JUHACA.Views.IVews
             string AccountName { get; set; }
             string Password { get; set; }
             string ConfirmPassword { get; set; }
+            string ProfileName { get; set; }
+            string ProfileRole { get; set; }
             string AccountRole { get; set; }
             string CurrentUserRole { get; }
             void ShowMessage(string message, string caption);

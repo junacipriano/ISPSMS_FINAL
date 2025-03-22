@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             DisconnectedGridView1 = new DataGridView();
             subsidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             disconnectedSubscriberViewBindingSource = new BindingSource(components);
             disconnectedSubscriberViewBindingSource1 = new BindingSource(components);
             disconnectedSubscriberViewBindingSource2 = new BindingSource(components);
+            SearchBox = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)DisconnectedGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscriberViewBindingSource3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)disconnectedSubscribersBindingSource2).BeginInit();
@@ -71,25 +71,6 @@
             materialLabel1.Size = new Size(280, 29);
             materialLabel1.TabIndex = 0;
             materialLabel1.Text = "Disconnected Subscribers";
-            // 
-            // materialTextBox1
-            // 
-            materialTextBox1.AnimateReadOnly = false;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.Hint = "Search";
-            materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(828, 62);
-            materialTextBox1.Margin = new Padding(3, 2, 3, 2);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(208, 50);
-            materialTextBox1.TabIndex = 1;
-            materialTextBox1.Text = "";
-            materialTextBox1.TrailingIcon = null;
             // 
             // DisconnectedGridView1
             // 
@@ -187,13 +168,21 @@
             // 
             disconnectedSubscriberViewBindingSource2.DataSource = typeof(Domain.ViewModels.DisconnectedSubscriberView);
             // 
+            // SearchBox
+            // 
+            SearchBox.Location = new Point(936, 76);
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(100, 23);
+            SearchBox.TabIndex = 3;
+            SearchBox.Text = "Search";
+            // 
             // Disconnected
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 489);
+            Controls.Add(SearchBox);
             Controls.Add(DisconnectedGridView1);
-            Controls.Add(materialTextBox1);
             Controls.Add(materialLabel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Disconnected";
@@ -240,5 +229,6 @@
         private BindingSource disconnectedSubscriberViewBindingSource;
         private BindingSource disconnectedSubscriberViewBindingSource1;
         private BindingSource disconnectedSubscriberViewBindingSource2;
+        private Krypton.Toolkit.KryptonTextBox SearchBox;
     }
 }

@@ -157,8 +157,16 @@ namespace ISPSMS_JUHACA.Presenter
             };
         }
 
+        private static string FormatName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return string.Empty;
+
+            return string.Join(" ", name.Split(' ')
+                .Select(word => char.ToUpper(word[0]) + word.Substring(1).ToLower()));
+        }
         public void EditLoad()
         {
+
             var selectedSubscriber = _subscribersForm.BindingSource.Current as ConnectedSubscribers;
 
             if (selectedSubscriber == null)
@@ -168,10 +176,9 @@ namespace ISPSMS_JUHACA.Presenter
             }
 
             var nameParts = selectedSubscriber.Conn_Name.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            _view.LastName = nameParts.Length > 0 ? nameParts[0] : "";
-            _view.FirstName = nameParts.Length > 1 ? nameParts[1] : "";
-            _view.MiddleInitial = nameParts.Length > 2 ? nameParts[2] : "";
+            _view.LastName = nameParts.Length > 0 ? FormatName(nameParts[0]) : "";
+            _view.FirstName = nameParts.Length > 1 ? FormatName(nameParts[1]) : "";
+            _view.MiddleInitial = nameParts.Length > 2 ? FormatName(nameParts[2]) : "";
 
             _view.District = GetDistrict(selectedSubscriber.Address);
             _view.Barangay = GetBarangay(selectedSubscriber.Address);
@@ -181,14 +188,16 @@ namespace ISPSMS_JUHACA.Presenter
             _view.DueDate = selectedSubscriber.CurrentDuedate;
 
             _subscribersForm.isEdit = true;
+
         }
 
         public void OnSaveSubscriber()
         {
-            if (!ValidateFields())
-            {
-                return;
-            }
+            if (!ValidateFields()) return;
+
+            _view.LastName = FormatName(_view.LastName);
+            _view.FirstName = FormatName(_view.FirstName);
+            _view.MiddleInitial = FormatName(_view.MiddleInitial);
 
             if (_subscribersForm.isEdit)
             {
@@ -213,7 +222,10 @@ namespace ISPSMS_JUHACA.Presenter
                 entity.Plan = _view.Plan;
                 entity.ContactNumber = _view.ContactNumber;
                 entity.Charge = _view.MonthlyCharge;
-                entity.CurrentDuedate = _view.DueDate;
+
+                // Strip the time portion and keep only the date (set to midnight)
+                entity.CurrentDuedate = _view.DueDate.Date; // This keeps only the date part (without time)
+
                 entity.Status = "Active";
 
                 _dbContext.connectedSubscriberRepository.Update(entity);
@@ -246,8 +258,11 @@ namespace ISPSMS_JUHACA.Presenter
                     Duedate = GetOrdinal(_view.DueDate.Day),
                     Charge = _view.MonthlyCharge,
                     ContactNumber = _view.ContactNumber,
-                    CurrentDuedate = _view.DueDate,
-                    InstallationDate = DateTime.Now,
+
+                    // Add 1 month and keep only the date part (no time)
+                    CurrentDuedate = _view.DueDate.AddMonths(1).Date, // Strip time, keep only the date
+
+                    InstallationDate = DateTime.Now.Date,
                     Status = "Active",
                     Balance = 0,
                     MonthlyCharge = _view.MonthlyCharge
@@ -264,10 +279,9 @@ namespace ISPSMS_JUHACA.Presenter
 
             _subscribersForm.getSubscribers();
 
-            if (_view is Form addForm)
-            {
-                addForm.Close();
-            }
+
+            _subscribersForm.getSubscribers();
+            if (_view is Form addForm) addForm.Close();
         }
 
 
@@ -287,12 +301,7 @@ namespace ISPSMS_JUHACA.Presenter
 
         private bool ValidateFields()
         {
-            if (string.IsNullOrWhiteSpace(_view.LastName) ||
-                string.IsNullOrWhiteSpace(_view.FirstName) ||
-                string.IsNullOrWhiteSpace(_view.District) ||
-                string.IsNullOrWhiteSpace(_view.Barangay) ||
-                string.IsNullOrWhiteSpace(_view.Plan) ||
-                string.IsNullOrWhiteSpace(_view.ContactNumber))
+            if (new[] { _view.LastName, _view.FirstName, _view.District, _view.Barangay, _view.Plan, _view.ContactNumber }.Any(string.IsNullOrWhiteSpace))
             {
                 _view.ShowMessage("Please fill in all required fields.");
                 return false;
@@ -304,17 +313,11 @@ namespace ISPSMS_JUHACA.Presenter
                 return false;
             }
 
-            if (!_view.LastName.All(char.IsLetter) || !_view.FirstName.All(char.IsLetter) ||
-               (!string.IsNullOrWhiteSpace(_view.MiddleInitial) && !_view.MiddleInitial.All(char.IsLetter)))
-            {
-                _view.ShowMessage("Last Name, First Name, and Middle Initial must contain only letters.");
-                return false;
-            }
             return true;
         }
 
-        private string GetDistrict(string address) => address.Split(',')[0].Trim();
-        private string GetBarangay(string address) => address.Split(',')[1].Trim();
+        private static string GetDistrict(string address) => address.Split(',')[0].Trim();
+        private static string GetBarangay(string address) => address.Split(',')[1].Trim();
 
         private void LogActivity(string activityDescription)
         {

@@ -163,7 +163,7 @@
             barangayComboBox.Hint = "Baranggay";
             barangayComboBox.IntegralHeight = false;
             barangayComboBox.ItemHeight = 43;
-            barangayComboBox.Items.AddRange(new object[] { "North Poblacion", "South Poblacion", "Dologon" });
+            barangayComboBox.Items.AddRange(new object[] { "North Poblacion", "South Poblacion", "Dologon", "   Anahawon", "   Base Camp", "   Colambugon", "   Danggawan", "   Panadtalan", "   South Poblacion", "   San Miguel" });
             barangayComboBox.Location = new Point(20, 173);
             barangayComboBox.Margin = new Padding(3, 2, 3, 2);
             barangayComboBox.MaxDropDownItems = 4;
@@ -344,7 +344,7 @@
             CancelBtn.HighEmphasis = true;
             CancelBtn.Icon = null;
             CancelBtn.Location = new Point(286, 374);
-            CancelBtn.Margin = new Padding(4, 4, 4, 4);
+            CancelBtn.Margin = new Padding(4);
             CancelBtn.MouseState = MaterialSkin.MouseState.HOVER;
             CancelBtn.Name = "CancelBtn";
             CancelBtn.NoAccentTextColor = Color.Empty;
@@ -363,7 +363,7 @@
             SaveBtn.HighEmphasis = true;
             SaveBtn.Icon = null;
             SaveBtn.Location = new Point(375, 374);
-            SaveBtn.Margin = new Padding(4, 4, 4, 4);
+            SaveBtn.Margin = new Padding(4);
             SaveBtn.MouseState = MaterialSkin.MouseState.HOVER;
             SaveBtn.Name = "SaveBtn";
             SaveBtn.NoAccentTextColor = Color.Empty;

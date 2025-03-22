@@ -1,13 +1,8 @@
-﻿using Domain.Models;
+﻿using System;
+using BCrypt.Net;
+using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
-using Infastructure.Data.Repositories;
 using ISPSMS_JUHACA.Views.IVews;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ISPSMS_JUHACA.Presenter
 {
@@ -30,11 +25,14 @@ namespace ISPSMS_JUHACA.Presenter
         {
             try
             {
+                // Hash password using bcrypt
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(_view.AccountPassword);
+
                 var account = new Accounts
                 {
                     Username = _view.Username,
                     AccountName = _view.AccountName,
-                    AccountPassword = _view.AccountPassword,
+                    AccountPassword = hashedPassword, // Store bcrypt hashed password
                     AccountRole = _view.AccountRole
                 };
 
