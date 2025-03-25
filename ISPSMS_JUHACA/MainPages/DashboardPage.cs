@@ -8,6 +8,9 @@ using LiveCharts.WinForms;
 using Infastructure.Repositories;
 using Timer = System.Windows.Forms.Timer;
 using MaterialSkin.Controls;
+using Microsoft.Data.SqlClient;
+using OfficeOpenXml;
+using System.Data;
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -18,6 +21,7 @@ namespace ISPSMS_JUHACA.MainPages
         private MainForm mainForm;
         private readonly IConnectedSubscribersRepository _connectedSubscribersRepository;
         private int lastUpdatedMonth = DateTime.Now.Month;
+        private int lastUpdateYear = DateTime.Now.Year;
         private readonly Timer updateTimer = new Timer { Interval = 86400000 };
         public DashboardPage(IConnectedSubscribersRepository connectedSubscribersRepository, IUnitOfWork dbContext, MainForm mainForm)
 
@@ -30,7 +34,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void dologonPanel_MouseEnter(object sender, EventArgs e)
         {
-            dologon.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\dol.png");
+            dologon.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DOL.png");
             dologon.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             dologon.BringToFront();
             infoBox.Visible = true;
@@ -88,7 +92,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void danggawanPanel_MouseEnter(object sender, EventArgs e)
         {
-            danggawan.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\dang.png");
+            danggawan.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\DANG.png");
             danggawan.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             danggawan.BringToFront();
             infoBox.Visible = true;
@@ -117,7 +121,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void sanmiguelPanel_MouseEnter(object sender, EventArgs e)
         {
-            sanmiguel.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\san.png");
+            sanmiguel.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SAN.png");
             sanmiguel.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             sanmiguel.BringToFront();
             infoBox.Visible = true;
@@ -146,7 +150,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void basecampPanel_MouseEnter(object sender, EventArgs e)
         {
-            basecamp.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\base.png");
+            basecamp.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\BASE.png");
             basecamp.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             basecamp.BringToFront();
             infoBox.Visible = true;
@@ -234,7 +238,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void northPanel_MouseEnter(object sender, EventArgs e)
         {
-            north.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\nor.png");
+            north.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\NORTH.png");
             north.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             north.BringToFront();
             infoBox.Visible = true;
@@ -263,7 +267,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void camp1Panel_MouseEnter(object sender, EventArgs e)
         {
-            camp1.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\cam.png");
+            camp1.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\CAMP.png");
             camp1.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             camp1.BringToFront();
             infoBox.Visible = true;
@@ -292,7 +296,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private void southPanel_MouseEnter(object sender, EventArgs e)
         {
-            south.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\sou.png");
+            south.StateCommon.Image = System.Drawing.Image.FromFile("D:\\ISPSMS_FINAL\\Image_Resources\\SOUTH.png");
             south.StateCommon.ImageStyle = PaletteImageStyle.Stretch;
             south.BringToFront();
             infoBox.Visible = true;
@@ -320,13 +324,26 @@ namespace ISPSMS_JUHACA.MainPages
         }
 
 
-        private void DashboardPage_Load(object sender, EventArgs e)
+        private async void DashboardPage_Load(object sender, EventArgs e)
         {
             MonthlyLoadTotals();
             DailyLoadTotals();
             UpdateTextBox();
+            LoadChartInfo();
+            Calendar.TodayDate = DateTime.Today;
+            Calendar.SetSelectionRange(DateTime.Today, DateTime.Today);
             updateTimer.Tick += (s, ev) => { if (DateTime.Now.Month != lastUpdatedMonth) { MonthlyLoadTotals(); lastUpdatedMonth = DateTime.Now.Month; } };
+            updateTimer.Tick += (s, ev) => { if (DateTime.Now.Year != lastUpdateYear) { UpdateYear(); lastUpdateYear = DateTime.Now.Year; } };
             updateTimer.Start();
+
+            Timer timer = new Timer();
+            timer.Interval = 1; 
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+        private void UpdateYear()
+        {
+            yearLabel.Content = $"YEAR {DateTime.Now.Year}";
         }
 
         private void MonthlyLoadTotals()
@@ -350,6 +367,90 @@ namespace ISPSMS_JUHACA.MainPages
             asOfTextbox2.Text = $"As of {DateTime.Now:MMMM dd, yyyy}";
         }
 
-    }
+        private void LoadChartInfo()
+        {
+            List<float> totalPaidAmounts = new List<float>
+            {
+                dbContext.transactionsRepository.ColambugonTotalPaidAmount(),
+                dbContext.transactionsRepository.DanggawanTotalPaidAmount(),
+                dbContext.transactionsRepository.SanMiguelTotalPaidAmount(),
+                dbContext.transactionsRepository.BaseCampTotalPaidAmount(),
+                dbContext.transactionsRepository.PanadtalanTotalPaidAmount(),
+                dbContext.transactionsRepository.AnahawonTotalPaidAmount(),
+                dbContext.transactionsRepository.NorthTotalPaidAmount(),
+                dbContext.transactionsRepository.SouthTotalPaidAmount(),
+                dbContext.transactionsRepository.Camp1TotalPaidAmount(),
+                dbContext.transactionsRepository.DologonTotalPaidAmount(),
 
+            };
+
+            InstalledGraph.DataPoints = totalPaidAmounts.ToArray();
+            InstalledGraph.Refresh();
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-AEJ6B24K\\SQLEXPRESS;Initial Catalog=connected_subscribers_db;User ID=ISPSMS_JUHACA;Password=OPTICALITSOLUTIONS2025;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string query = "SELECT * FROM dbo.transactions";
+
+
+            DataTable dt = GetDataTable(connectionString, query);
+            if (dt.Rows.Count > 0)
+            {
+                SaveExcelFile(dt);
+            }
+            else
+            {
+                MessageBox.Show("No data to export.");
+            }
+        }
+
+        private DataTable GetDataTable(string connectionString, string query)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        private void SaveExcelFile(DataTable dt)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "Excel Files|*.xlsx", FileName = $"JUHACA {DateTime.Now:yyyy} COLLECTION AS OF {DateTime.Now:MMMM dd, yyyy}.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Add this line
+
+                    using (ExcelPackage package = new ExcelPackage())
+                    {
+                        ExcelWorksheet ws = package.Workbook.Worksheets.Add("Transactions");
+                        ws.Cells["A1"].LoadFromDataTable(dt, true);
+
+                        File.WriteAllBytes(sfd.FileName, package.GetAsByteArray());
+                        MessageBox.Show("Exported successfully!");
+                    }
+                }
+            }
+        }
+
+        private void Calendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            Calendar.SetSelectionRange(DateTime.Today, DateTime.Today);
+            Calendar.TodayDate = DateTime.Today;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Time.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+    }
 }

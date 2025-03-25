@@ -68,7 +68,7 @@
             // transactionsBindingSource
             // 
             transactionsBindingSource.DataSource = typeof(Domain.Models.Transactions);
-            transactionsBindingSource.CurrentChanged += transactionsBindingSource_CurrentChanged;
+ 
             // 
             // transactionsRepositoryBindingSource2
             // 

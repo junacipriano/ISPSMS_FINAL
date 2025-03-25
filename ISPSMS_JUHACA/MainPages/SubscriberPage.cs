@@ -47,6 +47,9 @@ namespace ISPSMS_JUHACA.MainPages
 
             materialComboBox1.SelectedIndex = 0;
             connectedsubscribersGridView.AllowUserToOrderColumns = false;
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+
         }
 
         private void SetActiveButton(MaterialButton clickedButton)
@@ -130,15 +133,9 @@ namespace ISPSMS_JUHACA.MainPages
                 MessageBox.Show($"Error while disconnecting: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
-
-        private void disconnectedbtn_Click(object sender, EventArgs e)
-        {
 
 
-            var disconnectedForm = new Disconnected(dbContext, this);
-            disconnectedForm.ShowDialog();
-        }
+     
 
         private void connectedsubscribersGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -253,8 +250,8 @@ namespace ISPSMS_JUHACA.MainPages
         {
             getSubscribers();
             connectedsubscribersGridView.CellFormatting += connectedsubscribersGridView_CellFormatting;
-
-
+            connectedsubscribersGridView.Dock = DockStyle.Fill;
+            datagridViewPanel.Controls.Add(connectedsubscribersGridView);
         }
 
         private void FilterSubscribersByAddress(string address)
@@ -490,7 +487,7 @@ namespace ISPSMS_JUHACA.MainPages
                     }
                 }
 
-         
+
                 var dbSubscriber = dbContext.connectedSubscriberRepository.Get(s => s.subs_id == subscriber.subs_id, tracked: true);
                 if (dbSubscriber != null)
                 {
@@ -557,5 +554,13 @@ namespace ISPSMS_JUHACA.MainPages
             var AddForm = new addSubscribersForm(dbContext, this, _currentUsername, _currentUserRole, mainForm);
             AddForm.ShowDialog();
         }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            var disconnectedForm = new Disconnected(dbContext, this);
+            disconnectedForm.MdiParent = null; // Prevents it from affecting MDI layout
+            disconnectedForm.ShowDialog();
+        }
+
     }
 }

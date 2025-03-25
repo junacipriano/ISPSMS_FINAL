@@ -36,14 +36,14 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
+            activityBindingSource = new BindingSource(components);
+            activityRepositoryBindingSource = new BindingSource(components);
+            activityBindingSource1 = new BindingSource(components);
             activitiesidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             accountNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             accountRoleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             activitiesDoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             activitiesDateTimeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            activityBindingSource = new BindingSource(components);
-            activityRepositoryBindingSource = new BindingSource(components);
-            activityBindingSource1 = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)activityBindingSource).BeginInit();
@@ -74,6 +74,18 @@
             dataGridView1.Size = new Size(1534, 687);
             dataGridView1.TabIndex = 0;
             // 
+            // activityBindingSource
+            // 
+            activityBindingSource.DataSource = typeof(Domain.Models.Activity);
+            // 
+            // activityRepositoryBindingSource
+            // 
+            activityRepositoryBindingSource.DataSource = typeof(Infastructure.Data.Repositories.ActivityRepository);
+            // 
+            // activityBindingSource1
+            // 
+            activityBindingSource1.DataSource = typeof(Domain.Models.Activity);
+            // 
             // activitiesidDataGridViewTextBoxColumn
             // 
             activitiesidDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -99,7 +111,6 @@
             accountNameDataGridViewTextBoxColumn.HeaderText = "AccountName";
             accountNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             accountNameDataGridViewTextBoxColumn.Name = "accountNameDataGridViewTextBoxColumn";
-            accountNameDataGridViewTextBoxColumn.Visible = false;
             // 
             // accountRoleDataGridViewTextBoxColumn
             // 
@@ -137,18 +148,6 @@
             activitiesDateTimeDataGridViewTextBoxColumn.HeaderText = "ActivitiesDateTime";
             activitiesDateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             activitiesDateTimeDataGridViewTextBoxColumn.Name = "activitiesDateTimeDataGridViewTextBoxColumn";
-            // 
-            // activityBindingSource
-            // 
-            activityBindingSource.DataSource = typeof(Domain.Models.Activity);
-            // 
-            // activityRepositoryBindingSource
-            // 
-            activityRepositoryBindingSource.DataSource = typeof(Infastructure.Data.Repositories.ActivityRepository);
-            // 
-            // activityBindingSource1
-            // 
-            activityBindingSource1.DataSource = typeof(Domain.Models.Activity);
             // 
             // ActivityForm
             // 

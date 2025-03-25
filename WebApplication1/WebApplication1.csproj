@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="CuoreUI.Winforms" Version="2025.3.3" />
+    <PackageReference Include="EPPlus" Version="7.7.0" />
     <PackageReference Include="Krypton.Docking" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Navigator" Version="90.25.2.55" />
     <PackageReference Include="Krypton.Ribbon" Version="90.25.2.55" />

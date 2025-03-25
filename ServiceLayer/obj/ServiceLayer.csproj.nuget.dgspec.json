@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2025.3.3, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.7.0, )"
+            },
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -209,6 +213,10 @@
               "target": "Package",
               "version": "[2025.3.3, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.7.0, )"
+            },
             "Krypton.Docking": {
               "target": "Package",
               "version": "[90.25.2.55, )"
@@ -351,6 +359,10 @@
             "CuoreUI.Winforms": {
               "target": "Package",
               "version": "[2025.3.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.7.0, )"
             },
             "Krypton.Docking": {
               "target": "Package",

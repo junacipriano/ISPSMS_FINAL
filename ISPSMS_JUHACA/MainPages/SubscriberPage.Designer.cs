@@ -49,7 +49,6 @@
             panadtalanBtn = new Modified_Tools.CustomMaterialButton();
             sanMiguelBtn = new Modified_Tools.CustomMaterialButton();
             southPobBtn = new Modified_Tools.CustomMaterialButton();
-            disconnectedbtn = new MaterialSkin.Controls.MaterialButton();
             label1 = new Label();
             connectedsubscribersGridView = new DataGridView();
             Conn_Name = new DataGridViewTextBoxColumn();
@@ -69,10 +68,13 @@
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
             addBtn = new MaterialSkin.Controls.MaterialButton();
             AddButton = new Krypton.Toolkit.KryptonButton();
+            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            datagridViewPanel = new Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)datagridViewPanel).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -553,31 +555,6 @@
             southPobBtn.UseVisualStyleBackColor = true;
             southPobBtn.Click += southPobBtn_Click;
             // 
-            // disconnectedbtn
-            // 
-            disconnectedbtn.AutoSize = false;
-            disconnectedbtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            disconnectedbtn.BackColor = Color.FromArgb(248, 132, 86);
-            disconnectedbtn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
-            disconnectedbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            disconnectedbtn.Depth = 0;
-            disconnectedbtn.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            disconnectedbtn.ForeColor = Color.FromArgb(255, 255, 252);
-            disconnectedbtn.HighEmphasis = true;
-            disconnectedbtn.Icon = null;
-            disconnectedbtn.Location = new Point(788, 89);
-            disconnectedbtn.Margin = new Padding(4);
-            disconnectedbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            disconnectedbtn.Name = "disconnectedbtn";
-            disconnectedbtn.NoAccentTextColor = Color.Empty;
-            disconnectedbtn.Size = new Size(130, 36);
-            disconnectedbtn.TabIndex = 30;
-            disconnectedbtn.Text = "disconnected";
-            disconnectedbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            disconnectedbtn.UseAccentColor = false;
-            disconnectedbtn.UseVisualStyleBackColor = false;
-            disconnectedbtn.Click += disconnectedbtn_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -627,7 +604,7 @@
             connectedsubscribersGridView.EnableHeadersVisualStyles = false;
             connectedsubscribersGridView.GridColor = Color.FromArgb(255, 255, 252);
             connectedsubscribersGridView.ImeMode = ImeMode.NoControl;
-            connectedsubscribersGridView.Location = new Point(174, 132);
+            connectedsubscribersGridView.Location = new Point(174, 176);
             connectedsubscribersGridView.Margin = new Padding(3, 2, 3, 2);
             connectedsubscribersGridView.Name = "connectedsubscribersGridView";
             connectedsubscribersGridView.RightToLeft = RightToLeft.No;
@@ -651,7 +628,7 @@
             connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             connectedsubscribersGridView.ScrollBars = ScrollBars.Vertical;
             connectedsubscribersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            connectedsubscribersGridView.Size = new Size(1674, 803);
+            connectedsubscribersGridView.Size = new Size(1674, 730);
             connectedsubscribersGridView.TabIndex = 28;
             connectedsubscribersGridView.CellContentClick += connectedsubscribersGridView_CellContentClick;
             // 
@@ -750,6 +727,20 @@
             // 
             // addBtn
             // 
+            addBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            addBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            addBtn.Depth = 0;
+            addBtn.HighEmphasis = true;
+            addBtn.Icon = null;
+            addBtn.Location = new Point(0, 0);
+            addBtn.Margin = new Padding(4, 6, 4, 6);
+            addBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            addBtn.Name = "addBtn";
+            addBtn.NoAccentTextColor = Color.Empty;
+            addBtn.Size = new Size(75, 36);
+            addBtn.TabIndex = 0;
+            addBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            addBtn.UseAccentColor = false;
             // 
             // AddButton
             // 
@@ -761,11 +752,32 @@
             AddButton.Values.Text = "kryptonButton1";
             AddButton.Click += AddButton_Click;
             // 
+            // kryptonButton1
+            // 
+            kryptonButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            kryptonButton1.Location = new Point(710, 100);
+            kryptonButton1.Name = "kryptonButton1";
+            kryptonButton1.Size = new Size(90, 41);
+            kryptonButton1.TabIndex = 48;
+            kryptonButton1.Values.DropDownArrowColor = Color.Empty;
+            kryptonButton1.Values.Text = "kryptonButton1";
+            kryptonButton1.Click += kryptonButton1_Click;
+            // 
+            // datagridViewPanel
+            // 
+            datagridViewPanel.Location = new Point(174, 176);
+            datagridViewPanel.Name = "datagridViewPanel";
+            datagridViewPanel.Size = new Size(1659, 730);
+            datagridViewPanel.TabIndex = 49;
+            // 
             // SubscriberPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1914, 949);
+            BackColor = Color.FromArgb(241, 240, 233);
+            ClientSize = new Size(1892, 951);
+            ControlBox = false;
+            Controls.Add(kryptonButton1);
             Controls.Add(AddButton);
             Controls.Add(label5);
             Controls.Add(TotalSubscriberLabel);
@@ -783,17 +795,25 @@
             Controls.Add(panadtalanBtn);
             Controls.Add(sanMiguelBtn);
             Controls.Add(southPobBtn);
-            Controls.Add(disconnectedbtn);
             Controls.Add(label1);
             Controls.Add(connectedsubscribersGridView);
+            Controls.Add(datagridViewPanel);
+            MaximumSize = new Size(1906, 973);
+            MinimumSize = new Size(1906, 973);
             Name = "SubscriberPage";
             Padding = new Padding(3, 0, 3, 3);
-            Text = "SubscriberPage";
+            StartPosition = FormStartPosition.Manual;
+            StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Back.Color2 = Color.FromArgb(241, 240, 233);
+            StateCommon.Header.Back.Color1 = Color.FromArgb(241, 240, 233);
+            StateCommon.Header.Back.Color2 = Color.FromArgb(241, 240, 233);
+            TransparencyKey = Color.Empty;
             Load += SubscriberPage_Load;
             ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)datagridViewPanel).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -843,5 +863,7 @@
         private BindingSource connectedSubscribersBindingSource;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private Krypton.Toolkit.KryptonButton AddButton;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonPanel datagridViewPanel;
     }
 }

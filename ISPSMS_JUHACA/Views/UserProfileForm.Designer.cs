@@ -53,7 +53,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(15, 367);
+            btnClose.Location = new Point(12, 325);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(112, 31);
             btnClose.TabIndex = 2;
@@ -116,14 +116,14 @@
             panel1.Controls.Add(kryptonLabel1);
             panel1.Controls.Add(UserRole);
             panel1.Controls.Add(Username);
-            panel1.Location = new Point(12, 55);
+            panel1.Location = new Point(9, 13);
             panel1.Name = "panel1";
             panel1.Size = new Size(714, 306);
             panel1.TabIndex = 3;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(527, 252);
+            btnEdit.Location = new Point(490, 252);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(177, 31);
             btnEdit.TabIndex = 5;
@@ -247,7 +247,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(539, 367);
+            btnLogout.Location = new Point(499, 325);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(177, 31);
             btnLogout.StatePressed.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
@@ -260,11 +260,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(753, 450);
+            ClientSize = new Size(732, 363);
+            ControlBox = false;
             Controls.Add(btnLogout);
             Controls.Add(panel1);
             Controls.Add(btnClose);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "UserProfileForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UserProfileForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

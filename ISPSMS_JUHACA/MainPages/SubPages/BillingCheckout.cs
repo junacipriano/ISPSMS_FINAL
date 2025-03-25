@@ -5,6 +5,7 @@ using ISPSMS_JUHACA.Views.IVews;
 using Krypton.Toolkit;
 using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Graph.Models.Security;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -82,9 +83,8 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 return;
             }
 
-            // Ensure the balance is calculated correctly
             decimal balance = monthlyCharge - amount;
-            if (balance < 0) balance = 0; // Prevent negative balance
+            if (balance < 0) balance = 0;
 
             DateTime nextDueDate = ConSubsEntity.CurrentDuedate.AddMonths(1);
             string formattedDueDate = FormatWithOrdinal(nextDueDate.Day);
@@ -98,10 +98,22 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 Balance = balance,
                 Note = string.IsNullOrWhiteSpace(noteComboBox.Text) ? "None" : noteComboBox.Text,
                 Duedate = formattedDueDate,
-                TransactionDateTime = DateTime.Now
+                TransactionDateTime = DateTime.Now,
+                Address = addressTextBox.Text
             };
 
+            //decimal TotalCharge = monthlyCharge + balance;
+            //var updateSubscriber = new Domain.Models.ConnectedSubscribers
+            //{
+            //    subs_id = int.Parse(subIDTextBox.Text),
+            //    Conn_Name = mainNameTextBox.Text,
+              
+            
+            //    Balance = balance,
+            //};
+
             _dbContext.transactionsRepository.Add(newTransaction);
+            //_dbContext.connectedSubscriberRepository.Update(updateSubscriber);
             _dbContext.Save();
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -120,7 +132,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             }
             LogActivity(activityDescription);
 
-            _billingPage.LoadBillingItems();
+            _billingPage.LoadBillingItemsAsync();
             this.Close();
         }
 
@@ -137,8 +149,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         }
 
         private void editButton_Click(object sender, EventArgs e)
-        {
-            noteComboBox.Enabled = true;
+        { 
             amountTextBox.ReadOnly = false;
         }
 

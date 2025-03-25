@@ -186,3 +186,11 @@ D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\ISPSMS_JUHACA.runtimeconf
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_J.06952C74.Up2Date
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.genruntimeconfig.cache
 D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ref\ISPSMS_JUHACA.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\EPPlus.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+D:\ISPSMS_FINAL\ISPSMS_JUHACA\obj\Debug\net8.0-windows\ISPSMS_JUHACA.Views.ProfileEdit.resources

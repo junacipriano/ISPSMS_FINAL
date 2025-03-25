@@ -46,21 +46,21 @@
             kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
             amountTextBox = new Krypton.Toolkit.KryptonTextBox();
             kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
-            noteComboBox = new Krypton.Toolkit.KryptonComboBox();
             cancelButton = new Krypton.Toolkit.KryptonButton();
             confirmButton = new Krypton.Toolkit.KryptonButton();
             planTextBox = new Krypton.Toolkit.KryptonTextBox();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
+            noteComboBox = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)noteComboBox).BeginInit();
             SuspendLayout();
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(23, 12);
+            kryptonLabel1.Location = new Point(20, 9);
             kryptonLabel1.Margin = new Padding(0);
             kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(219, 40);
+            kryptonLabel1.Size = new Size(176, 33);
             kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(234, 98, 38);
             kryptonLabel1.StateCommon.ShortText.Color2 = Color.FromArgb(234, 98, 38);
             kryptonLabel1.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -69,13 +69,12 @@
             // 
             // subNameTextBox
             // 
-            subNameTextBox.Location = new Point(49, 264);
-            subNameTextBox.Margin = new Padding(3, 4, 3, 4);
-            subNameTextBox.MaximumSize = new Size(343, 35);
-            subNameTextBox.MinimumSize = new Size(229, 35);
+            subNameTextBox.Location = new Point(43, 198);
+            subNameTextBox.MaximumSize = new Size(300, 35);
+            subNameTextBox.MinimumSize = new Size(200, 35);
             subNameTextBox.Name = "subNameTextBox";
             subNameTextBox.ReadOnly = true;
-            subNameTextBox.Size = new Size(229, 35);
+            subNameTextBox.Size = new Size(200, 35);
             subNameTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             subNameTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             subNameTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -87,10 +86,10 @@
             // 
             // kryptonLabel3
             // 
-            kryptonLabel3.Location = new Point(50, 240);
+            kryptonLabel3.Location = new Point(44, 180);
             kryptonLabel3.Margin = new Padding(0);
             kryptonLabel3.Name = "kryptonLabel3";
-            kryptonLabel3.Size = new Size(135, 23);
+            kryptonLabel3.Size = new Size(110, 19);
             kryptonLabel3.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel3.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel3.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -99,10 +98,9 @@
             // 
             // editButton
             // 
-            editButton.Location = new Point(194, 425);
-            editButton.Margin = new Padding(3, 4, 3, 4);
+            editButton.Location = new Point(170, 319);
             editButton.Name = "editButton";
-            editButton.Size = new Size(74, 47);
+            editButton.Size = new Size(65, 35);
             editButton.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             editButton.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
             editButton.StateCommon.Border.Color1 = Color.FromArgb(171, 153, 119);
@@ -119,13 +117,12 @@
             // 
             // kryptonTextBox7
             // 
-            kryptonTextBox7.Location = new Point(23, 69);
-            kryptonTextBox7.Margin = new Padding(3, 4, 3, 4);
-            kryptonTextBox7.MaximumSize = new Size(571, 80);
-            kryptonTextBox7.MinimumSize = new Size(514, 80);
+            kryptonTextBox7.Location = new Point(20, 52);
+            kryptonTextBox7.MaximumSize = new Size(500, 80);
+            kryptonTextBox7.MinimumSize = new Size(450, 80);
             kryptonTextBox7.Name = "kryptonTextBox7";
             kryptonTextBox7.ReadOnly = true;
-            kryptonTextBox7.Size = new Size(514, 80);
+            kryptonTextBox7.Size = new Size(450, 80);
             kryptonTextBox7.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox7.StateCommon.Border.Color1 = Color.FromArgb(217, 217, 217);
             kryptonTextBox7.StateCommon.Border.Color2 = Color.FromArgb(217, 217, 217);
@@ -135,7 +132,7 @@
             // 
             // kryptonLabel10
             // 
-            kryptonLabel10.Location = new Point(45, 131);
+            kryptonLabel10.Location = new Point(39, 98);
             kryptonLabel10.Margin = new Padding(0);
             kryptonLabel10.Name = "kryptonLabel10";
             kryptonLabel10.Size = new Size(6, 2);
@@ -147,13 +144,12 @@
             // 
             // receiptNoTextBox
             // 
-            receiptNoTextBox.Location = new Point(270, 125);
-            receiptNoTextBox.Margin = new Padding(3, 4, 3, 4);
-            receiptNoTextBox.MaximumSize = new Size(343, 25);
-            receiptNoTextBox.MinimumSize = new Size(251, 25);
+            receiptNoTextBox.Location = new Point(236, 94);
+            receiptNoTextBox.MaximumSize = new Size(300, 25);
+            receiptNoTextBox.MinimumSize = new Size(220, 25);
             receiptNoTextBox.Name = "receiptNoTextBox";
             receiptNoTextBox.ReadOnly = true;
-            receiptNoTextBox.Size = new Size(251, 25);
+            receiptNoTextBox.Size = new Size(220, 25);
             receiptNoTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             receiptNoTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             receiptNoTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -166,13 +162,12 @@
             // 
             // mainNameTextBox
             // 
-            mainNameTextBox.Location = new Point(41, 92);
-            mainNameTextBox.Margin = new Padding(3, 4, 3, 4);
-            mainNameTextBox.MaximumSize = new Size(343, 25);
-            mainNameTextBox.MinimumSize = new Size(251, 25);
+            mainNameTextBox.Location = new Point(36, 69);
+            mainNameTextBox.MaximumSize = new Size(300, 25);
+            mainNameTextBox.MinimumSize = new Size(220, 25);
             mainNameTextBox.Name = "mainNameTextBox";
             mainNameTextBox.ReadOnly = true;
-            mainNameTextBox.Size = new Size(251, 25);
+            mainNameTextBox.Size = new Size(220, 25);
             mainNameTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             mainNameTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             mainNameTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -184,13 +179,13 @@
             // 
             // statusTextBox
             // 
-            statusTextBox.Location = new Point(407, 91);
+            statusTextBox.Location = new Point(356, 68);
             statusTextBox.Margin = new Padding(0);
-            statusTextBox.MaximumSize = new Size(114, 25);
-            statusTextBox.MinimumSize = new Size(114, 25);
+            statusTextBox.MaximumSize = new Size(100, 25);
+            statusTextBox.MinimumSize = new Size(100, 25);
             statusTextBox.Name = "statusTextBox";
             statusTextBox.ReadOnly = true;
-            statusTextBox.Size = new Size(114, 25);
+            statusTextBox.Size = new Size(100, 25);
             statusTextBox.StateCommon.Back.Color1 = Color.FromArgb(172, 239, 131);
             statusTextBox.StateCommon.Border.Color1 = Color.FromArgb(75, 121, 47);
             statusTextBox.StateCommon.Border.Color2 = Color.FromArgb(75, 121, 47);
@@ -205,13 +200,12 @@
             // 
             // subIDTextBox
             // 
-            subIDTextBox.Location = new Point(45, 125);
-            subIDTextBox.Margin = new Padding(3, 4, 3, 4);
-            subIDTextBox.MaximumSize = new Size(343, 25);
-            subIDTextBox.MinimumSize = new Size(251, 25);
+            subIDTextBox.Location = new Point(39, 94);
+            subIDTextBox.MaximumSize = new Size(300, 25);
+            subIDTextBox.MinimumSize = new Size(220, 25);
             subIDTextBox.Name = "subIDTextBox";
             subIDTextBox.ReadOnly = true;
-            subIDTextBox.Size = new Size(251, 25);
+            subIDTextBox.Size = new Size(220, 25);
             subIDTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             subIDTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             subIDTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -223,13 +217,12 @@
             // 
             // kryptonTextBox12
             // 
-            kryptonTextBox12.Location = new Point(23, 205);
-            kryptonTextBox12.Margin = new Padding(3, 4, 3, 4);
-            kryptonTextBox12.MaximumSize = new Size(686, 500);
-            kryptonTextBox12.MinimumSize = new Size(514, 220);
+            kryptonTextBox12.Location = new Point(20, 154);
+            kryptonTextBox12.MaximumSize = new Size(600, 500);
+            kryptonTextBox12.MinimumSize = new Size(450, 220);
             kryptonTextBox12.Name = "kryptonTextBox12";
             kryptonTextBox12.ReadOnly = true;
-            kryptonTextBox12.Size = new Size(514, 220);
+            kryptonTextBox12.Size = new Size(450, 220);
             kryptonTextBox12.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox12.StateCommon.Border.Color1 = Color.FromArgb(217, 217, 217);
             kryptonTextBox12.StateCommon.Border.Color2 = Color.FromArgb(217, 217, 217);
@@ -239,10 +232,10 @@
             // 
             // kryptonLabel6
             // 
-            kryptonLabel6.Location = new Point(335, 240);
+            kryptonLabel6.Location = new Point(293, 180);
             kryptonLabel6.Margin = new Padding(0);
             kryptonLabel6.Name = "kryptonLabel6";
-            kryptonLabel6.Size = new Size(79, 23);
+            kryptonLabel6.Size = new Size(65, 19);
             kryptonLabel6.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel6.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel6.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -251,13 +244,12 @@
             // 
             // dueDateTextBox
             // 
-            dueDateTextBox.Location = new Point(335, 264);
-            dueDateTextBox.Margin = new Padding(3, 4, 3, 4);
-            dueDateTextBox.MaximumSize = new Size(343, 35);
-            dueDateTextBox.MinimumSize = new Size(171, 35);
+            dueDateTextBox.Location = new Point(293, 198);
+            dueDateTextBox.MaximumSize = new Size(300, 35);
+            dueDateTextBox.MinimumSize = new Size(150, 35);
             dueDateTextBox.Name = "dueDateTextBox";
             dueDateTextBox.ReadOnly = true;
-            dueDateTextBox.Size = new Size(171, 35);
+            dueDateTextBox.Size = new Size(150, 35);
             dueDateTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -269,10 +261,10 @@
             // 
             // kryptonLabel4
             // 
-            kryptonLabel4.Location = new Point(50, 319);
+            kryptonLabel4.Location = new Point(44, 239);
             kryptonLabel4.Margin = new Padding(0);
             kryptonLabel4.Name = "kryptonLabel4";
-            kryptonLabel4.Size = new Size(70, 23);
+            kryptonLabel4.Size = new Size(57, 19);
             kryptonLabel4.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel4.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel4.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -281,13 +273,12 @@
             // 
             // addressTextBox
             // 
-            addressTextBox.Location = new Point(50, 343);
-            addressTextBox.Margin = new Padding(3, 4, 3, 4);
-            addressTextBox.MaximumSize = new Size(571, 35);
-            addressTextBox.MinimumSize = new Size(251, 35);
+            addressTextBox.Location = new Point(44, 257);
+            addressTextBox.MaximumSize = new Size(500, 35);
+            addressTextBox.MinimumSize = new Size(220, 35);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.ReadOnly = true;
-            addressTextBox.Size = new Size(274, 35);
+            addressTextBox.Size = new Size(240, 35);
             addressTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -299,10 +290,10 @@
             // 
             // kryptonLabel7
             // 
-            kryptonLabel7.Location = new Point(49, 400);
+            kryptonLabel7.Location = new Point(43, 300);
             kryptonLabel7.Margin = new Padding(0);
             kryptonLabel7.Name = "kryptonLabel7";
-            kryptonLabel7.Size = new Size(109, 23);
+            kryptonLabel7.Size = new Size(88, 19);
             kryptonLabel7.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel7.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel7.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -311,13 +302,12 @@
             // 
             // amountTextBox
             // 
-            amountTextBox.Location = new Point(50, 425);
-            amountTextBox.Margin = new Padding(3, 4, 3, 4);
-            amountTextBox.MaximumSize = new Size(343, 35);
-            amountTextBox.MinimumSize = new Size(137, 35);
+            amountTextBox.Location = new Point(44, 319);
+            amountTextBox.MaximumSize = new Size(300, 35);
+            amountTextBox.MinimumSize = new Size(120, 35);
             amountTextBox.Name = "amountTextBox";
             amountTextBox.ReadOnly = true;
-            amountTextBox.Size = new Size(137, 35);
+            amountTextBox.Size = new Size(120, 35);
             amountTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             amountTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             amountTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -329,49 +319,22 @@
             // 
             // kryptonLabel8
             // 
-            kryptonLabel8.Location = new Point(335, 400);
+            kryptonLabel8.Location = new Point(293, 300);
             kryptonLabel8.Margin = new Padding(0);
             kryptonLabel8.Name = "kryptonLabel8";
-            kryptonLabel8.Size = new Size(46, 23);
+            kryptonLabel8.Size = new Size(38, 19);
             kryptonLabel8.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel8.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel8.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonLabel8.TabIndex = 27;
             kryptonLabel8.Values.Text = "Note";
             // 
-            // noteComboBox
-            // 
-            noteComboBox.AutoCompleteCustomSource.AddRange(new string[] { "None", "Discount", "Partial", "Advance" });
-            noteComboBox.DropDownWidth = 59;
-            noteComboBox.Enabled = false;
-            noteComboBox.Items.AddRange(new object[] { "None", "Partial", "Advance", "Discount" });
-            noteComboBox.Location = new Point(335, 425);
-            noteComboBox.Margin = new Padding(0);
-            noteComboBox.MinimumSize = new Size(74, 35);
-            noteComboBox.Name = "noteComboBox";
-            noteComboBox.Size = new Size(171, 35);
-            noteComboBox.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(255, 255, 252);
-            noteComboBox.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(52, 72, 100);
-            noteComboBox.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(52, 72, 100);
-            noteComboBox.StateCommon.ComboBox.Border.Rounding = 5F;
-            noteComboBox.StateCommon.ComboBox.Border.Width = 2;
-            noteComboBox.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(52, 72, 100);
-            noteComboBox.StateCommon.ComboBox.Content.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            noteComboBox.StateCommon.ComboBox.Content.Padding = new Padding(2, -1, -1, -1);
-            noteComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            noteComboBox.StateCommon.DropBack.Color1 = Color.FromArgb(255, 255, 252);
-            noteComboBox.StateCommon.DropBack.Color2 = Color.FromArgb(255, 255, 252);
-            noteComboBox.StateCommon.Item.Back.Color1 = Color.FromArgb(171, 153, 119);
-            noteComboBox.StateCommon.Item.Back.Color2 = Color.FromArgb(171, 153, 119);
-            noteComboBox.TabIndex = 29;
-            noteComboBox.Text = "None";
-            // 
             // cancelButton
             // 
-            cancelButton.Location = new Point(314, 515);
+            cancelButton.Location = new Point(275, 386);
             cancelButton.Margin = new Padding(0);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new Size(103, 49);
+            cancelButton.Size = new Size(90, 37);
             cancelButton.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             cancelButton.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
             cancelButton.StateCommon.Border.Color1 = Color.FromArgb(52, 72, 100);
@@ -389,10 +352,10 @@
             // 
             // confirmButton
             // 
-            confirmButton.Location = new Point(431, 515);
+            confirmButton.Location = new Point(377, 386);
             confirmButton.Margin = new Padding(0);
             confirmButton.Name = "confirmButton";
-            confirmButton.Size = new Size(103, 49);
+            confirmButton.Size = new Size(90, 37);
             confirmButton.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             confirmButton.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
             confirmButton.StateCommon.Border.Color1 = Color.FromArgb(52, 72, 100);
@@ -410,13 +373,12 @@
             // 
             // planTextBox
             // 
-            planTextBox.Location = new Point(335, 343);
-            planTextBox.Margin = new Padding(3, 4, 3, 4);
-            planTextBox.MaximumSize = new Size(343, 35);
-            planTextBox.MinimumSize = new Size(171, 35);
+            planTextBox.Location = new Point(293, 257);
+            planTextBox.MaximumSize = new Size(300, 35);
+            planTextBox.MinimumSize = new Size(150, 35);
             planTextBox.Name = "planTextBox";
             planTextBox.ReadOnly = true;
-            planTextBox.Size = new Size(171, 35);
+            planTextBox.Size = new Size(150, 35);
             planTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             planTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             planTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -428,10 +390,10 @@
             // 
             // kryptonLabel2
             // 
-            kryptonLabel2.Location = new Point(335, 319);
+            kryptonLabel2.Location = new Point(293, 239);
             kryptonLabel2.Margin = new Padding(0);
             kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(44, 23);
+            kryptonLabel2.Size = new Size(37, 19);
             kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel2.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -440,22 +402,49 @@
             // 
             // kryptonLabel5
             // 
-            kryptonLabel5.Location = new Point(368, 129);
+            kryptonLabel5.Location = new Point(322, 97);
             kryptonLabel5.Margin = new Padding(0);
             kryptonLabel5.Name = "kryptonLabel5";
-            kryptonLabel5.Size = new Size(98, 23);
+            kryptonLabel5.Size = new Size(80, 19);
             kryptonLabel5.StateCommon.ShortText.Color1 = Color.FromArgb(171, 153, 119);
             kryptonLabel5.StateCommon.ShortText.Color2 = Color.FromArgb(171, 153, 119);
             kryptonLabel5.StateCommon.ShortText.Font = new Font("Franklin Gothic Medium", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kryptonLabel5.TabIndex = 34;
             kryptonLabel5.Values.Text = "Receipt No.:";
             // 
+            // noteComboBox
+            // 
+            noteComboBox.AutoCompleteCustomSource.AddRange(new string[] { "None", "Discount", "Partial", "Advance" });
+            noteComboBox.DropDownWidth = 150;
+            noteComboBox.Items.AddRange(new object[] { "Advance", "Discount", "None", "Partial" });
+            noteComboBox.Location = new Point(293, 319);
+            noteComboBox.Margin = new Padding(0);
+            noteComboBox.MinimumSize = new Size(65, 35);
+            noteComboBox.Name = "noteComboBox";
+            noteComboBox.Size = new Size(150, 35);
+            noteComboBox.Sorted = true;
+            noteComboBox.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(255, 255, 252);
+            noteComboBox.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(52, 72, 100);
+            noteComboBox.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(52, 72, 100);
+            noteComboBox.StateCommon.ComboBox.Border.Rounding = 5F;
+            noteComboBox.StateCommon.ComboBox.Border.Width = 2;
+            noteComboBox.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(52, 72, 100);
+            noteComboBox.StateCommon.ComboBox.Content.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            noteComboBox.StateCommon.ComboBox.Content.Padding = new Padding(2, -1, -1, -1);
+            noteComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            noteComboBox.StateCommon.DropBack.Color1 = Color.FromArgb(255, 255, 252);
+            noteComboBox.StateCommon.DropBack.Color2 = Color.FromArgb(255, 255, 252);
+            noteComboBox.StateCommon.Item.Back.Color1 = Color.FromArgb(171, 153, 119);
+            noteComboBox.StateCommon.Item.Back.Color2 = Color.FromArgb(171, 153, 119);
+            noteComboBox.TabIndex = 29;
+            noteComboBox.Text = "None";
+            // 
             // BillingCheckout
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 252);
-            ClientSize = new Size(560, 582);
+            ClientSize = new Size(492, 437);
             ControlBox = false;
             Controls.Add(kryptonLabel5);
             Controls.Add(planTextBox);
@@ -481,9 +470,8 @@
             Controls.Add(subNameTextBox);
             Controls.Add(kryptonLabel1);
             Controls.Add(kryptonTextBox12);
-            Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(576, 607);
-            MinimumSize = new Size(576, 607);
+            MaximumSize = new Size(506, 459);
+            MinimumSize = new Size(506, 459);
             Name = "BillingCheckout";
             StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
@@ -517,11 +505,11 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
         private Krypton.Toolkit.KryptonTextBox amountTextBox;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
-        private Krypton.Toolkit.KryptonComboBox noteComboBox;
         private Krypton.Toolkit.KryptonButton cancelButton;
         private Krypton.Toolkit.KryptonButton confirmButton;
         private Krypton.Toolkit.KryptonTextBox planTextBox;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private Krypton.Toolkit.KryptonComboBox noteComboBox;
     }
 }

@@ -6,6 +6,7 @@
     using ISPSMS_JUHACA.MainPages;
 using Infastructure.Data.Repositories;
 using ISPSMS_JUHACA.MainPages.SubPages;
+using Microsoft.Graph.Models;
 
 namespace ISPSMS_JUHACA
         {
@@ -17,6 +18,8 @@ namespace ISPSMS_JUHACA
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         public readonly IUnitOfWork unitOfWork;
         private readonly IConnectedSubscribersRepository _connectedSubscribersRepository;
+        private readonly Accounts accounts;
+        int userId = 1;
 
         public MainForm(IUnitOfWork dbContext)
         {
@@ -42,7 +45,7 @@ namespace ISPSMS_JUHACA
 
             this.dbContext = dbContext;
             bindingSource = new BindingSource();
-            _userProfileForm = new UserProfileForm();
+            _userProfileForm = new UserProfileForm(unitOfWork, userId);
 
             materialTabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
         }
@@ -179,9 +182,11 @@ namespace ISPSMS_JUHACA
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
+             // Assuming personID is set correctly
+
             if (_userProfileForm == null || _userProfileForm.IsDisposed)
             {
-                _userProfileForm = new UserProfileForm();
+                _userProfileForm = new UserProfileForm(unitOfWork, userId);
             }
             _userProfileForm.Show();
         }
@@ -190,7 +195,7 @@ namespace ISPSMS_JUHACA
             lblUsername.Text = username;
             lblRole.Text = role;
             string pass = password;
-            string prof = profname;
+            string prof = username;
             string idd = id;
             _userProfileForm.UpdateProfile(username, role, password, profname, id);
         }

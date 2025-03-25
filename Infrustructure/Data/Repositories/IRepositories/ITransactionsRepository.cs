@@ -1,18 +1,33 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Domain.Models;
+﻿using Domain.Models;
 
 namespace Infastructure.Data.Repositories.IRepositories
 {
     public interface ITransactionsRepository : IRepository<Transactions>
     {
-        void Update(Transactions obj);
-        Task<List<Transactions>> GetAllAsync();
-        Task<List<Transactions>> GetPaginatedAsync(int pageNumber, int pageSize, bool orderByDescending);
-
+        float AnahawonTotalPaidAmount();
+        float BaseCampTotalPaidAmount();
+        float Camp1TotalPaidAmount();
+        float ColambugonTotalPaidAmount();
+        float DanggawanTotalPaidAmount();
+        float DologonTotalPaidAmount();
+        Task<IEnumerable<Transactions>> GetAllAsync();  // Change List<T> to IEnumerable<T>
+        Task<IEnumerable<Transactions>> GetByDateAsync(DateTime date);
+        Task<IEnumerable<Transactions>> GetPaginatedAsync(int pageNumber, int pageSize, bool orderByDescending);
         Task<int> GetTotalCountAsync();
         Task<decimal> GetTotalPaidAmountAsync();
+        float NorthTotalPaidAmount();
+        float PanadtalanTotalPaidAmount();
+        float SanMiguelTotalPaidAmount();
+        float SouthTotalPaidAmount();
+        void Update(Transactions obj);
 
-        Task<List<Transactions>> GetByDateAsync(DateTime date);
+
     }
 }
+
+
+
+
+   
+      
+    

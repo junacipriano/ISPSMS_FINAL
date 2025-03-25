@@ -23,42 +23,121 @@ namespace Infastructure.Data.Repositories
             _context.Transactions.Update(obj);
         }
 
-        public async Task<List<Transactions>> GetAllAsync()
+        public async Task<IEnumerable<Transactions>> GetAllAsync()
         {
-            return await _context.Transactions.AsNoTracking().ToListAsync();
+            var transactions = await _context.Transactions
+                .AsNoTracking()
+                .ToListAsync();
+
+            return transactions.AsEnumerable(); // Return as IEnumerable
         }
 
-        public async Task<List<Transactions>> GetPaginatedAsync(int pageNumber, int pageSize, bool orderByDescending = false)
+        public async Task<IEnumerable<Transactions>> GetPaginatedAsync(int pageNumber, int pageSize, bool orderByDescending = false)
         {
-            IQueryable<Transactions> query = _context.Transactions.AsNoTracking(); // Prevent EF from tracking queries
+            // Fetch all transactions into memory (IEnumerable)
+            var allTransactions = await GetAllAsync();
 
+            // Apply ordering in-memory
+            IEnumerable<Transactions> orderedTransactions;
             if (orderByDescending)
             {
-                query = query.OrderByDescending(t => t.TransactionDateTime);
+                orderedTransactions = allTransactions.OrderByDescending(t => t.TransactionDateTime);
             }
             else
             {
-                query = query.OrderBy(t => t.TransactionDateTime);
+                orderedTransactions = allTransactions.OrderBy(t => t.TransactionDateTime);
             }
 
-            return await query.Skip((pageNumber - 1) * pageSize)
-                              .Take(pageSize)
-                              .ToListAsync();
+            // Apply paging in-memory
+            return orderedTransactions.Skip((pageNumber - 1) * pageSize)
+                                       .Take(pageSize);
         }
-        public async Task<decimal> GetTotalPaidAmountAsync()
+          public async Task<decimal> GetTotalPaidAmountAsync()
         {
             return await _context.Transactions.SumAsync(t => (decimal?)t.PaidAmount) ?? 0;
         }
 
+        // Get the total count of transactions (same as before)
+
+
         public async Task<int> GetTotalCountAsync()
         {
-            return await _context.Transactions.CountAsync(); // Return total number of transactions
+            return await _context.Transactions.AsNoTracking().CountAsync();
         }
-        public async Task<List<Transactions>> GetByDateAsync(DateTime TransactionDateTime)
+        public async Task<IEnumerable<Transactions>> GetByDateAsync(DateTime TransactionDateTime)
         {
-            return await _context.Transactions
+            var transactions = await _context.Transactions
                 .Where(t => t.TransactionDateTime.Date == TransactionDateTime)
                 .ToListAsync();
+
+            return transactions.AsEnumerable();
+        }
+
+        public float AnahawonTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Anahawon"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float ColambugonTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Colambugon"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float DanggawanTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Danggawan"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float SanMiguelTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("San Miguel"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float BaseCampTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Base Camp"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float PanadtalanTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Panadtalan"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float NorthTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("North Poblacion"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float SouthTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("South Poblacion"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float Camp1TotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Camp 1"))
+                .Sum(t => t.PaidAmount);
+        }
+        public float DologonTotalPaidAmount()
+        {
+            return (float)_context.Transactions
+                .Where(t => t.Address.Contains("Dologon"))
+                .Sum(t => t.PaidAmount);
         }
     }
 }
+
+
+      
+
+        
+

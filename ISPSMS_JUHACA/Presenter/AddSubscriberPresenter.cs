@@ -179,7 +179,6 @@ namespace ISPSMS_JUHACA.Presenter
             _view.LastName = nameParts.Length > 0 ? FormatName(nameParts[0]) : "";
             _view.FirstName = nameParts.Length > 1 ? FormatName(nameParts[1]) : "";
             _view.MiddleInitial = nameParts.Length > 2 ? FormatName(nameParts[2]) : "";
-
             _view.District = GetDistrict(selectedSubscriber.Address);
             _view.Barangay = GetBarangay(selectedSubscriber.Address);
             _view.Plan = selectedSubscriber.Plan;

@@ -56,11 +56,14 @@ namespace ISPSMS_JUHACA.Views
             {
                 MessageBox.Show($"Error initializing form: {ex.Message}", "Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.AutoScaleMode = AutoScaleMode.None;
         }
 
         private void Disconnected_Shown(object? sender, EventArgs e)
         {
             presenter.LoadDisconnectedSubscribers();
+
         }
 
         //public void LoadDisconnectedSubscribers()

@@ -34,6 +34,9 @@ namespace ISPSMS_JUHACA.MainPages
             currentUserRole = mainForm.GetUserRole();
             _currentUserName = mainForm.GetUsername();
             _currentUserRole = mainForm.GetUserRole();
+
+            accountsGridView.CellFormatting += accountsGridView_CellFormatting;
+
             getAccounts();
         }
 
@@ -50,8 +53,19 @@ namespace ISPSMS_JUHACA.MainPages
             }
         }
 
+        private void accountsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column is "AccountPassword" and the value is not null
+            if (accountsGridView.Columns[e.ColumnIndex].Name == "AccountPassword" && e.Value != null)
+            {
+                e.Value = new string('*', 10); // Show 10 asterisks
+                e.FormattingApplied = true;
+            }
+        }
+
         private void accountsGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
             var selectedAccount = accountsGridView.Rows[e.RowIndex].DataBoundItem as Accounts;
             if (selectedAccount == null) return;
 

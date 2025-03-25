@@ -5,15 +5,11 @@ using Krypton.Docking;
 using Krypton.Navigator;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Microsoft.AspNetCore.Components.Endpoints;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +24,12 @@ namespace ISPSMS_JUHACA.MainPages
         private MainForm mainForm;
         private readonly SubscriberPage _subscribersForm;
 
+        // Pagination
+        private int currentPage = 1;
+        private const int itemsPerPage = 20;
+
         public BindingSource BindingSource => bindingSource;
+
         public BillingPage(IUnitOfWork dbContext, MainForm mainForm)
         {
             InitializeComponent();
@@ -38,84 +39,112 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 // Initialize MaterialSkinManager safely
                 var materialSkinManager = MaterialSkinManager.Instance;
-                if (materialSkinManager != null)
-                {
-                    materialSkinManager.AddFormToManage(this);
-                    materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                    materialSkinManager.ColorScheme = new ColorScheme(
-                        Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500,
-                        Accent.LightBlue200, TextShade.WHITE
-                    );
-                }
+                materialSkinManager?.AddFormToManage(this);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                materialSkinManager.ColorScheme = new ColorScheme(
+                    Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500,
+                    Accent.LightBlue200, TextShade.WHITE
+                );
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"MaterialSkin initialization failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
             billingFlowPanel.BackColor = Color.FromArgb(241, 240, 233);
         }
 
-        public void getSubscribers()
+        private async void BillingPage_Load(object sender, EventArgs e)
         {
-            var subscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
+            await LoadBillingItemsAsync();
         }
 
-        private void BillingPage_Load(object sender, EventArgs e)
-        {
-            LoadBillingItems();
-        }
-
-        public void LoadBillingItems()
+        // Asynchronous method to load billing items
+        public async Task LoadBillingItemsAsync(int page = 1)
         {
             billingFlowPanel.Controls.Clear();
+            currentPage = page;
 
-            var subscribers = dbContext.connectedSubscriberRepository
+            var subscribers = await Task.Run(() =>
+                dbContext.connectedSubscriberRepository
                 .GetAll()
                 .OrderBy(sub => sub.CurrentDuedate)
-                .ToList();
+                .Skip((currentPage - 1) * itemsPerPage)
+                .Take(itemsPerPage)
+                .ToList()
+            );
+
+            btnNext.Enabled = subscribers.Count == itemsPerPage; // Disable btnNext if fewer than itemsPerPage are loaded
+            btnPrev.Enabled = currentPage > 1; // Disable btnPrev if on the first page
+
             if (!subscribers.Any())
             {
-                MessageBox.Show("No subscribers found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No more subscribers found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNext.Enabled = false; // Ensure next button is disabled when no items are found
                 return;
             }
 
             foreach (var subscriber in subscribers)
             {
-
                 BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this, mainForm)
                 {
-                    TopLevel = false, 
-                    Dock = DockStyle.Top 
+                    TopLevel = false,
+                    Dock = DockStyle.Top
                 };
 
-                // Set data
                 billingItem.ConSubsEntity = subscriber;
                 billingItem.LoadBillingItemData();
-
-                // Add to panel
                 billingFlowPanel.Controls.Add(billingItem);
                 billingItem.Show();
             }
         }
 
-        public void FilterData(string searchText)
+        // Pagination: Load Next Page
+        private async void btnNext_Click(object sender, EventArgs e)
         {
-            foreach (Control control in billingFlowPanel.Controls)
-            {
-                if (control is BillingItems billingItem)
-                {
-                    var subscriber = billingItem.ConSubsEntity;
-                    bool isVisible = subscriber.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
-                                     subscriber.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase);
-
-                    billingItem.Visible = isVisible;
-                }
-            }
+            currentPage++;
+            await LoadBillingItemsAsync(currentPage);
         }
 
+        // Pagination: Load Previous Page
+        private async void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                await LoadBillingItemsAsync(currentPage);
+            }
 
+            btnPrev.Enabled = currentPage > 1; // Disable when on the first page
+        }
 
+        public async void FilterData(string searchText)
+        {
+            var subscribers = await Task.Run(() =>
+                dbContext.connectedSubscriberRepository
+                .GetAll()
+                .Where(sub =>
+                    sub.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                    sub.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                .OrderBy(sub => sub.CurrentDuedate)
+                .ToList()
+            );
+
+            billingFlowPanel.Controls.Clear();
+
+            foreach (var subscriber in subscribers)
+            {
+                BillingItems billingItem = new BillingItems(dbContext, _subscribersForm, this, mainForm)
+                {
+                    TopLevel = false,
+                    Dock = DockStyle.Top
+                };
+
+                billingItem.ConSubsEntity = subscriber;
+                billingItem.LoadBillingItemData();
+                billingFlowPanel.Controls.Add(billingItem);
+                billingItem.Show();
+            }
+        }
     }
 }
