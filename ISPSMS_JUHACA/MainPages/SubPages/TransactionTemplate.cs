@@ -30,7 +30,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             balance.Text = _transaction.Balance.ToString("C");
             note.Text = _transaction.Note;
             dueDate.Text = _transaction.Duedate;
-            date.Text = _transaction.TransactionDateTime.ToString("MMMM d, yyyy HH:mm");
+            date.Text = _transaction.TransactionDateTime.ToString("MMMM d, yyyy ");
             time.Text = _transaction.TransactionDateTime.ToString("hh:mm tt");
         }
 

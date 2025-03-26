@@ -18,10 +18,10 @@
     <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
     <PackageReference Include="LiveCharts.WinForms.NetCore3" Version="0.9.8" />
     <PackageReference Include="Microsoft.Graph" Version="5.74.0" />
+    <PackageReference Include="Microsoft.ReportViewer.WebForms" Version="10.0.40219.1" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3124.44" />
     <PackageReference Include="ScottPlot.WinForms" Version="5.0.54" />
     <PackageReference Include="ThinkGeo.Core" Version="14.2.5" />
-    <PackageReference Include="ThinkGeo.UI.WinForms" Version="14.2.5" />
   </ItemGroup>
 
   <ItemGroup>

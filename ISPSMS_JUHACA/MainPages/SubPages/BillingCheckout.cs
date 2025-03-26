@@ -3,22 +3,8 @@ using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views;
 using ISPSMS_JUHACA.Views.IVews;
 using Krypton.Toolkit;
-using MaterialSkin.Controls;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Graph.Models.Security;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Unity.Storage.RegistrationSet;
+
 
 namespace ISPSMS_JUHACA.MainPages.SubPages
 {
@@ -102,18 +88,19 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 Address = addressTextBox.Text
             };
 
-            //decimal TotalCharge = monthlyCharge + balance;
-            //var updateSubscriber = new Domain.Models.ConnectedSubscribers
-            //{
-            //    subs_id = int.Parse(subIDTextBox.Text),
-            //    Conn_Name = mainNameTextBox.Text,
-              
-            
-            //    Balance = balance,
-            //};
+            decimal TotalCharge = monthlyCharge + balance;
+            var existingSubscriber = _dbContext.connectedSubscriberRepository.Get(s => s.subs_id == ConSubsEntity.subs_id);
+
+            if (existingSubscriber != null)
+            {
+                existingSubscriber.Balance = balance;
+                existingSubscriber.MonthlyCharge = TotalCharge;
+
+                _dbContext.connectedSubscriberRepository.Update(existingSubscriber);
+                _dbContext.Save();
+            }
 
             _dbContext.transactionsRepository.Add(newTransaction);
-            //_dbContext.connectedSubscriberRepository.Update(updateSubscriber);
             _dbContext.Save();
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

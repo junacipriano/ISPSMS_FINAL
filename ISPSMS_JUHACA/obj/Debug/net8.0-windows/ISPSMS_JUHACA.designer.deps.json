@@ -359,6 +359,62 @@
           }
         }
       },
+      "Microsoft.CodeAnalysis.Analyzers/3.3.4": {},
+      "Microsoft.CodeAnalysis.Common/4.8.0": {
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
+          "System.Collections.Immutable": "7.0.0",
+          "System.Reflection.Metadata": "7.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.CodeAnalysis.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.23.55801"
+          }
+        },
+        "resources": {
+          "lib/net7.0/cs/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net7.0/de/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net7.0/es/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net7.0/fr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net7.0/it/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net7.0/ja/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net7.0/ko/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net7.0/pl/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net7.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net7.0/ru/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net7.0/tr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net7.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net7.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "Microsoft.Data.SqlClient/6.0.1": {
         "dependencies": {
           "Azure.Identity": "1.11.4",
@@ -955,6 +1011,33 @@
           }
         }
       },
+      "Microsoft.ReportViewer.Common/10.0.40219.1": {
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.40219.1"
+          },
+          "lib/Microsoft.ReportViewer.DataVisualization.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.40219.1"
+          },
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.40219.1"
+          }
+        }
+      },
+      "Microsoft.ReportViewer.WebForms/10.0.40219.1": {
+        "dependencies": {
+          "Microsoft.ReportViewer.Common": "10.0.40219.1"
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.WebForms.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.40219.1"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
@@ -1363,6 +1446,14 @@
           }
         }
       },
+      "System.Collections.Immutable/7.0.0": {
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.ComponentModel.Annotations/5.0.0": {
         "runtime": {
           "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {
@@ -1468,6 +1559,17 @@
         }
       },
       "System.Numerics.Vectors/4.5.0": {},
+      "System.Reflection.Metadata/7.0.0": {
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Reflection.Metadata.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "runtime": {
           "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
@@ -1554,17 +1656,6 @@
         },
         "runtime": {
           "lib/netstandard2.1/ThinkGeo.Core.dll": {
-            "assemblyVersion": "14.0.0.0",
-            "fileVersion": "14.2.5.0"
-          }
-        }
-      },
-      "ThinkGeo.UI.WinForms/14.2.5": {
-        "dependencies": {
-          "ThinkGeo.Core": "14.2.5"
-        },
-        "runtime": {
-          "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll": {
             "assemblyVersion": "14.0.0.0",
             "fileVersion": "14.2.5.0"
           }
@@ -1797,6 +1888,20 @@
       "sha512": "sha512-bTUtGfpGyJnohQzjdXbtc7MqNzkv7CWUSRz54+ucNm0i32rZiIU0VdVPHDBShOl1qhVKRjW8mnEBz3d2vH93tQ==",
       "path": "microsoft.bcl.memory/9.0.0",
       "hashPath": "microsoft.bcl.memory.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Analyzers/3.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AxkxcPR+rheX0SmvpLVIGLhOUXAKG56a64kV9VQZ4y9gR9ZmPXnqZvHJnmwLSwzrEP6junUF11vuc+aqo5r68g==",
+      "path": "microsoft.codeanalysis.analyzers/3.3.4",
+      "hashPath": "microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Common/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/jR+e/9aT+BApoQJABlVCKnnggGQbvGh7BKq2/wI1LamxC+LbzhcLj4Vj7gXCofl1n4E521YfF9w0WcASGg/KA==",
+      "path": "microsoft.codeanalysis.common/4.8.0",
+      "hashPath": "microsoft.codeanalysis.common.4.8.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/6.0.1": {
       "type": "package",
@@ -2127,6 +2232,20 @@
       "path": "microsoft.openapi/1.6.22",
       "hashPath": "microsoft.openapi.1.6.22.nupkg.sha512"
     },
+    "Microsoft.ReportViewer.Common/10.0.40219.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BvYKVVgeRwdwiqCDUdIbaV179YIXg4RD+MlHI4KndReULmM2xO6KGlYmxOOMB/Lq5ktwFuMVyChbZgpgUqEgHw==",
+      "path": "microsoft.reportviewer.common/10.0.40219.1",
+      "hashPath": "microsoft.reportviewer.common.10.0.40219.1.nupkg.sha512"
+    },
+    "Microsoft.ReportViewer.WebForms/10.0.40219.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tQoaMDAJunxuwr7G/NIWmPr56BBoB2noTIdaTqr8HqEIjzNhvt5PpDfbkehIzr4sbyTxdNQjglVKzoEQ11+AOg==",
+      "path": "microsoft.reportviewer.webforms/10.0.40219.1",
+      "hashPath": "microsoft.reportviewer.webforms.10.0.40219.1.nupkg.sha512"
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2295,6 +2414,13 @@
       "path": "system.clientmodel/1.1.0",
       "hashPath": "system.clientmodel.1.1.0.nupkg.sha512"
     },
+    "System.Collections.Immutable/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+      "path": "system.collections.immutable/7.0.0",
+      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
+    },
     "System.ComponentModel.Annotations/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2372,6 +2498,13 @@
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
+    "System.Reflection.Metadata/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MclTG61lsD9sYdpNz9xsKBzjsmsfCtcMZYXz/IUr2zlhaTaABonlr1ESeompTgM+Xk+IwtGYU7/voh3YWB/fWw==",
+      "path": "system.reflection.metadata/7.0.0",
+      "hashPath": "system.reflection.metadata.7.0.0.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2427,13 +2560,6 @@
       "sha512": "sha512-iS8T8SiCAZR4Z6Wm/QHZz3mmVruZZC5XVl8Znu6oTCfWR+rhR/UdcSBFw35gYp9ojvALwRzTUTGjZoE/hDXTuw==",
       "path": "thinkgeo.core/14.2.5",
       "hashPath": "thinkgeo.core.14.2.5.nupkg.sha512"
-    },
-    "ThinkGeo.UI.WinForms/14.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XRIp8bagToU+KJZlq0Vjk8oP11q5cWn1uovUd6MgXAuKYbpJcFDvusK+l2AG33K+4GXwHxLgAYotbS73OP57Yg==",
-      "path": "thinkgeo.ui.winforms/14.2.5",
-      "hashPath": "thinkgeo.ui.winforms.14.2.5.nupkg.sha512"
     },
     "Unity/5.11.10": {
       "type": "package",

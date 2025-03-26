@@ -21,7 +21,6 @@ namespace Infastructure.Data.Repositories.IRepositories
         float SouthTotalPaidAmount();
         void Update(Transactions obj);
 
-
     }
 }
 

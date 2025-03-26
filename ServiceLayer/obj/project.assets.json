@@ -1327,6 +1327,31 @@
           }
         }
       },
+      "Microsoft.ReportViewer.Common/10.0.40219.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.DataVisualization.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.Common.dll": {},
+          "lib/Microsoft.ReportViewer.DataVisualization.dll": {},
+          "lib/Microsoft.ReportViewer.ProcessingObjectModel.dll": {}
+        }
+      },
+      "Microsoft.ReportViewer.WebForms/10.0.40219.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ReportViewer.Common": "10.0.40219.1"
+        },
+        "compile": {
+          "lib/Microsoft.ReportViewer.WebForms.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.ReportViewer.WebForms.dll": {}
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
@@ -2230,22 +2255,6 @@
           "build/netstandard2.1/ThinkGeo.Core.targets": {}
         }
       },
-      "ThinkGeo.UI.WinForms/14.2.5": {
-        "type": "package",
-        "dependencies": {
-          "ThinkGeo.Core": "14.2.5"
-        },
-        "compile": {
-          "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2266,10 +2275,10 @@
           "Microsoft.AspNetCore.Identity.UI": "8.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
           "Microsoft.Graph": "5.74.0",
+          "Microsoft.ReportViewer.WebForms": "10.0.40219.1",
           "Microsoft.Web.WebView2": "1.0.3124.44",
           "ScottPlot.WinForms": "5.0.54",
-          "ThinkGeo.Core": "14.2.5",
-          "ThinkGeo.UI.WinForms": "14.2.5"
+          "ThinkGeo.Core": "14.2.5"
         },
         "compile": {
           "bin/placeholder/Domain.dll": {}
@@ -2300,10 +2309,10 @@
           "Microsoft.AspNetCore.Identity.UI": "8.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
           "Microsoft.Graph": "5.74.0",
+          "Microsoft.ReportViewer.WebForms": "10.0.40219.1",
           "Microsoft.Web.WebView2": "1.0.3124.44",
           "ScottPlot.WinForms": "5.0.54",
-          "ThinkGeo.Core": "14.2.5",
-          "ThinkGeo.UI.WinForms": "14.2.5"
+          "ThinkGeo.Core": "14.2.5"
         },
         "compile": {
           "bin/placeholder/Infastructure.dll": {}
@@ -4287,6 +4296,32 @@
         "microsoft.kiota.serialization.text.nuspec"
       ]
     },
+    "Microsoft.ReportViewer.Common/10.0.40219.1": {
+      "sha512": "BvYKVVgeRwdwiqCDUdIbaV179YIXg4RD+MlHI4KndReULmM2xO6KGlYmxOOMB/Lq5ktwFuMVyChbZgpgUqEgHw==",
+      "type": "package",
+      "path": "microsoft.reportviewer.common/10.0.40219.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.ReportViewer.Common.dll",
+        "lib/Microsoft.ReportViewer.DataVisualization.dll",
+        "lib/Microsoft.ReportViewer.ProcessingObjectModel.dll",
+        "microsoft.reportviewer.common.10.0.40219.1.nupkg.sha512",
+        "microsoft.reportviewer.common.nuspec"
+      ]
+    },
+    "Microsoft.ReportViewer.WebForms/10.0.40219.1": {
+      "sha512": "tQoaMDAJunxuwr7G/NIWmPr56BBoB2noTIdaTqr8HqEIjzNhvt5PpDfbkehIzr4sbyTxdNQjglVKzoEQ11+AOg==",
+      "type": "package",
+      "path": "microsoft.reportviewer.webforms/10.0.40219.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.ReportViewer.WebForms.dll",
+        "microsoft.reportviewer.webforms.10.0.40219.1.nupkg.sha512",
+        "microsoft.reportviewer.webforms.nuspec"
+      ]
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "sha512": "N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "type": "package",
@@ -5771,21 +5806,6 @@
         "thinkgeo.core.nuspec"
       ]
     },
-    "ThinkGeo.UI.WinForms/14.2.5": {
-      "sha512": "XRIp8bagToU+KJZlq0Vjk8oP11q5cWn1uovUd6MgXAuKYbpJcFDvusK+l2AG33K+4GXwHxLgAYotbS73OP57Yg==",
-      "type": "package",
-      "path": "thinkgeo.ui.winforms/14.2.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net462/ThinkGeo.UI.WinForms.dll",
-        "lib/net462/ThinkGeo.UI.WinForms.xml",
-        "lib/net6.0-windows/ThinkGeo.UI.WinForms.dll",
-        "lib/net6.0-windows/ThinkGeo.UI.WinForms.xml",
-        "thinkgeo.ui.winforms.14.2.5.nupkg.sha512",
-        "thinkgeo.ui.winforms.nuspec"
-      ]
-    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -5811,10 +5831,10 @@
       "LiveCharts.WinForms >= 0.9.7.1",
       "LiveCharts.WinForms.NetCore3 >= 0.9.8",
       "Microsoft.Graph >= 5.74.0",
+      "Microsoft.ReportViewer.WebForms >= 10.0.40219.1",
       "Microsoft.Web.WebView2 >= 1.0.3124.44",
       "ScottPlot.WinForms >= 5.0.54",
-      "ThinkGeo.Core >= 14.2.5",
-      "ThinkGeo.UI.WinForms >= 14.2.5"
+      "ThinkGeo.Core >= 14.2.5"
     ]
   },
   "packageFolders": {
@@ -5915,6 +5935,10 @@
             "target": "Package",
             "version": "[5.74.0, )"
           },
+          "Microsoft.ReportViewer.WebForms": {
+            "target": "Package",
+            "version": "[10.0.40219.1, )"
+          },
           "Microsoft.Web.WebView2": {
             "target": "Package",
             "version": "[1.0.3124.44, )"
@@ -5924,10 +5948,6 @@
             "version": "[5.0.54, )"
           },
           "ThinkGeo.Core": {
-            "target": "Package",
-            "version": "[14.2.5, )"
-          },
-          "ThinkGeo.UI.WinForms": {
             "target": "Package",
             "version": "[14.2.5, )"
           }
@@ -5979,6 +5999,26 @@
       "warningLevel": 1,
       "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.ReportViewer.Common 10.0.40219.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.ReportViewer.Common",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.ReportViewer.WebForms 10.0.40219.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.ReportViewer.WebForms",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

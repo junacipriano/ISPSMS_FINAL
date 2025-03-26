@@ -23,6 +23,9 @@ namespace Infastructure.Repositories
 
             if (existingEntity != null)
             {
+                existingEntity.Balance = obj.Balance;
+                existingEntity.MonthlyCharge = obj.MonthlyCharge;
+
                 _db.Entry(existingEntity).State = EntityState.Detached; // Detach old entity to avoid tracking conflicts
             }
 

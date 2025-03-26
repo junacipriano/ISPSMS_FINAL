@@ -38,7 +38,7 @@ namespace ISPSMS_JUHACA.Presenter
                 var mainForm = new MainForm(_dbContext);
                 mainForm.SetUserProfile(account.AccountName, account.AccountRole, account.AccountPassword, account.Username, account.account_id.ToString());
                 mainForm.Show();
-                mainForm.OpenSubscribersPage();
+              
             }
             else
             {

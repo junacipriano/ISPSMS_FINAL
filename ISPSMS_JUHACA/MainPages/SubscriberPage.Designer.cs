@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            label5 = new Label();
-            TotalSubscriberLabel = new Label();
-            label3 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubscriberPage));
             materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             allBtn = new Modified_Tools.CustomMaterialButton();
             anahawonBtn = new Modified_Tools.CustomMaterialButton();
@@ -50,77 +43,37 @@
             sanMiguelBtn = new Modified_Tools.CustomMaterialButton();
             southPobBtn = new Modified_Tools.CustomMaterialButton();
             label1 = new Label();
-            connectedsubscribersGridView = new DataGridView();
-            Conn_Name = new DataGridViewTextBoxColumn();
-            subsidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            connNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            contactNumberDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            planDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            duedateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            installationDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            monthlyChargeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            editButton = new DataGridViewButtonColumn();
-            disconnectButton = new DataGridViewButtonColumn();
             connectedSubscribersBindingSource = new BindingSource(components);
             bindingSource1 = new BindingSource(components);
             connectedSubscriberViewBindingSource1 = new BindingSource(components);
             addBtn = new MaterialSkin.Controls.MaterialButton();
             AddButton = new Krypton.Toolkit.KryptonButton();
-            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            datagridViewPanel = new Krypton.Toolkit.KryptonPanel();
-            ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
+            Previous = new Krypton.Toolkit.KryptonButton();
+            Next = new Krypton.Toolkit.KryptonButton();
+            connectedsubscribersGridView = new Krypton.Toolkit.KryptonDataGridView();
+            kryptonDataGridViewTextBoxColumn1 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn2 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn3 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn4 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn5 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn6 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn7 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn9 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn12 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            editButton = new DataGridViewButtonColumn();
+            disconnectButton = new DataGridViewButtonColumn();
+            bgPanel = new Krypton.Toolkit.KryptonTextBox();
+            disconnectedbtn = new Krypton.Toolkit.KryptonButton();
+            kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            exportSubsBtn = new Krypton.Toolkit.KryptonButton();
+            transPrintBtn = new Krypton.Toolkit.KryptonButton();
+            kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)datagridViewPanel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).BeginInit();
             SuspendLayout();
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(52, 72, 100);
-            label5.Location = new Point(1807, 109);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 18);
-            label5.TabIndex = 46;
-            label5.Text = "50\r\n";
-            // 
-            // TotalSubscriberLabel
-            // 
-            TotalSubscriberLabel.AutoSize = true;
-            TotalSubscriberLabel.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TotalSubscriberLabel.ForeColor = Color.FromArgb(52, 72, 100);
-            TotalSubscriberLabel.Location = new Point(1804, 89);
-            TotalSubscriberLabel.Name = "TotalSubscriberLabel";
-            TotalSubscriberLabel.Size = new Size(41, 18);
-            TotalSubscriberLabel.TabIndex = 45;
-            TotalSubscriberLabel.Text = "1000";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(111, 130, 157);
-            label3.Location = new Point(1758, 109);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 18);
-            label3.TabIndex = 44;
-            label3.Text = "Due: ";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(111, 130, 157);
-            label2.Location = new Point(1659, 89);
-            label2.Name = "label2";
-            label2.Size = new Size(147, 18);
-            label2.TabIndex = 43;
-            label2.Text = "Total Subscribers: ";
-            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // materialComboBox1
             // 
@@ -137,7 +90,7 @@
             materialComboBox1.IntegralHeight = false;
             materialComboBox1.ItemHeight = 29;
             materialComboBox1.Items.AddRange(new object[] { "All", "Active", "Past due", "Overdue" });
-            materialComboBox1.Location = new Point(418, 94);
+            materialComboBox1.Location = new Point(451, 104);
             materialComboBox1.MaxDropDownItems = 4;
             materialComboBox1.MaximumSize = new Size(200, 0);
             materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
@@ -169,7 +122,7 @@
             allBtn.HighEmphasis = true;
             allBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             allBtn.Icon = null;
-            allBtn.Location = new Point(174, 22);
+            allBtn.Location = new Point(175, 32);
             allBtn.Margin = new Padding(4);
             allBtn.MouseState = MaterialSkin.MouseState.HOVER;
             allBtn.Name = "allBtn";
@@ -206,7 +159,7 @@
             anahawonBtn.HighEmphasis = true;
             anahawonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             anahawonBtn.Icon = null;
-            anahawonBtn.Location = new Point(320, 22);
+            anahawonBtn.Location = new Point(321, 32);
             anahawonBtn.Margin = new Padding(4);
             anahawonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             anahawonBtn.Name = "anahawonBtn";
@@ -243,7 +196,7 @@
             baseCampBtn.HighEmphasis = true;
             baseCampBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             baseCampBtn.Icon = null;
-            baseCampBtn.Location = new Point(473, 22);
+            baseCampBtn.Location = new Point(474, 32);
             baseCampBtn.Margin = new Padding(4);
             baseCampBtn.MouseState = MaterialSkin.MouseState.HOVER;
             baseCampBtn.Name = "baseCampBtn";
@@ -280,7 +233,7 @@
             camp1Btn.HighEmphasis = true;
             camp1Btn.HoverBackColor = Color.FromArgb(237, 237, 237);
             camp1Btn.Icon = null;
-            camp1Btn.Location = new Point(620, 22);
+            camp1Btn.Location = new Point(621, 32);
             camp1Btn.Margin = new Padding(4);
             camp1Btn.MouseState = MaterialSkin.MouseState.HOVER;
             camp1Btn.Name = "camp1Btn";
@@ -317,7 +270,7 @@
             colambugonBtn.HighEmphasis = true;
             colambugonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             colambugonBtn.Icon = null;
-            colambugonBtn.Location = new Point(772, 22);
+            colambugonBtn.Location = new Point(773, 32);
             colambugonBtn.Margin = new Padding(4);
             colambugonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             colambugonBtn.Name = "colambugonBtn";
@@ -354,7 +307,7 @@
             danggawanBtn.HighEmphasis = true;
             danggawanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             danggawanBtn.Icon = null;
-            danggawanBtn.Location = new Point(921, 22);
+            danggawanBtn.Location = new Point(922, 32);
             danggawanBtn.Margin = new Padding(4);
             danggawanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             danggawanBtn.Name = "danggawanBtn";
@@ -391,7 +344,7 @@
             dologonBtn.HighEmphasis = true;
             dologonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             dologonBtn.Icon = null;
-            dologonBtn.Location = new Point(1074, 22);
+            dologonBtn.Location = new Point(1075, 32);
             dologonBtn.Margin = new Padding(4);
             dologonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             dologonBtn.Name = "dologonBtn";
@@ -428,7 +381,7 @@
             northPobBtn.HighEmphasis = true;
             northPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             northPobBtn.Icon = null;
-            northPobBtn.Location = new Point(1226, 22);
+            northPobBtn.Location = new Point(1227, 32);
             northPobBtn.Margin = new Padding(4);
             northPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             northPobBtn.Name = "northPobBtn";
@@ -465,7 +418,7 @@
             panadtalanBtn.HighEmphasis = true;
             panadtalanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             panadtalanBtn.Icon = null;
-            panadtalanBtn.Location = new Point(1380, 22);
+            panadtalanBtn.Location = new Point(1381, 32);
             panadtalanBtn.Margin = new Padding(4);
             panadtalanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             panadtalanBtn.Name = "panadtalanBtn";
@@ -502,7 +455,7 @@
             sanMiguelBtn.HighEmphasis = true;
             sanMiguelBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             sanMiguelBtn.Icon = null;
-            sanMiguelBtn.Location = new Point(1532, 22);
+            sanMiguelBtn.Location = new Point(1533, 32);
             sanMiguelBtn.Margin = new Padding(4);
             sanMiguelBtn.MouseState = MaterialSkin.MouseState.HOVER;
             sanMiguelBtn.Name = "sanMiguelBtn";
@@ -539,7 +492,7 @@
             southPobBtn.HighEmphasis = true;
             southPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             southPobBtn.Icon = null;
-            southPobBtn.Location = new Point(1686, 22);
+            southPobBtn.Location = new Point(1687, 32);
             southPobBtn.Margin = new Padding(4);
             southPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             southPobBtn.Name = "southPobBtn";
@@ -558,160 +511,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Helvetica", 18F, FontStyle.Bold, GraphicsUnit.Point, 0, true);
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0, true);
             label1.ForeColor = Color.FromArgb(52, 72, 100);
-            label1.Location = new Point(169, 89);
+            label1.Location = new Point(175, 104);
             label1.Name = "label1";
-            label1.Size = new Size(243, 35);
+            label1.Size = new Size(243, 33);
             label1.TabIndex = 29;
             label1.Text = "ALL SUBSCRIBERS";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.UseCompatibleTextRendering = true;
             label1.UseMnemonic = false;
-            // 
-            // connectedsubscribersGridView
-            // 
-            connectedsubscribersGridView.AllowUserToOrderColumns = true;
-            connectedsubscribersGridView.AllowUserToResizeColumns = false;
-            connectedsubscribersGridView.AllowUserToResizeRows = false;
-            connectedsubscribersGridView.AutoGenerateColumns = false;
-            connectedsubscribersGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            connectedsubscribersGridView.BackgroundColor = Color.FromArgb(255, 255, 252);
-            connectedsubscribersGridView.BorderStyle = BorderStyle.None;
-            connectedsubscribersGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            connectedsubscribersGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle1.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle1.Padding = new Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(212, 208, 208);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            connectedsubscribersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            connectedsubscribersGridView.ColumnHeadersHeight = 50;
-            connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { Conn_Name, subsidDataGridViewTextBoxColumn, connNameDataGridViewTextBoxColumn, contactNumberDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, planDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, duedateDataGridViewTextBoxColumn, installationDateDataGridViewTextBoxColumn, monthlyChargeDataGridViewTextBoxColumn, editButton, disconnectButton });
-            connectedsubscribersGridView.DataSource = connectedSubscribersBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle2.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(52, 72, 100);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(242, 242, 242);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            connectedsubscribersGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            connectedsubscribersGridView.EnableHeadersVisualStyles = false;
-            connectedsubscribersGridView.GridColor = Color.FromArgb(255, 255, 252);
-            connectedsubscribersGridView.ImeMode = ImeMode.NoControl;
-            connectedsubscribersGridView.Location = new Point(174, 176);
-            connectedsubscribersGridView.Margin = new Padding(3, 2, 3, 2);
-            connectedsubscribersGridView.Name = "connectedsubscribersGridView";
-            connectedsubscribersGridView.RightToLeft = RightToLeft.No;
-            connectedsubscribersGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle3.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(166, 166, 166);
-            dataGridViewCellStyle3.Padding = new Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 219, 199);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            connectedsubscribersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            connectedsubscribersGridView.RowHeadersWidth = 51;
-            connectedsubscribersGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 255, 252);
-            dataGridViewCellStyle4.Font = new Font("Franklin Gothic Demi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(52, 72, 100);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(242, 242, 242);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(225, 111, 74);
-            connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            connectedsubscribersGridView.ScrollBars = ScrollBars.Vertical;
-            connectedsubscribersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            connectedsubscribersGridView.Size = new Size(1674, 730);
-            connectedsubscribersGridView.TabIndex = 28;
-            connectedsubscribersGridView.CellContentClick += connectedsubscribersGridView_CellContentClick;
-            // 
-            // Conn_Name
-            // 
-            Conn_Name.DataPropertyName = "Conn_Name";
-            Conn_Name.HeaderText = "NAME";
-            Conn_Name.MinimumWidth = 6;
-            Conn_Name.Name = "Conn_Name";
-            // 
-            // subsidDataGridViewTextBoxColumn
-            // 
-            subsidDataGridViewTextBoxColumn.DataPropertyName = "subs_id";
-            subsidDataGridViewTextBoxColumn.HeaderText = "subs_id";
-            subsidDataGridViewTextBoxColumn.Name = "subsidDataGridViewTextBoxColumn";
-            // 
-            // connNameDataGridViewTextBoxColumn
-            // 
-            connNameDataGridViewTextBoxColumn.DataPropertyName = "Conn_Name";
-            connNameDataGridViewTextBoxColumn.HeaderText = "Conn_Name";
-            connNameDataGridViewTextBoxColumn.Name = "connNameDataGridViewTextBoxColumn";
-            // 
-            // contactNumberDataGridViewTextBoxColumn
-            // 
-            contactNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactNumber";
-            contactNumberDataGridViewTextBoxColumn.HeaderText = "ContactNumber";
-            contactNumberDataGridViewTextBoxColumn.Name = "contactNumberDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // planDataGridViewTextBoxColumn
-            // 
-            planDataGridViewTextBoxColumn.DataPropertyName = "Plan";
-            planDataGridViewTextBoxColumn.HeaderText = "Plan";
-            planDataGridViewTextBoxColumn.Name = "planDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // duedateDataGridViewTextBoxColumn
-            // 
-            duedateDataGridViewTextBoxColumn.DataPropertyName = "Duedate";
-            duedateDataGridViewTextBoxColumn.HeaderText = "Duedate";
-            duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            // 
-            // installationDateDataGridViewTextBoxColumn
-            // 
-            installationDateDataGridViewTextBoxColumn.DataPropertyName = "InstallationDate";
-            installationDateDataGridViewTextBoxColumn.HeaderText = "InstallationDate";
-            installationDateDataGridViewTextBoxColumn.Name = "installationDateDataGridViewTextBoxColumn";
-            // 
-            // monthlyChargeDataGridViewTextBoxColumn
-            // 
-            monthlyChargeDataGridViewTextBoxColumn.DataPropertyName = "MonthlyCharge";
-            monthlyChargeDataGridViewTextBoxColumn.HeaderText = "MonthlyCharge";
-            monthlyChargeDataGridViewTextBoxColumn.Name = "monthlyChargeDataGridViewTextBoxColumn";
-            // 
-            // editButton
-            // 
-            editButton.DataPropertyName = "subs_id";
-            editButton.FillWeight = 19.2589474F;
-            editButton.FlatStyle = FlatStyle.Popup;
-            editButton.HeaderText = "";
-            editButton.MinimumWidth = 3;
-            editButton.Name = "editButton";
-            editButton.UseColumnTextForButtonValue = true;
-            // 
-            // disconnectButton
-            // 
-            disconnectButton.DataPropertyName = "disconnectButton";
-            disconnectButton.FillWeight = 17.6470585F;
-            disconnectButton.FlatStyle = FlatStyle.Popup;
-            disconnectButton.HeaderText = "";
-            disconnectButton.MinimumWidth = 3;
-            disconnectButton.Name = "disconnectButton";
-            disconnectButton.UseColumnTextForButtonValue = true;
             // 
             // connectedSubscribersBindingSource
             // 
@@ -732,7 +541,7 @@
             addBtn.Depth = 0;
             addBtn.HighEmphasis = true;
             addBtn.Icon = null;
-            addBtn.Location = new Point(0, 0);
+            addBtn.Location = new Point(54, -18);
             addBtn.Margin = new Padding(4, 6, 4, 6);
             addBtn.MouseState = MaterialSkin.MouseState.HOVER;
             addBtn.Name = "addBtn";
@@ -744,45 +553,337 @@
             // 
             // AddButton
             // 
-            AddButton.Location = new Point(591, 100);
+            AddButton.Location = new Point(598, 101);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(90, 25);
+            AddButton.OverrideDefault.Back.Color1 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideDefault.Back.Color2 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideDefault.Border.Color1 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideDefault.Border.Color2 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideFocus.Back.Color1 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideFocus.Back.Color2 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideFocus.Border.Color1 = Color.FromArgb(82, 147, 157);
+            AddButton.OverrideFocus.Border.Color2 = Color.FromArgb(82, 147, 157);
+            AddButton.Size = new Size(96, 40);
+            AddButton.StateCommon.Back.Color1 = Color.FromArgb(94, 167, 178);
+            AddButton.StateCommon.Back.Color2 = Color.FromArgb(94, 167, 178);
+            AddButton.StateCommon.Border.Color1 = Color.FromArgb(94, 167, 178);
+            AddButton.StateCommon.Border.Color2 = Color.FromArgb(94, 167, 178);
+            AddButton.StateCommon.Border.Rounding = 5F;
+            AddButton.StateCommon.Content.ShortText.Color1 = Color.FromArgb(241, 240, 233);
+            AddButton.StateCommon.Content.ShortText.Color2 = Color.FromArgb(241, 240, 233);
+            AddButton.StateCommon.Content.ShortText.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddButton.TabIndex = 47;
             AddButton.Values.DropDownArrowColor = Color.Empty;
-            AddButton.Values.Text = "kryptonButton1";
+            AddButton.Values.Text = "Add New";
             AddButton.Click += AddButton_Click;
             // 
-            // kryptonButton1
+            // Previous
             // 
-            kryptonButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            kryptonButton1.Location = new Point(710, 100);
-            kryptonButton1.Name = "kryptonButton1";
-            kryptonButton1.Size = new Size(90, 41);
-            kryptonButton1.TabIndex = 48;
-            kryptonButton1.Values.DropDownArrowColor = Color.Empty;
-            kryptonButton1.Values.Text = "kryptonButton1";
-            kryptonButton1.Click += kryptonButton1_Click;
+            Previous.Location = new Point(1728, 774);
+            Previous.Name = "Previous";
+            Previous.Size = new Size(25, 25);
+            Previous.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            Previous.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            Previous.StateCommon.Back.Image = (Image)resources.GetObject("Previous.StateCommon.Back.Image");
+            Previous.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            Previous.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            Previous.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
+            Previous.TabIndex = 48;
+            Previous.TabStop = false;
+            Previous.ToolTipValues.ImageTransparentColor = Color.FromArgb(255, 255, 252);
+            Previous.Values.DropDownArrowColor = Color.Empty;
+            Previous.Values.Text = "";
+            Previous.Click += Previous_Click;
             // 
-            // datagridViewPanel
+            // Next
             // 
-            datagridViewPanel.Location = new Point(174, 176);
-            datagridViewPanel.Name = "datagridViewPanel";
-            datagridViewPanel.Size = new Size(1659, 730);
-            datagridViewPanel.TabIndex = 49;
+            Next.Location = new Point(1799, 775);
+            Next.Name = "Next";
+            Next.OverrideDefault.Back.Color1 = Color.FromArgb(255, 255, 252);
+            Next.OverrideDefault.Back.Color2 = Color.FromArgb(255, 255, 252);
+            Next.OverrideDefault.Border.Color1 = Color.FromArgb(255, 255, 252);
+            Next.OverrideFocus.Back.Color1 = Color.FromArgb(255, 255, 252);
+            Next.OverrideFocus.Back.Color2 = Color.FromArgb(255, 255, 252);
+            Next.OverrideFocus.Border.Color1 = Color.FromArgb(255, 255, 252);
+            Next.OverrideFocus.Border.Color2 = Color.FromArgb(255, 255, 252);
+            Next.OverrideFocus.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.HighQuality;
+            Next.Size = new Size(25, 25);
+            Next.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            Next.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            Next.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.HighQuality;
+            Next.StateCommon.Back.Image = (Image)resources.GetObject("Next.StateCommon.Back.Image");
+            Next.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            Next.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            Next.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
+            Next.TabIndex = 49;
+            Next.TabStop = false;
+            Next.ToolTipValues.ImageTransparentColor = Color.FromArgb(255, 255, 252);
+            Next.Values.DropDownArrowColor = Color.Empty;
+            Next.Values.Text = "";
+            Next.Click += Next_Click;
+            // 
+            // connectedsubscribersGridView
+            // 
+            connectedsubscribersGridView.AutoGenerateColumns = false;
+            connectedsubscribersGridView.BorderStyle = BorderStyle.None;
+            connectedsubscribersGridView.ColumnHeadersHeight = 30;
+            connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { kryptonDataGridViewTextBoxColumn1, kryptonDataGridViewTextBoxColumn2, kryptonDataGridViewTextBoxColumn3, kryptonDataGridViewTextBoxColumn4, kryptonDataGridViewTextBoxColumn5, kryptonDataGridViewTextBoxColumn6, kryptonDataGridViewTextBoxColumn7, kryptonDataGridViewTextBoxColumn9, kryptonDataGridViewTextBoxColumn12, editButton, disconnectButton });
+            connectedsubscribersGridView.DataSource = connectedSubscribersBindingSource;
+            connectedsubscribersGridView.Location = new Point(189, 170);
+            connectedsubscribersGridView.Name = "connectedsubscribersGridView";
+            connectedsubscribersGridView.RowHeadersVisible = false;
+            connectedsubscribersGridView.RowHeadersWidth = 50;
+            connectedsubscribersGridView.Size = new Size(1645, 589);
+            connectedsubscribersGridView.StateCommon.Background.Color1 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            connectedsubscribersGridView.StateCommon.DataCell.Back.Color1 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.DataCell.Back.Color2 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.DataCell.Border.Color1 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.DataCell.Border.Color2 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Back.Color1 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Back.Color2 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Border.Color1 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Border.Color2 = Color.FromArgb(255, 255, 252);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Content.Color1 = Color.FromArgb(166, 166, 166);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Content.Color2 = Color.FromArgb(166, 166, 166);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Content.Font = new Font("Helvetica", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            connectedsubscribersGridView.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            connectedsubscribersGridView.StateCommon.HeaderRow.Border.Rounding = 20F;
+            connectedsubscribersGridView.TabIndex = 52;
+            connectedsubscribersGridView.TabStop = false;
+            // 
+            // kryptonDataGridViewTextBoxColumn1
+            // 
+            kryptonDataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn1.DataPropertyName = "subs_id";
+            kryptonDataGridViewTextBoxColumn1.HeaderText = "Id No.";
+            kryptonDataGridViewTextBoxColumn1.MinimumWidth = 80;
+            kryptonDataGridViewTextBoxColumn1.Name = "kryptonDataGridViewTextBoxColumn1";
+            kryptonDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // kryptonDataGridViewTextBoxColumn2
+            // 
+            kryptonDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn2.DataPropertyName = "Conn_Name";
+            kryptonDataGridViewTextBoxColumn2.HeaderText = "Name";
+            kryptonDataGridViewTextBoxColumn2.MinimumWidth = 300;
+            kryptonDataGridViewTextBoxColumn2.Name = "kryptonDataGridViewTextBoxColumn2";
+            kryptonDataGridViewTextBoxColumn2.Width = 300;
+            // 
+            // kryptonDataGridViewTextBoxColumn3
+            // 
+            kryptonDataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn3.DataPropertyName = "ContactNumber";
+            kryptonDataGridViewTextBoxColumn3.HeaderText = "Phone No.";
+            kryptonDataGridViewTextBoxColumn3.MinimumWidth = 150;
+            kryptonDataGridViewTextBoxColumn3.Name = "kryptonDataGridViewTextBoxColumn3";
+            kryptonDataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // kryptonDataGridViewTextBoxColumn4
+            // 
+            kryptonDataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn4.DataPropertyName = "Address";
+            kryptonDataGridViewTextBoxColumn4.HeaderText = "Address";
+            kryptonDataGridViewTextBoxColumn4.MinimumWidth = 300;
+            kryptonDataGridViewTextBoxColumn4.Name = "kryptonDataGridViewTextBoxColumn4";
+            kryptonDataGridViewTextBoxColumn4.Width = 300;
+            // 
+            // kryptonDataGridViewTextBoxColumn5
+            // 
+            kryptonDataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn5.DataPropertyName = "Plan";
+            kryptonDataGridViewTextBoxColumn5.HeaderText = "Plan";
+            kryptonDataGridViewTextBoxColumn5.MinimumWidth = 150;
+            kryptonDataGridViewTextBoxColumn5.Name = "kryptonDataGridViewTextBoxColumn5";
+            kryptonDataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // kryptonDataGridViewTextBoxColumn6
+            // 
+            kryptonDataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn6.DataPropertyName = "Status";
+            kryptonDataGridViewTextBoxColumn6.HeaderText = "Status";
+            kryptonDataGridViewTextBoxColumn6.MinimumWidth = 180;
+            kryptonDataGridViewTextBoxColumn6.Name = "kryptonDataGridViewTextBoxColumn6";
+            kryptonDataGridViewTextBoxColumn6.Width = 180;
+            // 
+            // kryptonDataGridViewTextBoxColumn7
+            // 
+            kryptonDataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn7.DataPropertyName = "Duedate";
+            kryptonDataGridViewTextBoxColumn7.HeaderText = "Duedate";
+            kryptonDataGridViewTextBoxColumn7.MinimumWidth = 100;
+            kryptonDataGridViewTextBoxColumn7.Name = "kryptonDataGridViewTextBoxColumn7";
+            // 
+            // kryptonDataGridViewTextBoxColumn9
+            // 
+            kryptonDataGridViewTextBoxColumn9.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn9.DataPropertyName = "InstallationDate";
+            kryptonDataGridViewTextBoxColumn9.HeaderText = "Installation Date";
+            kryptonDataGridViewTextBoxColumn9.MinimumWidth = 150;
+            kryptonDataGridViewTextBoxColumn9.Name = "kryptonDataGridViewTextBoxColumn9";
+            kryptonDataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // kryptonDataGridViewTextBoxColumn12
+            // 
+            kryptonDataGridViewTextBoxColumn12.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn12.DataPropertyName = "MonthlyCharge";
+            kryptonDataGridViewTextBoxColumn12.HeaderText = "Charge";
+            kryptonDataGridViewTextBoxColumn12.MinimumWidth = 120;
+            kryptonDataGridViewTextBoxColumn12.Name = "kryptonDataGridViewTextBoxColumn12";
+            kryptonDataGridViewTextBoxColumn12.Width = 120;
+            // 
+            // editButton
+            // 
+            editButton.DataPropertyName = "subs_id";
+            editButton.HeaderText = "";
+            editButton.MinimumWidth = 50;
+            editButton.Name = "editButton";
+            editButton.Width = 50;
+            // 
+            // disconnectButton
+            // 
+            disconnectButton.DataPropertyName = "subs_id";
+            disconnectButton.HeaderText = "";
+            disconnectButton.MinimumWidth = 50;
+            disconnectButton.Name = "disconnectButton";
+            disconnectButton.Width = 50;
+            // 
+            // bgPanel
+            // 
+            bgPanel.AccessibleRole = AccessibleRole.None;
+            bgPanel.AlwaysActive = false;
+            bgPanel.Location = new Point(175, 154);
+            bgPanel.MaximumSize = new Size(1674, 663);
+            bgPanel.MinimumSize = new Size(1674, 620);
+            bgPanel.Name = "bgPanel";
+            bgPanel.Size = new Size(1674, 620);
+            bgPanel.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            bgPanel.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            bgPanel.StateCommon.Border.Rounding = 15F;
+            bgPanel.TabIndex = 53;
+            bgPanel.TextChanged += bgPanel_TextChanged;
+            // 
+            // disconnectedbtn
+            // 
+            disconnectedbtn.Location = new Point(710, 101);
+            disconnectedbtn.Name = "disconnectedbtn";
+            disconnectedbtn.OverrideDefault.Back.Color1 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideDefault.Back.Color2 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideDefault.Border.Color1 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideDefault.Border.Color2 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideFocus.Back.Color1 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideFocus.Back.Color2 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideFocus.Border.Color1 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.OverrideFocus.Border.Color2 = Color.FromArgb(234, 98, 38);
+            disconnectedbtn.Size = new Size(120, 40);
+            disconnectedbtn.StateCommon.Back.Color1 = Color.FromArgb(248, 132, 86);
+            disconnectedbtn.StateCommon.Back.Color2 = Color.FromArgb(248, 132, 86);
+            disconnectedbtn.StateCommon.Border.Color1 = Color.FromArgb(248, 132, 86);
+            disconnectedbtn.StateCommon.Border.Color2 = Color.FromArgb(248, 132, 86);
+            disconnectedbtn.StateCommon.Border.Rounding = 5F;
+            disconnectedbtn.StateCommon.Content.ShortText.Color1 = Color.FromArgb(241, 240, 233);
+            disconnectedbtn.StateCommon.Content.ShortText.Color2 = Color.FromArgb(241, 240, 233);
+            disconnectedbtn.StateCommon.Content.ShortText.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            disconnectedbtn.TabIndex = 54;
+            disconnectedbtn.Values.DropDownArrowColor = Color.Empty;
+            disconnectedbtn.Values.Text = "Disconnected";
+            disconnectedbtn.Click += disconnectedbtn_Click;
+            // 
+            // kryptonTextBox1
+            // 
+            kryptonTextBox1.Location = new Point(175, 764);
+            kryptonTextBox1.MinimumSize = new Size(1674, 50);
+            kryptonTextBox1.Name = "kryptonTextBox1";
+            kryptonTextBox1.Size = new Size(1674, 50);
+            kryptonTextBox1.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox1.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox1.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox1.StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.True;
+            kryptonTextBox1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonTextBox1.StateCommon.Border.Rounding = 15F;
+            kryptonTextBox1.StateCommon.Border.Width = 1;
+            kryptonTextBox1.TabIndex = 55;
+            kryptonTextBox1.TextChanged += kryptonTextBox1_TextChanged;
+            // 
+            // exportSubsBtn
+            // 
+            exportSubsBtn.Location = new Point(1711, 109);
+            exportSubsBtn.Margin = new Padding(5);
+            exportSubsBtn.Name = "exportSubsBtn";
+            exportSubsBtn.Size = new Size(42, 37);
+            exportSubsBtn.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            exportSubsBtn.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            exportSubsBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            exportSubsBtn.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            exportSubsBtn.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
+            exportSubsBtn.StateCommon.Content.LongText.Image = (Image)resources.GetObject("exportSubsBtn.StateCommon.Content.LongText.Image");
+            exportSubsBtn.StateCommon.Content.LongText.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            exportSubsBtn.StateCommon.Content.ShortText.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            exportSubsBtn.TabIndex = 51;
+            exportSubsBtn.Values.DropDownArrowColor = Color.Empty;
+            exportSubsBtn.Values.ImageStates.ImageCheckedNormal = null;
+            exportSubsBtn.Values.ImageStates.ImageCheckedPressed = null;
+            exportSubsBtn.Values.ImageStates.ImageCheckedTracking = null;
+            exportSubsBtn.Values.ImageStates.ImageNormal = (Image)resources.GetObject("exportSubsBtn.Values.ImageStates.ImageNormal");
+            exportSubsBtn.Values.Text = "Export ";
+            exportSubsBtn.Click += exportSubsBtn_Click;
+            // 
+            // transPrintBtn
+            // 
+            transPrintBtn.Location = new Point(1583, 101);
+            transPrintBtn.Name = "transPrintBtn";
+            transPrintBtn.Size = new Size(35, 30);
+            transPrintBtn.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            transPrintBtn.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            transPrintBtn.StateCommon.Back.Image = (Image)resources.GetObject("transPrintBtn.StateCommon.Back.Image");
+            transPrintBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            transPrintBtn.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            transPrintBtn.TabIndex = 50;
+            transPrintBtn.Values.DropDownArrowColor = Color.Empty;
+            transPrintBtn.Values.Text = "";
+            transPrintBtn.Click += transPrintBtn_Click;
+            // 
+            // kryptonTextBox2
+            // 
+            kryptonTextBox2.Location = new Point(1455, 774);
+            kryptonTextBox2.Name = "kryptonTextBox2";
+            kryptonTextBox2.Size = new Size(113, 24);
+            kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox2.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox2.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 9.75F);
+            kryptonTextBox2.TabIndex = 57;
+            kryptonTextBox2.Text = "Rows per page: 30";
+            // 
+            // kryptonTextBox3
+            // 
+            kryptonTextBox3.Location = new Point(1615, 774);
+            kryptonTextBox3.Name = "kryptonTextBox3";
+            kryptonTextBox3.Size = new Size(113, 24);
+            kryptonTextBox3.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox3.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            kryptonTextBox3.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox3.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 9.75F);
+            kryptonTextBox3.TabIndex = 58;
+            kryptonTextBox3.Text = "1 -10 of 999";
             // 
             // SubscriberPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1892, 951);
+            ClientSize = new Size(1926, 847);
             ControlBox = false;
-            Controls.Add(kryptonButton1);
+            Controls.Add(kryptonTextBox3);
+            Controls.Add(kryptonTextBox2);
+            Controls.Add(connectedsubscribersGridView);
+            Controls.Add(disconnectedbtn);
+            Controls.Add(exportSubsBtn);
+            Controls.Add(transPrintBtn);
+            Controls.Add(Next);
+            Controls.Add(Previous);
             Controls.Add(AddButton);
-            Controls.Add(label5);
-            Controls.Add(TotalSubscriberLabel);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(materialComboBox1);
             Controls.Add(allBtn);
             Controls.Add(anahawonBtn);
@@ -796,34 +897,21 @@
             Controls.Add(sanMiguelBtn);
             Controls.Add(southPobBtn);
             Controls.Add(label1);
-            Controls.Add(connectedsubscribersGridView);
-            Controls.Add(datagridViewPanel);
-            MaximumSize = new Size(1906, 973);
-            MinimumSize = new Size(1906, 973);
+            Controls.Add(kryptonTextBox1);
+            Controls.Add(bgPanel);
             Name = "SubscriberPage";
             Padding = new Padding(3, 0, 3, 3);
-            StartPosition = FormStartPosition.Manual;
-            StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
-            StateCommon.Back.Color2 = Color.FromArgb(241, 240, 233);
-            StateCommon.Header.Back.Color1 = Color.FromArgb(241, 240, 233);
-            StateCommon.Header.Back.Color2 = Color.FromArgb(241, 240, 233);
-            TransparencyKey = Color.Empty;
+            ShowInTaskbar = false;
             Load += SubscriberPage_Load;
-            ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)datagridViewPanel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)connectedsubscribersGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label5;
-        private Label TotalSubscriberLabel;
-        private Label label3;
-        private Label label2;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         public Modified_Tools.CustomMaterialButton customMaterialButton12;
         public Modified_Tools.CustomMaterialButton customMaterialButton11;
@@ -836,9 +924,7 @@
         public Modified_Tools.CustomMaterialButton panadtalanBtn;
         public Modified_Tools.CustomMaterialButton sanMiguelBtn;
         public Modified_Tools.CustomMaterialButton southPobBtn;
-        private MaterialSkin.Controls.MaterialButton disconnectedbtn;
         private Label label1;
-        public DataGridView connectedsubscribersGridView;
         private MaterialSkin.Controls.MaterialButton addBtn;
         private BindingSource connectedSubscriberViewBindingSource;
         public Modified_Tools.CustomMaterialButton allBtn;
@@ -847,23 +933,32 @@
         public Modified_Tools.CustomMaterialButton camp1;
         public Modified_Tools.CustomMaterialButton camp1Btn;
         private BindingSource connectedSubscriberViewBindingSource1;
-        private DataGridViewTextBoxColumn Conn_Name;
-        private DataGridViewTextBoxColumn subsidDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn connNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn planDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn installationDateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn monthlyChargeDataGridViewTextBoxColumn;
-        private DataGridViewButtonColumn editButton;
-        private DataGridViewButtonColumn disconnectButton;
         private BindingSource bindingSource1;
         private BindingSource connectedSubscribersBindingSource;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private Krypton.Toolkit.KryptonButton AddButton;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonPanel datagridViewPanel;
+        private Krypton.Toolkit.KryptonButton previousPageButton;
+        private Krypton.Toolkit.KryptonButton nextPageButton;
+        private Krypton.Toolkit.KryptonButton Previous;
+        private Krypton.Toolkit.KryptonButton Next;
+        private Krypton.Toolkit.KryptonDataGridView connectedsubscribersGridView;
+        private Krypton.Toolkit.KryptonTextBox bgPanel;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn1;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn2;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn3;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn4;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn5;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn6;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn7;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn9;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn12;
+        private DataGridViewButtonColumn editButton;
+        private DataGridViewButtonColumn disconnectButton;
+        private Krypton.Toolkit.KryptonButton disconnectedbtn;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonButton exportSubsBtn;
+        private Krypton.Toolkit.KryptonButton transPrintBtn;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
     }
 }

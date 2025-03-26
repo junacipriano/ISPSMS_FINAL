@@ -13,7 +13,7 @@ namespace ISPSMS_JUHACA.Presenter
         private readonly ITransactionView _view;
         private readonly IUnitOfWork _dbContext;
         private int _currentPage = 1;
-        private const int PageSize = 20;
+        private const int PageSize = 30;
         private int _totalPages = 1;
         private bool _isLoading = false;
 
@@ -69,11 +69,13 @@ namespace ISPSMS_JUHACA.Presenter
             return (int)Math.Ceiling((double)totalCount / PageSize);
         }
 
-        public async Task LoadTransactionsByDateAsync(DateTime transactionDateTime)
+        public async Task<List<Transactions>> LoadTransactionsByDateAsync(DateTime transactionDateTime)
         {
-            var transactions = await _dbContext.transactionsRepository.GetByDateAsync(transactionDateTime);
+            List<Transactions> transactions = (await _dbContext.transactionsRepository.GetByDateAsync(transactionDateTime)).ToList();
             _view.DisplayTransactions(transactions);
+            return transactions;
         }
+
 
 
     }

@@ -28,6 +28,9 @@ namespace ISPSMS_JUHACA.MainPages
         private int currentPage = 1;
         private const int itemsPerPage = 20;
 
+        // Label for loading indicator
+        private Label lblLoading;
+
         public BindingSource BindingSource => bindingSource;
 
         public BillingPage(IUnitOfWork dbContext, MainForm mainForm)
@@ -35,9 +38,9 @@ namespace ISPSMS_JUHACA.MainPages
             InitializeComponent();
             this.dbContext = dbContext;
             this.mainForm = mainForm;
+
             try
             {
-                // Initialize MaterialSkinManager safely
                 var materialSkinManager = MaterialSkinManager.Instance;
                 materialSkinManager?.AddFormToManage(this);
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -52,6 +55,17 @@ namespace ISPSMS_JUHACA.MainPages
             }
 
             billingFlowPanel.BackColor = Color.FromArgb(241, 240, 233);
+
+            // Initialize loading label
+            lblLoading = new Label
+            {
+                Text = "Loading...",
+                AutoSize = true,
+                ForeColor = Color.DarkGray,
+                Font = new Font("Arial", 12, FontStyle.Italic),
+                Visible = false
+            };
+            billingFlowPanel.Controls.Add(lblLoading);
         }
 
         private async void BillingPage_Load(object sender, EventArgs e)
@@ -62,7 +76,14 @@ namespace ISPSMS_JUHACA.MainPages
         // Asynchronous method to load billing items
         public async Task LoadBillingItemsAsync(int page = 1)
         {
+            // Disable pagination buttons while loading
+            btnNext.Enabled = false;
+            btnPrev.Enabled = false;
+            lblLoading.Visible = true; // Show loading indicator
+
             billingFlowPanel.Controls.Clear();
+            billingFlowPanel.Controls.Add(lblLoading); // Keep label visible
+
             currentPage = page;
 
             var subscribers = await Task.Run(() =>
@@ -74,13 +95,11 @@ namespace ISPSMS_JUHACA.MainPages
                 .ToList()
             );
 
-            btnNext.Enabled = subscribers.Count == itemsPerPage; // Disable btnNext if fewer than itemsPerPage are loaded
-            btnPrev.Enabled = currentPage > 1; // Disable btnPrev if on the first page
+            lblLoading.Visible = false; // Hide loading indicator
 
             if (!subscribers.Any())
             {
                 MessageBox.Show("No more subscribers found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnNext.Enabled = false; // Ensure next button is disabled when no items are found
                 return;
             }
 
@@ -97,6 +116,10 @@ namespace ISPSMS_JUHACA.MainPages
                 billingFlowPanel.Controls.Add(billingItem);
                 billingItem.Show();
             }
+
+            // Enable buttons after loading is complete
+            btnNext.Enabled = subscribers.Count == itemsPerPage; // Enable if more pages exist
+            btnPrev.Enabled = currentPage > 1; // Enable if not on the first page
         }
 
         // Pagination: Load Next Page
@@ -114,12 +137,15 @@ namespace ISPSMS_JUHACA.MainPages
                 currentPage--;
                 await LoadBillingItemsAsync(currentPage);
             }
-
-            btnPrev.Enabled = currentPage > 1; // Disable when on the first page
         }
 
         public async void FilterData(string searchText)
         {
+            // Disable buttons while filtering
+            btnNext.Enabled = false;
+            btnPrev.Enabled = false;
+            lblLoading.Visible = true;
+
             var subscribers = await Task.Run(() =>
                 dbContext.connectedSubscriberRepository
                 .GetAll()
@@ -130,6 +156,7 @@ namespace ISPSMS_JUHACA.MainPages
                 .ToList()
             );
 
+            lblLoading.Visible = false;
             billingFlowPanel.Controls.Clear();
 
             foreach (var subscriber in subscribers)
@@ -145,6 +172,10 @@ namespace ISPSMS_JUHACA.MainPages
                 billingFlowPanel.Controls.Add(billingItem);
                 billingItem.Show();
             }
+
+            // Re-enable buttons after filtering
+            btnNext.Enabled = subscribers.Count == itemsPerPage;
+            btnPrev.Enabled = currentPage > 1;
         }
     }
 }

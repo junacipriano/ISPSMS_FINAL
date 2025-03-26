@@ -26,7 +26,7 @@ namespace ISPSMS_JUHACA
             UnityC.RegisterType<IConnectedSubscribersRepository, ConnectedSubscribersRepository>(new HierarchicalLifetimeManager());
 
             // Enable high DPI settings for better UI scaling
-            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

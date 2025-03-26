@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿   using Domain.Models;
 using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views;
@@ -25,6 +25,7 @@ namespace ISPSMS_JUHACA.MainPages
         private MainForm mainForm;
         private readonly string _currentUserName;
         private readonly string _currentUserRole;
+
         public AccountsForm(IUnitOfWork dbContext, MainForm mainForm)
         {
             InitializeComponent();
@@ -36,9 +37,25 @@ namespace ISPSMS_JUHACA.MainPages
             _currentUserRole = mainForm.GetUserRole();
 
             accountsGridView.CellFormatting += accountsGridView_CellFormatting;
+            ConfigureDataGridView();
 
             getAccounts();
         }
+
+
+        private void ConfigureDataGridView()
+        {
+            accountsGridView.ColumnHeadersVisible = true;
+            accountsGridView.EnableHeadersVisualStyles = false;
+            accountsGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            accountsGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            accountsGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            accountsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            accountsGridView.RowHeadersVisible = true; // Ensure row headers are visible
+            accountsGridView.DefaultCellStyle.SelectionBackColor = Color.LightBlue; // Better selection visibility
+        }
+
+
 
         public void getAccounts()
         {
@@ -56,7 +73,7 @@ namespace ISPSMS_JUHACA.MainPages
         private void accountsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Check if the column is "AccountPassword" and the value is not null
-            if (accountsGridView.Columns[e.ColumnIndex].Name == "AccountPassword" && e.Value != null)
+            if (accountsGridView.Columns[e.ColumnIndex].DataPropertyName == "AccountPassword" && e.Value != null)
             {
                 e.Value = new string('*', 10); // Show 10 asterisks
                 e.FormattingApplied = true;
@@ -157,6 +174,27 @@ namespace ISPSMS_JUHACA.MainPages
 
             dbContext.activityRepository.Update(activity);
             dbContext.Save();
+        }
+
+        private void comboFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRole = comboFilter.SelectedItem.ToString();
+
+            try
+            {
+                var accounts = dbContext.accountsRepository.GetAll();
+
+                if (selectedRole != "ALL")
+                {
+                    accounts = accounts.Where(a => a.AccountRole == selectedRole).ToList();
+                }
+
+                accountsGridView.DataSource = accounts;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error filtering accounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

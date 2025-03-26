@@ -1,15 +1,15 @@
-           using MaterialSkin;
-        using MaterialSkin.Controls;
-        using Infastructure.Data.Repositories.IRepositories;
-        using Domain.Models;
-    using ISPSMS_JUHACA.Views;
-    using ISPSMS_JUHACA.MainPages;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using Infastructure.Data.Repositories.IRepositories;
+using Domain.Models;
+using ISPSMS_JUHACA.Views;
+using ISPSMS_JUHACA.MainPages;
 using Infastructure.Data.Repositories;
 using ISPSMS_JUHACA.MainPages.SubPages;
-using Microsoft.Graph.Models;
+using ISPSMS_JUHACA.Presenter;
 
 namespace ISPSMS_JUHACA
-        {
+{
     public partial class MainForm : MaterialForm
     {
         public readonly IUnitOfWork dbContext;
@@ -19,6 +19,15 @@ namespace ISPSMS_JUHACA
         public readonly IUnitOfWork unitOfWork;
         private readonly IConnectedSubscribersRepository _connectedSubscribersRepository;
         private readonly Accounts accounts;
+
+        private SubscriberPage _subscriberPage;
+        private TransactionPresenter transpres;
+        private BillingPage _billingPage;
+        private AccountsForm _accountsPage;
+        private Transaction _transactionsPage;
+        private DashboardPage _dashboardPage;
+        private ActivityForm _activityPage;
+
         int userId = 1;
 
         public MainForm(IUnitOfWork dbContext)
@@ -27,7 +36,6 @@ namespace ISPSMS_JUHACA
 
             this.dbContext = dbContext;
             this.unitOfWork = dbContext;
-
             _connectedSubscribersRepository = unitOfWork.connectedSubscriberRepository;
 
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -36,198 +44,141 @@ namespace ISPSMS_JUHACA
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             this.BackColor = Color.FromArgb(241, 240, 233);
-            subscribersPage.BackColor = Color.FromArgb(241, 240, 233);
-            billingPage.BackColor = Color.FromArgb(241, 240, 233);
-            transactionsPage.BackColor = Color.FromArgb(241, 240, 233);
-            accountsPage.BackColor = Color.FromArgb(241, 240, 233);
-            activitiesPage.BackColor = Color.FromArgb(241, 240, 233);
-            dashboardPage.BackColor = Color.FromArgb(241, 240, 233);
+            SetTabPagesBackColor();
 
-            this.dbContext = dbContext;
             bindingSource = new BindingSource();
             _userProfileForm = new UserProfileForm(unitOfWork, userId);
 
+            // Preload forms to avoid first-click lag
+            PreloadTabPages();
+
+            this.Shown += (s, e) => FixMaterialSkinRendering();
             materialTabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
         }
 
-        private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
-        {   
+        private void SetTabPagesBackColor()
+        {
+            Color bgColor = Color.FromArgb(241, 240, 233);
+            subscribersPage.BackColor = bgColor;
+            billingPage.BackColor = bgColor;
+            transactionsPage.BackColor = bgColor;
+            accountsPage.BackColor = bgColor;
+            activitiesPage.BackColor = bgColor;
+            dashboardPage.BackColor = bgColor;
+        }
 
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            materialTabControl1.SelectedTab = subscribersPage;
+        }
+
+        private void FixMaterialSkinRendering()
+        {
+            this.Invalidate(); // Repaint the form
+            this.Refresh();
+        }
+
+        private void PreloadTabPages()
+        {
+            _subscriberPage = new SubscriberPage(dbContext, this);
+            _billingPage = new BillingPage(dbContext, this);
+            _accountsPage = new AccountsForm(dbContext, this);
+            _transactionsPage = new Transaction(dbContext, this);
+            _dashboardPage = new DashboardPage(_connectedSubscribersRepository, dbContext, this);
+            _activityPage = new ActivityForm(dbContext, this);
+
+            // Attach forms to tabs but do not load data yet
+            AttachPageToTab(subscribersPage, _subscriberPage);
+            AttachPageToTab(billingPage, _billingPage);
+            AttachPageToTab(accountsPage, _accountsPage);
+            AttachPageToTab(transactionsPage, _transactionsPage);
+            AttachPageToTab(dashboardPage, _dashboardPage);
+            AttachPageToTab(activitiesPage, _activityPage);
+        }
+
+
+        private void AttachPageToTab(TabPage tabPage, Form form)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            tabPage.Controls.Add(form);
+        }
+
+
+        private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
+        {
             if (materialTabControl1.SelectedTab == subscribersPage)
             {
-
-                subscribersPage.Controls.Clear();
-
-                var subsPage = new SubscriberPage(dbContext, this);
-
-                subsPage.TopLevel = false;
-                subsPage.FormBorderStyle = FormBorderStyle.None;
-                subsPage.Dock = DockStyle.Fill;
-
-                subscribersPage.Controls.Add(subsPage);
-                subsPage.Show();
-
-                subsPage.getSubscribers();
-
+                EnsurePageLoaded(_subscriberPage);
             }
             else if (materialTabControl1.SelectedTab == billingPage)
             {
-
-                billingPage.Controls.Clear();
-
-                var billPage = new BillingPage(dbContext, this);
-
-                billPage.TopLevel = false;
-                billPage.FormBorderStyle = FormBorderStyle.None;
-                billPage.Dock = DockStyle.Fill;
-
-                billingPage.Controls.Add(billPage);
-                billPage.Show();
-
+                EnsurePageLoaded(_billingPage);
             }
             else if (materialTabControl1.SelectedTab == accountsPage)
             {
-
-                accountsPage.Controls.Clear();
-
-                var accPage = new AccountsForm(dbContext, this);
-
-                accPage.TopLevel = false;
-                accPage.FormBorderStyle = FormBorderStyle.None;
-                accPage.Dock = DockStyle.Fill;
-
-                accountsPage.Controls.Add(accPage);
-                accPage.Show();
-
+                EnsurePageLoaded(_accountsPage);
             }
             else if (materialTabControl1.SelectedTab == transactionsPage)
             {
-
-                transactionsPage.Controls.Clear();
-
-                var traPage = new Transaction(dbContext, this);
-
-                traPage.TopLevel = false;
-                traPage.FormBorderStyle = FormBorderStyle.None;
-                traPage.Dock = DockStyle.Fill;
-
-                transactionsPage.Controls.Add(traPage);
-                traPage.Show();
-
-            }  
+                EnsurePageLoaded(_transactionsPage);
+            }
             else if (materialTabControl1.SelectedTab == dashboardPage)
             {
-
-                dashboardPage.Controls.Clear();
-                var DBPage = new DashboardPage(_connectedSubscribersRepository, dbContext, this);
-
-                DBPage.TopLevel = false;
-                DBPage.FormBorderStyle = FormBorderStyle.None;
-                DBPage.Dock = DockStyle.Fill;
-
-                dashboardPage.Controls.Add(DBPage);
-                DBPage.Show();
-
+                EnsurePageLoaded(_dashboardPage);
             }
             else if (materialTabControl1.SelectedTab == activitiesPage)
             {
-
-                activitiesPage.Controls.Clear();
-                var ActPage = new ActivityForm(dbContext, this);
-
-                ActPage.TopLevel = false;
-                ActPage.FormBorderStyle = FormBorderStyle.None;
-                ActPage.Dock = DockStyle.Fill;
-
-                activitiesPage.Controls.Add(ActPage);
-                ActPage.Show();
-
+                EnsurePageLoaded(_activityPage);
             }
-
-
-
         }
 
+        private void EnsurePageLoaded(Form page)
+        {
+            if (!page.Visible)
+            {
+                page.Show();
+            }
+        }
 
 
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             string searchText = searchBar.Text.Trim().ToLower();
 
-            if (materialTabControl1.SelectedTab == subscribersPage)
+            if (materialTabControl1.SelectedTab == subscribersPage && _subscriberPage != null)
             {
-                if (subscribersPage.Controls[0] is SubscriberPage subsPage)
-                {
-                    subsPage.FilterData(searchText);
-                }
+                _subscriberPage.FilterData(searchText);
             }
-            else if (materialTabControl1.SelectedTab == billingPage)
+            else if (materialTabControl1.SelectedTab == billingPage && _billingPage != null)
             {
-                if (billingPage.Controls[0] is BillingPage billPage)
-                {
-                    billPage.FilterData(searchText);
-                }
+                _billingPage.FilterData(searchText);
             }
-            else if (materialTabControl1.SelectedTab == transactionsPage)
+            else if (materialTabControl1.SelectedTab == transactionsPage && _transactionsPage != null)
             {
-                if (transactionsPage.Controls[0] is Transaction TransPage)
-                {
-                    TransPage.FilterData(searchText);
-                }
+                _transactionsPage.FilterData(searchText);
             }
-            
         }
-
-
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
-             // Assuming personID is set correctly
-
             if (_userProfileForm == null || _userProfileForm.IsDisposed)
             {
                 _userProfileForm = new UserProfileForm(unitOfWork, userId);
             }
             _userProfileForm.Show();
         }
+
         public void SetUserProfile(string username, string role, string password, string profname, string id)
         {
             lblUsername.Text = username;
             lblRole.Text = role;
-            string pass = password;
-            string prof = username;
-            string idd = id;
             _userProfileForm.UpdateProfile(username, role, password, profname, id);
         }
 
-        public void OpenSubscribersPage()
-        {
-            materialTabControl1.SelectedTab = subscribersPage;
-            subscribersPage.Controls.Clear();
-
-            var subsPage = new SubscriberPage(dbContext, this);
-            subsPage.TopLevel = false;
-            subsPage.FormBorderStyle = FormBorderStyle.None;
-            subsPage.Dock = DockStyle.Fill;
-
-            subscribersPage.Controls.Add(subsPage);
-
-            subsPage.getSubscribers(); // Ensure data loads with correct status
-            subsPage.Show(); // Ensure the form is displayed
-
-        }
-
-
-        public string GetUserRole()
-        {
-            return lblRole.Text;
-        }
-
-        public string GetUsername()
-        {
-            return lblUsername.Text;
-        }
-
-
+        public string GetUserRole() => lblRole.Text;
+        public string GetUsername() => lblUsername.Text;
     }
 }

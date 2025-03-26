@@ -130,7 +130,6 @@ D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\System.Reflection.Metad
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\System.Text.Json.dll
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\ThinkGeo.Core.dll
-D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\ThinkGeo.UI.WinForms.dll
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\af\Humanizer.resources.dll
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\ar\Humanizer.resources.dll
 D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\az\Humanizer.resources.dll
@@ -343,3 +342,16 @@ D:\ISPSMS_FINAL\WebApplication1\obj\Debug\net8.0-windows\refint\WebApplication1.
 D:\ISPSMS_FINAL\WebApplication1\obj\Debug\net8.0-windows\WebApplication1.pdb
 D:\ISPSMS_FINAL\WebApplication1\obj\Debug\net8.0-windows\WebApplication1.genruntimeconfig.cache
 D:\ISPSMS_FINAL\WebApplication1\obj\Debug\net8.0-windows\ref\WebApplication1.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\EPPlus.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.ReportViewer.Common.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.ReportViewer.DataVisualization.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ISPSMS_FINAL\WebApplication1\bin\Debug\net8.0-windows\Microsoft.ReportViewer.WebForms.dll

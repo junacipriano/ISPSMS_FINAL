@@ -34,7 +34,9 @@
             transactionsBindingSource = new BindingSource(components);
             transactionsRepositoryBindingSource2 = new BindingSource(components);
             flowLayoutPanel1 = new FlowLayoutPanel();
-            kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            transExportBtn = new Krypton.Toolkit.KryptonPanel();
+            transExportBttn = new Krypton.Toolkit.KryptonButton();
+            transPrintBtn = new Krypton.Toolkit.KryptonButton();
             kryptonDateTimePicker1 = new Krypton.Toolkit.KryptonDateTimePicker();
             lblTotalAmount = new Krypton.Toolkit.KryptonLabel();
             btnPreviousPage = new Krypton.Toolkit.KryptonButton();
@@ -53,8 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactionsBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonPanel1).BeginInit();
-            kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)transExportBtn).BeginInit();
+            transExportBtn.SuspendLayout();
             SuspendLayout();
             // 
             // transactionsRepositoryBindingSource
@@ -68,7 +70,6 @@
             // transactionsBindingSource
             // 
             transactionsBindingSource.DataSource = typeof(Domain.Models.Transactions);
- 
             // 
             // transactionsRepositoryBindingSource2
             // 
@@ -80,38 +81,60 @@
             flowLayoutPanel1.BackColor = Color.FromArgb(241, 240, 233);
             flowLayoutPanel1.Location = new Point(82, 148);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1800, 781);
+            flowLayoutPanel1.Size = new Size(1724, 781);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // kryptonPanel1
+            // transExportBtn
             // 
-            kryptonPanel1.Controls.Add(kryptonDateTimePicker1);
-            kryptonPanel1.Controls.Add(lblTotalAmount);
-            kryptonPanel1.Controls.Add(btnPreviousPage);
-            kryptonPanel1.Controls.Add(btnNextPage);
-            kryptonPanel1.Controls.Add(kryptonLabel10);
-            kryptonPanel1.Controls.Add(kryptonLabel9);
-            kryptonPanel1.Controls.Add(kryptonLabel8);
-            kryptonPanel1.Controls.Add(kryptonLabel7);
-            kryptonPanel1.Controls.Add(kryptonLabel6);
-            kryptonPanel1.Controls.Add(kryptonLabel5);
-            kryptonPanel1.Controls.Add(kryptonLabel4);
-            kryptonPanel1.Controls.Add(kryptonLabel3);
-            kryptonPanel1.Controls.Add(kryptonLabel2);
-            kryptonPanel1.Controls.Add(kryptonLabel1);
-            kryptonPanel1.Controls.Add(flowLayoutPanel1);
-            kryptonPanel1.Location = new Point(18, -5);
-            kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(1891, 1001);
-            kryptonPanel1.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
-            kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
-            kryptonPanel1.StateNormal.Color1 = Color.FromArgb(241, 240, 233);
-            kryptonPanel1.StateNormal.Color2 = Color.FromArgb(241, 240, 233);
-            kryptonPanel1.TabIndex = 3;
+            transExportBtn.Controls.Add(transExportBttn);
+            transExportBtn.Controls.Add(transPrintBtn);
+            transExportBtn.Controls.Add(kryptonDateTimePicker1);
+            transExportBtn.Controls.Add(lblTotalAmount);
+            transExportBtn.Controls.Add(btnPreviousPage);
+            transExportBtn.Controls.Add(btnNextPage);
+            transExportBtn.Controls.Add(kryptonLabel10);
+            transExportBtn.Controls.Add(kryptonLabel9);
+            transExportBtn.Controls.Add(kryptonLabel8);
+            transExportBtn.Controls.Add(kryptonLabel7);
+            transExportBtn.Controls.Add(kryptonLabel6);
+            transExportBtn.Controls.Add(kryptonLabel5);
+            transExportBtn.Controls.Add(kryptonLabel4);
+            transExportBtn.Controls.Add(kryptonLabel3);
+            transExportBtn.Controls.Add(kryptonLabel2);
+            transExportBtn.Controls.Add(kryptonLabel1);
+            transExportBtn.Controls.Add(flowLayoutPanel1);
+            transExportBtn.Location = new Point(6, 14);
+            transExportBtn.Name = "transExportBtn";
+            transExportBtn.Size = new Size(1903, 982);
+            transExportBtn.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
+            transExportBtn.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
+            transExportBtn.StateNormal.Color1 = Color.FromArgb(241, 240, 233);
+            transExportBtn.StateNormal.Color2 = Color.FromArgb(241, 240, 233);
+            transExportBtn.TabIndex = 3;
+            // 
+            // transExportBttn
+            // 
+            transExportBttn.Location = new Point(1491, 51);
+            transExportBttn.Name = "transExportBttn";
+            transExportBttn.Size = new Size(74, 25);
+            transExportBttn.TabIndex = 18;
+            transExportBttn.Values.DropDownArrowColor = Color.Empty;
+            transExportBttn.Values.Text = "Export";
+            transExportBttn.Click += transExportBttn_Click;
+            // 
+            // transPrintBtn
+            // 
+            transPrintBtn.Location = new Point(1576, 51);
+            transPrintBtn.Name = "transPrintBtn";
+            transPrintBtn.Size = new Size(78, 25);
+            transPrintBtn.TabIndex = 17;
+            transPrintBtn.Values.DropDownArrowColor = Color.Empty;
+            transPrintBtn.Values.Text = "Print";
+            transPrintBtn.Click += transPrintBtn_Click;
             // 
             // kryptonDateTimePicker1
             // 
-            kryptonDateTimePicker1.Location = new Point(1588, 58);
+            kryptonDateTimePicker1.Location = new Point(1670, 53);
             kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
             kryptonDateTimePicker1.Size = new Size(136, 21);
             kryptonDateTimePicker1.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -125,7 +148,6 @@
             lblTotalAmount.Size = new Size(95, 20);
             lblTotalAmount.TabIndex = 14;
             lblTotalAmount.Values.Text = "lblTotalAmount";
-        
             // 
             // btnPreviousPage
             // 
@@ -264,7 +286,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1906, 973);
             ControlBox = false;
-            Controls.Add(kryptonPanel1);
+            Controls.Add(transExportBtn);
             ForeColor = Color.White;
             FormStyle = FormStyles.StatusAndActionBar_None;
             Name = "Transaction";
@@ -276,9 +298,9 @@
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)transactionsBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)transactionsRepositoryBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonPanel1).EndInit();
-            kryptonPanel1.ResumeLayout(false);
-            kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)transExportBtn).EndInit();
+            transExportBtn.ResumeLayout(false);
+            transExportBtn.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -288,7 +310,7 @@
         private BindingSource transactionsBindingSource;
         private BindingSource transactionsRepositoryBindingSource2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private Krypton.Toolkit.KryptonPanel transExportBtn;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonLabel kryptonLabel9;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
@@ -304,5 +326,7 @@
         private Krypton.Toolkit.KryptonButton btnLoadMore;
         private Krypton.Toolkit.KryptonLabel lblTotalAmount;
         private Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
+        private Krypton.Toolkit.KryptonButton transExportBttn;
+        private Krypton.Toolkit.KryptonButton transPrintBtn;
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Dt9F1zYMIwI=",
+  "dgSpecHash": "+8jWQSbXA9k=",
   "success": true,
   "projectFilePath": "D:\\ISPSMS_FINAL\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -150,6 +150,8 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.kiota.serialization.text\\1.17.1\\microsoft.kiota.serialization.text.1.17.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.net.stringtools\\17.8.3\\microsoft.net.stringtools.17.8.3.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.reportviewer.common\\10.0.40219.1\\microsoft.reportviewer.common.10.0.40219.1.nupkg.sha512",
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.reportviewer.webforms\\10.0.40219.1\\microsoft.reportviewer.webforms.10.0.40219.1.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\8.0.7\\microsoft.visualstudio.web.codegeneration.8.0.7.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\8.0.7\\microsoft.visualstudio.web.codegeneration.core.8.0.7.nupkg.sha512",
@@ -230,8 +232,7 @@
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Zeb Perez\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Zeb Perez\\.nuget\\packages\\thinkgeo.core\\14.2.5\\thinkgeo.core.14.2.5.nupkg.sha512",
-    "C:\\Users\\Zeb Perez\\.nuget\\packages\\thinkgeo.ui.winforms\\14.2.5\\thinkgeo.ui.winforms.14.2.5.nupkg.sha512"
+    "C:\\Users\\Zeb Perez\\.nuget\\packages\\thinkgeo.core\\14.2.5\\thinkgeo.core.14.2.5.nupkg.sha512"
   ],
   "logs": [
     {
@@ -270,6 +271,26 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.ReportViewer.Common 10.0.40219.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.ReportViewer.Common",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.ReportViewer.WebForms 10.0.40219.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.ReportViewer.WebForms",
       "targetGraphs": [
         "net8.0-windows7.0"
       ]

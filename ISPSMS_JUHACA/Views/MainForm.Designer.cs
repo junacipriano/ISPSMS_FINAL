@@ -71,14 +71,15 @@
             materialTabControl1.Depth = 0;
             materialTabControl1.ImageList = imageList1;
             materialTabControl1.ImeMode = ImeMode.NoControl;
-            materialTabControl1.Location = new Point(3, 77);
+            materialTabControl1.Location = new Point(3, 121);
             materialTabControl1.Margin = new Padding(0);
             materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             materialTabControl1.Multiline = true;
             materialTabControl1.Name = "materialTabControl1";
             materialTabControl1.SelectedIndex = 0;
-            materialTabControl1.Size = new Size(1914, 1001);
+            materialTabControl1.Size = new Size(1914, 957);
             materialTabControl1.TabIndex = 0;
+         
             // 
             // dashboardPage
             // 
@@ -88,7 +89,7 @@
             dashboardPage.Margin = new Padding(3, 2, 3, 2);
             dashboardPage.Name = "dashboardPage";
             dashboardPage.Padding = new Padding(3, 2, 3, 2);
-            dashboardPage.Size = new Size(1906, 973);
+            dashboardPage.Size = new Size(1906, 929);
             dashboardPage.TabIndex = 0;
             dashboardPage.Text = "Dashboard";
             // 
@@ -199,10 +200,10 @@
             kryptonPanel1.Controls.Add(lblRole);
             kryptonPanel1.Controls.Add(lblUsername);
             kryptonPanel1.Dock = DockStyle.Fill;
-            kryptonPanel1.Location = new Point(3, 24);
+            kryptonPanel1.Location = new Point(3, 64);
             kryptonPanel1.Margin = new Padding(0);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(1914, 1054);
+            kryptonPanel1.Size = new Size(1920, 990);
             kryptonPanel1.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateNormal.Color1 = Color.FromArgb(241, 240, 233);
@@ -266,19 +267,13 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1920, 1080);
+            ClientSize = new Size(1926, 1056);
             Controls.Add(materialTabControl1);
             Controls.Add(kryptonPanel1);
-            DrawerAutoShow = true;
-            DrawerBackgroundWithAccent = true;
-            DrawerIsOpen = true;
-            DrawerShowIconsWhenHidden = true;
             DrawerTabControl = materialTabControl1;
-            DrawerUseColors = true;
-            FormStyle = FormStyles.ActionBar_None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
-            Padding = new Padding(3, 24, 3, 2);
+            Padding = new Padding(3, 64, 3, 2);
             ShowIcon = false;
             Text = "Form1";
             TransparencyKey = Color.White;

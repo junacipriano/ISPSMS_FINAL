@@ -67,7 +67,7 @@ namespace Infastructure.Data.Repositories
         public async Task<IEnumerable<Transactions>> GetByDateAsync(DateTime TransactionDateTime)
         {
             var transactions = await _context.Transactions
-                .Where(t => t.TransactionDateTime.Date == TransactionDateTime)
+                .Where(t => t.TransactionDateTime.Date == TransactionDateTime.Date)
                 .ToListAsync();
 
             return transactions.AsEnumerable();

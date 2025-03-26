@@ -128,6 +128,10 @@
               "target": "Package",
               "version": "[5.74.0, )"
             },
+            "Microsoft.ReportViewer.WebForms": {
+              "target": "Package",
+              "version": "[10.0.40219.1, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.7, )"
@@ -145,10 +149,6 @@
               "version": "[8.0.0, )"
             },
             "ThinkGeo.Core": {
-              "target": "Package",
-              "version": "[14.2.5, )"
-            },
-            "ThinkGeo.UI.WinForms": {
               "target": "Package",
               "version": "[14.2.5, )"
             }

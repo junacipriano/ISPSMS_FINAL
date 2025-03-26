@@ -9,10 +9,14 @@ using ISPSMS_JUHACA.Views.IVews;
 using Domain.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Krypton.Toolkit;
-
+using System.Linq;
+using System.Data;
+using Microsoft.Data.SqlClient;
+using OfficeOpenXml;
+using ISPSMS_JUHACA.Views.toPrintData;
 namespace ISPSMS_JUHACA.MainPages
 {
-    public partial class SubscriberPage : KryptonForm
+    public partial class SubscriberPage : MaterialForm
     {
         public Domain.Models.ConnectedSubscribers ConSubsEntity;
         public readonly IUnitOfWork dbContext;
@@ -22,15 +26,26 @@ namespace ISPSMS_JUHACA.MainPages
         private MaterialButton activeButton;
         private readonly string _currentUsername;
         private readonly string _currentUserRole;
+        private DisconnectedPresenter disc;
+
+        private int currentPage = 1;
+        private int pageSize = 30;  // Number of items per page
+        private int totalPages;
+
+        private IEnumerable<ConnectedSubscribers> originalSubscribers;
 
         public BindingSource BindingSource => bindingSource;
-        private List<ConnectedSubscribers> originalSubscribers = new List<ConnectedSubscribers>();
+
         public SubscriberPage(IUnitOfWork dbContext, MainForm mainForm)  // Change parameter name to match usage
         {
             InitializeComponent();
             this.dbContext = dbContext;
             this.mainForm = mainForm;  // Assign the passed instance to the class-level variable
 
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
 
             _currentUsername = mainForm.GetUsername();
@@ -46,9 +61,10 @@ namespace ISPSMS_JUHACA.MainPages
 
 
             materialComboBox1.SelectedIndex = 0;
-            connectedsubscribersGridView.AllowUserToOrderColumns = false;
-            this.MaximumSize = this.Size;
-            this.MinimumSize = this.Size;
+
+
+
+
 
         }
 
@@ -65,39 +81,44 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void getSubscribers()
         {
+            string selectedStatus = materialComboBox1.SelectedItem.ToString();
             originalSubscribers = dbContext.connectedSubscriberRepository.GetAll()
-         .OrderByDescending(s => s.Duedate)
-         .ToList();
-            AddActionButtons();
+       .OrderByDescending(s => s.subs_id)
+       .ToList();
 
-            // Assign statuses
-            UpdateStatuses();
 
-            if (connectedsubscribersGridView.Rows.Count > 0)
+            if (selectedStatus != "All")
             {
-                connectedsubscribersGridView.Rows[0].Selected = false;
+                originalSubscribers = originalSubscribers
+                    .Where(s => s.Status.Trim().Equals(selectedStatus.Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
             }
 
-            GetColumnOrder();
+            // Calculate total pages
+            totalPages = (int)Math.Ceiling((double)originalSubscribers.Count() / pageSize);
 
-            // Set data source
-            bindingSource.DataSource = originalSubscribers;
+            // Ensure the current page is within the correct range
+            currentPage = Math.Max(1, Math.Min(currentPage, totalPages));
+
+            var pagedSubscribers = originalSubscribers.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+            bindingSource.DataSource = pagedSubscribers;
             connectedsubscribersGridView.DataSource = bindingSource;
-            // Move buttons to last position
-            MoveButtonsToLastColumn();
-            var currentDueDateColumn = connectedsubscribersGridView.Columns["currentDuedateDataGridViewTextBoxColumn"];
-            if (currentDueDateColumn != null)
-            {
-                currentDueDateColumn.Visible = false;
-            }
-            var connNameColumn = connectedsubscribersGridView.Columns["Conn_Name"];
-            if (connNameColumn != null)
-            {
-                connNameColumn.Visible = false;
-            }
 
-            TotalSubscriberLabel.Text = originalSubscribers.Count.ToString();
+            MoveButtonsToLastColumn();
+            AddActionButtons();
+            UpdateStatuses();
+            connectedsubscribersGridView.Refresh();
+
+            // Manage button states
+            Previous.Enabled = currentPage > 1;
+            Next.Enabled = currentPage < totalPages; // Disable if on the last page
+
+
         }
+
+
+
 
         private void MoveToDisconnectedList(ConnectedSubscribers subscriber)
         {
@@ -135,7 +156,13 @@ namespace ISPSMS_JUHACA.MainPages
         }
 
 
-     
+        private void disconnectedbtn_Click(object sender, EventArgs e)
+        {
+
+
+            var disconnectedForm = new Disconnected(dbContext, this);
+            disconnectedForm.ShowDialog();
+        }
 
         private void connectedsubscribersGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -250,8 +277,7 @@ namespace ISPSMS_JUHACA.MainPages
         {
             getSubscribers();
             connectedsubscribersGridView.CellFormatting += connectedsubscribersGridView_CellFormatting;
-            connectedsubscribersGridView.Dock = DockStyle.Fill;
-            datagridViewPanel.Controls.Add(connectedsubscribersGridView);
+
         }
 
         private void FilterSubscribersByAddress(string address)
@@ -271,7 +297,6 @@ namespace ISPSMS_JUHACA.MainPages
             }
 
             connectedsubscribersGridView.DataSource = bindingSource;
-            TotalSubscriberLabel.Text = filteredSubscribers.Count.ToString();
         }
 
         public void FilterData(string searchText)
@@ -282,11 +307,10 @@ namespace ISPSMS_JUHACA.MainPages
                 return;
             }
 
-            Console.WriteLine($"Filtering for: {searchText}");
 
             if (string.IsNullOrEmpty(searchText))
             {
-                bindingSource.DataSource = new List<ConnectedSubscribers>(originalSubscribers);
+                bindingSource.DataSource = originalSubscribers.ToList();  // Convert to list if needed for DataGridView
             }
             else
             {
@@ -294,15 +318,13 @@ namespace ISPSMS_JUHACA.MainPages
                     .Where(sub => !string.IsNullOrEmpty(sub.Conn_Name) && sub.Conn_Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
                                   !string.IsNullOrEmpty(sub.Address) && sub.Address.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
                                   !string.IsNullOrEmpty(sub.ContactNumber) && sub.ContactNumber.Contains(searchText, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
+                    .ToList();  // Convert to list after filtering
 
                 Console.WriteLine($"Filtered Count: {filteredList.Count}");
-
                 bindingSource.DataSource = filteredList.Any() ? filteredList : new List<ConnectedSubscribers>();
             }
 
             connectedsubscribersGridView.DataSource = bindingSource;
-            TotalSubscriberLabel.Text = ((List<ConnectedSubscribers>)bindingSource.DataSource).Count.ToString();
         }
 
         private void allBtn_Click(object sender, EventArgs e)
@@ -342,13 +364,11 @@ namespace ISPSMS_JUHACA.MainPages
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("Danggawan");
         }
-
         private void dologonBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("Dologon");
         }
-
         private void northPobBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
@@ -360,21 +380,16 @@ namespace ISPSMS_JUHACA.MainPages
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("Panadtalan");
         }
-
         private void sanMiguelBtn_Click(object sender, EventArgs e)
         {
-
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("San Miguel");
         }
-
         private void southPobBtn_Click(object sender, EventArgs e)
         {
             SetActiveButton((MaterialButton)sender);
             FilterSubscribersByAddress("South Poblacion");
         }
-
-
         private void LogActivity(string activityDescription)
         {
             var activity = new Activity
@@ -394,33 +409,11 @@ namespace ISPSMS_JUHACA.MainPages
             string selectedState = materialComboBox1.SelectedItem.ToString();
 
             // Call the filter method with the selected state
-            FilterSubscribersByState(selectedState);
+            getSubscribers();
         }
 
-        private void FilterSubscribersByState(string filterState)
-        {
 
-            UpdateStatuses();
 
-            List<ConnectedSubscribers> filteredSubscribers = filterState switch
-            {
-                "Past due" => originalSubscribers.Where(s => s.Status == "Past Due").ToList(),
-                "Overdue" => originalSubscribers.Where(s => s.Status == "Overdue").ToList(),
-                "Active" => originalSubscribers.Where(s => s.Status == "Active").ToList(),
-                "All" => originalSubscribers,
-                _ => originalSubscribers
-            };
-
-            bindingSource.DataSource = null;
-            bindingSource.DataSource = filteredSubscribers;
-            connectedsubscribersGridView.DataSource = bindingSource;
-
-            // Re-add edit button column after filtering
-            AddActionButtons();
-
-            connectedsubscribersGridView.Refresh();
-            TotalSubscriberLabel.Text = filteredSubscribers.Count.ToString();
-        }
         private void AddActionButtons()
         {  // Remove existing action button columns if they exist
             if (connectedsubscribersGridView.Columns.Contains("editButton"))
@@ -505,45 +498,19 @@ namespace ISPSMS_JUHACA.MainPages
             connectedsubscribersGridView.Columns["disconnectButton"].DisplayIndex = connectedsubscribersGridView.Columns.Count - 1;
         }
 
-        public void GetColumnOrder()
-        {
-            if (connectedsubscribersGridView.Columns.Contains("subs_id"))
-            {
-                connectedsubscribersGridView.Columns["subs_id"].DisplayIndex = 0; // Ensure subs_id is first
-            }
+        //public void GetColumnOrder()
+        //{
+        //    var columns = new[] { "subs_id", "ContactNumber", "Address", "Plan", "Status", "Duedate", "MonthlyCharge" };
 
-            if (connectedsubscribersGridView.Columns.Contains("ContactNumber"))
-            {
-                connectedsubscribersGridView.Columns["ContactNumber"].DisplayIndex = 1;
-            }
+        //    for (int i = 0; i < columns.Length; i++)
+        //    {
+        //        if (connectedsubscribersGridView.Columns.Contains(columns[i]))
+        //        {
+        //            connectedsubscribersGridView.Columns[columns[i]].DisplayIndex = i;
+        //        }
+        //    }
+        //}
 
-            if (connectedsubscribersGridView.Columns.Contains("Address"))
-            {
-                connectedsubscribersGridView.Columns["Address"].DisplayIndex = 2;
-            }
-
-            if (connectedsubscribersGridView.Columns.Contains("Plan"))
-            {
-                connectedsubscribersGridView.Columns["Plan"].DisplayIndex = 3;
-            }
-
-            if (connectedsubscribersGridView.Columns.Contains("Status"))
-            {
-                connectedsubscribersGridView.Columns["Status"].DisplayIndex = 4;
-            }
-
-            if (connectedsubscribersGridView.Columns.Contains("Duedate"))
-            {
-                connectedsubscribersGridView.Columns["Duedate"].DisplayIndex = 5;
-            }
-
-            if (connectedsubscribersGridView.Columns.Contains("MonthlyCharge"))
-            {
-                connectedsubscribersGridView.Columns["MonthlyCharge"].DisplayIndex = 6;
-            }
-
-
-        }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
@@ -555,12 +522,91 @@ namespace ISPSMS_JUHACA.MainPages
             AddForm.ShowDialog();
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private void Previous_Click(object sender, EventArgs e)
         {
-            var disconnectedForm = new Disconnected(dbContext, this);
-            disconnectedForm.MdiParent = null; // Prevents it from affecting MDI layout
-            disconnectedForm.ShowDialog();
+            if (currentPage > 1)
+            {
+                currentPage--;
+                getSubscribers();
+            }
         }
 
+        private void Next_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                getSubscribers();
+            }
+        }
+
+        private void transPrintBtn_Click(object sender, EventArgs e)
+        {
+            List<ConnectedSubscribers> Allsubscribers = dbContext.connectedSubscriberRepository.GetAll().ToList();
+            SubscribersPrintDocs printDoc = new SubscribersPrintDocs(Allsubscribers);
+            printDoc.Print();
+        }
+
+        private void exportSubsBtn_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=LAPTOP-AEJ6B24K\\SQLEXPRESS;Initial Catalog=connected_subscribers_db;User ID=ISPSMS_JUHACA;Password=OPTICALITSOLUTIONS2025;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string query = "SELECT * FROM dbo.connectedSubscribers";
+
+            DataTable dt = GetDataTable(connectionString, query);
+            if (dt.Rows.Count > 0)
+            {
+                SaveExcelFile(dt);
+            }
+            else
+            {
+                MessageBox.Show("No data to export.");
+            }
+        }
+        private DataTable GetDataTable(string connectionString, string query)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        private void SaveExcelFile(DataTable dt)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "Excel Files|*.xlsx", FileName = $"JUHACA {DateTime.Now:yyyy} SUBSCRIBERS AS OF {DateTime.Now:MMMM dd, yyyy}.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                    using (ExcelPackage package = new ExcelPackage())
+                    {
+                        ExcelWorksheet ws = package.Workbook.Worksheets.Add("Transactions");
+                        ws.Cells["A1"].LoadFromDataTable(dt, true);
+
+                        File.WriteAllBytes(sfd.FileName, package.GetAsByteArray());
+                        MessageBox.Show("Exported successfully!");
+                    }
+                }
+            }
+        }
+
+        private void bgPanel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
