@@ -21,6 +21,8 @@ namespace ISPSMS_JUHACA.Views
         internal Disconnected disconnected;
         private DisconnectedPresenter presenter;
         private SubscriberPage subs;
+        private string _currentUsername;
+        private string _currentUserRole;
 
         public ConnectedSubscribers SelectedSubscriber { get; internal set; }
 
@@ -29,11 +31,12 @@ namespace ISPSMS_JUHACA.Views
 
             InitializeComponent();
             this.subs = subs;
-
+            _currentUsername = subs._currentUsername;
+            _currentUserRole = subs._currentUserRole;
 
             try
             {
-               
+
                 // Check if MaterialSkinManager.Instance is null before using it
                 var materialSkinManager = MaterialSkinManager.Instance;
                 if (materialSkinManager != null)
@@ -68,17 +71,19 @@ namespace ISPSMS_JUHACA.Views
             presenter.LoadDisconnectedSubscribers();
         }
 
-        //public void LoadDisconnectedSubscribers()
-        //{
-        //    var disconnectedSubscribers = dbContext.disconnectedSubscriberRepository.GetAll();
-        //    DisconnectdataGridView1.DataSource = disconnectedSubscribers;
-        //}
+        private void LogActivity(string activityDescription)
+        {
+            var activity = new Activity
+            {
+                AccountName = _currentUsername,
+                AccountRole = _currentUserRole,
+                ActivitiesDone = activityDescription,
+                ActivitiesDateTime = DateTime.Now
+            };
 
-        //private void Disconnected_Load(object sender, EventArgs e)
-        //{
-        //    // LoadDisconnectedSubscribers();
-        //presenter.LoadDisconnectedSubscribers();
-        //}
+            dbContext.activityRepository.Update(activity); // Use Add instead of Update for new records
+            dbContext.Save();
+        }
 
         public void SetDisconnectedSubscribers(IEnumerable<DisconnectedSubscribers> subscribers)
         {
@@ -169,12 +174,14 @@ namespace ISPSMS_JUHACA.Views
                             dbContext.disconnectedSubscriberRepository.Remove(subscriberToReconnect);
                             dbContext.Save();
 
+                            LogActivity($"Reconnected subscriber: {selectedSubscriber.Disconn_Name}");
+
                             // Update the binding source and refresh the grid
                             bindingSource.Remove(selectedSubscriber);
                             presenter.LoadDisconnectedSubscribers();
 
                             subs.getSubscribers();
-                          
+
                         }
                         catch (Exception ex)
                         {
@@ -209,6 +216,8 @@ namespace ISPSMS_JUHACA.Views
                             dbContext.disconnectedSubscriberRepository.Remove(subscriberToDelete);
                             dbContext.Save();
 
+                            LogActivity($"Deleted subscriber: {selectedSubscriber.Disconn_Name}");
+
                             // Update the binding source and refresh the grid
                             bindingSource.Remove(selectedSubscriber);
                             presenter.LoadDisconnectedSubscribers();
@@ -237,7 +246,7 @@ namespace ISPSMS_JUHACA.Views
             return day + "th";
         }
 
-    
+
 
         private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {

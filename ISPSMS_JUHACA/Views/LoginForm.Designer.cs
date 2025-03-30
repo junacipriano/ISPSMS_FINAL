@@ -36,6 +36,7 @@
             btnSignUp = new Krypton.Toolkit.KryptonButton();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
+            ShowPass = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
             // tbUsername
@@ -77,7 +78,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(104, 361);
+            btnLogin.Location = new Point(104, 417);
             btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(209, 76);
@@ -152,12 +153,23 @@
             kryptonLabel3.TabIndex = 8;
             kryptonLabel3.Values.Text = "";
             // 
+            // ShowPass
+            // 
+            ShowPass.Location = new Point(78, 344);
+            ShowPass.Name = "ShowPass";
+            ShowPass.Size = new Size(160, 31);
+            ShowPass.TabIndex = 9;
+            ShowPass.Values.DropDownArrowColor = Color.Empty;
+            ShowPass.Values.Text = "Show";
+            ShowPass.Click += ShowPass_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(870, 485);
+            ClientSize = new Size(876, 529);
+            Controls.Add(ShowPass);
             Controls.Add(kryptonLabel3);
             Controls.Add(kryptonLabel2);
             Controls.Add(btnSignUp);
@@ -184,11 +196,12 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox tbUsername;
-        private MaterialSkin.Controls.MaterialTextBox tbPassword;
         private Krypton.Toolkit.KryptonButton btnLogin;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonButton btnSignUp;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private Krypton.Toolkit.KryptonButton ShowPass;
+        public MaterialSkin.Controls.MaterialTextBox tbPassword;
     }
 }

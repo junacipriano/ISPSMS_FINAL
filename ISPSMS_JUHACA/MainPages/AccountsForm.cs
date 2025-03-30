@@ -37,25 +37,9 @@ namespace ISPSMS_JUHACA.MainPages
             _currentUserRole = mainForm.GetUserRole();
 
             accountsGridView.CellFormatting += accountsGridView_CellFormatting;
-            ConfigureDataGridView();
 
             getAccounts();
         }
-
-
-        private void ConfigureDataGridView()
-        {
-            accountsGridView.ColumnHeadersVisible = true;
-            accountsGridView.EnableHeadersVisualStyles = false;
-            accountsGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            accountsGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
-            accountsGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-            accountsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            accountsGridView.RowHeadersVisible = true; // Ensure row headers are visible
-            accountsGridView.DefaultCellStyle.SelectionBackColor = Color.LightBlue; // Better selection visibility
-        }
-
-
 
         public void getAccounts()
         {
@@ -86,7 +70,7 @@ namespace ISPSMS_JUHACA.MainPages
             var selectedAccount = accountsGridView.Rows[e.RowIndex].DataBoundItem as Accounts;
             if (selectedAccount == null) return;
 
-            if (accountsGridView.Columns[e.ColumnIndex].Name == "Edit" && e.RowIndex >= 0)
+            if (accountsGridView.Columns[e.ColumnIndex].Name == "editButton" && e.RowIndex >= 0)
             {
                 if (currentUserRole == "DEFAULT")
                 {
@@ -103,7 +87,7 @@ namespace ISPSMS_JUHACA.MainPages
                 editForm.ShowDialog();
                 getAccounts();
             }
-            else if (accountsGridView.Columns[e.ColumnIndex].Name == "Delete" && e.RowIndex >= 0)
+            else if (accountsGridView.Columns[e.ColumnIndex].Name == "deleteButton" && e.RowIndex >= 0)
             {
                 if (currentUserRole == "ADMIN" && (selectedAccount.AccountRole == "ADMIN" || selectedAccount.AccountRole == "CEO"))
                 {
@@ -194,6 +178,82 @@ namespace ISPSMS_JUHACA.MainPages
             catch (Exception ex)
             {
                 MessageBox.Show("Error filtering accounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountsGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == accountsGridView.Columns["editButton"].Index ||
+                    e.ColumnIndex == accountsGridView.Columns["deleteButton"].Index)
+                {
+                    // Prevent default paint
+                    e.Handled = true;
+
+                    // Set your custom background color
+                    Color bgColor = Color.FromArgb(255, 255, 252);
+                    using (SolidBrush brush = new SolidBrush(bgColor))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    // Draw the image
+                    Image image = null;
+                    if (e.ColumnIndex == accountsGridView.Columns["editButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\edit.png");
+                    }
+                    else if (e.ColumnIndex == accountsGridView.Columns["deleteButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
+                    }
+
+                    if (image != null)
+                    {
+                        var imageSize = new Size(25, 25); // Desired size
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
+                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
+                    }
+                }
+            }
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == accountsGridView.Columns["editButton"].Index ||
+                    e.ColumnIndex == accountsGridView.Columns["deleteButton"].Index)
+                {
+                    e.Handled = true;
+
+                    Color bgColor = Color.FromArgb(255, 255, 252);
+                    using (SolidBrush brush = new SolidBrush(bgColor))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    Image image = null;
+                    if (e.ColumnIndex == accountsGridView.Columns["editButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\edit.png");
+                    }
+                    else if (e.ColumnIndex == accountsGridView.Columns["deleteButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
+                    }
+
+                    if (image != null)
+                    {
+                        var imageSize = new Size(25, 25);
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
+                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
+                    }
+                }
             }
         }
     }

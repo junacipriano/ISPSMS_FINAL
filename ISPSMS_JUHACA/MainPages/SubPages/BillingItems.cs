@@ -4,6 +4,7 @@ using Krypton.Toolkit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
@@ -23,7 +24,9 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             InitializeComponent();
             this.dbContext = dbContext;
             _billingPage = billingPage;
-            _mainForm = mainForm; // Initialize _mainForm
+            _mainForm = mainForm; 
+
+
         }
 
         private void BillingItems_Load(object sender, EventArgs e)
@@ -34,6 +37,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         public void LoadBillingItemData()
         {
             string subID = ConSubsEntity.CurrentDuedate.ToString("MMMM")[0] + ConSubsEntity.subs_id.ToString();
+            var culture = new CultureInfo("fil-PH");
             subIDTextBox.Text = subID;
 
             nameTextBox.Text = ConSubsEntity.Conn_Name ?? "N/A";
@@ -41,7 +45,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             dueDateTextBox.Text = ConSubsEntity.CurrentDuedate.ToString("MMMM d, yyyy");
             addressTextBox.Text = ConSubsEntity.Address ?? "N/A";
             planTextBox.Text = ConSubsEntity.Plan ?? "N/A";
-            amountTextBox.Text = ConSubsEntity.MonthlyCharge.ToString("C") ?? "₱0.00";
+            amountTextBox.Text = ConSubsEntity.MonthlyCharge.ToString("C", culture);
 
             payBtn.Tag = ConSubsEntity;
             payBtn.Click -= payBtn_Click;
@@ -67,8 +71,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 return;
             }
 
-            ConSubsEntity.CurrentDuedate = ConSubsEntity.CurrentDuedate.AddMonths(1);
-
+            ConSubsEntity.CurrentDuedate = ConSubsEntity.CurrentDuedate;
             dbContext.connectedSubscriberRepository.Update(ConSubsEntity);
             dbContext.connectedSubscriberRepository.Save();
             BillingCheckout paymentForm = new BillingCheckout(dbContext, ConSubsEntity, _billingPage, _mainForm);

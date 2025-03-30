@@ -73,6 +73,22 @@ namespace Infastructure.Data.Repositories
             return transactions.AsEnumerable();
         }
 
+        public async Task<IEnumerable<(DateTime Date, decimal TotalAmount)>> GetDailyTransactionTotalsAsync()
+        {
+            var dailyTotals = await _context.Transactions
+                .GroupBy(t => t.TransactionDateTime.Date)
+                .Select(g => new
+                {
+                    Date = g.Key,
+                    TotalAmount = g.Sum(t => t.PaidAmount)
+                })
+                .ToListAsync();
+
+            return dailyTotals.Select(d => (d.Date, d.TotalAmount));
+        }
+
+
+
         public float AnahawonTotalPaidAmount()
         {
             return (float)_context.Transactions

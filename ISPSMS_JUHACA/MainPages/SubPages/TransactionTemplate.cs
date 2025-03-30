@@ -1,8 +1,11 @@
 ﻿using Domain.Models;
+using ISPSMS_JUHACA.Views;
 using Krypton.Toolkit;
+using Microsoft.Graph.Models.Security;
 using Microsoft.VisualBasic;
 using System;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace ISPSMS_JUHACA.MainPages.SubPages
@@ -10,6 +13,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
     public partial class TransactionTemplate : UserControl
     {
         private readonly Transactions _transaction;
+        private readonly Accounts _loggedInUser;
 
         private PrintDocument printDocument = new PrintDocument();
         public Transactions Transaction { get; private set; }
@@ -18,16 +22,18 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             InitializeComponent();
             Transaction = transaction;
             _transaction = transaction;
+            this.DoubleBuffered = true;
             LoadTransactionData();
         }
 
         public void LoadTransactionData()
         {
+            var culture = new CultureInfo("fil-PH");
             receiptNoTextBox.Text = _transaction.trans_id.ToString();
             subIDTextBox.Text = _transaction.subs_id.ToString();
             name.Text = _transaction.Trans_Name;
-            amount.Text = _transaction.PaidAmount.ToString("C");
-            balance.Text = _transaction.Balance.ToString("C");
+            amount.Text = _transaction.PaidAmount.ToString("C", culture);
+            balance.Text = _transaction.Balance.ToString("C", culture);
             note.Text = _transaction.Note;
             dueDate.Text = _transaction.Duedate;
             date.Text = _transaction.TransactionDateTime.ToString("MMMM d, yyyy ");
@@ -61,9 +67,9 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            string printText = "Hello test print";
-            Font printFont = new Font("Arial", 12);
-            e.Graphics.DrawString(printText, printFont, Brushes.Black, 50, 50);
+            Transactions transaction = new Transactions();
+            var receiptForm = new ReceiptForm(transaction, _loggedInUser);
+            receiptForm.ShowDialog();
         }
 
         private void prinyBtn_Click(object sender, EventArgs e)

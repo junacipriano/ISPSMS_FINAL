@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            Switch = new MaterialSkin.Controls.MaterialSwitch();
             tbLName = new Krypton.Toolkit.KryptonTextBox();
             tbMi = new Krypton.Toolkit.KryptonTextBox();
             tbConfirmPass = new Krypton.Toolkit.KryptonTextBox();
@@ -44,7 +45,6 @@
             kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            Switch = new MaterialSkin.Controls.MaterialSwitch();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,6 +72,22 @@
             panel1.Size = new Size(656, 375);
             panel1.TabIndex = 6;
             // 
+            // Switch
+            // 
+            Switch.AutoSize = true;
+            Switch.Depth = 0;
+            Switch.Location = new Point(80, 268);
+            Switch.Margin = new Padding(0);
+            Switch.MouseLocation = new Point(-1, -1);
+            Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            Switch.Name = "Switch";
+            Switch.Ripple = true;
+            Switch.Size = new Size(172, 37);
+            Switch.TabIndex = 26;
+            Switch.Text = "Show Password";
+            Switch.UseVisualStyleBackColor = true;
+            Switch.CheckedChanged += Switch_CheckedChanged;
+            // 
             // tbLName
             // 
             tbLName.CueHint.CueHintText = "Last Name";
@@ -93,7 +109,6 @@
             tbConfirmPass.CueHint.CueHintText = "Change Password";
             tbConfirmPass.Location = new Point(341, 238);
             tbConfirmPass.Name = "tbConfirmPass";
-            tbConfirmPass.PasswordChar = '*';
             tbConfirmPass.Size = new Size(260, 27);
             tbConfirmPass.TabIndex = 23;
             // 
@@ -102,7 +117,6 @@
             tbPass.CueHint.CueHintText = "Change Password";
             tbPass.Location = new Point(80, 238);
             tbPass.Name = "tbPass";
-            tbPass.PasswordChar = '*';
             tbPass.Size = new Size(243, 27);
             tbPass.TabIndex = 22;
             // 
@@ -202,22 +216,6 @@
             kryptonLabel1.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel1.TabIndex = 3;
             kryptonLabel1.Values.Text = "Account Name:";
-            // 
-            // Switch
-            // 
-            Switch.AutoSize = true;
-            Switch.Depth = 0;
-            Switch.Location = new Point(80, 268);
-            Switch.Margin = new Padding(0);
-            Switch.MouseLocation = new Point(-1, -1);
-            Switch.MouseState = MaterialSkin.MouseState.HOVER;
-            Switch.Name = "Switch";
-            Switch.Ripple = true;
-            Switch.Size = new Size(172, 37);
-            Switch.TabIndex = 26;
-            Switch.Text = "Show Password";
-            Switch.UseVisualStyleBackColor = true;
-            Switch.CheckedChanged += Switch_CheckedChanged;
             // 
             // ProfileEdit
             // 

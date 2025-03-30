@@ -13,7 +13,9 @@ using System.Linq;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using OfficeOpenXml;
-using ISPSMS_JUHACA.Views.toPrintData;
+using System.Windows.Media.TextFormatting;
+using System.Drawing.Drawing2D;
+using ISPSMS_JUHACA.toPrintData;
 namespace ISPSMS_JUHACA.MainPages
 {
     public partial class SubscriberPage : MaterialForm
@@ -24,8 +26,8 @@ namespace ISPSMS_JUHACA.MainPages
         internal bool isEdit;
         private MainForm mainForm;
         private MaterialButton activeButton;
-        private readonly string _currentUsername;
-        private readonly string _currentUserRole;
+        public readonly string _currentUsername;
+        public readonly string _currentUserRole;
         private DisconnectedPresenter disc;
 
         private int currentPage = 1;
@@ -41,6 +43,7 @@ namespace ISPSMS_JUHACA.MainPages
             InitializeComponent();
             this.dbContext = dbContext;
             this.mainForm = mainForm;  // Assign the passed instance to the class-level variable
+            this.BackColor = Color.FromArgb(241, 240, 233);
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -53,19 +56,8 @@ namespace ISPSMS_JUHACA.MainPages
 
             bindingSource = new BindingSource();
             connectedsubscribersGridView.AutoGenerateColumns = false;
-
-            materialComboBox1.Items.Add("All");
-            materialComboBox1.Items.Add("Active");
-            materialComboBox1.Items.Add("Past due");
-            materialComboBox1.Items.Add("Overdue");
-
-
-            materialComboBox1.SelectedIndex = 0;
-
-
-
-
-
+            connectedsubscribersGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            filterCombobox.SelectedIndex = 0;
         }
 
         private void SetActiveButton(MaterialButton clickedButton)
@@ -81,10 +73,11 @@ namespace ISPSMS_JUHACA.MainPages
 
         public void getSubscribers()
         {
-            string selectedStatus = materialComboBox1.SelectedItem.ToString();
-            originalSubscribers = dbContext.connectedSubscriberRepository.GetAll()
-       .OrderByDescending(s => s.subs_id)
-       .ToList();
+            string selectedStatus = filterCombobox.SelectedItem.ToString();
+            originalSubscribers = dbContext.connectedSubscriberRepository
+                .GetAll()
+                .OrderByDescending(s => s.subs_id)
+                .ToList();
 
 
             if (selectedStatus != "All")
@@ -116,9 +109,6 @@ namespace ISPSMS_JUHACA.MainPages
 
 
         }
-
-
-
 
         private void MoveToDisconnectedList(ConnectedSubscribers subscriber)
         {
@@ -164,34 +154,6 @@ namespace ISPSMS_JUHACA.MainPages
             disconnectedForm.ShowDialog();
         }
 
-        private void connectedsubscribersGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (connectedsubscribersGridView.Columns[e.ColumnIndex].DataPropertyName == "Status" && e.Value != null)
-            {
-                string status = e.Value.ToString().Trim();
-
-                Console.WriteLine($"Row {e.RowIndex}, Column {e.ColumnIndex}, Status Value: {status}");
-
-                if (status.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                {
-                    e.CellStyle.ForeColor = Color.Green;
-                    e.CellStyle.Font = new Font(connectedsubscribersGridView.Font, FontStyle.Bold);
-                }
-                else if (status.Equals("Past Due", StringComparison.OrdinalIgnoreCase))
-                {
-                    e.CellStyle.ForeColor = Color.Orange;
-                    e.CellStyle.Font = new Font(connectedsubscribersGridView.Font, FontStyle.Bold);
-                }
-                else if (status.Equals("Overdue", StringComparison.OrdinalIgnoreCase))
-                {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.Font = new Font(connectedsubscribersGridView.Font, FontStyle.Bold);
-                }
-            }
-        }
-
-
-
         private void connectedsubscribersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -202,7 +164,7 @@ namespace ISPSMS_JUHACA.MainPages
             string columnName = connectedsubscribersGridView.Columns[e.ColumnIndex].Name;
 
 
-            if (connectedsubscribersGridView.Columns[e.ColumnIndex].Name == "editButton")
+            if (columnName == "editButton")
             {
                 isEdit = true;
 
@@ -213,7 +175,6 @@ namespace ISPSMS_JUHACA.MainPages
 
                 };
 
-                // Update the constructor call to include the required parameters 'currentUserName' and 'currentUserRole'
                 var presenter = new AddSubscriberPresenter(addsubs, dbContext, this, _currentUsername, mainForm);
 
                 presenter.EditLoad();
@@ -272,11 +233,12 @@ namespace ISPSMS_JUHACA.MainPages
                     }
                 }
             }
+
         }
         private void SubscriberPage_Load(object sender, EventArgs e)
         {
             getSubscribers();
-            connectedsubscribersGridView.CellFormatting += connectedsubscribersGridView_CellFormatting;
+            //connectedsubscribersGridView.CellFormatting += connectedsubscribersGridView_CellFormatting;
 
         }
 
@@ -403,19 +365,17 @@ namespace ISPSMS_JUHACA.MainPages
             dbContext.activityRepository.Update(activity); // Use Add instead of Update for new records
             dbContext.Save();
         }
-
-        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void filterCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedState = materialComboBox1.SelectedItem.ToString();
+            string selectedState = filterCombobox.SelectedItem.ToString();
 
             // Call the filter method with the selected state
             getSubscribers();
+            this.ActiveControl = null;
         }
-
-
-
         private void AddActionButtons()
-        {  // Remove existing action button columns if they exist
+        {
+            // Remove existing action button columns if they exist
             if (connectedsubscribersGridView.Columns.Contains("editButton"))
             {
                 connectedsubscribersGridView.Columns.Remove("editButton");
@@ -426,30 +386,184 @@ namespace ISPSMS_JUHACA.MainPages
                 connectedsubscribersGridView.Columns.Remove("disconnectButton");
             }
 
-            // Create Edit Button Column
-            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn
+            // Add Edit Button Column
+            DataGridViewImageColumn editButtonColumn = new DataGridViewImageColumn
             {
                 Name = "editButton",
-                HeaderText = "Edit",
-                Text = "Edit",
-                UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                HeaderText = "",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                Width = 50,
+                DividerWidth = 10
             };
 
-            // Create Disconnect Button Column
-            DataGridViewButtonColumn disconnectButtonColumn = new DataGridViewButtonColumn
+            // Add Disconnect Button Column
+            DataGridViewImageColumn disconnectButtonColumn = new DataGridViewImageColumn
             {
                 Name = "disconnectButton",
-                HeaderText = "Disconnect",
-                Text = "Disconnect",
-                UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                HeaderText = "",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                Width = 50,
+                DividerWidth = 10
             };
 
-            // Add columns at the end (last position)
             connectedsubscribersGridView.Columns.Add(editButtonColumn);
             connectedsubscribersGridView.Columns.Add(disconnectButtonColumn);
         }
+
+        private void ConnectedsubscribersGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index ||
+                    e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
+                {
+                    // Prevent default paint
+                    e.Handled = true;
+
+                    // Set your custom background color
+                    Color bgColor = Color.FromArgb(255, 255, 252);
+                    using (SolidBrush brush = new SolidBrush(bgColor))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    // Draw the image
+                    Image image = null;
+                    if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\edit.png");
+                    }
+                    else if (e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
+                    }
+
+                    if (image != null)
+                    {
+                        var imageSize = new Size(25, 25); // Desired size
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
+                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
+                    }
+                }
+            }
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index ||
+                    e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
+                {
+                    e.Handled = true;
+
+                    Color bgColor = Color.FromArgb(255, 255, 252);
+                    using (SolidBrush brush = new SolidBrush(bgColor))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    Image image = null;
+                    if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\edit.png");
+                    }
+                    else if (e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
+                    }
+
+                    if (image != null)
+                    {
+                        var imageSize = new Size(25, 25);
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
+                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
+                    }
+                }
+            }
+
+            ApplyStatusStyle(e, "Status");
+        }
+
+        private void ApplyStatusStyle(DataGridViewCellPaintingEventArgs e, string columnName)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            if (connectedsubscribersGridView.Columns[e.ColumnIndex].DataPropertyName != columnName)
+                return;
+
+            string status = e.FormattedValue?.ToString()?.Trim();
+            if (string.IsNullOrEmpty(status))
+                return;
+
+            // Colors
+            Color backColor;
+            Color textColor = Color.Black;
+            Color borderColor;
+
+            switch (status.ToLower())
+            {
+                case "active":
+                    backColor = Color.FromArgb(206, 255, 176);
+                    borderColor = Color.FromArgb(75, 121, 47);
+                    textColor = Color.FromArgb(75, 121, 47);
+                    break;
+                case "past due":
+                    backColor = Color.FromArgb(247, 229, 174);
+                    borderColor = Color.FromArgb(160, 122, 4);
+                    textColor = Color.FromArgb(160, 122, 4);
+                    break;
+                case "overdue":
+                    backColor = Color.FromArgb(237, 203, 202);
+                    borderColor = Color.FromArgb(178, 59, 46);
+                    textColor = Color.FromArgb(178, 59, 46);
+                    break;
+                default:
+                    backColor = Color.FromArgb(241, 240, 233);
+                    borderColor = Color.Gray;
+                    textColor = Color.Gray;
+                    break;
+            }
+
+            e.Handled = true;
+            e.PaintBackground(e.CellBounds, true);
+
+            using (SolidBrush brush = new SolidBrush(backColor))
+            using (Pen borderPen = new Pen(borderColor, 1)) // thicker border
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            {
+                SizeF textSize = e.Graphics.MeasureString(status, e.CellStyle.Font);
+                int paddingX = 15;
+                int paddingY = 5;
+                int badgeWidth = (int)textSize.Width + paddingX * 2;
+                int badgeHeight = (int)textSize.Height + paddingY;
+
+                int badgeX = e.CellBounds.X + (e.CellBounds.Width - badgeWidth) / 2;
+                int badgeY = e.CellBounds.Y + (e.CellBounds.Height - badgeHeight) / 2;
+                Rectangle rect = new Rectangle(badgeX, badgeY, badgeWidth, badgeHeight);
+
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                GraphicsPath path = GetRoundedRectanglePath(rect, badgeHeight / 1);
+
+                e.Graphics.FillPath(brush, path);
+                e.Graphics.DrawPath(borderPen, path);
+                e.Graphics.DrawString(status, e.CellStyle.Font, textBrush, rect, sf);
+            }
+        }
+
+
+        private GraphicsPath GetRoundedRectanglePath(Rectangle bounds, int cornerRadius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(bounds.X, bounds.Y, cornerRadius, cornerRadius, 180, 90);
+            path.AddArc(bounds.Right - cornerRadius, bounds.Y, cornerRadius, cornerRadius, 270, 90);
+            path.AddArc(bounds.Right - cornerRadius, bounds.Bottom - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            path.AddArc(bounds.X, bounds.Bottom - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
+
 
         private void UpdateStatuses()
         {
@@ -607,6 +721,10 @@ namespace ISPSMS_JUHACA.MainPages
         private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void connectedsubscribersGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

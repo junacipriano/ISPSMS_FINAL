@@ -59,6 +59,7 @@
             // 
             subIDTextBox.CausesValidation = false;
             subIDTextBox.CharacterCasing = CharacterCasing.Upper;
+            subIDTextBox.Enabled = false;
             subIDTextBox.Location = new Point(43, 59);
             subIDTextBox.MaximumSize = new Size(60, 60);
             subIDTextBox.MinimumSize = new Size(60, 55);
@@ -77,6 +78,7 @@
             // 
             // nameTextBox
             // 
+            nameTextBox.Enabled = false;
             nameTextBox.Location = new Point(109, 64);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(211, 37);
@@ -90,6 +92,7 @@
             // 
             // statusTextBox
             // 
+            statusTextBox.Enabled = false;
             statusTextBox.Location = new Point(110, 91);
             statusTextBox.Name = "statusTextBox";
             statusTextBox.Size = new Size(151, 27);
@@ -127,6 +130,7 @@
             // 
             // dueDateTextBox
             // 
+            dueDateTextBox.Enabled = false;
             dueDateTextBox.Location = new Point(192, 125);
             dueDateTextBox.Name = "dueDateTextBox";
             dueDateTextBox.Size = new Size(169, 24);
@@ -141,6 +145,7 @@
             // 
             // kryptonTextBox6
             // 
+            kryptonTextBox6.Enabled = false;
             kryptonTextBox6.Location = new Point(45, 171);
             kryptonTextBox6.Name = "kryptonTextBox6";
             kryptonTextBox6.Size = new Size(89, 24);
@@ -154,6 +159,7 @@
             // 
             // kryptonTextBox8
             // 
+            kryptonTextBox8.Enabled = false;
             kryptonTextBox8.Location = new Point(45, 212);
             kryptonTextBox8.Name = "kryptonTextBox8";
             kryptonTextBox8.Size = new Size(89, 24);
@@ -167,6 +173,7 @@
             // 
             // kryptonTextBox9
             // 
+            kryptonTextBox9.Enabled = false;
             kryptonTextBox9.Location = new Point(43, 296);
             kryptonTextBox9.Name = "kryptonTextBox9";
             kryptonTextBox9.Size = new Size(89, 24);
@@ -190,6 +197,7 @@
             // 
             // kryptonTextBox11
             // 
+            kryptonTextBox11.Enabled = false;
             kryptonTextBox11.Location = new Point(230, 171);
             kryptonTextBox11.Name = "kryptonTextBox11";
             kryptonTextBox11.Size = new Size(133, 24);
@@ -204,6 +212,7 @@
             // 
             // addressTextBox
             // 
+            addressTextBox.Enabled = false;
             addressTextBox.Location = new Point(164, 212);
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(199, 24);
@@ -218,6 +227,7 @@
             // 
             // amountTextBox
             // 
+            amountTextBox.Enabled = false;
             amountTextBox.Location = new Point(43, 316);
             amountTextBox.Name = "amountTextBox";
             amountTextBox.Size = new Size(113, 28);
@@ -235,6 +245,10 @@
             payBtn.Location = new Point(270, 307);
             payBtn.Margin = new Padding(0);
             payBtn.Name = "payBtn";
+            payBtn.OverrideDefault.Back.Color1 = Color.FromArgb(82, 147, 157);
+            payBtn.OverrideDefault.Back.Color2 = Color.FromArgb(82, 147, 157);
+            payBtn.OverrideFocus.Back.Color1 = Color.FromArgb(82, 147, 157);
+            payBtn.OverrideFocus.Back.Color2 = Color.FromArgb(82, 147, 157);
             payBtn.Size = new Size(91, 37);
             payBtn.StateCommon.Back.Color1 = Color.FromArgb(94, 167, 178);
             payBtn.StateCommon.Back.Color2 = Color.FromArgb(94, 167, 178);
@@ -266,6 +280,7 @@
             // 
             // planTextBox
             // 
+            planTextBox.Enabled = false;
             planTextBox.Location = new Point(230, 252);
             planTextBox.Name = "planTextBox";
             planTextBox.Size = new Size(133, 24);
@@ -280,6 +295,7 @@
             // 
             // kryptonTextBox2
             // 
+            kryptonTextBox2.Enabled = false;
             kryptonTextBox2.Location = new Point(45, 252);
             kryptonTextBox2.Name = "kryptonTextBox2";
             kryptonTextBox2.Size = new Size(89, 24);
@@ -294,6 +310,7 @@
             // 
             // kryptonTextBox1
             // 
+            kryptonTextBox1.Enabled = false;
             kryptonTextBox1.Location = new Point(16, 27);
             kryptonTextBox1.MaximumSize = new Size(379, 354);
             kryptonTextBox1.MinimumSize = new Size(379, 354);

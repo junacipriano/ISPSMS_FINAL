@@ -1,8 +1,11 @@
 ﻿using Domain.Models;
+using Infastructure.Data.Repositories;
 using Infastructure.Data.Repositories.IRepositories;
 using ISPSMS_JUHACA.Views;
 using ISPSMS_JUHACA.Views.IVews;
 using Krypton.Toolkit;
+using Microsoft.EntityFrameworkCore;
+using SkiaSharp;
 using System.Globalization;
 
 
@@ -31,18 +34,26 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
             _currentUserName = _mainForm.GetUsername();
             _currentUserRole = _mainForm.GetUserRole();
-
             LoadBillingCheckoutData(ConSubsEntity);
+            noteComboBox.Items.Clear();
+            noteComboBox.Items.Add("None");
+            noteComboBox.Items.Add("Advance");
+            noteComboBox.Items.Add("Discount");
+            noteComboBox.Items.Add("Partial");
+            noteComboBox.SelectedIndex = 0;
+
         }
 
         private void BillingCheckout_Load(object sender, EventArgs e)
         {
         }
 
-        public void LoadBillingCheckoutData(ConnectedSubscribers entity)
+        public async void LoadBillingCheckoutData(ConnectedSubscribers entity)
         {
             if (ConSubsEntity != null)
             {
+                var culture = new CultureInfo("fil-PH");
+
                 subIDTextBox.Text = ConSubsEntity.subs_id.ToString();
                 mainNameTextBox.Text = ConSubsEntity.Conn_Name;
                 subNameTextBox.Text = ConSubsEntity.Conn_Name;
@@ -50,9 +61,20 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 addressTextBox.Text = ConSubsEntity.Address;
                 dueDateTextBox.Text = ConSubsEntity.CurrentDuedate.ToString("MMMM d, yyyy");
                 planTextBox.Text = ConSubsEntity.Plan;
-                amountTextBox.Text = ConSubsEntity.MonthlyCharge.ToString("C");
+                amountTextBox.Text = ConSubsEntity.MonthlyCharge.ToString("C", culture);
+                receiptNoTextBox.Text = LoadNextReceiptNumber().ToString();
             }
         }
+        private int LoadNextReceiptNumber()
+        {
+            int nextId = 1;
+            if (_dbContext.transactionsRepository.GetAll().Any())
+            {
+                nextId = _dbContext.transactionsRepository.GetAll().Max(t => t.trans_id) + 1;
+            }
+            return nextId;
+        }
+
 
         private void confirmButton_Click(object sender, EventArgs e)
         {

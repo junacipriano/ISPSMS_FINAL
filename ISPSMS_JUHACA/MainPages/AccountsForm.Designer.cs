@@ -30,237 +30,246 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            accountsGridView = new DataGridView();
-            accountidDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            usernameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            accountNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            accountPasswordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            accountRoleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
-            Delete = new DataGridViewButtonColumn();
             accountsBindingSource = new BindingSource(components);
-            kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
+            kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
             comboFilter = new Krypton.Toolkit.KryptonComboBox();
-            kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            ((System.ComponentModel.ISupportInitialize)accountsGridView).BeginInit();
+            accountsGridView = new Krypton.Toolkit.KryptonDataGridView();
+            kryptonDataGridViewTextBoxColumn1 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn2 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn3 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn4 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            kryptonDataGridViewTextBoxColumn5 = new Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            editButton = new DataGridViewImageColumn();
+            deleteButton = new DataGridViewImageColumn();
+            bgPanel = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)accountsBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonPanel1).BeginInit();
-            kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)comboFilter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accountsGridView).BeginInit();
             SuspendLayout();
-            // 
-            // accountsGridView
-            // 
-            dataGridViewCellStyle1.BackColor = SystemColors.Info;
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            accountsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            accountsGridView.AutoGenerateColumns = false;
-            accountsGridView.BackgroundColor = SystemColors.Info;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            accountsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            accountsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            accountsGridView.Columns.AddRange(new DataGridViewColumn[] { accountidDataGridViewTextBoxColumn, usernameDataGridViewTextBoxColumn, accountNameDataGridViewTextBoxColumn, accountPasswordDataGridViewTextBoxColumn, accountRoleDataGridViewTextBoxColumn, Edit, Delete });
-            accountsGridView.DataSource = accountsBindingSource;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = SystemColors.Info;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            accountsGridView.DefaultCellStyle = dataGridViewCellStyle10;
-            accountsGridView.Dock = DockStyle.Fill;
-            accountsGridView.Location = new Point(0, 71);
-            accountsGridView.Margin = new Padding(3, 4, 3, 4);
-            accountsGridView.Name = "accountsGridView";
-            accountsGridView.RowHeadersWidth = 51;
-            accountsGridView.Size = new Size(1241, 653);
-            accountsGridView.TabIndex = 0;
-            accountsGridView.CellContentClick += accountsGridView_CellContentClick_1;
-            // 
-            // accountidDataGridViewTextBoxColumn
-            // 
-            accountidDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            accountidDataGridViewTextBoxColumn.DataPropertyName = "account_id";
-            dataGridViewCellStyle3.BackColor = SystemColors.Info;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            accountidDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            accountidDataGridViewTextBoxColumn.HeaderText = "account_id";
-            accountidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            accountidDataGridViewTextBoxColumn.Name = "accountidDataGridViewTextBoxColumn";
-            accountidDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            usernameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            dataGridViewCellStyle4.BackColor = SystemColors.Info;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            usernameDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // accountNameDataGridViewTextBoxColumn
-            // 
-            accountNameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            accountNameDataGridViewTextBoxColumn.DataPropertyName = "AccountName";
-            dataGridViewCellStyle5.BackColor = SystemColors.Info;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            accountNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            accountNameDataGridViewTextBoxColumn.HeaderText = "AccountName";
-            accountNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            accountNameDataGridViewTextBoxColumn.Name = "accountNameDataGridViewTextBoxColumn";
-            // 
-            // accountPasswordDataGridViewTextBoxColumn
-            // 
-            accountPasswordDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            accountPasswordDataGridViewTextBoxColumn.DataPropertyName = "AccountPassword";
-            dataGridViewCellStyle6.BackColor = SystemColors.Info;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            accountPasswordDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            accountPasswordDataGridViewTextBoxColumn.HeaderText = "AccountPassword";
-            accountPasswordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            accountPasswordDataGridViewTextBoxColumn.Name = "accountPasswordDataGridViewTextBoxColumn";
-            accountPasswordDataGridViewTextBoxColumn.Width = 153;
-            // 
-            // accountRoleDataGridViewTextBoxColumn
-            // 
-            accountRoleDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            accountRoleDataGridViewTextBoxColumn.DataPropertyName = "AccountRole";
-            dataGridViewCellStyle7.BackColor = SystemColors.Info;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            accountRoleDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            accountRoleDataGridViewTextBoxColumn.HeaderText = "AccountRole";
-            accountRoleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            accountRoleDataGridViewTextBoxColumn.Name = "accountRoleDataGridViewTextBoxColumn";
-            accountRoleDataGridViewTextBoxColumn.Width = 122;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.DataPropertyName = "account_id";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Info;
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            Edit.DefaultCellStyle = dataGridViewCellStyle8;
-            Edit.HeaderText = "Edit";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            Edit.Width = 64;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.DataPropertyName = "account_id";
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = SystemColors.Info;
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            Delete.DefaultCellStyle = dataGridViewCellStyle9;
-            Delete.HeaderText = "Delete";
-            Delete.MinimumWidth = 6;
-            Delete.Name = "Delete";
-            Delete.Width = 59;
             // 
             // accountsBindingSource
             // 
             accountsBindingSource.DataSource = typeof(Domain.Models.Accounts);
             // 
-            // kryptonPanel1
+            // kryptonBorderEdge1
             // 
-            kryptonPanel1.Controls.Add(kryptonLabel2);
-            kryptonPanel1.Controls.Add(comboFilter);
-            kryptonPanel1.Controls.Add(kryptonLabel1);
-            kryptonPanel1.Dock = DockStyle.Top;
-            kryptonPanel1.Location = new Point(0, 0);
-            kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(1241, 71);
-            kryptonPanel1.TabIndex = 3;
+            kryptonBorderEdge1.Location = new Point(137, 86);
+            kryptonBorderEdge1.Name = "kryptonBorderEdge1";
+            kryptonBorderEdge1.Size = new Size(1704, 1);
+            kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(182, 182, 182);
+            kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
-            // kryptonLabel2
+            // kryptonLabel10
             // 
-            kryptonLabel2.Location = new Point(322, 19);
-            kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(59, 24);
-            kryptonLabel2.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kryptonLabel2.TabIndex = 4;
-            kryptonLabel2.Values.Text = "Filter:";
+            kryptonLabel10.Location = new Point(128, 40);
+            kryptonLabel10.Name = "kryptonLabel10";
+            kryptonLabel10.Size = new Size(142, 36);
+            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel10.TabIndex = 14;
+            kryptonLabel10.Values.Text = "Accounts";
             // 
             // comboFilter
             // 
-            comboFilter.DropDownWidth = 152;
+            comboFilter.AlwaysActive = false;
+            comboFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboFilter.DropDownWidth = 96;
             comboFilter.Items.AddRange(new object[] { "ALL", "CEO", "ADMIN", "DEFAULT" });
-            comboFilter.Location = new Point(403, 17);
+            comboFilter.Location = new Point(1691, 36);
+            comboFilter.MaximumSize = new Size(150, 60);
+            comboFilter.MinimumSize = new Size(100, 40);
             comboFilter.Name = "comboFilter";
-            comboFilter.Size = new Size(152, 26);
-            comboFilter.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            comboFilter.TabIndex = 3;
-            comboFilter.Text = "ALL";
+            comboFilter.Size = new Size(150, 40);
+            comboFilter.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(255, 255, 252);
+            comboFilter.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(205, 205, 205);
+            comboFilter.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(205, 205, 205);
+            comboFilter.StateCommon.ComboBox.Border.Rounding = 20F;
+            comboFilter.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(52, 72, 100);
+            comboFilter.StateCommon.ComboBox.Content.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboFilter.StateCommon.DropBack.Color1 = Color.FromArgb(255, 255, 252);
+            comboFilter.StateCommon.DropBack.Color2 = Color.FromArgb(255, 255, 252);
+            comboFilter.StateCommon.Item.Border.Rounding = 20F;
+            comboFilter.StateCommon.Item.Content.DrawFocus = Krypton.Toolkit.InheritBool.False;
+            comboFilter.TabIndex = 63;
+            comboFilter.TabStop = false;
             comboFilter.SelectedIndexChanged += comboFilter_SelectedIndexChanged;
             // 
-            // kryptonLabel1
+            // accountsGridView
             // 
-            kryptonLabel1.Location = new Point(49, 12);
-            kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(115, 31);
-            kryptonLabel1.StateCommon.ShortText.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            kryptonLabel1.TabIndex = 2;
-            kryptonLabel1.Values.Text = "Accounts";
+            accountsGridView.AllowUserToAddRows = false;
+            accountsGridView.AllowUserToResizeColumns = false;
+            accountsGridView.AllowUserToResizeRows = false;
+            accountsGridView.AutoGenerateColumns = false;
+            accountsGridView.BorderStyle = BorderStyle.None;
+            accountsGridView.ColumnHeadersHeight = 30;
+            accountsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            accountsGridView.Columns.AddRange(new DataGridViewColumn[] { kryptonDataGridViewTextBoxColumn1, kryptonDataGridViewTextBoxColumn2, kryptonDataGridViewTextBoxColumn3, kryptonDataGridViewTextBoxColumn4, kryptonDataGridViewTextBoxColumn5, editButton, deleteButton });
+            accountsGridView.DataSource = accountsBindingSource;
+            accountsGridView.Location = new Point(167, 123);
+            accountsGridView.Name = "accountsGridView";
+            accountsGridView.ReadOnly = true;
+            accountsGridView.RowHeadersVisible = false;
+            accountsGridView.RowHeadersWidth = 5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(52, 72, 100);
+            dataGridViewCellStyle1.Padding = new Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(217, 217, 217);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(234, 98, 38);
+            accountsGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            accountsGridView.RowTemplate.DefaultCellStyle.Padding = new Padding(5);
+            accountsGridView.RowTemplate.Height = 40;
+            accountsGridView.RowTemplate.ReadOnly = true;
+            accountsGridView.RowTemplate.Resizable = DataGridViewTriState.False;
+            accountsGridView.ScrollBars = ScrollBars.Vertical;
+            accountsGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            accountsGridView.Size = new Size(1645, 735);
+            accountsGridView.StateCommon.Background.Color1 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            accountsGridView.StateCommon.DataCell.Back.Color1 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.DataCell.Back.Color2 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.DataCell.Border.Color1 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.DataCell.Border.Color2 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.HeaderColumn.Back.Color1 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.HeaderColumn.Back.Color2 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.HeaderColumn.Border.Color1 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.HeaderColumn.Border.Color2 = Color.FromArgb(255, 255, 252);
+            accountsGridView.StateCommon.HeaderColumn.Content.Color1 = Color.FromArgb(166, 166, 166);
+            accountsGridView.StateCommon.HeaderColumn.Content.Color2 = Color.FromArgb(166, 166, 166);
+            accountsGridView.StateCommon.HeaderColumn.Content.Font = new Font("Helvetica", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            accountsGridView.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            accountsGridView.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            accountsGridView.StateCommon.HeaderRow.Border.Rounding = 20F;
+            accountsGridView.StateCommon.HeaderRow.Content.Color1 = Color.FromArgb(52, 72, 100);
+            accountsGridView.StateCommon.HeaderRow.Content.Color2 = Color.FromArgb(52, 72, 100);
+            accountsGridView.StateCommon.HeaderRow.Content.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            accountsGridView.TabIndex = 64;
+            accountsGridView.TabStop = false;
+            accountsGridView.CellContentClick += accountsGridView_CellContentClick_1;
+            accountsGridView.CellPainting += accountsGridView_CellPainting;
+            // 
+            // kryptonDataGridViewTextBoxColumn1
+            // 
+            kryptonDataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn1.DataPropertyName = "account_id";
+            kryptonDataGridViewTextBoxColumn1.HeaderText = "Account ID";
+            kryptonDataGridViewTextBoxColumn1.MinimumWidth = 100;
+            kryptonDataGridViewTextBoxColumn1.Name = "kryptonDataGridViewTextBoxColumn1";
+            kryptonDataGridViewTextBoxColumn1.ReadOnly = true;
+            kryptonDataGridViewTextBoxColumn1.Width = 102;
+            // 
+            // kryptonDataGridViewTextBoxColumn2
+            // 
+            kryptonDataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn2.DataPropertyName = "Username";
+            kryptonDataGridViewTextBoxColumn2.HeaderText = "Username";
+            kryptonDataGridViewTextBoxColumn2.MinimumWidth = 400;
+            kryptonDataGridViewTextBoxColumn2.Name = "kryptonDataGridViewTextBoxColumn2";
+            kryptonDataGridViewTextBoxColumn2.ReadOnly = true;
+            kryptonDataGridViewTextBoxColumn2.Width = 400;
+            // 
+            // kryptonDataGridViewTextBoxColumn3
+            // 
+            kryptonDataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn3.DataPropertyName = "AccountName";
+            kryptonDataGridViewTextBoxColumn3.HeaderText = "Account Name";
+            kryptonDataGridViewTextBoxColumn3.MinimumWidth = 400;
+            kryptonDataGridViewTextBoxColumn3.Name = "kryptonDataGridViewTextBoxColumn3";
+            kryptonDataGridViewTextBoxColumn3.ReadOnly = true;
+            kryptonDataGridViewTextBoxColumn3.Width = 400;
+            // 
+            // kryptonDataGridViewTextBoxColumn4
+            // 
+            kryptonDataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn4.DataPropertyName = "AccountPassword";
+            kryptonDataGridViewTextBoxColumn4.HeaderText = "Password";
+            kryptonDataGridViewTextBoxColumn4.MinimumWidth = 400;
+            kryptonDataGridViewTextBoxColumn4.Name = "kryptonDataGridViewTextBoxColumn4";
+            kryptonDataGridViewTextBoxColumn4.ReadOnly = true;
+            kryptonDataGridViewTextBoxColumn4.Width = 400;
+            // 
+            // kryptonDataGridViewTextBoxColumn5
+            // 
+            kryptonDataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            kryptonDataGridViewTextBoxColumn5.DataPropertyName = "AccountRole";
+            kryptonDataGridViewTextBoxColumn5.HeaderText = "Role";
+            kryptonDataGridViewTextBoxColumn5.MinimumWidth = 250;
+            kryptonDataGridViewTextBoxColumn5.Name = "kryptonDataGridViewTextBoxColumn5";
+            kryptonDataGridViewTextBoxColumn5.ReadOnly = true;
+            kryptonDataGridViewTextBoxColumn5.Width = 250;
+            // 
+            // editButton
+            // 
+            editButton.DataPropertyName = "subs_id";
+            editButton.FillWeight = 20F;
+            editButton.HeaderText = "";
+            editButton.MinimumWidth = 50;
+            editButton.Name = "editButton";
+            editButton.ReadOnly = true;
+            editButton.Resizable = DataGridViewTriState.False;
+            editButton.Width = 50;
+            // 
+            // deleteButton
+            // 
+            deleteButton.DataPropertyName = "subs_id";
+            deleteButton.FillWeight = 20F;
+            deleteButton.HeaderText = "";
+            deleteButton.MinimumWidth = 50;
+            deleteButton.Name = "deleteButton";
+            deleteButton.ReadOnly = true;
+            deleteButton.Resizable = DataGridViewTriState.False;
+            deleteButton.Width = 50;
+            // 
+            // bgPanel
+            // 
+            bgPanel.AccessibleRole = AccessibleRole.None;
+            bgPanel.AlwaysActive = false;
+            bgPanel.Location = new Point(137, 108);
+            bgPanel.MaximumSize = new Size(1674, 663);
+            bgPanel.MinimumSize = new Size(1704, 780);
+            bgPanel.Name = "bgPanel";
+            bgPanel.Size = new Size(1704, 780);
+            bgPanel.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            bgPanel.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
+            bgPanel.StateCommon.Border.Rounding = 15F;
+            bgPanel.TabIndex = 65;
             // 
             // AccountsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1241, 724);
+            BackColor = Color.FromArgb(241, 240, 233);
+            ClientSize = new Size(1906, 929);
+            Controls.Add(comboFilter);
+            Controls.Add(kryptonBorderEdge1);
+            Controls.Add(kryptonLabel10);
             Controls.Add(accountsGridView);
-            Controls.Add(kryptonPanel1);
+            Controls.Add(bgPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "AccountsForm";
             Text = "AccountsForm";
-            ((System.ComponentModel.ISupportInitialize)accountsGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)accountsBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonPanel1).EndInit();
-            kryptonPanel1.ResumeLayout(false);
-            kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)comboFilter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accountsGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private DataGridView accountsGridView;
         private BindingSource accountsBindingSource;
-        private DataGridViewTextBoxColumn accountidDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn accountNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn accountPasswordDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn accountRoleDataGridViewTextBoxColumn;
-        private DataGridViewButtonColumn Edit;
-        private DataGridViewButtonColumn Delete;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel10;
         private Krypton.Toolkit.KryptonComboBox comboFilter;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonDataGridView accountsGridView;
+        private Krypton.Toolkit.KryptonTextBox bgPanel;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn1;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn2;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn3;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn4;
+        private Krypton.Toolkit.KryptonDataGridViewTextBoxColumn kryptonDataGridViewTextBoxColumn5;
+        private DataGridViewImageColumn editButton;
+        private DataGridViewImageColumn deleteButton;
     }
 }

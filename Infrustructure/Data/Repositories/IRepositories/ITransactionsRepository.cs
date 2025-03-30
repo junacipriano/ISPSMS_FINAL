@@ -13,6 +13,7 @@ namespace Infastructure.Data.Repositories.IRepositories
         Task<IEnumerable<Transactions>> GetAllAsync();  // Change List<T> to IEnumerable<T>
         Task<IEnumerable<Transactions>> GetByDateAsync(DateTime date);
         Task<IEnumerable<Transactions>> GetPaginatedAsync(int pageNumber, int pageSize, bool orderByDescending);
+        Task<IEnumerable<(DateTime Date, decimal TotalAmount)>> GetDailyTransactionTotalsAsync();
         Task<int> GetTotalCountAsync();
         Task<decimal> GetTotalPaidAmountAsync();
         float NorthTotalPaidAmount();
@@ -20,6 +21,7 @@ namespace Infastructure.Data.Repositories.IRepositories
         float SanMiguelTotalPaidAmount();
         float SouthTotalPaidAmount();
         void Update(Transactions obj);
+
 
     }
 }

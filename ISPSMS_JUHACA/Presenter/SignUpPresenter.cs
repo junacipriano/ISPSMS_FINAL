@@ -2,6 +2,7 @@
 using BCrypt.Net;
 using Domain.Models;
 using Infastructure.Data.Repositories.IRepositories;
+using ISPSMS_JUHACA.Views;
 using ISPSMS_JUHACA.Views.IVews;
 
 namespace ISPSMS_JUHACA.Presenter
@@ -11,6 +12,7 @@ namespace ISPSMS_JUHACA.Presenter
         private readonly ISignUp _view;
         private readonly IUnitOfWork _dbContext;
         private readonly IAccountsRepository _repository;
+  
 
         public SignUpPresenter(ISignUp view, IUnitOfWork dbContext, IAccountsRepository repository)
         {
@@ -39,11 +41,13 @@ namespace ISPSMS_JUHACA.Presenter
                 _repository.Update(account);
                 _dbContext.Save();
                 _view.ShowMessage("Account created successfully.");
+                _view.ClearFields();
             }
             catch (Exception ex)
             {
                 _view.ShowError($"An error occurred: {ex.Message}");
             }
         }
+
     }
 }

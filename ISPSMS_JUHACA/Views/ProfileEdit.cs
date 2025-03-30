@@ -23,7 +23,7 @@ namespace ISPSMS_JUHACA.Views
             InitializeComponent();
             _context = unitOfWork;
             _userId = userId;
-           _currentUserName = accountName;
+            _currentUserName = accountName;
             _currentUserRole = role;
 
             try
@@ -60,17 +60,15 @@ namespace ISPSMS_JUHACA.Views
                 }
 
                 tbUsername.Text = username;
-                tbPass.Text = new string('*', password.Length);
-                tbConfirmPass.Text = password;
+                tbPass.UseSystemPasswordChar = true; // Mask the password
+                tbConfirmPass.UseSystemPasswordChar = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while loading profile: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
-
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -83,6 +81,13 @@ namespace ISPSMS_JUHACA.Views
 
             try
             {
+                // Validate password fields
+                if (string.IsNullOrWhiteSpace(tbPass.Text) || string.IsNullOrWhiteSpace(tbConfirmPass.Text))
+                {
+                    MessageBox.Show("Password fields cannot be empty!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Validate password confirmation
                 if (tbPass.Text != tbConfirmPass.Text)
                 {
@@ -90,15 +95,23 @@ namespace ISPSMS_JUHACA.Views
                     return;
                 }
 
+                // Validate middle initial length (if provided)
+                if (!string.IsNullOrWhiteSpace(tbMi.Text) && tbMi.Text.Length > 1)
+                {
+                    MessageBox.Show("Middle initial should only be one letter.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Update account details
                 _account.AccountName = $"{tbFName.Text} {tbMi.Text} {tbLName.Text}".Trim();
                 _account.Username = tbUsername.Text;
 
-                // Hash the new password before saving
-                if (!string.IsNullOrWhiteSpace(tbPass.Text) && tbPass.Text != _actualPassword)
+                // Hash the new password before saving (only if changed)
+                if (tbPass.Text != _actualPassword)
                 {
                     _account.AccountPassword = BCrypt.Net.BCrypt.HashPassword(tbPass.Text);
                 }
+
                 LogActivity("Edited his/her account: " + _account.AccountName);
 
                 _context.accountsRepository.Update(_account);
@@ -113,27 +126,25 @@ namespace ISPSMS_JUHACA.Views
             }
         }
 
-
-
         private void Switch_CheckedChanged(object sender, EventArgs e)
         {
-            _isPasswordVisible = Switch.Checked;
+            try
+            {
+                _isPasswordVisible = Switch.Checked;
 
-            if (_isPasswordVisible)
-            {
-                tbPass.Text = _account.AccountPassword; // Show password
-                tbConfirmPass.Text = _account.AccountPassword;
+                tbPass.UseSystemPasswordChar = !_isPasswordVisible;
+                tbConfirmPass.UseSystemPasswordChar = !_isPasswordVisible;
             }
-            else
+            catch (Exception ex)
             {
-                tbPass.Text = new string('*', tbPass.Text.Length); // Mask password
-                tbConfirmPass.Text = new string('*', tbConfirmPass.Text.Length);
+                MessageBox.Show($"Error while toggling password visibility: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void LogActivity(string activityDescription)
         {
-
+            try
+            {
                 var activity = new Domain.Models.Activity
                 {
                     AccountName = _currentUserName,
@@ -144,8 +155,11 @@ namespace ISPSMS_JUHACA.Views
 
                 _context.activityRepository.Update(activity);
                 _context.Save();
-   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to log activity: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
     }
-    }
+}

@@ -16,5 +16,6 @@ namespace ISPSMS_JUHACA.Views.IVews
         void ShowMessage(string message);
         void ShowError(string message);
         event EventHandler Save;
+        void ClearFields();
     }
 }

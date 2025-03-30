@@ -16,6 +16,7 @@ namespace ISPSMS_JUHACA.Views
     {
         public event EventHandler Login;
         public event EventHandler SignUp;
+      
 
         public LoginForm(Infastructure.Data.Repositories.IRepositories.IUnitOfWork unitOfWork)
         {
@@ -85,7 +86,7 @@ namespace ISPSMS_JUHACA.Views
         {
             this.Hide();
         }
-    
+
 
         private bool ValidateInputs()
         {
@@ -125,6 +126,30 @@ namespace ISPSMS_JUHACA.Views
         private void btnSignUp_Click_1(object sender, EventArgs e)
         {
             SignUp?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ShowPass_Click(object sender, EventArgs e)
+        {
+
+            if (tbPassword.InvokeRequired)
+            {
+                tbPassword.Invoke(new Action(() => TogglePasswordVisibility()));
+            }
+            else
+            {
+                TogglePasswordVisibility();
+            }
+
+        }
+
+        private void TogglePasswordVisibility()
+        {
+            tbPassword.Password = !tbPassword.Password;
+
+            // Optionally change button text/icon for better UX
+            ShowPass.Text = tbPassword.Password ? "Show" : "Hide";
+
+            tbPassword.Refresh();
         }
     }
 }

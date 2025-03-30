@@ -23,8 +23,7 @@ namespace ISPSMS_JUHACA.MainPages
         internal bool isEdit;
         private MainForm mainForm;
         private readonly SubscriberPage _subscribersForm;
-
-        // Pagination
+        private int totalItems;
         private int currentPage = 1;
         private const int itemsPerPage = 20;
 
@@ -48,6 +47,7 @@ namespace ISPSMS_JUHACA.MainPages
                     Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500,
                     Accent.LightBlue200, TextShade.WHITE
                 );
+
             }
             catch (Exception ex)
             {
@@ -66,23 +66,28 @@ namespace ISPSMS_JUHACA.MainPages
                 Visible = false
             };
             billingFlowPanel.Controls.Add(lblLoading);
+
+          
         }
 
         private async void BillingPage_Load(object sender, EventArgs e)
         {
+            totalItems = await Task.Run(() =>
+                dbContext.connectedSubscriberRepository.GetAll().Count()
+            );
             await LoadBillingItemsAsync();
+
         }
 
         // Asynchronous method to load billing items
         public async Task LoadBillingItemsAsync(int page = 1)
         {
-            // Disable pagination buttons while loading
             btnNext.Enabled = false;
             btnPrev.Enabled = false;
-            lblLoading.Visible = true; // Show loading indicator
+            lblLoading.Visible = true;
 
             billingFlowPanel.Controls.Clear();
-            billingFlowPanel.Controls.Add(lblLoading); // Keep label visible
+            billingFlowPanel.Controls.Add(lblLoading);
 
             currentPage = page;
 
@@ -95,7 +100,7 @@ namespace ISPSMS_JUHACA.MainPages
                 .ToList()
             );
 
-            lblLoading.Visible = false; // Hide loading indicator
+            lblLoading.Visible = false;
 
             if (!subscribers.Any())
             {
@@ -110,16 +115,18 @@ namespace ISPSMS_JUHACA.MainPages
                     TopLevel = false,
                     Dock = DockStyle.Top
                 };
-
                 billingItem.ConSubsEntity = subscriber;
                 billingItem.LoadBillingItemData();
                 billingFlowPanel.Controls.Add(billingItem);
                 billingItem.Show();
             }
 
-            // Enable buttons after loading is complete
-            btnNext.Enabled = subscribers.Count == itemsPerPage; // Enable if more pages exist
-            btnPrev.Enabled = currentPage > 1; // Enable if not on the first page
+            btnNext.Enabled = subscribers.Count == itemsPerPage;
+            btnPrev.Enabled = currentPage > 1;
+
+            int start = ((currentPage - 1) * itemsPerPage) + 1;
+            int end = start + subscribers.Count - 1;
+            paginationStatusTextBox.Text = $"{start}-{end} of {totalItems}";
         }
 
         // Pagination: Load Next Page
@@ -170,12 +177,14 @@ namespace ISPSMS_JUHACA.MainPages
                 billingItem.ConSubsEntity = subscriber;
                 billingItem.LoadBillingItemData();
                 billingFlowPanel.Controls.Add(billingItem);
-                billingItem.Show();
+                billingItem.Show(); 
             }
 
             // Re-enable buttons after filtering
             btnNext.Enabled = subscribers.Count == itemsPerPage;
             btnPrev.Enabled = currentPage > 1;
         }
+
     }
+
 }

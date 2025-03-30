@@ -22,31 +22,9 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             this.mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm));
 
-            // Set DateFilter to today's date
             DateFilter.Value = DateTime.Today;
 
-            // Load activities for today by default
             getActivity(DateTime.Today);
-
-            // Attach event handler for formatting
-            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
-
-            // Ensure DataGridView headers are visible
-            ConfigureDataGridView();
-        }
-
-        private void ConfigureDataGridView()
-        {
-            dataGridView1.ColumnHeadersVisible = true;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.RowHeadersVisible = false; // Optional: Hide row headers
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightBlue; // Better selection visibility
-
-            DateFilter.BackColor = Color.LightGray;
         }
 
         public void getActivity(DateTime? selectedDate = null)
@@ -69,7 +47,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 }
 
                 dataGridView1.DataSource = activities;
- 
+
 
                 // Force refresh to apply formatting
                 dataGridView1.Refresh();

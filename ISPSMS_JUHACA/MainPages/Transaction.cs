@@ -15,7 +15,10 @@ using ISPSMS_JUHACA.Views;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using OfficeOpenXml;
-using ISPSMS_JUHACA.Views.toPrintData;
+using ISPSMS_JUHACA.toPrintData;
+using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
+using System.Globalization;
 
 namespace ISPSMS_JUHACA.MainPages
 {
@@ -26,8 +29,14 @@ namespace ISPSMS_JUHACA.MainPages
         private readonly BindingSource _bindingSource;
         private bool _isLoading = false;
         private Label _loadingLabel;
+        private int _currentPage = 1;
+        private int _itemsPerPage = 10;
+        private int _totalItems = 0;
+        private List<Transactions> _currentTransactions = new List<Transactions>();
+        private readonly Timer updateTimer = new Timer { Interval = 86400000 };
 
         public BindingSource BindingSource => _bindingSource;
+
 
         public Transaction(IUnitOfWork dbContext, MainForm mainForm)
         {
@@ -41,17 +50,19 @@ namespace ISPSMS_JUHACA.MainPages
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme =
-                new MaterialSkin.ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            // Enable double buffering on the existing flowLayoutPanel1
             flowLayoutPanel1.GetType().GetProperty("DoubleBuffered",
-                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
-                ?.SetValue(flowLayoutPanel1, true, null);
+            System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+            ?.SetValue(flowLayoutPanel1, true, null);
+            flowLayoutPanel1.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel1.HorizontalScroll.Enabled = false;
+            flowLayoutPanel1.HorizontalScroll.Visible = false;
 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.WrapContents = false;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Time.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         public async void Transaction_Load(object sender, EventArgs e)
@@ -59,38 +70,73 @@ namespace ISPSMS_JUHACA.MainPages
             lblTotalAmount.Text = "Loading...";
             ShowLoadingIndicator(true);
             await Task.Delay(100);
-            await _presenter.LoadAllTransactionDataAsync();
+            var transactions = await _presenter.LoadAllTransactionDataAsync();
+            _currentTransactions = transactions;
+            _totalItems = transactions.Count;
+            _currentPage = 1;
+            DisplayTransactions(transactions, filterByDate: true);
+            UpdatePaginationButtons();
             ShowLoadingIndicator(false);
+
+            Timer timer = new Timer();
+            timer.Interval = 1;
+            timer.Tick += Timer_Tick;
+            timer.Start();
+            UpdateDateTime();
         }
+
 
         public void UpdatePaidAmountLabel(decimal totalPaidAmount)
         {
-            lblTotalAmount.Text = totalPaidAmount.ToString("C");
+            var culture = new CultureInfo("fil-PH");
+            lblTotalAmount.Text = totalPaidAmount.ToString("C", culture);
         }
 
-        public void DisplayTransactions(IEnumerable<Transactions> transactions)
+        public void SetPaginationData(int currentPage, int itemsPerPage, int totalItems)
+        {
+            _currentPage = currentPage;
+            _itemsPerPage = itemsPerPage;
+            _totalItems = totalItems;
+        }
+
+        public void DisplayTransactions(IEnumerable<Transactions> transactions, bool filterByDate = true)
         {
             flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.Controls.Clear();
+            var filteredTransactions = filterByDate
+              ? transactions.Where(t => t.TransactionDateTime.Date == kryptonDateTimePicker1.Value.Date).ToList()
+              : transactions.ToList();
 
-            // Avoid excessive UI operations
-            if (flowLayoutPanel1.Controls.Count > 0)
-            {
-                flowLayoutPanel1.Controls.Clear();
-            }
+            int totalFilteredItems = filteredTransactions.Count;
+            int startIndex = (_currentPage - 1) * _itemsPerPage;
+            int endIndex = Math.Min(startIndex + _itemsPerPage, totalFilteredItems);
 
-            foreach (var transaction in transactions)
+            var pagedTransactions = filteredTransactions
+                .Skip(startIndex)
+                .Take(_itemsPerPage);
+
+            foreach (var transaction in pagedTransactions)
             {
-                TransactionTemplate transactionTemplate = new TransactionTemplate(transaction)
+                TransactionTemplate template = new TransactionTemplate(transaction)
                 {
                     AutoSize = true
                 };
-                flowLayoutPanel1.Controls.Add(transactionTemplate);
-                transactionTemplate.Show();
+                flowLayoutPanel1.Controls.Add(template);
+                template.Show();
             }
 
             flowLayoutPanel1.ResumeLayout();
-        }
 
+            if (totalFilteredItems > 0)
+            {
+                paginationStatusTextBox.Text = $"{startIndex + 1}-{endIndex} of {totalFilteredItems}";
+            }
+            else
+            {
+                paginationStatusTextBox.Text = "No transactions found";
+            }
+            TotalTransactionDay.Text = totalFilteredItems.ToString();
+        }
 
         public void FilterData(string searchText)
         {
@@ -107,22 +153,59 @@ namespace ISPSMS_JUHACA.MainPages
             }
         }
 
-        private async void btnPreviousPage_Click(object sender, EventArgs e)
-        {
-            if (_isLoading) return;
-            await _presenter.LoadTransactionsPageAsync(false);
-        }
-
         private async void btnNextPage_Click(object sender, EventArgs e)
         {
             if (_isLoading) return;
-            await _presenter.LoadTransactionsPageAsync(true);
+            if ((_currentPage * _itemsPerPage) >= _totalItems) return; // No next page
+
+            _currentPage++;
+            DisplayTransactions(_currentTransactions, filterByDate: false);
+            UpdatePaginationButtons();
         }
+
+        private async void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (_isLoading) return;
+            if (_currentPage == 1) return; // No previous page
+
+            _currentPage--;
+            DisplayTransactions(_currentTransactions, filterByDate: false);
+            UpdatePaginationButtons();
+        }
+
 
         private async void kryptonDateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             DateTime selectedDate = kryptonDateTimePicker1.Value.Date;
-            await _presenter.LoadTransactionsByDateAsync(selectedDate);
+
+            try
+            {
+                _currentPage = 1;
+                var transactions = await _presenter.LoadTransactionsByDateAsync(selectedDate);
+                DisplayTransactions(transactions, filterByDate: false);
+
+                if (transactions == null || transactions.Count == 0)
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                    SetPaginationButtons(false, false);
+                    return;
+                }
+
+                _currentTransactions = transactions;
+                _totalItems = transactions.Count;
+                UpdatePaginationButtons();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading transactions: " + ex.Message);
+            }
+
+        }
+
+        private void UpdatePaginationButtons()
+        {
+            btnPreviousPage.Enabled = _currentPage > 1;
+            btnNextPage.Enabled = (_currentPage * _itemsPerPage) < _totalItems;
         }
 
         private void ShowLoadingIndicator(bool show)
@@ -144,12 +227,16 @@ namespace ISPSMS_JUHACA.MainPages
             }
         }
 
+        public void SetPaginationStatusText(string statusText)
+        {
+            paginationStatusTextBox.Text = statusText;
+        }
+
         public void SetPaginationButtons(bool enablePrevious, bool enableNext)
         {
             btnPreviousPage.Enabled = enablePrevious;
             btnNextPage.Enabled = enableNext;
         }
-
         private async void transPrintBtn_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = kryptonDateTimePicker1.Value.Date;
@@ -190,7 +277,7 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@SelectedDate", selectedDate); 
+                    cmd.Parameters.AddWithValue("@SelectedDate", selectedDate);
                     conn.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -211,7 +298,7 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial; 
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
                     using (ExcelPackage package = new ExcelPackage())
                     {
@@ -224,7 +311,26 @@ namespace ISPSMS_JUHACA.MainPages
                 }
             }
         }
-    
 
+        private async void UpdateDateTime()
+        {
+            Date.Text = DateTime.Now.ToString("MMMM dd, yyyy"); // Example: March 27, 2025
+            DateTime today = DateTime.Now.Date;
+        }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transExportBtn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
