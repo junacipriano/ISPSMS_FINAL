@@ -67,25 +67,34 @@ namespace ISPSMS_JUHACA.MainPages
 
         public async void Transaction_Load(object sender, EventArgs e)
         {
+            kryptonDateTimePicker1.Value = DateTime.Today;
             lblTotalAmount.Text = "Loading...";
             ShowLoadingIndicator(true);
             await Task.Delay(100);
-            var transactions = await _presenter.LoadAllTransactionDataAsync();
-            _currentTransactions = transactions;
-            _totalItems = transactions.Count;
-            _currentPage = 1;
-            DisplayTransactions(transactions, filterByDate: true);
-            UpdatePaginationButtons();
-            ShowLoadingIndicator(false);
-
+            await RefreshTransactions();
+            
             Timer timer = new Timer();
             timer.Interval = 1;
             timer.Tick += Timer_Tick;
             timer.Start();
             UpdateDateTime();
+
+            ShowLoadingIndicator(false);
+
         }
 
-
+        private async Task RefreshTransactions()
+        {
+            var transactions = await _presenter.LoadAllTransactionDataAsync();
+            if (transactions.Count != _currentTransactions.Count) // Only refresh if there are changes
+            {
+                _currentTransactions = transactions;
+                _totalItems = transactions.Count;
+                _currentPage = 1;
+                DisplayTransactions(transactions, filterByDate: true);
+                UpdatePaginationButtons();
+            }
+        }
         public void UpdatePaidAmountLabel(decimal totalPaidAmount)
         {
             var culture = new CultureInfo("fil-PH");
@@ -103,9 +112,10 @@ namespace ISPSMS_JUHACA.MainPages
         {
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.Controls.Clear();
-            var filteredTransactions = filterByDate
-              ? transactions.Where(t => t.TransactionDateTime.Date == kryptonDateTimePicker1.Value.Date).ToList()
-              : transactions.ToList();
+            var filteredTransactions = transactions
+                .Where(t => t.TransactionDateTime.Date == kryptonDateTimePicker1.Value.Date)
+                .OrderByDescending(t => t.TransactionDateTime)
+                .ToList();
 
             int totalFilteredItems = filteredTransactions.Count;
             int startIndex = (_currentPage - 1) * _itemsPerPage;
@@ -126,6 +136,7 @@ namespace ISPSMS_JUHACA.MainPages
             }
 
             flowLayoutPanel1.ResumeLayout();
+            flowLayoutPanel1.Refresh();
 
             if (totalFilteredItems > 0)
             {

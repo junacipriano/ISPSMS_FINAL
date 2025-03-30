@@ -8,6 +8,7 @@ using ISPSMS_JUHACA.Views.IVews;
 using ISPSMS_JUHACA.Presenter;
 using Krypton.Toolkit;
 using Microsoft.VisualBasic;
+using ISPSMS_JUHACA.MainPages.SubPages;
 
 
 namespace ISPSMS_JUHACA.Views
@@ -127,7 +128,7 @@ namespace ISPSMS_JUHACA.Views
             {
                 var selectedSubscriber = (DisconnectedSubscribers)DisconnectedGridView1.Rows[e.RowIndex].DataBoundItem;
 
-                // Handle the "Reconnect" button click
+
                 if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "ReconnectColumn")
                 {
                     DialogResult result = MessageBox.Show($"Are you sure you want to reconnect {selectedSubscriber.Disconn_Name}?",
@@ -148,11 +149,8 @@ namespace ISPSMS_JUHACA.Views
                                 return;
                             }
 
-                            var dueDate = DateTime.Now.AddMonths(1);  // Get the due date one month from now
-                            var dueDateWithOrdinal = GetOrdinal(dueDate.Day);  // Get the ordinal suffix
-
-                            // Format the due date as a string with the ordinal suffix (e.g., "2025-04-1st")
-                            var formattedDueDate = $"{dueDateWithOrdinal}";
+                            var dueDate = DateTime.Now.AddMonths(1);
+                            var formattedDueDate = GetOrdinal(dueDate.Day);
 
                             var connectedSubscriber = new ConnectedSubscribers
                             {
@@ -160,27 +158,30 @@ namespace ISPSMS_JUHACA.Views
                                 ContactNumber = subscriberToReconnect.ContactNumber,
                                 Address = subscriberToReconnect.Address,
                                 Plan = subscriberToReconnect.Plan,
-                                Status = "Active", // Set status to Active
-                                Duedate = formattedDueDate, // Use the formatted due date as a string
-                                CurrentDuedate = DateTime.Now.AddMonths(1), // You can also set this as DateTime if needed
+                                Status = "Active",
+                                Duedate = formattedDueDate,
+                                CurrentDuedate = DateTime.Now.AddMonths(1),
                                 InstallationDate = DateTime.Now,
                                 MonthlyCharge = subscriberToReconnect.MonthlyCharge,
                                 Balance = subscriberToReconnect.Balance,
                                 Charge = subscriberToReconnect.Charge
                             };
 
-                            // Add the subscriber to the ConnectedSubscribers table and remove from the DisconnectedSubscribers table
                             dbContext.connectedSubscriberRepository.Add(connectedSubscriber);
                             dbContext.disconnectedSubscriberRepository.Remove(subscriberToReconnect);
                             dbContext.Save();
 
-                            LogActivity($"Reconnected subscriber: {selectedSubscriber.Disconn_Name}");
-
-                            // Update the binding source and refresh the grid
                             bindingSource.Remove(selectedSubscriber);
                             presenter.LoadDisconnectedSubscribers();
 
                             subs.getSubscribers();
+
+                            // ✅ Show the BillingCheckout form after reconnection
+                            var mainForm = new MainForm(dbContext);  // Pass dbContext
+                            var billingPage = new BillingPage(dbContext, mainForm);  // Pass dbContext and mainForm
+
+                            var billingCheckout = new BillingCheckout(dbContext, connectedSubscriber, billingPage, mainForm);
+                            billingCheckout.ShowDialog(); // Show as a modal dialog
 
                         }
                         catch (Exception ex)

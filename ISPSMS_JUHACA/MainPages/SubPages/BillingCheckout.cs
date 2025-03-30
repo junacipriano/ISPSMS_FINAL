@@ -83,7 +83,9 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
             try
             {
-                amount = decimal.Parse(amountTextBox.Text, NumberStyles.Currency, CultureInfo.CurrentCulture);
+                var culture = new CultureInfo("fil-PH");
+                string amountText = amountTextBox.Text.Replace("₱", "").Trim();
+                amount = decimal.Parse(amountText, NumberStyles.Number, culture);
             }
             catch (FormatException)
             {
@@ -95,17 +97,15 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             if (balance < 0) balance = 0;
 
             DateTime nextDueDate = ConSubsEntity.CurrentDuedate.AddMonths(1);
-            string formattedDueDate = FormatWithOrdinal(nextDueDate.Day);
 
             var newTransaction = new Domain.Models.Transactions
             {
-                trans_id = int.Parse(receiptNoTextBox.Text),
                 subs_id = int.Parse(subIDTextBox.Text),
                 Trans_Name = mainNameTextBox.Text,
                 PaidAmount = amount,
                 Balance = balance,
                 Note = string.IsNullOrWhiteSpace(noteComboBox.Text) ? "None" : noteComboBox.Text,
-                Duedate = formattedDueDate,
+                Duedate = nextDueDate.ToString("MMMM d, yyyy"), 
                 TransactionDateTime = DateTime.Now,
                 Address = addressTextBox.Text
             };
@@ -117,6 +117,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             {
                 existingSubscriber.Balance = balance;
                 existingSubscriber.MonthlyCharge = TotalCharge;
+                existingSubscriber.CurrentDuedate = nextDueDate;
 
                 _dbContext.connectedSubscriberRepository.Update(existingSubscriber);
                 _dbContext.Save();
@@ -124,16 +125,20 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
 
             _dbContext.transactionsRepository.Add(newTransaction);
             _dbContext.Save();
+
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            DialogResult printReceipt = MessageBox.Show("Do you want to print the receipt?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Ensure transactions are sorted by date
+            _billingPage.LoadBillingItemsAsync();
 
+            // Print receipt if needed
+            DialogResult printReceipt = MessageBox.Show("Do you want to print the receipt?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (printReceipt == DialogResult.Yes)
             {
                 PrintReceipt(newTransaction);
             }
 
-            // Log the activity
+            // Log activity
             string activityDescription = $"Processed payment: {mainNameTextBox.Text}";
             if (!string.IsNullOrEmpty(noteComboBox.Text) && noteComboBox.Text != "None")
             {
@@ -141,9 +146,9 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             }
             LogActivity(activityDescription);
 
-            _billingPage.LoadBillingItemsAsync();
             this.Close();
         }
+
 
         private string FormatWithOrdinal(int day)
         {

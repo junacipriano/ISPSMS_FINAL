@@ -94,7 +94,7 @@
             paginationStatusTextBox.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             paginationStatusTextBox.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             paginationStatusTextBox.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            paginationStatusTextBox.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            paginationStatusTextBox.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             paginationStatusTextBox.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             paginationStatusTextBox.TabIndex = 62;
             paginationStatusTextBox.Text = "1 -10 of 999";
@@ -109,7 +109,7 @@
             kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox2.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox2.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox2.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             kryptonTextBox2.TabIndex = 61;
             kryptonTextBox2.Text = "Items per page: 20";
@@ -187,12 +187,12 @@
             // 
             kryptonLabel2.Location = new Point(129, 38);
             kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(323, 32);
-            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel2.Size = new Size(269, 32);
+            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
             kryptonLabel2.StateCommon.ShortText.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel2.TabIndex = 1;
-            kryptonLabel2.Values.Text = "BILLING AND DUE DATES";
+            kryptonLabel2.Values.Text = "Billing and Due Dates";
             // 
             // BillingPage
             // 

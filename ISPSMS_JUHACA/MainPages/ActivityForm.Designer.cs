@@ -74,8 +74,8 @@
             kryptonLabel10.Location = new Point(128, 40);
             kryptonLabel10.Name = "kryptonLabel10";
             kryptonLabel10.Size = new Size(258, 36);
-            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
             kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel10.TabIndex = 67;
             kryptonLabel10.Values.Text = "Account Activities";
@@ -98,7 +98,7 @@
             dataGridView1.RowHeadersWidth = 5;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(52, 72, 100);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(55, 71, 79);
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(217, 217, 217);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(234, 98, 38);
@@ -212,7 +212,7 @@
             DateFilter.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             DateFilter.StateCommon.Border.Color1 = Color.FromArgb(182, 182, 182);
             DateFilter.StateCommon.Border.Rounding = 20F;
-            DateFilter.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            DateFilter.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             DateFilter.StateCommon.Content.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateFilter.StateCommon.Content.Padding = new Padding(5, -1, -1, -1);
             DateFilter.StateCommon.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;

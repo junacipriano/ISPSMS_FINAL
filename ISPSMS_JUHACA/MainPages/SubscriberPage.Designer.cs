@@ -714,7 +714,7 @@
             kryptonTextBox2.Size = new Size(135, 27);
             kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox2.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox2.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             kryptonTextBox2.TabIndex = 57;
             kryptonTextBox2.Text = "Rows per page: 30";
@@ -726,7 +726,7 @@
             kryptonTextBox3.Size = new Size(113, 27);
             kryptonTextBox3.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox3.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            kryptonTextBox3.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox3.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox3.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             kryptonTextBox3.TabIndex = 58;
             kryptonTextBox3.Text = "1 -10 of 999";
@@ -790,7 +790,7 @@
             kryptonTextBox4.Size = new Size(233, 36);
             kryptonTextBox4.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox4.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox4.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox4.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox4.StateCommon.Content.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonTextBox4.TabIndex = 61;
             kryptonTextBox4.Text = "ALL SUBSCRIBERS";
@@ -837,7 +837,7 @@
             connectedsubscribersGridView.RowHeadersWidth = 50;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(52, 72, 100);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(55, 71, 79);
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(217, 217, 217);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(234, 98, 38);

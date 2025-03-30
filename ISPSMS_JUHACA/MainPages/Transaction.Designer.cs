@@ -158,7 +158,7 @@
             TotalTransactionDay.Size = new Size(241, 32);
             TotalTransactionDay.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             TotalTransactionDay.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            TotalTransactionDay.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            TotalTransactionDay.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             TotalTransactionDay.StateCommon.Content.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TotalTransactionDay.StateNormal.Content.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TotalTransactionDay.TabIndex = 80;
@@ -185,7 +185,7 @@
             kryptonTextBox3.Size = new Size(241, 32);
             kryptonTextBox3.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox3.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            kryptonTextBox3.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox3.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox3.StateCommon.Content.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonTextBox3.StateNormal.Content.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonTextBox3.TabIndex = 78;
@@ -199,7 +199,7 @@
             Time.Size = new Size(149, 36);
             Time.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             Time.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            Time.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            Time.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             Time.StateCommon.Content.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Time.TabIndex = 77;
             Time.Text = "12:59 PM";
@@ -211,7 +211,7 @@
             Date.Size = new Size(232, 36);
             Date.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             Date.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
-            Date.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            Date.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             Date.StateCommon.Content.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Date.TabIndex = 76;
             Date.Text = "December 30, 2025";
@@ -237,7 +237,7 @@
             paginationStatusTextBox.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             paginationStatusTextBox.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             paginationStatusTextBox.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            paginationStatusTextBox.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            paginationStatusTextBox.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             paginationStatusTextBox.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             paginationStatusTextBox.TabIndex = 66;
             paginationStatusTextBox.Text = "1 -10 of 999";
@@ -253,7 +253,7 @@
             kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox2.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox2.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonTextBox2.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonTextBox2.StateCommon.Content.Font = new Font("Franklin Gothic Medium", 11.25F);
             kryptonTextBox2.TabIndex = 65;
             kryptonTextBox2.Text = "Items per page: 20";
@@ -449,7 +449,7 @@
             kryptonDateTimePicker1.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonDateTimePicker1.StateCommon.Border.Color1 = Color.FromArgb(182, 182, 182);
             kryptonDateTimePicker1.StateCommon.Border.Rounding = 20F;
-            kryptonDateTimePicker1.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonDateTimePicker1.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
             kryptonDateTimePicker1.StateCommon.Content.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonDateTimePicker1.StateCommon.Content.Padding = new Padding(5, -1, -1, -1);
             kryptonDateTimePicker1.StateCommon.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -464,8 +464,8 @@
             kryptonLabel10.Location = new Point(119, 36);
             kryptonLabel10.Name = "kryptonLabel10";
             kryptonLabel10.Size = new Size(189, 36);
-            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
-            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
             kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel10.TabIndex = 12;
             kryptonLabel10.Values.Text = "Transactions";

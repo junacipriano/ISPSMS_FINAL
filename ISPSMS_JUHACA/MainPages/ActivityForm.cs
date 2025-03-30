@@ -76,7 +76,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 else
                 {
                     // Reset to default color
-                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.FromArgb(55, 71, 79);
                 }
             }
         }

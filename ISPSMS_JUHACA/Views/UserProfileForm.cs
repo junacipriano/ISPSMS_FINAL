@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Domain.Models;
+using ISPSMS_JUHACA.Modified_Tools;
 
 namespace ISPSMS_JUHACA.Views
 {
@@ -13,7 +14,6 @@ namespace ISPSMS_JUHACA.Views
         private Accounts _account;
         private Label lblUsername;
         private Label lblRole;
-
         public event EventHandler? Logout;
 
         public UserProfileForm(IUnitOfWork unitOfWork, int userId)
@@ -32,6 +32,8 @@ namespace ISPSMS_JUHACA.Views
             {
                 UpdateProfile(_account.Username, _account.AccountRole, _account.AccountPassword, _account.AccountName, _account.account_id.ToString());
             }
+
+
         }
 
         public void UpdateProfile(string username, string role, string password, string pname, string id)
