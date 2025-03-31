@@ -8,10 +8,11 @@ using ISPSMS_JUHACA.Views.IVews;
 using ISPSMS_JUHACA.Presenter;
 using ISPSMS_JUHACA.MainPages;
 using System.Diagnostics;
+using Krypton.Toolkit;
 
 namespace ISPSMS_JUHACA
 {
-    public partial class addSubscribersForm : MaterialForm, IMainSubscriberPage
+    public partial class addSubscribersForm : KryptonForm, IMainSubscriberPage
     {
         public readonly IUnitOfWork dbContext;
         internal SubscriberPage SubscribersForm;
@@ -150,7 +151,12 @@ namespace ISPSMS_JUHACA
             FormLoaded?.Invoke(this, EventArgs.Empty);
 
 
-           
+
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

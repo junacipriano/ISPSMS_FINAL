@@ -37,9 +37,6 @@
     <Compile Update="Modified Tools\FORM.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Modified Tools\TABCONTROL.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Views\addSubscribersForm.cs">
       <SubType>Form</SubType>
     </Compile>

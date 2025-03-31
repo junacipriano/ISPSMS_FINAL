@@ -54,22 +54,22 @@
             // 
             // kryptonBorderEdge1
             // 
-            kryptonBorderEdge1.Location = new Point(137, 86);
+            kryptonBorderEdge1.Location = new Point(75, 99);
             kryptonBorderEdge1.Name = "kryptonBorderEdge1";
-            kryptonBorderEdge1.Size = new Size(1704, 1);
+            kryptonBorderEdge1.Size = new Size(1700, 1);
             kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(182, 182, 182);
             kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
             // kryptonLabel10
             // 
-            kryptonLabel10.Location = new Point(128, 40);
+            kryptonLabel10.Location = new Point(70, 48);
             kryptonLabel10.Name = "kryptonLabel10";
-            kryptonLabel10.Size = new Size(142, 36);
+            kryptonLabel10.Size = new Size(213, 38);
             kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
             kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
-            kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel10.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel10.TabIndex = 14;
-            kryptonLabel10.Values.Text = "Accounts";
+            kryptonLabel10.Values.Text = "User Accounts";
             // 
             // comboFilter
             // 
@@ -77,7 +77,7 @@
             comboFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             comboFilter.DropDownWidth = 96;
             comboFilter.Items.AddRange(new object[] { "ALL", "CEO", "ADMIN", "DEFAULT" });
-            comboFilter.Location = new Point(1691, 36);
+            comboFilter.Location = new Point(1627, 44);
             comboFilter.MaximumSize = new Size(150, 60);
             comboFilter.MinimumSize = new Size(100, 40);
             comboFilter.Name = "comboFilter";
@@ -107,7 +107,7 @@
             accountsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             accountsGridView.Columns.AddRange(new DataGridViewColumn[] { kryptonDataGridViewTextBoxColumn1, kryptonDataGridViewTextBoxColumn2, kryptonDataGridViewTextBoxColumn3, kryptonDataGridViewTextBoxColumn4, kryptonDataGridViewTextBoxColumn5, editButton, deleteButton });
             accountsGridView.DataSource = accountsBindingSource;
-            accountsGridView.Location = new Point(167, 123);
+            accountsGridView.Location = new Point(103, 131);
             accountsGridView.Name = "accountsGridView";
             accountsGridView.ReadOnly = true;
             accountsGridView.RowHeadersVisible = false;
@@ -125,7 +125,7 @@
             accountsGridView.RowTemplate.Resizable = DataGridViewTriState.False;
             accountsGridView.ScrollBars = ScrollBars.Vertical;
             accountsGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            accountsGridView.Size = new Size(1645, 735);
+            accountsGridView.Size = new Size(1645, 758);
             accountsGridView.StateCommon.Background.Color1 = Color.FromArgb(255, 255, 252);
             accountsGridView.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             accountsGridView.StateCommon.DataCell.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -226,11 +226,11 @@
             // 
             bgPanel.AccessibleRole = AccessibleRole.None;
             bgPanel.AlwaysActive = false;
-            bgPanel.Location = new Point(137, 108);
+            bgPanel.Location = new Point(73, 116);
             bgPanel.MaximumSize = new Size(1674, 663);
-            bgPanel.MinimumSize = new Size(1704, 780);
+            bgPanel.MinimumSize = new Size(1704, 800);
             bgPanel.Name = "bgPanel";
-            bgPanel.Size = new Size(1704, 780);
+            bgPanel.Size = new Size(1704, 800);
             bgPanel.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Rounding = 15F;
@@ -241,7 +241,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1906, 929);
+            ClientSize = new Size(1920, 990);
             Controls.Add(comboFilter);
             Controls.Add(kryptonBorderEdge1);
             Controls.Add(kryptonLabel10);

@@ -393,6 +393,9 @@
             cancelButton.Location = new Point(275, 386);
             cancelButton.Margin = new Padding(0);
             cancelButton.Name = "cancelButton";
+            cancelButton.OverrideFocus.Back.Color1 = Color.FromArgb(239, 131, 131);
+            cancelButton.OverrideFocus.Back.Color2 = Color.FromArgb(239, 131, 131);
+            cancelButton.OverrideFocus.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
             cancelButton.Size = new Size(90, 37);
             cancelButton.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             cancelButton.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
@@ -420,6 +423,10 @@
             confirmButton.Location = new Point(377, 386);
             confirmButton.Margin = new Padding(0);
             confirmButton.Name = "confirmButton";
+            confirmButton.OverrideFocus.Back.Color1 = Color.FromArgb(94, 167, 178);
+            confirmButton.OverrideFocus.Back.Color2 = Color.FromArgb(94, 167, 178);
+            confirmButton.OverrideFocus.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            confirmButton.OverrideFocus.Content.ShortText.Color2 = Color.FromArgb(255, 255, 252);
             confirmButton.Size = new Size(90, 37);
             confirmButton.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             confirmButton.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);

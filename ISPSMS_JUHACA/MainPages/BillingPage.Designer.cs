@@ -48,7 +48,7 @@
             billingFlowPanel.BackColor = Color.FromArgb(241, 240, 233);
             billingFlowPanel.Controls.Add(kryptonLabel1);
             billingFlowPanel.ForeColor = Color.FromArgb(241, 240, 233);
-            billingFlowPanel.Location = new Point(111, 91);
+            billingFlowPanel.Location = new Point(54, 97);
             billingFlowPanel.Margin = new Padding(0);
             billingFlowPanel.Name = "billingFlowPanel";
             billingFlowPanel.Size = new Size(1796, 837);
@@ -71,11 +71,11 @@
             kryptonPanel1.Controls.Add(billingFlowPanel);
             kryptonPanel1.Controls.Add(kryptonBorderEdge1);
             kryptonPanel1.Controls.Add(kryptonLabel2);
-            kryptonPanel1.Location = new Point(0, -2);
+            kryptonPanel1.Location = new Point(-1, 2);
             kryptonPanel1.Margin = new Padding(0);
-            kryptonPanel1.MinimumSize = new Size(1906, 929);
+            kryptonPanel1.MinimumSize = new Size(1920, 990);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(1906, 975);
+            kryptonPanel1.Size = new Size(1920, 990);
             kryptonPanel1.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateDisabled.Color1 = Color.FromArgb(241, 240, 233);
@@ -87,7 +87,7 @@
             // paginationStatusTextBox
             // 
             paginationStatusTextBox.Enabled = false;
-            paginationStatusTextBox.Location = new Point(1686, 41);
+            paginationStatusTextBox.Location = new Point(1571, 47);
             paginationStatusTextBox.Name = "paginationStatusTextBox";
             paginationStatusTextBox.ReadOnly = true;
             paginationStatusTextBox.Size = new Size(113, 27);
@@ -102,7 +102,7 @@
             // kryptonTextBox2
             // 
             kryptonTextBox2.Enabled = false;
-            kryptonTextBox2.Location = new Point(1523, 41);
+            kryptonTextBox2.Location = new Point(1408, 47);
             kryptonTextBox2.Name = "kryptonTextBox2";
             kryptonTextBox2.ReadOnly = true;
             kryptonTextBox2.Size = new Size(135, 27);
@@ -116,7 +116,7 @@
             // 
             // btnNext
             // 
-            btnNext.Location = new Point(1857, 42);
+            btnNext.Location = new Point(1742, 48);
             btnNext.Name = "btnNext";
             btnNext.OverrideDefault.Back.Color1 = Color.FromArgb(255, 255, 252);
             btnNext.OverrideDefault.Back.Color2 = Color.FromArgb(255, 255, 252);
@@ -150,7 +150,7 @@
             // 
             // btnPrev
             // 
-            btnPrev.Location = new Point(1794, 42);
+            btnPrev.Location = new Point(1679, 48);
             btnPrev.Name = "btnPrev";
             btnPrev.Size = new Size(25, 25);
             btnPrev.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
@@ -175,9 +175,9 @@
             // 
             // kryptonBorderEdge1
             // 
-            kryptonBorderEdge1.Location = new Point(137, 87);
+            kryptonBorderEdge1.Location = new Point(80, 93);
             kryptonBorderEdge1.Name = "kryptonBorderEdge1";
-            kryptonBorderEdge1.Size = new Size(1743, 1);
+            kryptonBorderEdge1.Size = new Size(1680, 1);
             kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(182, 182, 182);
             kryptonBorderEdge1.StateCommon.Color2 = Color.FromArgb(182, 182, 182);
             kryptonBorderEdge1.StateCommon.Width = 1;
@@ -185,12 +185,12 @@
             // 
             // kryptonLabel2
             // 
-            kryptonLabel2.Location = new Point(129, 38);
+            kryptonLabel2.Location = new Point(72, 44);
             kryptonLabel2.Name = "kryptonLabel2";
-            kryptonLabel2.Size = new Size(269, 32);
+            kryptonLabel2.Size = new Size(312, 38);
             kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
             kryptonLabel2.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
-            kryptonLabel2.StateCommon.ShortText.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel2.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel2.TabIndex = 1;
             kryptonLabel2.Values.Text = "Billing and Due Dates";
             // 
@@ -199,11 +199,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1906, 929);
+            ClientSize = new Size(1920, 990);
             ControlBox = false;
             Controls.Add(kryptonPanel1);
             ForeColor = Color.FromArgb(241, 240, 233);
-            MinimumSize = new Size(1906, 929);
+            MinimumSize = new Size(1918, 990);
             Name = "BillingPage";
             Text = "BillingPage";
             Load += BillingPage_Load;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             activityBindingSource = new BindingSource(components);
             activityRepositoryBindingSource = new BindingSource(components);
             activityBindingSource1 = new BindingSource(components);
@@ -63,20 +63,20 @@
             // 
             // kryptonBorderEdge1
             // 
-            kryptonBorderEdge1.Location = new Point(137, 86);
+            kryptonBorderEdge1.Location = new Point(85, 104);
             kryptonBorderEdge1.Name = "kryptonBorderEdge1";
-            kryptonBorderEdge1.Size = new Size(1704, 1);
+            kryptonBorderEdge1.Size = new Size(1690, 1);
             kryptonBorderEdge1.StateCommon.Color1 = Color.FromArgb(182, 182, 182);
             kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
             // kryptonLabel10
             // 
-            kryptonLabel10.Location = new Point(128, 40);
+            kryptonLabel10.Location = new Point(81, 55);
             kryptonLabel10.Name = "kryptonLabel10";
-            kryptonLabel10.Size = new Size(258, 36);
+            kryptonLabel10.Size = new Size(257, 38);
             kryptonLabel10.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
             kryptonLabel10.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
-            kryptonLabel10.StateCommon.ShortText.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel10.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel10.TabIndex = 67;
             kryptonLabel10.Values.Text = "Account Activities";
             // 
@@ -91,25 +91,25 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { kryptonDataGridViewTextBoxColumn1, kryptonDataGridViewTextBoxColumn2, kryptonDataGridViewTextBoxColumn3, kryptonDataGridViewTextBoxColumn4, kryptonDataGridViewTextBoxColumn5 });
             dataGridView1.DataSource = activityBindingSource;
-            dataGridView1.Location = new Point(167, 123);
+            dataGridView1.Location = new Point(109, 142);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 5;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(55, 71, 79);
-            dataGridViewCellStyle1.Padding = new Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(217, 217, 217);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(234, 98, 38);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(55, 71, 79);
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(217, 217, 217);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(234, 98, 38);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.RowTemplate.DefaultCellStyle.Padding = new Padding(5);
             dataGridView1.RowTemplate.Height = 40;
             dataGridView1.RowTemplate.ReadOnly = true;
             dataGridView1.RowTemplate.Resizable = DataGridViewTriState.False;
             dataGridView1.ScrollBars = ScrollBars.Vertical;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1645, 735);
+            dataGridView1.Size = new Size(1645, 763);
             dataGridView1.StateCommon.Background.Color1 = Color.FromArgb(255, 255, 252);
             dataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dataGridView1.StateCommon.DataCell.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -187,11 +187,11 @@
             // 
             bgPanel.AccessibleRole = AccessibleRole.None;
             bgPanel.AlwaysActive = false;
-            bgPanel.Location = new Point(137, 108);
+            bgPanel.Location = new Point(79, 123);
             bgPanel.MaximumSize = new Size(1674, 663);
-            bgPanel.MinimumSize = new Size(1704, 780);
+            bgPanel.MinimumSize = new Size(1704, 810);
             bgPanel.Name = "bgPanel";
-            bgPanel.Size = new Size(1704, 780);
+            bgPanel.Size = new Size(1704, 810);
             bgPanel.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Rounding = 15F;
@@ -205,7 +205,7 @@
             DateFilter.CalendarHeaderStyle = Krypton.Toolkit.HeaderStyle.Secondary;
             DateFilter.CalendarTodayFormat = "D";
             DateFilter.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorStack;
-            DateFilter.Location = new Point(1644, 31);
+            DateFilter.Location = new Point(1581, 46);
             DateFilter.MinimumSize = new Size(136, 40);
             DateFilter.Name = "DateFilter";
             DateFilter.Size = new Size(197, 40);
@@ -227,7 +227,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1906, 929);
+            ClientSize = new Size(1920, 990);
             Controls.Add(DateFilter);
             Controls.Add(kryptonBorderEdge1);
             Controls.Add(kryptonLabel10);

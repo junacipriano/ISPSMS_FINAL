@@ -67,7 +67,7 @@ namespace ISPSMS_JUHACA.MainPages
             };
             billingFlowPanel.Controls.Add(lblLoading);
 
-          
+
         }
 
         private async void BillingPage_Load(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace ISPSMS_JUHACA.MainPages
                 billingItem.ConSubsEntity = subscriber;
                 billingItem.LoadBillingItemData();
                 billingFlowPanel.Controls.Add(billingItem);
-                billingItem.Show(); 
+                billingItem.Show();
             }
 
             // Re-enable buttons after filtering

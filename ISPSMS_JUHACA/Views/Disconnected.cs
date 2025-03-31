@@ -128,7 +128,7 @@ namespace ISPSMS_JUHACA.Views
             {
                 var selectedSubscriber = (DisconnectedSubscribers)DisconnectedGridView1.Rows[e.RowIndex].DataBoundItem;
 
-
+                // Handle the "Reconnect" button click
                 if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "ReconnectColumn")
                 {
                     DialogResult result = MessageBox.Show($"Are you sure you want to reconnect {selectedSubscriber.Disconn_Name}?",
@@ -167,27 +167,40 @@ namespace ISPSMS_JUHACA.Views
                                 Charge = subscriberToReconnect.Charge
                             };
 
-                            dbContext.connectedSubscriberRepository.Add(connectedSubscriber);
-                            dbContext.disconnectedSubscriberRepository.Remove(subscriberToReconnect);
-                            dbContext.Save();
+                            // 🚫 Do NOT save yet—wait for billing confirmation
 
-                            bindingSource.Remove(selectedSubscriber);
-                            presenter.LoadDisconnectedSubscribers();
-
-                            subs.getSubscribers();
-
-                            // ✅ Show the BillingCheckout form after reconnection
-                            var mainForm = new MainForm(dbContext);  // Pass dbContext
-                            var billingPage = new BillingPage(dbContext, mainForm);  // Pass dbContext and mainForm
-
+                            var mainForm = new MainForm(dbContext);
+                            var billingPage = new BillingPage(dbContext, mainForm);
                             var billingCheckout = new BillingCheckout(dbContext, connectedSubscriber, billingPage, mainForm);
-                            billingCheckout.ShowDialog(); // Show as a modal dialog
+
+                            var res = billingCheckout.ShowDialog();
+
+                            // ✅ Only save if billing was confirmed
+                            if (res == DialogResult.OK)
+                            {
+                                dbContext.connectedSubscriberRepository.Add(connectedSubscriber);
+                                dbContext.disconnectedSubscriberRepository.Remove(subscriberToReconnect);
+                                dbContext.Save(); // Save only after confirmation
+
+                                MessageBox.Show($"{connectedSubscriber.Conn_Name} has been successfully reconnected!",
+                                                "Reconnection Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Update UI
+                                bindingSource.Remove(selectedSubscriber);
+                                presenter.LoadDisconnectedSubscribers();
+                                subs.getSubscribers();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Reconnection was not completed. Please confirm the billing process.",
+                                                "Reconnection Canceled", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
 
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error while reconnecting: {ex.InnerException?.Message ?? ex.Message}",
-                                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -219,22 +232,22 @@ namespace ISPSMS_JUHACA.Views
 
                             LogActivity($"Deleted subscriber: {selectedSubscriber.Disconn_Name}");
 
-                            // Update the binding source and refresh the grid
+                            // Update UI
                             bindingSource.Remove(selectedSubscriber);
                             presenter.LoadDisconnectedSubscribers();
 
-                            // Success message
                             MessageBox.Show("Subscriber successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error while deleting: {ex.InnerException?.Message ?? ex.Message}",
-                                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
         }
+
 
         public string GetOrdinal(int day)
         {

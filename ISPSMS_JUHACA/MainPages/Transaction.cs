@@ -85,7 +85,7 @@ namespace ISPSMS_JUHACA.MainPages
 
         private async Task RefreshTransactions()
         {
-            var transactions = await _presenter.LoadAllTransactionDataAsync();
+            var transactions = await _presenter.LoadTransactionsByDateAsync(kryptonDateTimePicker1.Value.Date);
             if (transactions.Count != _currentTransactions.Count) // Only refresh if there are changes
             {
                 _currentTransactions = transactions;
@@ -193,18 +193,25 @@ namespace ISPSMS_JUHACA.MainPages
             {
                 _currentPage = 1;
                 var transactions = await _presenter.LoadTransactionsByDateAsync(selectedDate);
-                DisplayTransactions(transactions, filterByDate: false);
 
                 if (transactions == null || transactions.Count == 0)
                 {
                     flowLayoutPanel1.Controls.Clear();
                     SetPaginationButtons(false, false);
+                    lblTotalAmount.Text = "₱0.00"; // Reset total amount if no transactions
                     return;
                 }
 
                 _currentTransactions = transactions;
                 _totalItems = transactions.Count;
+                DisplayTransactions(transactions, filterByDate: false);
                 UpdatePaginationButtons();
+
+                decimal totalPaidAmount = transactions
+        .Where(t => t.TransactionDateTime.Date == kryptonDateTimePicker1.Value.Date)
+        .Sum(t => t.PaidAmount);
+
+                UpdatePaidAmountLabel(totalPaidAmount);
             }
             catch (Exception ex)
             {

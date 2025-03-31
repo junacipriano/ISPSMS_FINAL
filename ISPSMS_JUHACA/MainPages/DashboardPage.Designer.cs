@@ -76,6 +76,7 @@
             cuiLabel2 = new CuoreUI.Controls.cuiLabel();
             totalInstallationTextbox = new Krypton.Toolkit.KryptonTextBox();
             kryptonPanel7 = new Krypton.Toolkit.KryptonPanel();
+            kryptonPanel8 = new Krypton.Toolkit.KryptonPanel();
             kryptonPanel9 = new Krypton.Toolkit.KryptonPanel();
             kryptonPanel10 = new Krypton.Toolkit.KryptonPanel();
             forTheMonthTextbox2 = new Krypton.Toolkit.KryptonTextBox();
@@ -121,6 +122,8 @@
             kryptonPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel7).BeginInit();
+            kryptonPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)kryptonPanel8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel9).BeginInit();
             kryptonPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel10).BeginInit();
@@ -134,9 +137,9 @@
             // 
             // kryptonPanel1
             // 
-            kryptonPanel1.Location = new Point(102, 20);
+            kryptonPanel1.Location = new Point(45, 40);
             kryptonPanel1.Name = "kryptonPanel1";
-            kryptonPanel1.Size = new Size(1755, 144);
+            kryptonPanel1.Size = new Size(1748, 144);
             kryptonPanel1.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateCommon.Color2 = Color.FromArgb(241, 240, 233);
             kryptonPanel1.StateCommon.Image = Properties.Resources.header;
@@ -180,7 +183,7 @@
             // 
             kryptonTextBox1.AlwaysActive = false;
             kryptonTextBox1.Enabled = false;
-            kryptonTextBox1.Location = new Point(102, 185);
+            kryptonTextBox1.Location = new Point(45, 210);
             kryptonTextBox1.MinimumSize = new Size(466, 720);
             kryptonTextBox1.Name = "kryptonTextBox1";
             kryptonTextBox1.ReadOnly = true;
@@ -195,7 +198,7 @@
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(125, 222);
+            kryptonLabel1.Location = new Point(68, 247);
             kryptonLabel1.Name = "kryptonLabel1";
             kryptonLabel1.Size = new Size(262, 30);
             kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(225, 111, 74);
@@ -207,7 +210,7 @@
             // 
             // kryptonLabel2
             // 
-            kryptonLabel2.Location = new Point(125, 249);
+            kryptonLabel2.Location = new Point(68, 274);
             kryptonLabel2.Name = "kryptonLabel2";
             kryptonLabel2.Size = new Size(230, 19);
             kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
@@ -219,11 +222,11 @@
             // 
             // kryptonLabel3
             // 
-            kryptonLabel3.Location = new Point(123, 284);
+            kryptonLabel3.Location = new Point(66, 309);
             kryptonLabel3.Name = "kryptonLabel3";
             kryptonLabel3.Size = new Size(220, 29);
-            kryptonLabel3.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
-            kryptonLabel3.StateCommon.ShortText.Color2 = Color.FromArgb(55, 71, 79);
+            kryptonLabel3.StateCommon.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            kryptonLabel3.StateCommon.ShortText.Color2 = Color.FromArgb(52, 72, 100);
             kryptonLabel3.StateCommon.ShortText.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonLabel3.TabIndex = 4;
             kryptonLabel3.TabStop = false;
@@ -241,11 +244,11 @@
             kryptonPanel2.Controls.Add(anahawon);
             kryptonPanel2.Controls.Add(panadtalan);
             kryptonPanel2.Controls.Add(basecamp);
-            kryptonPanel2.Location = new Point(108, 300);
+            kryptonPanel2.Location = new Point(51, 325);
             kryptonPanel2.Name = "kryptonPanel2";
             kryptonPanel2.Size = new Size(590, 503);
             kryptonPanel2.StateCommon.Color1 = Color.Transparent;
-            kryptonPanel2.StateCommon.Image = Properties.NewResources.MARAMAG_MAO1;
+            kryptonPanel2.StateCommon.Image = (Image)resources.GetObject("kryptonPanel2.StateCommon.Image");
             kryptonPanel2.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             kryptonPanel2.TabIndex = 5;
             // 
@@ -358,7 +361,7 @@
             infoBox.Controls.Add(subscribersLabel);
             infoBox.Controls.Add(areaLabel);
             infoBox.Controls.Add(locLogo);
-            infoBox.Location = new Point(125, 722);
+            infoBox.Location = new Point(68, 747);
             infoBox.Margin = new Padding(0);
             infoBox.Name = "infoBox";
             infoBox.Size = new Size(168, 175);
@@ -423,7 +426,7 @@
             // 
             // kryptonTextBox3
             // 
-            kryptonTextBox3.Location = new Point(734, 421);
+            kryptonTextBox3.Location = new Point(677, 439);
             kryptonTextBox3.MinimumSize = new Size(400, 200);
             kryptonTextBox3.Name = "kryptonTextBox3";
             kryptonTextBox3.Size = new Size(400, 200);
@@ -438,7 +441,7 @@
             kryptonPanel3.Controls.Add(yearLabel);
             kryptonPanel3.Controls.Add(cuiLabel9);
             kryptonPanel3.Controls.Add(InstalledGraph);
-            kryptonPanel3.Location = new Point(741, 628);
+            kryptonPanel3.Location = new Point(684, 666);
             kryptonPanel3.Name = "kryptonPanel3";
             kryptonPanel3.Size = new Size(1139, 287);
             kryptonPanel3.StateCommon.Color1 = Color.FromArgb(241, 240, 233);
@@ -466,7 +469,7 @@
             cuiLabel9.BackColor = Color.FromArgb(241, 240, 233);
             cuiLabel9.Content = "Total\\ Collection";
             cuiLabel9.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel9.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel9.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel9.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
             cuiLabel9.Location = new Point(0, 13);
             cuiLabel9.Margin = new Padding(4, 3, 4, 3);
@@ -522,7 +525,7 @@
             // 
             // BtnExport
             // 
-            BtnExport.Location = new Point(1752, 641);
+            BtnExport.Location = new Point(1697, 680);
             BtnExport.Name = "BtnExport";
             BtnExport.OverrideDefault.Back.Color1 = Color.FromArgb(94, 167, 178);
             BtnExport.OverrideDefault.Back.Color2 = Color.FromArgb(94, 167, 178);
@@ -564,7 +567,7 @@
             // 
             // kryptonTextBox2
             // 
-            kryptonTextBox2.Location = new Point(1167, 194);
+            kryptonTextBox2.Location = new Point(1110, 212);
             kryptonTextBox2.MinimumSize = new Size(400, 200);
             kryptonTextBox2.Name = "kryptonTextBox2";
             kryptonTextBox2.Size = new Size(400, 200);
@@ -576,7 +579,7 @@
             // 
             // kryptonTextBox5
             // 
-            kryptonTextBox5.Location = new Point(1167, 420);
+            kryptonTextBox5.Location = new Point(1110, 438);
             kryptonTextBox5.MinimumSize = new Size(400, 200);
             kryptonTextBox5.Name = "kryptonTextBox5";
             kryptonTextBox5.Size = new Size(400, 200);
@@ -588,7 +591,7 @@
             // 
             // kryptonTextBox6
             // 
-            kryptonTextBox6.Location = new Point(734, 194);
+            kryptonTextBox6.Location = new Point(677, 212);
             kryptonTextBox6.MinimumSize = new Size(400, 200);
             kryptonTextBox6.Name = "kryptonTextBox6";
             kryptonTextBox6.Size = new Size(400, 200);
@@ -625,7 +628,7 @@
             // 
             Calendar.DayOfWeekStyle = Krypton.Toolkit.ButtonStyle.NavigatorOverflow;
             Calendar.HeaderStyle = Krypton.Toolkit.HeaderStyle.DockInactive;
-            Calendar.Location = new Point(1600, 188);
+            Calendar.Location = new Point(1543, 208);
             Calendar.Name = "Calendar";
             Calendar.SelectionEnd = new DateTime(2025, 3, 22, 0, 0, 0, 0);
             Calendar.SelectionStart = new DateTime(2025, 3, 22, 0, 0, 0, 0);
@@ -693,7 +696,7 @@
             // 
             // kryptonTextBox4
             // 
-            kryptonTextBox4.Location = new Point(1600, 420);
+            kryptonTextBox4.Location = new Point(1543, 438);
             kryptonTextBox4.MaximumSize = new Size(239, 200);
             kryptonTextBox4.MinimumSize = new Size(239, 200);
             kryptonTextBox4.Name = "kryptonTextBox4";
@@ -707,7 +710,7 @@
             // 
             // totalSubTextbox
             // 
-            totalSubTextbox.Location = new Point(758, 210);
+            totalSubTextbox.Location = new Point(701, 228);
             totalSubTextbox.Name = "totalSubTextbox";
             totalSubTextbox.Size = new Size(170, 81);
             totalSubTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -724,9 +727,9 @@
             cuiLabel1.BackColor = Color.FromArgb(220, 219, 210);
             cuiLabel1.Content = "Total\\ Subscribers";
             cuiLabel1.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel1.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel1.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel1.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel1.Location = new Point(760, 282);
+            cuiLabel1.Location = new Point(703, 300);
             cuiLabel1.Margin = new Padding(4, 3, 4, 3);
             cuiLabel1.Name = "cuiLabel1";
             cuiLabel1.Size = new Size(196, 32);
@@ -734,7 +737,7 @@
             // 
             // asOfTextbox1
             // 
-            asOfTextbox1.Location = new Point(760, 351);
+            asOfTextbox1.Location = new Point(703, 369);
             asOfTextbox1.Name = "asOfTextbox1";
             asOfTextbox1.Size = new Size(196, 25);
             asOfTextbox1.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -748,7 +751,7 @@
             // kryptonPanel4
             // 
             kryptonPanel4.Controls.Add(kryptonPanel6);
-            kryptonPanel4.Location = new Point(1002, 213);
+            kryptonPanel4.Location = new Point(945, 231);
             kryptonPanel4.Name = "kryptonPanel4";
             kryptonPanel4.Size = new Size(100, 98);
             kryptonPanel4.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -770,7 +773,7 @@
             // 
             // forTheMonthTextbox1
             // 
-            forTheMonthTextbox1.Location = new Point(1193, 350);
+            forTheMonthTextbox1.Location = new Point(1136, 368);
             forTheMonthTextbox1.Name = "forTheMonthTextbox1";
             forTheMonthTextbox1.Size = new Size(196, 25);
             forTheMonthTextbox1.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -787,9 +790,9 @@
             cuiLabel2.BackColor = Color.FromArgb(220, 219, 210);
             cuiLabel2.Content = "Total\\ Installation";
             cuiLabel2.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel2.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel2.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel2.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel2.Location = new Point(1193, 281);
+            cuiLabel2.Location = new Point(1136, 299);
             cuiLabel2.Margin = new Padding(4, 3, 4, 3);
             cuiLabel2.Name = "cuiLabel2";
             cuiLabel2.Size = new Size(196, 32);
@@ -797,7 +800,7 @@
             // 
             // totalInstallationTextbox
             // 
-            totalInstallationTextbox.Location = new Point(1193, 212);
+            totalInstallationTextbox.Location = new Point(1136, 230);
             totalInstallationTextbox.Name = "totalInstallationTextbox";
             totalInstallationTextbox.Size = new Size(170, 81);
             totalInstallationTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -810,7 +813,8 @@
             // 
             // kryptonPanel7
             // 
-            kryptonPanel7.Location = new Point(1441, 209);
+            kryptonPanel7.Controls.Add(kryptonPanel8);
+            kryptonPanel7.Location = new Point(1384, 227);
             kryptonPanel7.Name = "kryptonPanel7";
             kryptonPanel7.Size = new Size(100, 98);
             kryptonPanel7.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -819,10 +823,21 @@
             kryptonPanel7.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             kryptonPanel7.TabIndex = 29;
             // 
+            // kryptonPanel8
+            // 
+            kryptonPanel8.Location = new Point(127, -24);
+            kryptonPanel8.Name = "kryptonPanel8";
+            kryptonPanel8.Size = new Size(100, 98);
+            kryptonPanel8.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
+            kryptonPanel8.StateCommon.Image = Properties.Resources.subscribers;
+            kryptonPanel8.StateCommon.ImageAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            kryptonPanel8.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            kryptonPanel8.TabIndex = 28;
+            // 
             // kryptonPanel9
             // 
             kryptonPanel9.Controls.Add(kryptonPanel10);
-            kryptonPanel9.Location = new Point(1002, 438);
+            kryptonPanel9.Location = new Point(945, 456);
             kryptonPanel9.Name = "kryptonPanel9";
             kryptonPanel9.Size = new Size(100, 98);
             kryptonPanel9.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -844,7 +859,7 @@
             // 
             // forTheMonthTextbox2
             // 
-            forTheMonthTextbox2.Location = new Point(760, 576);
+            forTheMonthTextbox2.Location = new Point(703, 594);
             forTheMonthTextbox2.Name = "forTheMonthTextbox2";
             forTheMonthTextbox2.Size = new Size(196, 25);
             forTheMonthTextbox2.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -861,9 +876,9 @@
             cuiLabel3.BackColor = Color.FromArgb(220, 219, 210);
             cuiLabel3.Content = "Total\\ Cut-off";
             cuiLabel3.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel3.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel3.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel3.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel3.Location = new Point(760, 507);
+            cuiLabel3.Location = new Point(703, 525);
             cuiLabel3.Margin = new Padding(4, 3, 4, 3);
             cuiLabel3.Name = "cuiLabel3";
             cuiLabel3.Size = new Size(196, 32);
@@ -871,7 +886,7 @@
             // 
             // totalCutTextbox
             // 
-            totalCutTextbox.Location = new Point(758, 435);
+            totalCutTextbox.Location = new Point(701, 453);
             totalCutTextbox.Name = "totalCutTextbox";
             totalCutTextbox.Size = new Size(170, 81);
             totalCutTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -888,9 +903,9 @@
             cuiLabel4.BackColor = Color.FromArgb(220, 219, 210);
             cuiLabel4.Content = "Total\\ Due";
             cuiLabel4.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel4.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel4.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel4.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel4.Location = new Point(1193, 506);
+            cuiLabel4.Location = new Point(1136, 524);
             cuiLabel4.Margin = new Padding(4, 3, 4, 3);
             cuiLabel4.Name = "cuiLabel4";
             cuiLabel4.Size = new Size(196, 32);
@@ -899,7 +914,7 @@
             // kryptonPanel11
             // 
             kryptonPanel11.Controls.Add(kryptonPanel12);
-            kryptonPanel11.Location = new Point(1441, 437);
+            kryptonPanel11.Location = new Point(1384, 455);
             kryptonPanel11.Name = "kryptonPanel11";
             kryptonPanel11.Size = new Size(100, 98);
             kryptonPanel11.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -921,7 +936,7 @@
             // 
             // asOfTextbox2
             // 
-            asOfTextbox2.Location = new Point(1193, 575);
+            asOfTextbox2.Location = new Point(1136, 593);
             asOfTextbox2.Name = "asOfTextbox2";
             asOfTextbox2.Size = new Size(196, 25);
             asOfTextbox2.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -934,7 +949,7 @@
             // 
             // totalDueTextbox
             // 
-            totalDueTextbox.Location = new Point(1193, 434);
+            totalDueTextbox.Location = new Point(1136, 452);
             totalDueTextbox.Name = "totalDueTextbox";
             totalDueTextbox.Size = new Size(170, 81);
             totalDueTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -951,9 +966,9 @@
             cuiLabel5.BackColor = Color.FromArgb(220, 219, 210);
             cuiLabel5.Content = "Status\\ Details";
             cuiLabel5.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cuiLabel5.ForeColor = Color.FromArgb(55, 71, 79);
+            cuiLabel5.ForeColor = Color.FromArgb(52, 72, 100);
             cuiLabel5.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel5.Location = new Point(1621, 442);
+            cuiLabel5.Location = new Point(1564, 460);
             cuiLabel5.Margin = new Padding(4, 3, 4, 3);
             cuiLabel5.Name = "cuiLabel5";
             cuiLabel5.Size = new Size(196, 32);
@@ -962,7 +977,7 @@
             // 
             // kryptonPanel13
             // 
-            kryptonPanel13.Location = new Point(1624, 564);
+            kryptonPanel13.Location = new Point(1567, 582);
             kryptonPanel13.Name = "kryptonPanel13";
             kryptonPanel13.Size = new Size(25, 25);
             kryptonPanel13.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -972,7 +987,7 @@
             // 
             // kryptonPanel14
             // 
-            kryptonPanel14.Location = new Point(1624, 523);
+            kryptonPanel14.Location = new Point(1567, 541);
             kryptonPanel14.Name = "kryptonPanel14";
             kryptonPanel14.Size = new Size(25, 25);
             kryptonPanel14.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -982,7 +997,7 @@
             // 
             // kryptonPanel15
             // 
-            kryptonPanel15.Location = new Point(1624, 481);
+            kryptonPanel15.Location = new Point(1567, 499);
             kryptonPanel15.Name = "kryptonPanel15";
             kryptonPanel15.Size = new Size(25, 25);
             kryptonPanel15.StateCommon.Color1 = Color.FromArgb(220, 219, 210);
@@ -998,7 +1013,7 @@
             cuiLabel6.Font = new Font("Helvetica", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cuiLabel6.ForeColor = Color.FromArgb(196, 81, 68);
             cuiLabel6.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel6.Location = new Point(1666, 484);
+            cuiLabel6.Location = new Point(1609, 502);
             cuiLabel6.Margin = new Padding(4, 3, 4, 3);
             cuiLabel6.Name = "cuiLabel6";
             cuiLabel6.Size = new Size(114, 19);
@@ -1013,7 +1028,7 @@
             cuiLabel7.Font = new Font("Helvetica", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cuiLabel7.ForeColor = Color.FromArgb(198, 159, 35);
             cuiLabel7.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel7.Location = new Point(1666, 527);
+            cuiLabel7.Location = new Point(1609, 545);
             cuiLabel7.Margin = new Padding(4, 3, 4, 3);
             cuiLabel7.Name = "cuiLabel7";
             cuiLabel7.Size = new Size(114, 19);
@@ -1028,7 +1043,7 @@
             cuiLabel8.Font = new Font("Helvetica", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cuiLabel8.ForeColor = Color.FromArgb(106, 182, 59);
             cuiLabel8.HorizontalAlignment = CuoreUI.Controls.cuiLabel.HorizontalAlignments.Left;
-            cuiLabel8.Location = new Point(1666, 567);
+            cuiLabel8.Location = new Point(1609, 585);
             cuiLabel8.Margin = new Padding(4, 3, 4, 3);
             cuiLabel8.Name = "cuiLabel8";
             cuiLabel8.Size = new Size(114, 19);
@@ -1037,7 +1052,7 @@
             // 
             // overdueTextbox
             // 
-            overdueTextbox.Location = new Point(1783, 476);
+            overdueTextbox.Location = new Point(1726, 494);
             overdueTextbox.Name = "overdueTextbox";
             overdueTextbox.Size = new Size(47, 32);
             overdueTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -1050,7 +1065,7 @@
             // 
             // pastDueTextbox
             // 
-            pastDueTextbox.Location = new Point(1783, 520);
+            pastDueTextbox.Location = new Point(1726, 538);
             pastDueTextbox.Name = "pastDueTextbox";
             pastDueTextbox.Size = new Size(47, 32);
             pastDueTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -1063,7 +1078,7 @@
             // 
             // activeTextbox
             // 
-            activeTextbox.Location = new Point(1783, 558);
+            activeTextbox.Location = new Point(1726, 576);
             activeTextbox.Name = "activeTextbox";
             activeTextbox.Size = new Size(47, 32);
             activeTextbox.StateCommon.Back.Color1 = Color.FromArgb(220, 219, 210);
@@ -1081,14 +1096,14 @@
             // Time
             // 
             Time.AlwaysActive = false;
-            Time.Location = new Point(529, 844);
+            Time.Location = new Point(472, 869);
             Time.Name = "Time";
             Time.ReadOnly = true;
             Time.Size = new Size(146, 33);
             Time.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             Time.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             Time.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            Time.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
+            Time.StateCommon.Content.Color1 = Color.FromArgb(52, 72, 100);
             Time.StateCommon.Content.Font = new Font("Helvetica", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Time.TabIndex = 48;
             Time.Text = "12:00:00 AM";
@@ -1100,7 +1115,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1901, 947);
+            ClientSize = new Size(1904, 976);
             ControlBox = false;
             Controls.Add(Time);
             Controls.Add(BtnExport);
@@ -1146,8 +1161,8 @@
             Controls.Add(kryptonTextBox1);
             Controls.Add(kryptonPanel3);
             FormBorderStyle = FormBorderStyle.None;
-            MaximumSize = new Size(1915, 961);
-            MinimumSize = new Size(1915, 961);
+            MaximumSize = new Size(1920, 990);
+            MinimumSize = new Size(1918, 990);
             Name = "DashboardPage";
             StartPosition = FormStartPosition.CenterParent;
             StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
@@ -1183,6 +1198,8 @@
             kryptonPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)kryptonPanel6).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel7).EndInit();
+            kryptonPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)kryptonPanel8).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonPanel9).EndInit();
             kryptonPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)kryptonPanel10).EndInit();
@@ -1241,6 +1258,7 @@
         private CuoreUI.Controls.cuiLabel cuiLabel2;
         private Krypton.Toolkit.KryptonTextBox totalInstallationTextbox;
         private Krypton.Toolkit.KryptonPanel kryptonPanel7;
+        private Krypton.Toolkit.KryptonPanel kryptonPanel8;
         private Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private Krypton.Toolkit.KryptonPanel kryptonPanel10;
         private Krypton.Toolkit.KryptonTextBox forTheMonthTextbox2;

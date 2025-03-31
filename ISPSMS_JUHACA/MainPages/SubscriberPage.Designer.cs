@@ -71,7 +71,6 @@
             editButton = new DataGridViewImageColumn();
             disconnectButton = new DataGridViewImageColumn();
             kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
-            kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)connectedSubscribersBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)connectedSubscriberViewBindingSource1).BeginInit();
@@ -100,7 +99,7 @@
             allBtn.HighEmphasis = true;
             allBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             allBtn.Icon = null;
-            allBtn.Location = new Point(175, 55);
+            allBtn.Location = new Point(84, 41);
             allBtn.Margin = new Padding(4);
             allBtn.MouseState = MaterialSkin.MouseState.HOVER;
             allBtn.Name = "allBtn";
@@ -137,7 +136,7 @@
             anahawonBtn.HighEmphasis = true;
             anahawonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             anahawonBtn.Icon = null;
-            anahawonBtn.Location = new Point(321, 55);
+            anahawonBtn.Location = new Point(238, 41);
             anahawonBtn.Margin = new Padding(4);
             anahawonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             anahawonBtn.Name = "anahawonBtn";
@@ -174,7 +173,7 @@
             baseCampBtn.HighEmphasis = true;
             baseCampBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             baseCampBtn.Icon = null;
-            baseCampBtn.Location = new Point(474, 55);
+            baseCampBtn.Location = new Point(392, 41);
             baseCampBtn.Margin = new Padding(4);
             baseCampBtn.MouseState = MaterialSkin.MouseState.HOVER;
             baseCampBtn.Name = "baseCampBtn";
@@ -211,7 +210,7 @@
             camp1Btn.HighEmphasis = true;
             camp1Btn.HoverBackColor = Color.FromArgb(237, 237, 237);
             camp1Btn.Icon = null;
-            camp1Btn.Location = new Point(621, 55);
+            camp1Btn.Location = new Point(546, 41);
             camp1Btn.Margin = new Padding(4);
             camp1Btn.MouseState = MaterialSkin.MouseState.HOVER;
             camp1Btn.Name = "camp1Btn";
@@ -248,7 +247,7 @@
             colambugonBtn.HighEmphasis = true;
             colambugonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             colambugonBtn.Icon = null;
-            colambugonBtn.Location = new Point(773, 55);
+            colambugonBtn.Location = new Point(700, 41);
             colambugonBtn.Margin = new Padding(4);
             colambugonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             colambugonBtn.Name = "colambugonBtn";
@@ -285,7 +284,7 @@
             danggawanBtn.HighEmphasis = true;
             danggawanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             danggawanBtn.Icon = null;
-            danggawanBtn.Location = new Point(922, 55);
+            danggawanBtn.Location = new Point(854, 41);
             danggawanBtn.Margin = new Padding(4);
             danggawanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             danggawanBtn.Name = "danggawanBtn";
@@ -322,7 +321,7 @@
             dologonBtn.HighEmphasis = true;
             dologonBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             dologonBtn.Icon = null;
-            dologonBtn.Location = new Point(1075, 55);
+            dologonBtn.Location = new Point(1008, 41);
             dologonBtn.Margin = new Padding(4);
             dologonBtn.MouseState = MaterialSkin.MouseState.HOVER;
             dologonBtn.Name = "dologonBtn";
@@ -359,7 +358,7 @@
             northPobBtn.HighEmphasis = true;
             northPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             northPobBtn.Icon = null;
-            northPobBtn.Location = new Point(1227, 55);
+            northPobBtn.Location = new Point(1162, 41);
             northPobBtn.Margin = new Padding(4);
             northPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             northPobBtn.Name = "northPobBtn";
@@ -396,7 +395,7 @@
             panadtalanBtn.HighEmphasis = true;
             panadtalanBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             panadtalanBtn.Icon = null;
-            panadtalanBtn.Location = new Point(1381, 55);
+            panadtalanBtn.Location = new Point(1316, 41);
             panadtalanBtn.Margin = new Padding(4);
             panadtalanBtn.MouseState = MaterialSkin.MouseState.HOVER;
             panadtalanBtn.Name = "panadtalanBtn";
@@ -433,7 +432,7 @@
             sanMiguelBtn.HighEmphasis = true;
             sanMiguelBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             sanMiguelBtn.Icon = null;
-            sanMiguelBtn.Location = new Point(1533, 55);
+            sanMiguelBtn.Location = new Point(1470, 41);
             sanMiguelBtn.Margin = new Padding(4);
             sanMiguelBtn.MouseState = MaterialSkin.MouseState.HOVER;
             sanMiguelBtn.Name = "sanMiguelBtn";
@@ -470,7 +469,7 @@
             southPobBtn.HighEmphasis = true;
             southPobBtn.HoverBackColor = Color.FromArgb(237, 237, 237);
             southPobBtn.Icon = null;
-            southPobBtn.Location = new Point(1687, 55);
+            southPobBtn.Location = new Point(1624, 41);
             southPobBtn.Margin = new Padding(4);
             southPobBtn.MouseState = MaterialSkin.MouseState.HOVER;
             southPobBtn.Name = "southPobBtn";
@@ -505,7 +504,7 @@
             addBtn.Depth = 0;
             addBtn.HighEmphasis = true;
             addBtn.Icon = null;
-            addBtn.Location = new Point(54, 28);
+            addBtn.Location = new Point(-28, 14);
             addBtn.Margin = new Padding(4, 6, 4, 6);
             addBtn.MouseState = MaterialSkin.MouseState.HOVER;
             addBtn.Name = "addBtn";
@@ -517,7 +516,7 @@
             // 
             // AddButton
             // 
-            AddButton.Location = new Point(543, 135);
+            AddButton.Location = new Point(483, 124);
             AddButton.Name = "AddButton";
             AddButton.OverrideDefault.Back.Color1 = Color.FromArgb(82, 147, 157);
             AddButton.OverrideDefault.Back.Color2 = Color.FromArgb(82, 147, 157);
@@ -543,7 +542,7 @@
             // 
             // Previous
             // 
-            Previous.Location = new Point(1743, 840);
+            Previous.Location = new Point(1661, 905);
             Previous.Name = "Previous";
             Previous.Size = new Size(25, 25);
             Previous.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -568,7 +567,7 @@
             // 
             // Next
             // 
-            Next.Location = new Point(1806, 840);
+            Next.Location = new Point(1724, 905);
             Next.Name = "Next";
             Next.OverrideDefault.Back.Color1 = Color.FromArgb(255, 255, 252);
             Next.OverrideDefault.Back.Color2 = Color.FromArgb(255, 255, 252);
@@ -604,11 +603,10 @@
             // 
             bgPanel.AccessibleRole = AccessibleRole.None;
             bgPanel.AlwaysActive = false;
-            bgPanel.Location = new Point(175, 200);
-            bgPanel.MaximumSize = new Size(1674, 663);
-            bgPanel.MinimumSize = new Size(1674, 650);
+            bgPanel.Location = new Point(85, 186);
+            bgPanel.MinimumSize = new Size(1695, 720);
             bgPanel.Name = "bgPanel";
-            bgPanel.Size = new Size(1674, 650);
+            bgPanel.Size = new Size(1695, 720);
             bgPanel.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             bgPanel.StateCommon.Border.Rounding = 15F;
@@ -617,7 +615,7 @@
             // 
             // disconnectedbtn
             // 
-            disconnectedbtn.Location = new Point(654, 135);
+            disconnectedbtn.Location = new Point(594, 124);
             disconnectedbtn.Name = "disconnectedbtn";
             disconnectedbtn.OverrideDefault.Back.Color1 = Color.FromArgb(234, 98, 38);
             disconnectedbtn.OverrideDefault.Back.Color2 = Color.FromArgb(234, 98, 38);
@@ -643,10 +641,10 @@
             // 
             // kryptonTextBox1
             // 
-            kryptonTextBox1.Location = new Point(175, 837);
+            kryptonTextBox1.Location = new Point(85, 893);
             kryptonTextBox1.MinimumSize = new Size(1674, 50);
             kryptonTextBox1.Name = "kryptonTextBox1";
-            kryptonTextBox1.Size = new Size(1674, 50);
+            kryptonTextBox1.Size = new Size(1695, 50);
             kryptonTextBox1.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox1.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox1.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -660,7 +658,7 @@
             // exportSubsBtn
             // 
             exportSubsBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            exportSubsBtn.Location = new Point(1650, 135);
+            exportSubsBtn.Location = new Point(1568, 121);
             exportSubsBtn.Margin = new Padding(5);
             exportSubsBtn.Name = "exportSubsBtn";
             exportSubsBtn.OverrideDefault.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -709,7 +707,7 @@
             // 
             // kryptonTextBox2
             // 
-            kryptonTextBox2.Location = new Point(1472, 841);
+            kryptonTextBox2.Location = new Point(1390, 906);
             kryptonTextBox2.Name = "kryptonTextBox2";
             kryptonTextBox2.Size = new Size(135, 27);
             kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -721,7 +719,7 @@
             // 
             // kryptonTextBox3
             // 
-            kryptonTextBox3.Location = new Point(1635, 841);
+            kryptonTextBox3.Location = new Point(1553, 906);
             kryptonTextBox3.Name = "kryptonTextBox3";
             kryptonTextBox3.Size = new Size(113, 27);
             kryptonTextBox3.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -734,7 +732,7 @@
             // transPrintBtn
             // 
             transPrintBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            transPrintBtn.Location = new Point(1756, 135);
+            transPrintBtn.Location = new Point(1674, 121);
             transPrintBtn.Margin = new Padding(5);
             transPrintBtn.Name = "transPrintBtn";
             transPrintBtn.OverrideDefault.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -785,13 +783,13 @@
             // 
             // kryptonTextBox4
             // 
-            kryptonTextBox4.Location = new Point(175, 139);
+            kryptonTextBox4.Location = new Point(93, 125);
             kryptonTextBox4.Name = "kryptonTextBox4";
-            kryptonTextBox4.Size = new Size(233, 36);
+            kryptonTextBox4.Size = new Size(276, 39);
             kryptonTextBox4.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox4.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox4.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
-            kryptonTextBox4.StateCommon.Content.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonTextBox4.StateCommon.Content.Font = new Font("Helvetica Rounded", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kryptonTextBox4.TabIndex = 61;
             kryptonTextBox4.Text = "ALL SUBSCRIBERS";
             // 
@@ -801,7 +799,7 @@
             filterCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
             filterCombobox.DropDownWidth = 96;
             filterCombobox.Items.AddRange(new object[] { "All", "Active", "Past Due", "Overdue" });
-            filterCombobox.Location = new Point(427, 135);
+            filterCombobox.Location = new Point(367, 124);
             filterCombobox.MaximumSize = new Size(100, 60);
             filterCombobox.MinimumSize = new Size(100, 40);
             filterCombobox.Name = "filterCombobox";
@@ -830,7 +828,7 @@
             connectedsubscribersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             connectedsubscribersGridView.Columns.AddRange(new DataGridViewColumn[] { kryptonDataGridViewTextBoxColumn1, kryptonDataGridViewTextBoxColumn2, kryptonDataGridViewTextBoxColumn3, kryptonDataGridViewTextBoxColumn4, kryptonDataGridViewTextBoxColumn5, kryptonDataGridViewTextBoxColumn6, kryptonDataGridViewTextBoxColumn7, kryptonDataGridViewTextBoxColumn9, kryptonDataGridViewTextBoxColumn12, editButton, disconnectButton });
             connectedsubscribersGridView.DataSource = connectedSubscribersBindingSource;
-            connectedsubscribersGridView.Location = new Point(189, 216);
+            connectedsubscribersGridView.Location = new Point(107, 202);
             connectedsubscribersGridView.Name = "connectedsubscribersGridView";
             connectedsubscribersGridView.ReadOnly = true;
             connectedsubscribersGridView.RowHeadersVisible = false;
@@ -848,7 +846,7 @@
             connectedsubscribersGridView.RowTemplate.Resizable = DataGridViewTriState.False;
             connectedsubscribersGridView.ScrollBars = ScrollBars.Vertical;
             connectedsubscribersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            connectedsubscribersGridView.Size = new Size(1645, 608);
+            connectedsubscribersGridView.Size = new Size(1642, 685);
             connectedsubscribersGridView.StateCommon.Background.Color1 = Color.FromArgb(255, 255, 252);
             connectedsubscribersGridView.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             connectedsubscribersGridView.StateCommon.DataCell.Back.Color1 = Color.FromArgb(255, 255, 252);
@@ -980,32 +978,21 @@
             // 
             // kryptonTextBox5
             // 
-            kryptonTextBox5.Location = new Point(0, 0);
-            kryptonTextBox5.MinimumSize = new Size(1906, 929);
+            kryptonTextBox5.Location = new Point(-3, 1);
+            kryptonTextBox5.MinimumSize = new Size(1920, 990);
             kryptonTextBox5.Name = "kryptonTextBox5";
-            kryptonTextBox5.Size = new Size(1926, 929);
+            kryptonTextBox5.Size = new Size(1920, 990);
             kryptonTextBox5.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox5.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
             kryptonTextBox5.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
             kryptonTextBox5.TabIndex = 63;
-            // 
-            // kryptonTextBox6
-            // 
-            kryptonTextBox6.Location = new Point(-46, 51);
-            kryptonTextBox6.MinimumSize = new Size(1906, 929);
-            kryptonTextBox6.Name = "kryptonTextBox6";
-            kryptonTextBox6.Size = new Size(1926, 929);
-            kryptonTextBox6.StateCommon.Back.Color1 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox6.StateCommon.Border.Color1 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox6.StateCommon.Border.Color2 = Color.FromArgb(241, 240, 233);
-            kryptonTextBox6.TabIndex = 63;
             // 
             // SubscriberPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(1906, 929);
+            ClientSize = new Size(1920, 990);
             ControlBox = false;
             Controls.Add(filterCombobox);
             Controls.Add(kryptonTextBox4);
@@ -1031,11 +1018,10 @@
             Controls.Add(southPobBtn);
             Controls.Add(kryptonTextBox1);
             Controls.Add(bgPanel);
-            Controls.Add(kryptonTextBox6);
             Controls.Add(kryptonTextBox5);
             DrawerHighlightWithAccent = false;
             FormStyle = FormStyles.ActionBar_None;
-            MinimumSize = new Size(1906, 929);
+            MinimumSize = new Size(1918, 990);
             Name = "SubscriberPage";
             Padding = new Padding(3, 24, 3, 3);
             ShowInTaskbar = false;
@@ -1098,6 +1084,5 @@
         private DataGridViewImageColumn editButton;
         private DataGridViewImageColumn disconnectButton;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
     }
 }

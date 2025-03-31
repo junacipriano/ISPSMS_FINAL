@@ -241,7 +241,6 @@
             // 
             // payBtn
             // 
-            payBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             payBtn.Location = new Point(270, 307);
             payBtn.Margin = new Padding(0);
             payBtn.Name = "payBtn";

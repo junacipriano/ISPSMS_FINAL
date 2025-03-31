@@ -30,6 +30,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             ConSubsEntity = selectedSubscribers;
             _billingPage = billingPage;
             _dbContext = dbContext;
+
             _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm)); // Ensure mainForm isn't null
 
             _currentUserName = _mainForm.GetUsername();
@@ -145,7 +146,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 activityDescription += $" (Note: {noteComboBox.Text})";
             }
             LogActivity(activityDescription);
-
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -168,7 +169,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
-        {
+        {   
             this.Close();
         }
 

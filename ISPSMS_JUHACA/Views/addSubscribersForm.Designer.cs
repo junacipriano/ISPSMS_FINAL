@@ -28,398 +28,406 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            lastNameTextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            firstNameTextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            MITextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            barangayComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            districtComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            planComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            dueDatePicker = new DateTimePicker();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            monthlyChargeTextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            contactNumberTextBox = new MaterialSkin.Controls.MaterialTextBox2();
-            CancelBtn = new MaterialSkin.Controls.MaterialButton();
-            SaveBtn = new MaterialSkin.Controls.MaterialButton();
+            kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            lastNameTextBox = new Krypton.Toolkit.KryptonTextBox();
+            firstNameTextBox = new Krypton.Toolkit.KryptonTextBox();
+            MITextBox = new Krypton.Toolkit.KryptonTextBox();
+            kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            barangayComboBox = new Krypton.Toolkit.KryptonComboBox();
+            districtComboBox = new Krypton.Toolkit.KryptonComboBox();
+            kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
+            planComboBox = new Krypton.Toolkit.KryptonComboBox();
+            kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            dueDatePicker = new Krypton.Toolkit.KryptonDateTimePicker();
+            kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
+            monthlyChargeTextBox = new Krypton.Toolkit.KryptonTextBox();
+            contactNumberTextBox = new Krypton.Toolkit.KryptonTextBox();
+            kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
+            kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
+            SaveBtn = new Krypton.Toolkit.KryptonButton();
+            CancelBtn = new Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)barangayComboBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)districtComboBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)planComboBox).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(17, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(122, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Add Client";
-            // 
-            // lastNameTextBox
-            // 
-            lastNameTextBox.AnimateReadOnly = false;
-            lastNameTextBox.BackgroundImageLayout = ImageLayout.None;
-            lastNameTextBox.CharacterCasing = CharacterCasing.Normal;
-            lastNameTextBox.Depth = 0;
-            lastNameTextBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lastNameTextBox.HideSelection = true;
-            lastNameTextBox.Hint = "Last Name";
-            lastNameTextBox.LeadingIcon = null;
-            lastNameTextBox.Location = new Point(20, 110);
-            lastNameTextBox.Margin = new Padding(3, 2, 3, 2);
-            lastNameTextBox.MaxLength = 32767;
-            lastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.PasswordChar = '\0';
-            lastNameTextBox.PrefixSuffixText = null;
-            lastNameTextBox.ReadOnly = false;
-            lastNameTextBox.RightToLeft = RightToLeft.No;
-            lastNameTextBox.SelectedText = "";
-            lastNameTextBox.SelectionLength = 0;
-            lastNameTextBox.SelectionStart = 0;
-            lastNameTextBox.ShortcutsEnabled = true;
-            lastNameTextBox.Size = new Size(157, 48);
-            lastNameTextBox.TabIndex = 1;
-            lastNameTextBox.TabStop = false;
-            lastNameTextBox.TextAlign = HorizontalAlignment.Left;
-            lastNameTextBox.TrailingIcon = null;
-            lastNameTextBox.UseSystemPasswordChar = false;
-            // 
-            // firstNameTextBox
-            // 
-            firstNameTextBox.AnimateReadOnly = false;
-            firstNameTextBox.BackgroundImageLayout = ImageLayout.None;
-            firstNameTextBox.CharacterCasing = CharacterCasing.Normal;
-            firstNameTextBox.Depth = 0;
-            firstNameTextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            firstNameTextBox.HideSelection = true;
-            firstNameTextBox.Hint = "First Name";
-            firstNameTextBox.LeadingIcon = null;
-            firstNameTextBox.Location = new Point(193, 110);
-            firstNameTextBox.Margin = new Padding(3, 2, 3, 2);
-            firstNameTextBox.MaxLength = 32767;
-            firstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            firstNameTextBox.Name = "firstNameTextBox";
-            firstNameTextBox.PasswordChar = '\0';
-            firstNameTextBox.PrefixSuffixText = null;
-            firstNameTextBox.ReadOnly = false;
-            firstNameTextBox.RightToLeft = RightToLeft.No;
-            firstNameTextBox.SelectedText = "";
-            firstNameTextBox.SelectionLength = 0;
-            firstNameTextBox.SelectionStart = 0;
-            firstNameTextBox.ShortcutsEnabled = true;
-            firstNameTextBox.Size = new Size(156, 48);
-            firstNameTextBox.TabIndex = 2;
-            firstNameTextBox.TabStop = false;
-            firstNameTextBox.TextAlign = HorizontalAlignment.Left;
-            firstNameTextBox.TrailingIcon = null;
-            firstNameTextBox.UseSystemPasswordChar = false;
-            // 
-            // MITextBox
-            // 
-            MITextBox.AnimateReadOnly = false;
-            MITextBox.BackgroundImageLayout = ImageLayout.None;
-            MITextBox.CharacterCasing = CharacterCasing.Normal;
-            MITextBox.Depth = 0;
-            MITextBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            MITextBox.HideSelection = true;
-            MITextBox.Hint = "M.I.";
-            MITextBox.LeadingIcon = null;
-            MITextBox.Location = new Point(365, 110);
-            MITextBox.Margin = new Padding(3, 2, 3, 2);
-            MITextBox.MaxLength = 32767;
-            MITextBox.MouseState = MaterialSkin.MouseState.OUT;
-            MITextBox.Name = "MITextBox";
-            MITextBox.PasswordChar = '\0';
-            MITextBox.PrefixSuffixText = null;
-            MITextBox.ReadOnly = false;
-            MITextBox.RightToLeft = RightToLeft.No;
-            MITextBox.SelectedText = "";
-            MITextBox.SelectionLength = 0;
-            MITextBox.SelectionStart = 0;
-            MITextBox.ShortcutsEnabled = true;
-            MITextBox.Size = new Size(66, 48);
-            MITextBox.TabIndex = 3;
-            MITextBox.TabStop = false;
-            MITextBox.TextAlign = HorizontalAlignment.Left;
-            MITextBox.TrailingIcon = null;
-            MITextBox.UseSystemPasswordChar = false;
-            // 
-            // barangayComboBox
-            // 
-            barangayComboBox.AutoResize = false;
-            barangayComboBox.BackColor = Color.FromArgb(255, 255, 255);
-            barangayComboBox.Depth = 0;
-            barangayComboBox.DrawMode = DrawMode.OwnerDrawVariable;
-            barangayComboBox.DropDownHeight = 174;
-            barangayComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            barangayComboBox.DropDownWidth = 121;
-            barangayComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            barangayComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            barangayComboBox.FormattingEnabled = true;
-            barangayComboBox.Hint = "Baranggay";
-            barangayComboBox.IntegralHeight = false;
-            barangayComboBox.ItemHeight = 43;
-            barangayComboBox.Items.AddRange(new object[] { "North Poblacion", "South Poblacion", "Dologon", "   Anahawon", "   Base Camp", "   Colambugon", "   Danggawan", "   Panadtalan", "   South Poblacion", "   San Miguel" });
-            barangayComboBox.Location = new Point(20, 173);
-            barangayComboBox.Margin = new Padding(3, 2, 3, 2);
-            barangayComboBox.MaxDropDownItems = 4;
-            barangayComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            barangayComboBox.Name = "barangayComboBox";
-            barangayComboBox.Size = new Size(195, 49);
-            barangayComboBox.StartIndex = 0;
-            barangayComboBox.TabIndex = 4;
-            // 
-            // districtComboBox
-            // 
-            districtComboBox.AutoResize = false;
-            districtComboBox.BackColor = Color.FromArgb(255, 255, 255);
-            districtComboBox.Depth = 0;
-            districtComboBox.DrawMode = DrawMode.OwnerDrawVariable;
-            districtComboBox.DropDownHeight = 174;
-            districtComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            districtComboBox.DropDownWidth = 121;
-            districtComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            districtComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            districtComboBox.FormattingEnabled = true;
-            districtComboBox.Hint = "District/Purok";
-            districtComboBox.IntegralHeight = false;
-            districtComboBox.ItemHeight = 43;
-            districtComboBox.Items.AddRange(new object[] { "Purok 2", "Purok 5", "Purok 10" });
-            districtComboBox.Location = new Point(237, 173);
-            districtComboBox.Margin = new Padding(3, 2, 3, 2);
-            districtComboBox.MaxDropDownItems = 4;
-            districtComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            districtComboBox.Name = "districtComboBox";
-            districtComboBox.Size = new Size(195, 49);
-            districtComboBox.StartIndex = 0;
-            districtComboBox.TabIndex = 5;
-            // 
-            // materialLabel1
-            // 
-            materialLabel1.AutoSize = true;
-            materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Button;
-            materialLabel1.Location = new Point(20, 155);
-            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(53, 17);
-            materialLabel1.TabIndex = 6;
-            materialLabel1.Text = "Address";
-            // 
-            // materialLabel2
-            // 
-            materialLabel2.AutoSize = true;
-            materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Button;
-            materialLabel2.Location = new Point(20, 230);
-            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(30, 17);
-            materialLabel2.TabIndex = 8;
-            materialLabel2.Text = "Plan";
-            // 
-            // planComboBox
-            // 
-            planComboBox.AutoResize = false;
-            planComboBox.BackColor = Color.FromArgb(255, 255, 255);
-            planComboBox.Depth = 0;
-            planComboBox.DrawMode = DrawMode.OwnerDrawVariable;
-            planComboBox.DropDownHeight = 174;
-            planComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            planComboBox.DropDownWidth = 121;
-            planComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            planComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            planComboBox.FormattingEnabled = true;
-            planComboBox.Hint = "Plan";
-            planComboBox.IntegralHeight = false;
-            planComboBox.ItemHeight = 43;
-            planComboBox.Items.AddRange(new object[] { "Postpaid", "Prepaid" });
-            planComboBox.Location = new Point(20, 247);
-            planComboBox.Margin = new Padding(3, 2, 3, 2);
-            planComboBox.MaxDropDownItems = 4;
-            planComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            planComboBox.Name = "planComboBox";
-            planComboBox.Size = new Size(195, 49);
-            planComboBox.StartIndex = 0;
-            planComboBox.TabIndex = 7;
-            // 
-            // dueDatePicker
-            // 
-            dueDatePicker.Location = new Point(237, 247);
-            dueDatePicker.Margin = new Padding(3, 2, 3, 2);
-            dueDatePicker.Name = "dueDatePicker";
-            dueDatePicker.Size = new Size(195, 23);
-            dueDatePicker.TabIndex = 9;
             // 
             // sqlCommand1
             // 
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // materialLabel3
+            // kryptonLabel1
             // 
-            materialLabel3.AutoSize = true;
-            materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Button;
-            materialLabel3.Location = new Point(237, 230);
-            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(59, 17);
-            materialLabel3.TabIndex = 10;
-            materialLabel3.Text = "Due Date";
+            kryptonLabel1.Location = new Point(16, -5);
+            kryptonLabel1.Name = "kryptonLabel1";
+            kryptonLabel1.Size = new Size(200, 34);
+            kryptonLabel1.StateCommon.ShortText.Color1 = Color.FromArgb(248, 132, 86);
+            kryptonLabel1.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel1.TabIndex = 15;
+            kryptonLabel1.Values.Text = "Add Subscriber";
+            // 
+            // lastNameTextBox
+            // 
+            lastNameTextBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            lastNameTextBox.CueHint.CueHintText = "Last Name";
+            lastNameTextBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lastNameTextBox.Location = new Point(23, 62);
+            lastNameTextBox.MinimumSize = new Size(194, 40);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(223, 40);
+            lastNameTextBox.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            lastNameTextBox.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            lastNameTextBox.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            lastNameTextBox.StateCommon.Border.Rounding = 5F;
+            lastNameTextBox.TabIndex = 16;
+            // 
+            // firstNameTextBox
+            // 
+            firstNameTextBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            firstNameTextBox.CueHint.CueHintText = "First Name";
+            firstNameTextBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            firstNameTextBox.Location = new Point(256, 62);
+            firstNameTextBox.MinimumSize = new Size(194, 40);
+            firstNameTextBox.Name = "firstNameTextBox";
+            firstNameTextBox.Size = new Size(223, 40);
+            firstNameTextBox.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            firstNameTextBox.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            firstNameTextBox.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            firstNameTextBox.StateCommon.Border.Rounding = 5F;
+            firstNameTextBox.TabIndex = 17;
+            // 
+            // MITextBox
+            // 
+            MITextBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            MITextBox.CueHint.CueHintText = "M.I.";
+            MITextBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MITextBox.Location = new Point(489, 62);
+            MITextBox.MinimumSize = new Size(50, 40);
+            MITextBox.Name = "MITextBox";
+            MITextBox.Size = new Size(56, 40);
+            MITextBox.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            MITextBox.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            MITextBox.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            MITextBox.StateCommon.Border.Rounding = 5F;
+            MITextBox.TabIndex = 18;
+            // 
+            // kryptonLabel2
+            // 
+            kryptonLabel2.Location = new Point(21, 40);
+            kryptonLabel2.Name = "kryptonLabel2";
+            kryptonLabel2.Size = new Size(57, 22);
+            kryptonLabel2.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel2.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel2.TabIndex = 19;
+            kryptonLabel2.Values.Text = "Name";
+            // 
+            // barangayComboBox
+            // 
+            barangayComboBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            barangayComboBox.CueHint.CueHintText = "Barangay";
+            barangayComboBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            barangayComboBox.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorStack;
+            barangayComboBox.DropDownWidth = 251;
+            barangayComboBox.Items.AddRange(new object[] { "North Poblacion", "South Poblacion", "Dologon", "Anahawon", "Base Camp", "Colambugon", "Danggawan", "Panadtalan", "San Miguel", "Camp 1" });
+            barangayComboBox.Location = new Point(23, 146);
+            barangayComboBox.MinimumSize = new Size(255, 40);
+            barangayComboBox.Name = "barangayComboBox";
+            barangayComboBox.Size = new Size(255, 40);
+            barangayComboBox.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.ComboBox.Border.Rounding = 5F;
+            barangayComboBox.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(55, 71, 79);
+            barangayComboBox.StateCommon.ComboBox.Content.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            barangayComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            barangayComboBox.StateCommon.DropBack.Color1 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.DropBack.Color2 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.Item.Back.Color1 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.Item.Back.Color2 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.Item.Border.Color1 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.Item.Border.Color2 = Color.FromArgb(237, 237, 237);
+            barangayComboBox.StateCommon.Item.Content.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            barangayComboBox.StateCommon.Item.Content.ShortText.Color2 = Color.FromArgb(55, 71, 79);
+            barangayComboBox.StateCommon.Item.Content.ShortText.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            barangayComboBox.TabIndex = 20;
+            // 
+            // districtComboBox
+            // 
+            districtComboBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            districtComboBox.CueHint.CueHintText = "District";
+            districtComboBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            districtComboBox.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorStack;
+            districtComboBox.DropDownWidth = 251;
+            districtComboBox.Items.AddRange(new object[] { "Purok 2", "Purok 5", "Purok 10" });
+            districtComboBox.Location = new Point(290, 146);
+            districtComboBox.MinimumSize = new Size(255, 40);
+            districtComboBox.Name = "districtComboBox";
+            districtComboBox.Size = new Size(255, 40);
+            districtComboBox.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.ComboBox.Border.Rounding = 5F;
+            districtComboBox.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(55, 71, 79);
+            districtComboBox.StateCommon.ComboBox.Content.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            districtComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            districtComboBox.StateCommon.DropBack.Color1 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.DropBack.Color2 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.Item.Back.Color1 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.Item.Back.Color2 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.Item.Border.Color1 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.Item.Border.Color2 = Color.FromArgb(237, 237, 237);
+            districtComboBox.StateCommon.Item.Content.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            districtComboBox.StateCommon.Item.Content.ShortText.Color2 = Color.FromArgb(55, 71, 79);
+            districtComboBox.StateCommon.Item.Content.ShortText.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            districtComboBox.TabIndex = 21;
+            // 
+            // kryptonLabel3
+            // 
+            kryptonLabel3.Location = new Point(21, 124);
+            kryptonLabel3.Name = "kryptonLabel3";
+            kryptonLabel3.Size = new Size(73, 22);
+            kryptonLabel3.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel3.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel3.TabIndex = 22;
+            kryptonLabel3.Values.Text = "Address";
+            // 
+            // planComboBox
+            // 
+            planComboBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            planComboBox.CueHint.CueHintText = "Internet Plan";
+            planComboBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planComboBox.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorStack;
+            planComboBox.DropDownWidth = 251;
+            planComboBox.Items.AddRange(new object[] { "Postpaid", "Prepaid" });
+            planComboBox.Location = new Point(23, 234);
+            planComboBox.MinimumSize = new Size(255, 40);
+            planComboBox.Name = "planComboBox";
+            planComboBox.Size = new Size(255, 40);
+            planComboBox.StateCommon.ComboBox.Back.Color1 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.ComboBox.Border.Color2 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.ComboBox.Border.Rounding = 5F;
+            planComboBox.StateCommon.ComboBox.Content.Color1 = Color.FromArgb(55, 71, 79);
+            planComboBox.StateCommon.ComboBox.Content.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            planComboBox.StateCommon.DropBack.Color1 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.DropBack.Color2 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.Item.Back.Color1 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.Item.Back.Color2 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.Item.Border.Color1 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.Item.Border.Color2 = Color.FromArgb(237, 237, 237);
+            planComboBox.StateCommon.Item.Content.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            planComboBox.StateCommon.Item.Content.ShortText.Color2 = Color.FromArgb(55, 71, 79);
+            planComboBox.StateCommon.Item.Content.ShortText.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planComboBox.TabIndex = 23;
+            // 
+            // kryptonLabel4
+            // 
+            kryptonLabel4.Location = new Point(22, 212);
+            kryptonLabel4.Name = "kryptonLabel4";
+            kryptonLabel4.Size = new Size(46, 22);
+            kryptonLabel4.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel4.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel4.TabIndex = 24;
+            kryptonLabel4.Values.Text = "Plan";
+            // 
+            // dueDatePicker
+            // 
+            dueDatePicker.DropButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorOverflow;
+            dueDatePicker.Location = new Point(290, 234);
+            dueDatePicker.MinimumSize = new Size(255, 40);
+            dueDatePicker.Name = "dueDatePicker";
+            dueDatePicker.Size = new Size(255, 40);
+            dueDatePicker.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            dueDatePicker.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            dueDatePicker.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            dueDatePicker.StateCommon.Border.Rounding = 5F;
+            dueDatePicker.StateCommon.Content.Color1 = Color.FromArgb(55, 71, 79);
+            dueDatePicker.TabIndex = 25;
+            // 
+            // kryptonLabel5
+            // 
+            kryptonLabel5.Location = new Point(287, 212);
+            kryptonLabel5.Name = "kryptonLabel5";
+            kryptonLabel5.Size = new Size(83, 22);
+            kryptonLabel5.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel5.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel5.TabIndex = 26;
+            kryptonLabel5.Values.Text = "Due Date";
             // 
             // monthlyChargeTextBox
             // 
-            monthlyChargeTextBox.AnimateReadOnly = false;
-            monthlyChargeTextBox.BackgroundImageLayout = ImageLayout.None;
-            monthlyChargeTextBox.CharacterCasing = CharacterCasing.Normal;
-            monthlyChargeTextBox.Depth = 0;
-            monthlyChargeTextBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            monthlyChargeTextBox.HideSelection = true;
-            monthlyChargeTextBox.Hint = "Monthly Charge";
-            monthlyChargeTextBox.LeadingIcon = null;
-            monthlyChargeTextBox.Location = new Point(20, 308);
-            monthlyChargeTextBox.Margin = new Padding(3, 2, 3, 2);
-            monthlyChargeTextBox.MaxLength = 32767;
-            monthlyChargeTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            monthlyChargeTextBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            monthlyChargeTextBox.CueHint.CueHintText = "Charge Amount";
+            monthlyChargeTextBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            monthlyChargeTextBox.Location = new Point(21, 327);
+            monthlyChargeTextBox.MinimumSize = new Size(194, 40);
             monthlyChargeTextBox.Name = "monthlyChargeTextBox";
-            monthlyChargeTextBox.PasswordChar = '\0';
-            monthlyChargeTextBox.PrefixSuffixText = null;
-            monthlyChargeTextBox.ReadOnly = false;
-            monthlyChargeTextBox.RightToLeft = RightToLeft.No;
-            monthlyChargeTextBox.SelectedText = "";
-            monthlyChargeTextBox.SelectionLength = 0;
-            monthlyChargeTextBox.SelectionStart = 0;
-            monthlyChargeTextBox.ShortcutsEnabled = true;
-            monthlyChargeTextBox.Size = new Size(194, 48);
-            monthlyChargeTextBox.TabIndex = 11;
-            monthlyChargeTextBox.TabStop = false;
-            monthlyChargeTextBox.TextAlign = HorizontalAlignment.Left;
-            monthlyChargeTextBox.TrailingIcon = null;
-            monthlyChargeTextBox.UseSystemPasswordChar = false;
+            monthlyChargeTextBox.Size = new Size(257, 40);
+            monthlyChargeTextBox.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            monthlyChargeTextBox.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            monthlyChargeTextBox.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            monthlyChargeTextBox.StateCommon.Border.Rounding = 5F;
+            monthlyChargeTextBox.TabIndex = 27;
             // 
             // contactNumberTextBox
             // 
-            contactNumberTextBox.AnimateReadOnly = false;
-            contactNumberTextBox.BackgroundImageLayout = ImageLayout.None;
-            contactNumberTextBox.CharacterCasing = CharacterCasing.Normal;
-            contactNumberTextBox.Depth = 0;
-            contactNumberTextBox.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contactNumberTextBox.HelperText = "09XXXXXXXXX";
-            contactNumberTextBox.HideSelection = true;
-            contactNumberTextBox.Hint = "Contact Number";
-            contactNumberTextBox.LeadingIcon = null;
-            contactNumberTextBox.Location = new Point(237, 308);
-            contactNumberTextBox.Margin = new Padding(3, 2, 3, 2);
-            contactNumberTextBox.MaxLength = 32767;
-            contactNumberTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            contactNumberTextBox.CueHint.Color1 = Color.FromArgb(142, 138, 138);
+            contactNumberTextBox.CueHint.CueHintText = "09XXXXXXXXX";
+            contactNumberTextBox.CueHint.Font = new Font("Helvetica", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contactNumberTextBox.Location = new Point(290, 327);
+            contactNumberTextBox.MinimumSize = new Size(194, 40);
             contactNumberTextBox.Name = "contactNumberTextBox";
-            contactNumberTextBox.PasswordChar = '\0';
-            contactNumberTextBox.PrefixSuffixText = null;
-            contactNumberTextBox.ReadOnly = false;
-            contactNumberTextBox.RightToLeft = RightToLeft.No;
-            contactNumberTextBox.SelectedText = "";
-            contactNumberTextBox.SelectionLength = 0;
-            contactNumberTextBox.SelectionStart = 0;
-            contactNumberTextBox.ShortcutsEnabled = true;
-            contactNumberTextBox.Size = new Size(194, 48);
-            contactNumberTextBox.TabIndex = 12;
-            contactNumberTextBox.TabStop = false;
-            contactNumberTextBox.TextAlign = HorizontalAlignment.Left;
-            contactNumberTextBox.TrailingIcon = null;
-            contactNumberTextBox.UseSystemPasswordChar = false;
+            contactNumberTextBox.Size = new Size(255, 40);
+            contactNumberTextBox.StateCommon.Back.Color1 = Color.FromArgb(237, 237, 237);
+            contactNumberTextBox.StateCommon.Border.Color1 = Color.FromArgb(237, 237, 237);
+            contactNumberTextBox.StateCommon.Border.Color2 = Color.FromArgb(237, 237, 237);
+            contactNumberTextBox.StateCommon.Border.Rounding = 5F;
+            contactNumberTextBox.TabIndex = 28;
             // 
-            // CancelBtn
+            // kryptonLabel6
             // 
-            CancelBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            CancelBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            CancelBtn.Depth = 0;
-            CancelBtn.HighEmphasis = true;
-            CancelBtn.Icon = null;
-            CancelBtn.Location = new Point(286, 374);
-            CancelBtn.Margin = new Padding(4);
-            CancelBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            CancelBtn.Name = "CancelBtn";
-            CancelBtn.NoAccentTextColor = Color.Empty;
-            CancelBtn.Size = new Size(77, 36);
-            CancelBtn.TabIndex = 13;
-            CancelBtn.Text = "CANCEL";
-            CancelBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            CancelBtn.UseAccentColor = false;
-            CancelBtn.UseVisualStyleBackColor = true;
+            kryptonLabel6.Location = new Point(20, 303);
+            kryptonLabel6.Name = "kryptonLabel6";
+            kryptonLabel6.Size = new Size(131, 22);
+            kryptonLabel6.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel6.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel6.TabIndex = 29;
+            kryptonLabel6.Values.Text = "Monthly Charge";
+            // 
+            // kryptonLabel7
+            // 
+            kryptonLabel7.Location = new Point(286, 303);
+            kryptonLabel7.Name = "kryptonLabel7";
+            kryptonLabel7.Size = new Size(136, 22);
+            kryptonLabel7.StateCommon.ShortText.Color1 = Color.FromArgb(55, 71, 79);
+            kryptonLabel7.StateCommon.ShortText.Font = new Font("Helvetica Rounded", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kryptonLabel7.TabIndex = 30;
+            kryptonLabel7.Values.Text = "Contact Number";
             // 
             // SaveBtn
             // 
-            SaveBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            SaveBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            SaveBtn.Depth = 0;
-            SaveBtn.HighEmphasis = true;
-            SaveBtn.Icon = null;
-            SaveBtn.Location = new Point(375, 374);
-            SaveBtn.Margin = new Padding(4);
-            SaveBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            SaveBtn.Location = new Point(455, 387);
+            SaveBtn.Margin = new Padding(0);
             SaveBtn.Name = "SaveBtn";
-            SaveBtn.NoAccentTextColor = Color.Empty;
-            SaveBtn.Size = new Size(64, 36);
-            SaveBtn.TabIndex = 14;
-            SaveBtn.Text = "SAVE";
-            SaveBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            SaveBtn.UseAccentColor = false;
-            SaveBtn.UseVisualStyleBackColor = true;
+            SaveBtn.OverrideFocus.Back.Color1 = Color.FromArgb(94, 167, 178);
+            SaveBtn.OverrideFocus.Back.Color2 = Color.FromArgb(94, 167, 178);
+            SaveBtn.OverrideFocus.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            SaveBtn.Size = new Size(90, 37);
+            SaveBtn.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            SaveBtn.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            SaveBtn.StateCommon.Border.Color1 = Color.FromArgb(52, 72, 100);
+            SaveBtn.StateCommon.Border.Color2 = Color.FromArgb(52, 72, 100);
+            SaveBtn.StateCommon.Border.Rounding = 20F;
+            SaveBtn.StateCommon.Border.Width = 1;
+            SaveBtn.StateCommon.Content.Padding = new Padding(0);
+            SaveBtn.StateCommon.Content.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            SaveBtn.StateCommon.Content.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            SaveBtn.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SaveBtn.StateTracking.Back.Color1 = Color.FromArgb(94, 167, 178);
+            SaveBtn.StateTracking.Back.Color2 = Color.FromArgb(94, 167, 178);
+            SaveBtn.StateTracking.Border.Color1 = Color.FromArgb(52, 72, 100);
+            SaveBtn.StateTracking.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            SaveBtn.StateTracking.Content.ShortText.Color2 = Color.FromArgb(255, 255, 252);
+            SaveBtn.TabIndex = 33;
+            SaveBtn.Values.DropDownArrowColor = Color.Empty;
+            SaveBtn.Values.Text = "Save";
             SaveBtn.Click += SaveBtn_Click_1;
+            // 
+            // CancelBtn
+            // 
+            CancelBtn.Location = new Point(355, 387);
+            CancelBtn.Margin = new Padding(0);
+            CancelBtn.Name = "CancelBtn";
+            CancelBtn.OverrideFocus.Back.Color1 = Color.FromArgb(239, 131, 131);
+            CancelBtn.OverrideFocus.Back.Color2 = Color.FromArgb(239, 131, 131);
+            CancelBtn.OverrideFocus.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            CancelBtn.Size = new Size(90, 37);
+            CancelBtn.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
+            CancelBtn.StateCommon.Back.Color2 = Color.FromArgb(255, 255, 252);
+            CancelBtn.StateCommon.Border.Color1 = Color.FromArgb(52, 72, 100);
+            CancelBtn.StateCommon.Border.Color2 = Color.FromArgb(52, 72, 100);
+            CancelBtn.StateCommon.Border.Rounding = 20F;
+            CancelBtn.StateCommon.Border.Width = 1;
+            CancelBtn.StateCommon.Content.Padding = new Padding(0);
+            CancelBtn.StateCommon.Content.ShortText.Color1 = Color.FromArgb(52, 72, 100);
+            CancelBtn.StateCommon.Content.ShortText.Color2 = Color.FromArgb(52, 72, 100);
+            CancelBtn.StateCommon.Content.ShortText.Font = new Font("Microsoft Sans Serif", 11.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CancelBtn.StateTracking.Back.Color1 = Color.FromArgb(239, 131, 131);
+            CancelBtn.StateTracking.Back.Color2 = Color.FromArgb(239, 131, 131);
+            CancelBtn.StateTracking.Border.Color1 = Color.FromArgb(52, 72, 100);
+            CancelBtn.StateTracking.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            CancelBtn.StateTracking.Content.ShortText.Color1 = Color.FromArgb(255, 255, 252);
+            CancelBtn.StateTracking.Content.ShortText.Color2 = Color.FromArgb(255, 255, 252);
+            CancelBtn.TabIndex = 32;
+            CancelBtn.Values.DropDownArrowColor = Color.Empty;
+            CancelBtn.Values.Text = "Cancel";
+            CancelBtn.Click += CancelBtn_Click;
             // 
             // addSubscribersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(458, 433);
+            BackColor = Color.FromArgb(255, 254, 250);
+            ClientSize = new Size(572, 436);
             Controls.Add(SaveBtn);
-            Controls.Add(CancelBtn);
+            Controls.Add(kryptonLabel7);
+            Controls.Add(kryptonLabel6);
             Controls.Add(contactNumberTextBox);
             Controls.Add(monthlyChargeTextBox);
-            Controls.Add(materialLabel3);
+            Controls.Add(kryptonLabel5);
             Controls.Add(dueDatePicker);
-            Controls.Add(materialLabel2);
+            Controls.Add(kryptonLabel4);
             Controls.Add(planComboBox);
-            Controls.Add(materialLabel1);
-            Controls.Add(districtComboBox);
             Controls.Add(barangayComboBox);
+            Controls.Add(kryptonLabel3);
+            Controls.Add(districtComboBox);
+            Controls.Add(lastNameTextBox);
+            Controls.Add(kryptonLabel2);
             Controls.Add(MITextBox);
             Controls.Add(firstNameTextBox);
-            Controls.Add(lastNameTextBox);
-            Controls.Add(label1);
+            Controls.Add(kryptonLabel1);
+            Controls.Add(CancelBtn);
             Margin = new Padding(3, 2, 3, 2);
             Name = "addSubscribersForm";
             Padding = new Padding(3, 48, 3, 2);
+            ShowIcon = false;
+            StateCommon.Back.Color1 = Color.FromArgb(255, 254, 250);
+            StateCommon.Back.Color2 = Color.FromArgb(255, 254, 250);
+            StateCommon.Border.Color1 = Color.FromArgb(255, 254, 250);
+            StateCommon.Border.Rounding = 20F;
+            StateCommon.Header.Back.Color1 = Color.FromArgb(255, 254, 250);
+            StateCommon.Header.Back.Color2 = Color.FromArgb(255, 254, 250);
+            TransparencyKey = Color.FromArgb(241, 240, 233);
             Load += addSubscribersForm_Load;
+            ((System.ComponentModel.ISupportInitialize)barangayComboBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)districtComboBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)planComboBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialButton CancelBtn;
-        private MaterialSkin.Controls.MaterialButton SaveBtn;
-        public MaterialSkin.Controls.MaterialTextBox2 lastNameTextBox;
-        public MaterialSkin.Controls.MaterialTextBox2 firstNameTextBox;
-        public MaterialSkin.Controls.MaterialTextBox2 MITextBox;
-        public MaterialSkin.Controls.MaterialComboBox barangayComboBox;
-        public MaterialSkin.Controls.MaterialComboBox districtComboBox;
-        public MaterialSkin.Controls.MaterialComboBox planComboBox;
-        public DateTimePicker dueDatePicker;
-        public MaterialSkin.Controls.MaterialTextBox2 monthlyChargeTextBox;
-        public MaterialSkin.Controls.MaterialTextBox2 contactNumberTextBox;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel3;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel5;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel6;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel7;
+        private Krypton.Toolkit.KryptonButton SaveBtn;
+        private Krypton.Toolkit.KryptonButton CancelBtn;
+        public Krypton.Toolkit.KryptonTextBox lastNameTextBox;
+        public Krypton.Toolkit.KryptonTextBox firstNameTextBox;
+        public Krypton.Toolkit.KryptonTextBox MITextBox;
+        public Krypton.Toolkit.KryptonComboBox barangayComboBox;
+        public Krypton.Toolkit.KryptonComboBox districtComboBox;
+        public Krypton.Toolkit.KryptonComboBox planComboBox;
+        public Krypton.Toolkit.KryptonDateTimePicker dueDatePicker;
+        public Krypton.Toolkit.KryptonTextBox contactNumberTextBox;
+        public Krypton.Toolkit.KryptonTextBox monthlyChargeTextBox;
     }
 }

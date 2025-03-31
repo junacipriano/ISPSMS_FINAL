@@ -1,4 +1,4 @@
-﻿using MaterialSkin;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using Domain.Models;
 using ISPSMS_JUHACA.Views;
@@ -7,10 +7,6 @@ using Infastructure.Data.Repositories;
 using ISPSMS_JUHACA.MainPages.SubPages;
 using Microsoft.Graph.Models;
 using Infastructure.Data.Repositories.IRepositories;
-using System.Runtime.InteropServices;
-using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Small;
-using Image = System.Drawing.Image;
-using Application = System.Windows.Forms.Application;
 
 namespace ISPSMS_JUHACA
 {
@@ -39,48 +35,28 @@ namespace ISPSMS_JUHACA
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey600, Primary.Grey700, Primary.Grey900, Accent.Red200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            materialTabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
-            materialTabControl1.Invalidate();
+            this.BackColor = Color.FromArgb(241, 240, 233);
+
+            // Force the form to repaint
+            this.Invalidate();
+            SetTabPageColors();
 
             bindingSource = new BindingSource();
             _userProfileForm = new UserProfileForm(unitOfWork, userId);
+
+            materialTabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
+
+
         }
-        private void MaterialTabControl1_DrawItem(object sender, DrawItemEventArgs e)
+
+        private void SetTabPageColors()
         {
-            var tabControl = sender as TabControl;
-            if (tabControl == null) return;
-
-            // Get the tab rectangle and text
-            Rectangle tabRect = tabControl.GetTabRect(e.Index);
-            string tabText = tabControl.TabPages[e.Index].Text;
-            Font font = new Font("Arial", 10, FontStyle.Bold);
-
-            // Custom colors
-            Color backColor = (e.Index == tabControl.SelectedIndex) ? Color.FromArgb(255, 254, 250) : Color.FromArgb(255, 254, 250);
-            Color textColor = Color.FromArgb(255, 254, 250);
-
-            // Fill background
-            using (SolidBrush backBrush = new SolidBrush(backColor))
+            foreach (TabPage page in materialTabControl1.TabPages)
             {
-                e.Graphics.FillRectangle(backBrush, tabRect);
+                page.BackColor = Color.FromArgb(241, 240, 233);
             }
-
-            // Draw text centered
-            TextRenderer.DrawText(e.Graphics, tabText, font, tabRect, textColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-        }
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-
-            Rectangle rect = new Rectangle(0, this.Height - this.ClientSize.Height, this.Width, this.ClientSize.Height);
-
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(241, 240, 233)))
-            {
-                e.Graphics.FillRectangle(brush, rect);
-            }
-
         }
 
         private void TabControl1_SelectedIndexChanged(object? sender, EventArgs e)
@@ -99,23 +75,23 @@ namespace ISPSMS_JUHACA
                 newPage = _dbPage ??= new DashboardPage(_connectedSubscribersRepository, unitOfWork, this);
             else if (materialTabControl1.SelectedTab == activitiesPage)
                 newPage = _actPage ??= new ActivityForm(unitOfWork, this);
+
             if (newPage != null)
                 LoadFormIntoTab(materialTabControl1.SelectedTab, newPage);
         }
 
-
-        private void LoadFormIntoTab(TabPage tabPage, Form form)
-        {
-            if (!tabPage.Controls.Contains(form))
+            private void LoadFormIntoTab(TabPage tabPage, Form form)
             {
-                tabPage.Controls.Clear();
-                form.TopLevel = false;
-                form.FormBorderStyle = FormBorderStyle.None;
-                form.Dock = DockStyle.Fill;
-                tabPage.Controls.Add(form);
-                form.Show();
+                if (!tabPage.Controls.Contains(form))
+                {
+                    tabPage.Controls.Clear();
+                    form.TopLevel = false;
+                    form.FormBorderStyle = FormBorderStyle.None;
+                    form.Dock = DockStyle.Fill;
+                    tabPage.Controls.Add(form);
+                    form.Show();
+                }
             }
-        }
 
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
@@ -154,8 +130,5 @@ namespace ISPSMS_JUHACA
 
         public string GetUserRole() => lblRole.Text;
         public string GetUsername() => lblUsername.Text;
-
-        
-    }
-
+  }
 }

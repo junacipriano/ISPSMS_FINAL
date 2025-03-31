@@ -213,6 +213,16 @@ namespace ISPSMS_JUHACA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PC {
+            get {
+                object obj = ResourceManager.GetObject("PC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print {
             get {
                 object obj = ResourceManager.GetObject("print", resourceCulture);
@@ -286,6 +296,26 @@ namespace ISPSMS_JUHACA.Properties {
         internal static System.Drawing.Bitmap square__1_ {
             get {
                 object obj = ResourceManager.GetObject("square (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_design__18_ {
+            get {
+                object obj = ResourceManager.GetObject("Untitled design (18)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_design__18_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled design (18)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
