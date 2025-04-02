@@ -15,8 +15,8 @@ namespace ISPSMS_JUHACA.Views
     public partial class ReceiptForm : KryptonForm
     {
         private Transactions _transaction;
-        private Accounts _loggedInUser;
-        public ReceiptForm(Transactions transactionData, Accounts loggedInUser)
+        private readonly string _loggedInUser;
+        public ReceiptForm(Transactions transactionData, string loggedInUser)
         {
             InitializeComponent();
             _transaction = transactionData;
@@ -30,7 +30,7 @@ namespace ISPSMS_JUHACA.Views
             transactionDateTextBox.Text = _transaction.TransactionDateTime.ToString();   
             amountNumberTextBox.Text = _transaction.PaidAmount.ToString("C");
             amountWordTextBox.Text = ConvertAmountToWords(_transaction.PaidAmount);
-            receivedByTextBox.Text = _loggedInUser.AccountName;
+            receivedByTextBox.Text = _loggedInUser;
         }
 
         private string ConvertAmountToWords(decimal amount)

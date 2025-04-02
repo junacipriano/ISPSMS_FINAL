@@ -81,7 +81,7 @@
             nameTextBox.Enabled = false;
             nameTextBox.Location = new Point(109, 64);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(211, 37);
+            nameTextBox.Size = new Size(211, 45);
             nameTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             nameTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             nameTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -95,7 +95,7 @@
             statusTextBox.Enabled = false;
             statusTextBox.Location = new Point(110, 91);
             statusTextBox.Name = "statusTextBox";
-            statusTextBox.Size = new Size(151, 27);
+            statusTextBox.Size = new Size(151, 31);
             statusTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             statusTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             statusTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -119,7 +119,7 @@
             // 
             kryptonTextBox4.Location = new Point(43, 125);
             kryptonTextBox4.Name = "kryptonTextBox4";
-            kryptonTextBox4.Size = new Size(89, 24);
+            kryptonTextBox4.Size = new Size(89, 28);
             kryptonTextBox4.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox4.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox4.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -133,7 +133,7 @@
             dueDateTextBox.Enabled = false;
             dueDateTextBox.Location = new Point(192, 125);
             dueDateTextBox.Name = "dueDateTextBox";
-            dueDateTextBox.Size = new Size(169, 24);
+            dueDateTextBox.Size = new Size(169, 28);
             dueDateTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             dueDateTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -148,7 +148,7 @@
             kryptonTextBox6.Enabled = false;
             kryptonTextBox6.Location = new Point(45, 171);
             kryptonTextBox6.Name = "kryptonTextBox6";
-            kryptonTextBox6.Size = new Size(89, 24);
+            kryptonTextBox6.Size = new Size(89, 28);
             kryptonTextBox6.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox6.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox6.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -162,7 +162,7 @@
             kryptonTextBox8.Enabled = false;
             kryptonTextBox8.Location = new Point(45, 212);
             kryptonTextBox8.Name = "kryptonTextBox8";
-            kryptonTextBox8.Size = new Size(89, 24);
+            kryptonTextBox8.Size = new Size(89, 28);
             kryptonTextBox8.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox8.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox8.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -176,7 +176,7 @@
             kryptonTextBox9.Enabled = false;
             kryptonTextBox9.Location = new Point(43, 296);
             kryptonTextBox9.Name = "kryptonTextBox9";
-            kryptonTextBox9.Size = new Size(89, 24);
+            kryptonTextBox9.Size = new Size(89, 28);
             kryptonTextBox9.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox9.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox9.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -200,7 +200,7 @@
             kryptonTextBox11.Enabled = false;
             kryptonTextBox11.Location = new Point(230, 171);
             kryptonTextBox11.Name = "kryptonTextBox11";
-            kryptonTextBox11.Size = new Size(133, 24);
+            kryptonTextBox11.Size = new Size(133, 28);
             kryptonTextBox11.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox11.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox11.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -215,7 +215,7 @@
             addressTextBox.Enabled = false;
             addressTextBox.Location = new Point(164, 212);
             addressTextBox.Name = "addressTextBox";
-            addressTextBox.Size = new Size(199, 24);
+            addressTextBox.Size = new Size(199, 28);
             addressTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             addressTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -230,7 +230,7 @@
             amountTextBox.Enabled = false;
             amountTextBox.Location = new Point(43, 316);
             amountTextBox.Name = "amountTextBox";
-            amountTextBox.Size = new Size(113, 28);
+            amountTextBox.Size = new Size(113, 32);
             amountTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             amountTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             amountTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -241,6 +241,7 @@
             // 
             // payBtn
             // 
+            payBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             payBtn.Location = new Point(270, 307);
             payBtn.Margin = new Padding(0);
             payBtn.Name = "payBtn";
@@ -282,7 +283,7 @@
             planTextBox.Enabled = false;
             planTextBox.Location = new Point(230, 252);
             planTextBox.Name = "planTextBox";
-            planTextBox.Size = new Size(133, 24);
+            planTextBox.Size = new Size(133, 28);
             planTextBox.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             planTextBox.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             planTextBox.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -297,7 +298,7 @@
             kryptonTextBox2.Enabled = false;
             kryptonTextBox2.Location = new Point(45, 252);
             kryptonTextBox2.Name = "kryptonTextBox2";
-            kryptonTextBox2.Size = new Size(89, 24);
+            kryptonTextBox2.Size = new Size(89, 28);
             kryptonTextBox2.StateCommon.Back.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox2.StateCommon.Border.Color1 = Color.FromArgb(255, 255, 252);
             kryptonTextBox2.StateCommon.Border.Color2 = Color.FromArgb(255, 255, 252);
@@ -326,7 +327,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(241, 240, 233);
-            ClientSize = new Size(413, 409);
+            ClientSize = new Size(411, 407);
             ControlBox = false;
             Controls.Add(planTextBox);
             Controls.Add(kryptonTextBox2);

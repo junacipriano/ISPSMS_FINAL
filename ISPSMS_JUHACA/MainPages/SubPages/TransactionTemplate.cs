@@ -13,7 +13,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
     public partial class TransactionTemplate : UserControl
     {
         private readonly Transactions _transaction;
-        private readonly Accounts _loggedInUser;
+        private readonly string _loggedInUser;
 
         private PrintDocument printDocument = new PrintDocument();
         public Transactions Transaction { get; private set; }

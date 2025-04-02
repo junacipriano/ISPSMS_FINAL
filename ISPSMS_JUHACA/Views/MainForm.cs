@@ -95,12 +95,13 @@ namespace ISPSMS_JUHACA
 
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
+            BillingPresenter presenter = _billPage.GetPresenter();
             string searchText = searchBar.Text.Trim().ToLower();
 
             if (materialTabControl1.SelectedTab == subscribersPage && _subsPage != null)
                 _subsPage.FilterData(searchText);
             else if (materialTabControl1.SelectedTab == billingPage && _billPage != null)
-                _billPage.FilterData(searchText);
+                presenter.FilterData(searchText);
             else if (materialTabControl1.SelectedTab == transactionsPage && _traPage != null)
                 _traPage.FilterData(searchText);
         }

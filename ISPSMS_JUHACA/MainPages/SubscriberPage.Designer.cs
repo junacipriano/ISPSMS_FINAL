@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubscriberPage));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             allBtn = new Modified_Tools.CustomMaterialButton();
             anahawonBtn = new Modified_Tools.CustomMaterialButton();
             baseCampBtn = new Modified_Tools.CustomMaterialButton();
@@ -833,13 +833,13 @@
             connectedsubscribersGridView.ReadOnly = true;
             connectedsubscribersGridView.RowHeadersVisible = false;
             connectedsubscribersGridView.RowHeadersWidth = 50;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(55, 71, 79);
-            dataGridViewCellStyle1.Padding = new Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(217, 217, 217);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(234, 98, 38);
-            connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new Font("Helvetica Rounded", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(55, 71, 79);
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(217, 217, 217);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(234, 98, 38);
+            connectedsubscribersGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             connectedsubscribersGridView.RowTemplate.DefaultCellStyle.Padding = new Padding(5);
             connectedsubscribersGridView.RowTemplate.Height = 40;
             connectedsubscribersGridView.RowTemplate.ReadOnly = true;

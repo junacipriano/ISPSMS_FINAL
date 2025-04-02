@@ -19,10 +19,11 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         private readonly IUnitOfWork _dbContext;
         private readonly BillingItems _billingItems;
         private readonly BillingPage _billingPage;
-        private readonly Accounts _loggedInUser;
+        private readonly string _loggedInUser;
         private readonly MainForm _mainForm;
         private readonly string _currentUserName;
         private readonly string _currentUserRole;
+        private readonly BillingPresenter _presenter;
 
         public BillingCheckout(IUnitOfWork dbContext, ConnectedSubscribers selectedSubscribers, BillingPage billingPage, MainForm mainForm)
         {
@@ -30,11 +31,14 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             ConSubsEntity = selectedSubscribers;
             _billingPage = billingPage;
             _dbContext = dbContext;
-
             _mainForm = mainForm ?? throw new ArgumentNullException(nameof(mainForm)); // Ensure mainForm isn't null
+           _loggedInUser = _mainForm.GetUsername();
 
             _currentUserName = _mainForm.GetUsername();
             _currentUserRole = _mainForm.GetUserRole();
+           
+            _presenter = new BillingPresenter(billingPage, _dbContext);
+
             LoadBillingCheckoutData(ConSubsEntity);
             noteComboBox.Items.Clear();
             noteComboBox.Items.Add("None");
@@ -130,7 +134,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
             MessageBox.Show("Payment Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Ensure transactions are sorted by date
-            _billingPage.LoadBillingItemsAsync();
+            _presenter.LoadBillingItemsAsync();
 
             // Print receipt if needed
             DialogResult printReceipt = MessageBox.Show("Do you want to print the receipt?", "Print Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -146,7 +150,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
                 activityDescription += $" (Note: {noteComboBox.Text})";
             }
             LogActivity(activityDescription);
-            this.DialogResult = DialogResult.OK;
+
             this.Close();
         }
 
@@ -169,7 +173,7 @@ namespace ISPSMS_JUHACA.MainPages.SubPages
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
-        {   
+        {
             this.Close();
         }
 

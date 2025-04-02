@@ -82,7 +82,7 @@ namespace ISPSMS_JUHACA.MainPages
             ShowLoadingIndicator(false);
 
         }
-
+            
         private async Task RefreshTransactions()
         {
             var transactions = await _presenter.LoadTransactionsByDateAsync(kryptonDateTimePicker1.Value.Date);
@@ -319,7 +319,7 @@ namespace ISPSMS_JUHACA.MainPages
                     ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
                     using (ExcelPackage package = new ExcelPackage())
-                    {
+                    {   
                         ExcelWorksheet ws = package.Workbook.Worksheets.Add("Transactions");
                         ws.Cells["A1"].LoadFromDataTable(dt, true);
 

@@ -417,41 +417,6 @@ namespace ISPSMS_JUHACA.MainPages
                 if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index ||
                     e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
                 {
-                    // Prevent default paint
-                    e.Handled = true;
-
-                    // Set your custom background color
-                    Color bgColor = Color.FromArgb(255, 255, 252);
-                    using (SolidBrush brush = new SolidBrush(bgColor))
-                    {
-                        e.Graphics.FillRectangle(brush, e.CellBounds);
-                    }
-
-                    // Draw the image
-                    Image image = null;
-                    if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index)
-                    {
-                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\edit.png");
-                    }
-                    else if (e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
-                    {
-                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
-                    }
-
-                    if (image != null)
-                    {
-                        var imageSize = new Size(25, 25); // Desired size
-                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
-                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
-                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
-                    }
-                }
-            }
-            if (e.RowIndex >= 0)
-            {
-                if (e.ColumnIndex == connectedsubscribersGridView.Columns["editButton"].Index ||
-                    e.ColumnIndex == connectedsubscribersGridView.Columns["disconnectButton"].Index)
-                {
                     e.Handled = true;
 
                     Color bgColor = Color.FromArgb(255, 255, 252);

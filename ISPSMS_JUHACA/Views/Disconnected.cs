@@ -9,11 +9,12 @@ using ISPSMS_JUHACA.Presenter;
 using Krypton.Toolkit;
 using Microsoft.VisualBasic;
 using ISPSMS_JUHACA.MainPages.SubPages;
+using System.Drawing.Drawing2D;
 
 
 namespace ISPSMS_JUHACA.Views
 {
-    public partial class Disconnected : MaterialForm, IDisconnected
+    public partial class Disconnected : KryptonForm, IDisconnected
     {
         public readonly IUnitOfWork dbContext;
         private System.Windows.Forms.BindingSource bindingSource;
@@ -37,22 +38,7 @@ namespace ISPSMS_JUHACA.Views
 
             try
             {
-
-                // Check if MaterialSkinManager.Instance is null before using it
                 var materialSkinManager = MaterialSkinManager.Instance;
-                if (materialSkinManager != null)
-                {
-                    materialSkinManager.AddFormToManage(this);
-                    materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                    materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(
-                        Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500,
-                        Accent.LightBlue200, TextShade.WHITE);
-                }
-                else
-                {
-                    MessageBox.Show("MaterialSkinManager is not initialized!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
                 this.dbContext = dbContext;
                 bindingSource = new System.Windows.Forms.BindingSource();
 
@@ -90,36 +76,6 @@ namespace ISPSMS_JUHACA.Views
         {
             DisconnectedGridView1.DataSource = null;
             DisconnectedGridView1.DataSource = subscribers.ToList(); // Convert to List for binding
-
-            // Check if the button column already exists
-            if (!DisconnectedGridView1.Columns.Contains("ReconnectColumn"))
-            {
-                DataGridViewButtonColumn reconnectColumn = new DataGridViewButtonColumn
-                {
-                    Name = "ReconnectColumn",
-                    HeaderText = "Action",
-                    Text = "Reconnect",
-                    UseColumnTextForButtonValue = true,
-                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                };
-
-                DisconnectedGridView1.Columns.Add(reconnectColumn);
-            }
-            if (!DisconnectedGridView1.Columns.Contains("DeleteColumn"))
-            {
-                DataGridViewButtonColumn deleteColumn = new DataGridViewButtonColumn
-                {
-                    Name = "DeleteColumn",
-                    HeaderText = "Action",
-                    Text = "Delete",
-                    UseColumnTextForButtonValue = true,
-                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                };
-
-                DisconnectedGridView1.Columns.Add(deleteColumn);
-            }
-
-            DisconnectedGridView1.CellClick += DisconnectedGridView1_CellClick;
         }
 
         private void DisconnectedGridView1_CellClick(object? sender, DataGridViewCellEventArgs e)
@@ -129,7 +85,7 @@ namespace ISPSMS_JUHACA.Views
                 var selectedSubscriber = (DisconnectedSubscribers)DisconnectedGridView1.Rows[e.RowIndex].DataBoundItem;
 
                 // Handle the "Reconnect" button click
-                if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "ReconnectColumn")
+                if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "reconnectButton")
                 {
                     DialogResult result = MessageBox.Show($"Are you sure you want to reconnect {selectedSubscriber.Disconn_Name}?",
                                                           "Confirm Reconnection",
@@ -167,7 +123,6 @@ namespace ISPSMS_JUHACA.Views
                                 Charge = subscriberToReconnect.Charge
                             };
 
-                            // 🚫 Do NOT save yet—wait for billing confirmation
 
                             var mainForm = new MainForm(dbContext);
                             var billingPage = new BillingPage(dbContext, mainForm);
@@ -175,7 +130,6 @@ namespace ISPSMS_JUHACA.Views
 
                             var res = billingCheckout.ShowDialog();
 
-                            // ✅ Only save if billing was confirmed
                             if (res == DialogResult.OK)
                             {
                                 dbContext.connectedSubscriberRepository.Add(connectedSubscriber);
@@ -205,8 +159,7 @@ namespace ISPSMS_JUHACA.Views
                     }
                 }
 
-                // Handle the "Delete" button click
-                if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "DeleteColumn")
+                if (DisconnectedGridView1.Columns[e.ColumnIndex].Name == "deleteButton")
                 {
                     DialogResult result = MessageBox.Show($"Are you sure you want to delete {selectedSubscriber.Disconn_Name}?",
                                                           "Confirm Deletion",
@@ -261,10 +214,101 @@ namespace ISPSMS_JUHACA.Views
         }
 
 
-
-        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        private void DisconnectedGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == DisconnectedGridView1.Columns["reconnectButton"].Index ||
+                    e.ColumnIndex == DisconnectedGridView1.Columns["deleteButton"].Index)
+                {
+                    e.Handled = true;
 
+                    Color bgColor = Color.FromArgb(255, 255, 252);
+                    using (SolidBrush brush = new SolidBrush(bgColor))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    Image image = null;
+                    if (e.ColumnIndex == DisconnectedGridView1.Columns["reconnectButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\reconnect.png");
+                    }
+                    else if (e.ColumnIndex == DisconnectedGridView1.Columns["deleteButton"].Index)
+                    {
+                        image = Image.FromFile(@"D:\ISPSMS_FINAL\Icons\minus-circle.png");
+                    }
+
+                    if (image != null)
+                    {
+                        var imageSize = new Size(25, 25);
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - imageSize.Width) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - imageSize.Height) / 2;
+                        e.Graphics.DrawImage(image, new Rectangle(new Point(x, y), imageSize));
+                    }
+                }
+            }
+            ApplyStatusStyle(e, "Status");
         }
+
+        private void ApplyStatusStyle(DataGridViewCellPaintingEventArgs e, string columnName)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            if (DisconnectedGridView1.Columns[e.ColumnIndex].DataPropertyName != columnName)
+                return;
+
+            string status = e.FormattedValue?.ToString()?.Trim();
+            if (string.IsNullOrEmpty(status))
+                return;
+
+            DisconnectedGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            Color backColor = Color.FromArgb(217, 217, 217); ;
+            Color textColor = Color.Gray;
+            Color borderColor = Color.Gray; ;
+
+            e.Handled = true;
+            using (SolidBrush cellBgBrush = new SolidBrush(Color.FromArgb(255, 255, 252)))
+            {
+                e.Graphics.FillRectangle(cellBgBrush, e.CellBounds);
+            }
+            e.PaintBackground(e.CellBounds, true);
+
+            using (SolidBrush brush = new SolidBrush(backColor))
+            using (Pen borderPen = new Pen(borderColor, 1)) 
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            {
+                SizeF textSize = e.Graphics.MeasureString(status, e.CellStyle.Font);
+                int paddingX = 15;
+                int paddingY = 5;
+                int badgeWidth = (int)textSize.Width + paddingX * 2;
+                int badgeHeight = (int)textSize.Height + paddingY;
+
+                int badgeX = e.CellBounds.X + (e.CellBounds.Width - badgeWidth) / 2;
+                int badgeY = e.CellBounds.Y + (e.CellBounds.Height - badgeHeight) / 2;
+                Rectangle rect = new Rectangle(badgeX, badgeY, badgeWidth, badgeHeight);
+
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                GraphicsPath path = GetRoundedRectanglePath(rect, badgeHeight / 1);
+
+                e.Graphics.FillPath(brush, path);
+                e.Graphics.DrawPath(borderPen, path);
+                e.Graphics.DrawString(status, e.CellStyle.Font, textBrush, rect, sf);
+            }
+        }
+
+        private GraphicsPath GetRoundedRectanglePath(Rectangle bounds, int cornerRadius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(bounds.X, bounds.Y, cornerRadius, cornerRadius, 180, 90);
+            path.AddArc(bounds.Right - cornerRadius, bounds.Y, cornerRadius, cornerRadius, 270, 90);
+            path.AddArc(bounds.Right - cornerRadius, bounds.Bottom - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            path.AddArc(bounds.X, bounds.Bottom - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
     }
 }
